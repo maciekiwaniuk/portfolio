@@ -13,29 +13,32 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity';
 
 export default {
     name: 'Portfolio',
-    components: {
+    setup() {
+        let theme = ref('dark');
 
-    },
-    data() {
-        return {
-            theme: 'dark'
-        }
-    },
-    methods: {
-        changeTheme() {
-            if (this.theme == 'dark') {
-                this.$refs.container.classList.remove('dark-theme');
-                this.$refs.container.classList.add('light-theme');
-                this.theme = 'light';
+        const container = ref(null);
+
+        const changeTheme = () => {
+            if (theme.value == 'dark') {
+                container.value.classList.remove('dark-theme');
+                container.value.classList.add('light-theme');
+                theme.value = 'light'
             } else {
-                this.$refs.container.classList.remove('light-theme');
-                this.$refs.container.classList.add('dark-theme');
-                this.theme = 'dark';
+                container.value.classList.remove('light-theme');
+                container.value.classList.add('dark-theme');
+                theme.value = 'dark'
             }
         }
+
+        return { 
+            container,
+            theme,
+            changeTheme 
+        };
     }
 }
 </script>
@@ -47,6 +50,9 @@ export default {
 #app {
     .container {
         min-height: 100vh;
+
+        transition: background-color ease 1s,
+                    color ease 1s;
     }
 
     .dark-theme {
