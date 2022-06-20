@@ -1,5 +1,5 @@
 <template>
-    <div 
+    <div
         ref="container"
         class="container"
         :class="{ 'dark-theme' : theme == 'dark',
@@ -7,13 +7,27 @@
     >
         <h1>Hello, I am Maciek</h1>
         <h2>Software developer</h2>
+
+        {{ t('message') }}
+
         <button @click="changeTheme();">Theme switch</button>
+
+        <br/>
+        <br/>
+
+        <button @click="changeLanguage('pl');">PL</button>
+
+        <br/>
+
+        <button @click="changeLanguage('en');">EN</button>
     </div>
-    
+
 </template>
 
 <script>
 import { ref } from '@vue/reactivity';
+import { useI18n } from 'vue-i18n'
+
 
 export default {
     name: 'Portfolio',
@@ -34,10 +48,20 @@ export default {
             }
         }
 
-        return { 
+        const { t, locale } = useI18n({
+            useScope: 'global'
+        });
+
+        const changeLanguage = (newLanguage) => {
+            locale.value = newLanguage;
+        };
+
+        return {
             container,
             theme,
-            changeTheme 
+            changeTheme,
+            changeLanguage,
+            t
         };
     }
 }
@@ -59,11 +83,11 @@ export default {
         background-color: #dark[background-color];
         color: #dark[text-color];
     }
-        
+
     .light-theme {
         background-color: #light[background-color];
         color: #light[text-color];
     }
-        
+
 }
 </style>
