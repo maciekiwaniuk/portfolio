@@ -19,9 +19,15 @@ const loadLocaleMessages = () => {
     return messages
 }
 
+// Sets default language
+if (localStorage.getItem('language') === null) {
+    localStorage.setItem('language', 'pl');
+}
+let selectedLanguage = localStorage.getItem('language');
+
 export default createI18n({
     legacy: false,
-    locale: 'en',
-    fallbackLocale: 'en',
+    locale: selectedLanguage,
+    fallbackLocale: selectedLanguage,
     messages: loadLocaleMessages()
 })
