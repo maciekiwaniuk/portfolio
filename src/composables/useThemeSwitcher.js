@@ -18,6 +18,7 @@ const useThemeSwitcher = () => {
             container.value.classList.add('light-theme');
             theme.value = 'light';
         } else {
+            container.value.classList.remove('light-theme');
             container.value.classList.add('dark-theme');
             theme.value = 'dark';
         }

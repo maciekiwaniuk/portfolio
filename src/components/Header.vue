@@ -1,20 +1,14 @@
 <template>
     <div class="header">
-        <button @click="changeTheme();" class="changeThemeButton">Theme switch</button>
+        <slot name="changeThemeButton"></slot>
 
-        <button @click="changeLanguage('pl');" class="changeLanguageButton">PL</button>
-
-        <button @click="changeLanguage('en');" class="changeLanguageButton">EN</button>
+        <slot name="changeLanguageButtons"></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Header',
-    props: {
-        changeTheme: Function,
-        changeLanguage: Function
-    }
+    name: 'Header'
 }
 </script>
 

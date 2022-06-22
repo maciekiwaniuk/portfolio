@@ -5,7 +5,17 @@
         :class="{ 'dark-theme' : theme == 'dark',
                   'light-theme' : theme == 'light' }"
     >
-        <Header :changeTheme="changeTheme" :changeLanguage="changeLanguage" />
+        <Header>
+            <template #changeThemeButton>
+                <button @click="changeTheme();" class="changeThemeButton">Theme switch</button>
+            </template>
+
+            <template #changeLanguageButtons>
+                <button @click="changeLanguage('pl');" class="changeLanguageButton">PL</button>
+
+                <button @click="changeLanguage('en');" class="changeLanguageButton">EN</button>
+            </template>
+        </Header>
 
         {{ t('message') }}
 
