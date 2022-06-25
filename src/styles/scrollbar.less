@@ -1,0 +1,21 @@
+@import 'variables.less';
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+    background-color: @scrollbar-background-color;
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+    background: @scrollbar-color;
+    border-radius: 0.5rem;
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: @scrollbar-hover-color;
+}

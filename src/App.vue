@@ -1,4 +1,6 @@
 <template>
+    <div ref="cursor" class="cursor"></div>
+
     <div
         ref="container"
         class="container"
@@ -28,9 +30,10 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import useThemeSwitcher from './composables/useThemeSwitcher';
-import useLanguageSwitcher from './composables/useLanguageSwitcher';
+import Header from '@/components/Header.vue';
+import useThemeSwitcher from '@/composables/useThemeSwitcher';
+import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { onMounted } from '@vue/runtime-core';
 
 export default {
     name: 'Portfolio',
@@ -38,7 +41,16 @@ export default {
         Header
     },
     setup() {
-        const { container, theme, changeTheme } = useThemeSwitcher();
+        onMounted(() => {
+            // cursor updating
+            const cursor = document.querySelector('.cursor');
+            document.addEventListener('mousemove', event => {
+                let cssPositions = `top: ${event.pageY - 15}px; left: ${event.pageX - 15}px;`;
+                cursor.setAttribute('style', cssPositions);
+            });
+        });
+
+        const { container, cursor, theme, changeTheme } = useThemeSwitcher();
 
         const { t, changeLanguage } = useLanguageSwitcher();
 
@@ -50,6 +62,7 @@ export default {
 
         return {
             container,
+            cursor,
             theme,
             changeTheme,
             changeLanguage,
@@ -65,7 +78,7 @@ export default {
 
 #app {
     .container {
-        min-height: 100vh;
+        min-height: 200vh;
 
         transition: background-color ease 1s,
                     color ease 1s;
