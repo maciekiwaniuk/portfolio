@@ -42,6 +42,12 @@ export default {
 
         const { t, changeLanguage } = useLanguageSwitcher();
 
+        // set lang attribute
+        document.documentElement.setAttribute(
+            'lang',
+            localStorage.getItem('language')
+        );
+
         return {
             container,
             theme,

@@ -12,5 +12,12 @@ module.exports = defineConfig({
             compositionOnly: false,
             fullInstall: true
         }
+    },
+    pwa: {
+        name: 'Maciek Iwaniuk Portfolio',
+        themeColor: '#4DBA87',
+        msTileColor: '#000000',
+        appleMobileWebAppCapable: 'yes',
+        appleMobileWebAppStatusBarStyle: 'black',
     }
 });
