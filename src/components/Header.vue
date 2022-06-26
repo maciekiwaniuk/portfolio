@@ -19,12 +19,5 @@ export default {
     min-width: 100%;
     height: 2rem;
     background-color: orange;
-    .changeThemeButton {
-
-    }
-
-    .changeLanguageButton {
-
-    }
 }
 </style>

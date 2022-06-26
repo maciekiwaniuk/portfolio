@@ -1,13 +1,15 @@
 @import 'variables.less';
 
 .cursor {
-    position: absolute;
+    position: fixed;
     width: 2rem;
     height: 2rem;
     border-width: 0.15rem;
     border-style: solid;
     border-radius: 50%;
     pointer-events: none;
+    user-select: none;
+    background-color: none;
     transition: border-color ease 1s;
 }
 

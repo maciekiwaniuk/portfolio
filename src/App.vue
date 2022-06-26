@@ -9,13 +9,13 @@
     >
         <Header>
             <template #changeThemeButton>
-                <button @click="changeTheme();" class="changeThemeButton">Theme switch</button>
+                <button @click="changeTheme();" class="change-theme-button">Theme switch</button>
             </template>
 
             <template #changeLanguageButtons>
-                <button @click="changeLanguage('pl');" class="changeLanguageButton">PL</button>
+                <button @click="changeLanguage('pl');" class="change-language-button">PL</button>
 
-                <button @click="changeLanguage('en');" class="changeLanguageButton">EN</button>
+                <button @click="changeLanguage('en');" class="change-language-button">EN</button>
             </template>
         </Header>
 
@@ -33,6 +33,7 @@
 import Header from '@/components/Header.vue';
 import useThemeSwitcher from '@/composables/useThemeSwitcher';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import applyStylesAndEventOnCursor from '@/functions/applyStylesAndEventOnCursor';
 import { onMounted } from '@vue/runtime-core';
 
 export default {
@@ -42,12 +43,7 @@ export default {
     },
     setup() {
         onMounted(() => {
-            // cursor updating
-            const cursor = document.querySelector('.cursor');
-            document.addEventListener('mousemove', event => {
-                let cssPositions = `top: ${event.pageY - 15}px; left: ${event.pageX - 15}px;`;
-                cursor.setAttribute('style', cssPositions);
-            });
+            applyStylesAndEventOnCursor();
         });
 
         const { container, cursor, theme, changeTheme } = useThemeSwitcher();
@@ -87,11 +83,25 @@ export default {
     .dark-theme {
         background-color: #dark[background-color];
         color: #dark[text-color];
+
+        .change-theme-button {
+
+        }
+        .change-theme-button:hover {
+            cursor: pointer;
+        }
     }
 
     .light-theme {
         background-color: #light[background-color];
         color: #light[text-color];
+
+        .change-theme-button {
+
+        }
+        .change-theme-button:hover {
+            cursor: pointer;
+        }
     }
 
 }
