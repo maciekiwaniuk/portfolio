@@ -2,6 +2,7 @@ import { ref } from 'vue';
 
 /**
  * @returns container => main div which contains application content
+ * @returns cursor => div which imitates user's cursor
  * @returns theme => currently selected theme
  * @returns changeTheme() => changes currently selected theme
  */

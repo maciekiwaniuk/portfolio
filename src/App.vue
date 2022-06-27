@@ -5,7 +5,7 @@
         :class="{ 'cursor-dark-theme' : theme == 'dark',
                   'cursor-light-theme' : theme == 'light',
                   'cursor-hover-dark-theme' : (theme == 'dark' && cursorHover),
-                  'cursor-hover-light-theme' : (theme == 'light' && cursorHover)}"
+                  'cursor-hover-light-theme' : (theme == 'light' && cursorHover) }"
     ></div>
 
     <div
@@ -16,39 +16,36 @@
     >
         <TheHeader>
             <template #changeThemeButton>
-                <button
+                <div
                     @mouseenter="cursorHover = true;"
                     @mouseleave="cursorHover = false;"
                     @click="changeTheme();"
                     class="change-theme-button"
-                >Theme switch</button>
+                >
+                    <img src="@/assets/icons/sun.svg" class="sun-icon" v-if="theme == 'dark'" >
+                    <img src="@/assets/icons/moon.svg" class="moon-icon" v-else>
+                </div>
             </template>
 
             <template #changeLanguageButtons>
-                <button
+                <img
+                    src="@/assets/flags/pl.png"
+                    class="change-language-button"
                     @mouseenter="cursorHover = true;"
                     @mouseleave="cursorHover = false;"
                     @click="changeLanguage('pl');"
-                    class="change-language-button"
-                >PL</button>
+                >
 
-                <button
+                <img
+                    src="@/assets/flags/en.png"
+                    class="change-language-button"
                     @mouseenter="cursorHover = true;"
                     @mouseleave="cursorHover = false;"
                     @click="changeLanguage('en');"
-                    class="change-language-button"
-                >EN</button>
+                >
             </template>
         </TheHeader>
-
-        {{ t('message') }}
-
-        <br/>
-        <br/>
-
-
     </div>
-
 </template>
 
 <script>
@@ -98,17 +95,39 @@ export default {
 
         transition: background-color ease 1s,
                     color ease 1s;
+
+        /* icons */
+        .sun-icon {
+            width: 2.5rem;
+            // change black svg into white
+            filter: invert(100%);
+        }
+        .moon-icon {
+            width: 2.5rem;
+        }
+
+        /* buttons */
+        .change-theme-button {
+            font-size: 3rem;
+        }
+        .change-theme-button:hover {
+            cursor: pointer;
+        }
+
+        .change-language-button {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 0.5rem;
+        }
     }
 
     .dark-theme {
         background-color: #dark[background-color];
         color: #dark[text-color];
 
+        /* buttons */
         .change-theme-button {
 
-        }
-        .change-theme-button:hover {
-            cursor: pointer;
         }
     }
 
@@ -116,11 +135,10 @@ export default {
         background-color: #light[background-color];
         color: #light[text-color];
 
+
+        /* buttons */
         .change-theme-button {
 
-        }
-        .change-theme-button:hover {
-            cursor: pointer;
         }
     }
 
