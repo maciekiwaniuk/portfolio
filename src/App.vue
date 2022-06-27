@@ -7,7 +7,7 @@
         :class="{ 'dark-theme' : theme == 'dark',
                   'light-theme' : theme == 'light' }"
     >
-        <Header>
+        <TheHeader>
             <template #changeThemeButton>
                 <button @click="changeTheme();" class="change-theme-button">Theme switch</button>
             </template>
@@ -17,7 +17,7 @@
 
                 <button @click="changeLanguage('en');" class="change-language-button">EN</button>
             </template>
-        </Header>
+        </TheHeader>
 
         {{ t('message') }}
 
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
+import TheHeader from '@/components/TheHeader.vue';
 import useThemeSwitcher from '@/composables/useThemeSwitcher';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import applyStylesAndEventOnCursor from '@/functions/applyStylesAndEventOnCursor';
@@ -39,7 +39,7 @@ import { onMounted } from '@vue/runtime-core';
 export default {
     name: 'Portfolio',
     components: {
-        Header
+        TheHeader
     },
     setup() {
         onMounted(() => {
