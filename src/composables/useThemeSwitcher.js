@@ -14,28 +14,8 @@ const useThemeSwitcher = () => {
     let theme = ref(localStorage.getItem('theme'));
 
     const changeTheme = () => {
+        theme.value == 'dark' ? theme.value = 'light' : theme.value = 'dark';
 
-        if (theme.value == 'dark') {
-            // container
-            container.value.classList.remove('dark-theme');
-            container.value.classList.add('light-theme');
-
-            // cursor
-            cursor.value.classList.remove('cursor-dark-theme');
-            cursor.value.classList.add('cursor-light-theme');
-
-            theme.value = 'light';
-        } else {
-            // container
-            container.value.classList.remove('light-theme');
-            container.value.classList.add('dark-theme');
-
-            // cursor
-            cursor.value.classList.remove('cursor-light-theme');
-            cursor.value.classList.add('cursor-dark-theme');
-
-            theme.value = 'dark';
-        }
         localStorage.setItem('theme', theme.value);
     }
 
