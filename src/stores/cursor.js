@@ -7,6 +7,9 @@ export const useCursorStore = defineStore('cursor', {
     actions: {
         toggle() {
             this.hover = !this.hover;
+        },
+        setCursorToHover() {
+            this.hover = true;
         }
     }
 });

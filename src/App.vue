@@ -1,11 +1,5 @@
 <template>
-    <div
-        class="cursor"
-        :class="{ 'cursor-dark-theme' : themeStore.value == 'dark',
-                  'cursor-light-theme' : themeStore.value == 'light',
-                  'cursor-hover-dark-theme' : (themeStore.value == 'dark' && cursorStore.hover),
-                  'cursor-hover-light-theme' : (themeStore.value == 'light' && cursorStore.hover) }"
-    ></div>
+    <TheCursor />
 
     <div
         class="container"
@@ -17,7 +11,7 @@
                 <div
                     class="change-theme-button"
                     v-cursor-hover
-                    @click="themeStore.toggle(); cursorStore.toggle();"
+                    @click="themeStore.toggle();"
                 >
                     <img src="@/assets/icons/sun.svg" class="sun-icon" v-if="themeStore.value == 'dark'" >
                     <img src="@/assets/icons/moon.svg" class="moon-icon" v-else>
@@ -47,6 +41,7 @@
 
 <script setup>
 import TheHeader from '@/components/TheHeader.vue';
+import TheCursor from '@/components/TheCursor.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 
@@ -80,10 +75,6 @@ const vCursorHover = useCursorHover();
 @import '@/styles/main.less';
 
 #app {
-    .cursor {
-        z-index: 1000;
-    }
-
     .container {
 
         min-height: 200vh;
