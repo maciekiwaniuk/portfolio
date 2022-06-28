@@ -22,12 +22,15 @@
 
 <script>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { store } from '@/composables/store';
+import { useStore } from '@/composables/useStore';
+
 
 export default {
     name: 'TheHeader',
     setup() {
         const { t } = useLanguageSwitcher();
+
+        const store = useStore();
 
         return { t, store };
     }

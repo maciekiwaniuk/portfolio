@@ -53,7 +53,7 @@ import TheHeader from '@/components/TheHeader.vue';
 
 import useThemeSwitcher from '@/composables/useThemeSwitcher';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { store } from '@/composables/store';
+import { useStore } from '@/composables/useStore';
 
 import addEventOnCursor from '@/functions/addEventOnCursor';
 import setLangAttribute from '@/functions/setLangAttribute';
@@ -74,6 +74,8 @@ export default {
         const { container, cursor, theme, changeTheme } = useThemeSwitcher();
 
         const { t, changeLanguage } = useLanguageSwitcher();
+
+        const store = useStore();
 
         return {
             container, cursor, theme, changeTheme,

@@ -5,11 +5,15 @@ import App from './App.vue'
 import i18n from './i18n'
 import './registerServiceWorker'
 
+/* import pinia */
+import { createPinia } from 'pinia';
+const pinia = createPinia();
+
 /* instance of app */
 const app = createApp(App);
 
-/* use i18n plugin */
-app.use(i18n);
+app.use(i18n)
+    .use(pinia);
 
 /* mount app */
 app.mount('#app');
