@@ -4,8 +4,8 @@
         class="cursor"
         :class="{ 'cursor-dark-theme' : theme == 'dark',
                   'cursor-light-theme' : theme == 'light',
-                  'cursor-hover-dark-theme' : (theme == 'dark' && cursorHover),
-                  'cursor-hover-light-theme' : (theme == 'light' && cursorHover) }"
+                  'cursor-hover-dark-theme' : (theme == 'dark' && store.cursorHover),
+                  'cursor-hover-light-theme' : (theme == 'light' && store.cursorHover) }"
     ></div>
 
     <div
@@ -17,8 +17,8 @@
         <TheHeader>
             <template #changeThemeButton>
                 <div
-                    @mouseenter="cursorHover = true;"
-                    @mouseleave="cursorHover = false;"
+                    @mouseenter="store.cursorHover = true;"
+                    @mouseleave="store.cursorHover = false;"
                     @click="changeTheme();"
                     class="change-theme-button"
                 >
@@ -31,16 +31,16 @@
                 <img
                     src="@/assets/flags/pl.png"
                     class="change-language-button"
-                    @mouseenter="cursorHover = true;"
-                    @mouseleave="cursorHover = false;"
+                    @mouseenter="store.cursorHover = true;"
+                    @mouseleave="store.cursorHover = false;"
                     @click="changeLanguage('pl');"
                 >
 
                 <img
                     src="@/assets/flags/en.png"
                     class="change-language-button"
-                    @mouseenter="cursorHover = true;"
-                    @mouseleave="cursorHover = false;"
+                    @mouseenter="store.cursorHover = true;"
+                    @mouseleave="store.cursorHover = false;"
                     @click="changeLanguage('en');"
                 >
             </template>
@@ -53,11 +53,12 @@ import TheHeader from '@/components/TheHeader.vue';
 
 import useThemeSwitcher from '@/composables/useThemeSwitcher';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { store } from '@/composables/store';
 
 import addEventOnCursor from '@/functions/addEventOnCursor';
 import setLangAttribute from '@/functions/setLangAttribute';
 
-import { onMounted, ref } from '@vue/runtime-core';
+import { onMounted } from '@vue/runtime-core';
 
 export default {
     name: 'Portfolio',
@@ -74,12 +75,10 @@ export default {
 
         const { t, changeLanguage } = useLanguageSwitcher();
 
-        let cursorHover = ref(false);
-
         return {
             container, cursor, theme, changeTheme,
             changeLanguage, t,
-            cursorHover
+            store
         };
     }
 }
@@ -118,6 +117,9 @@ export default {
             width: 3rem;
             height: 3rem;
             margin-right: 0.5rem;
+        }
+        .change-language-button:hover {
+            cursor: pointer;
         }
     }
 

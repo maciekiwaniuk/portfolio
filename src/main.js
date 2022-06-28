@@ -8,9 +8,9 @@ import './registerServiceWorker'
 /* instance of app */
 const app = createApp(App);
 
-// use i18n plugin
+/* use i18n plugin */
 app.use(i18n);
 
-// mount app
+/* mount app */
 app.mount('#app');
 
