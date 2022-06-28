@@ -4,24 +4,26 @@
         :class="{ 'header-dark-theme' : themeStore.value == 'dark',
                   'header-light-theme' : themeStore.value == 'light'}"
     >
-        <slot name="changeThemeButton"></slot>
+        <TheHeaderThemeButton />
 
         <div class="flags">
-            <slot name="changeLanguageButtons"></slot>
+            <TheHeaderLanguageButtons />
         </div>
 
         <div class="menu">
-<ul>
-    <li v-cursor-hover>{{ t('header.home') }}</li>
-    <li v-cursor-hover>{{ t('header.education') }}</li>
-    <li v-cursor-hover>{{ t('header.projects') }}</li>
-    <li v-cursor-hover>{{ t('header.experience') }}</li>
-</ul>
+            <ul>
+                <li v-cursor-hover>{{ t('header.home') }}</li>
+                <li v-cursor-hover>{{ t('header.education') }}</li>
+                <li v-cursor-hover>{{ t('header.projects') }}</li>
+                <li v-cursor-hover>{{ t('header.experience') }}</li>
+            </ul>
         </div>
     </div>
 </template>
 
 <script setup>
+import TheHeaderThemeButton from '@/components/TheHeaderThemeButton.vue';
+import TheHeaderLanguageButtons from '@/components/TheHeaderLanguageButtons.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
