@@ -1,48 +1,48 @@
 <template>
     <div
-        ref="cursor"
         class="cursor"
-        :class="{ 'cursor-dark-theme' : theme == 'dark',
-                  'cursor-light-theme' : theme == 'light',
-                  'cursor-hover-dark-theme' : (theme == 'dark' && store.cursorHover),
-                  'cursor-hover-light-theme' : (theme == 'light' && store.cursorHover) }"
+        :class="{ 'cursor-dark-theme' : themeStore.value == 'dark',
+                  'cursor-light-theme' : themeStore.value == 'light',
+                  'cursor-hover-dark-theme' : (themeStore.value == 'dark' && cursorStore.hover),
+                  'cursor-hover-light-theme' : (themeStore.value == 'light' && cursorStore.hover) }"
     ></div>
 
     <div
-        ref="container"
         class="container"
-        :class="{ 'dark-theme' : theme == 'dark',
-                  'light-theme' : theme == 'light' }"
+        :class="{ 'dark-theme' : themeStore.value == 'dark',
+                  'light-theme' : themeStore.value == 'light' }"
     >
         <TheHeader>
             <template #changeThemeButton>
                 <div
-                    @mouseenter="store.cursorHover = true;"
-                    @mouseleave="store.cursorHover = false;"
-                    @click="changeTheme();"
                     class="change-theme-button"
+                    @mouseenter="cursorStore.toggle();"
+                    @mouseleave="cursorStore.toggle();"
+                    @click="themeStore.toggle(); cursorStore.toggle();"
                 >
-                    <img src="@/assets/icons/sun.svg" class="sun-icon" v-if="theme == 'dark'" >
+                    <img src="@/assets/icons/sun.svg" class="sun-icon" v-if="themeStore.value == 'dark'" >
                     <img src="@/assets/icons/moon.svg" class="moon-icon" v-else>
                 </div>
             </template>
 
             <template #changeLanguageButtons>
-                <img
-                    src="@/assets/flags/pl.png"
+                <button
                     class="change-language-button"
-                    @mouseenter="store.cursorHover = true;"
-                    @mouseleave="store.cursorHover = false;"
+                    @mouseenter="cursorStore.toggle();"
+                    @mouseleave="cursorStore.toggle();"
                     @click="changeLanguage('pl');"
                 >
+                    <img src="@/assets/flags/pl.png" class="flag">
+                </button>
 
-                <img
-                    src="@/assets/flags/en.png"
+                <button
                     class="change-language-button"
-                    @mouseenter="store.cursorHover = true;"
-                    @mouseleave="store.cursorHover = false;"
+                    @mouseenter="cursorStore.toggle();;"
+                    @mouseleave="cursorStore.toggle();"
                     @click="changeLanguage('en');"
                 >
+                    <img src="@/assets/flags/en.png" class="flag">
+                </button>
             </template>
         </TheHeader>
     </div>
@@ -51,9 +51,10 @@
 <script>
 import TheHeader from '@/components/TheHeader.vue';
 
-import useThemeSwitcher from '@/composables/useThemeSwitcher';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useStore } from '@/composables/useStore';
+
+import { useThemeStore } from '@/stores/theme';
+import { useCursorStore } from '@/stores/cursor';
 
 import addEventOnCursor from '@/functions/addEventOnCursor';
 import setLangAttribute from '@/functions/setLangAttribute';
@@ -71,16 +72,15 @@ export default {
             setLangAttribute();
         });
 
-        const { container, cursor, theme, changeTheme } = useThemeSwitcher();
+        const themeStore = useThemeStore();
+
+        const cursorStore = useCursorStore();
 
         const { t, changeLanguage } = useLanguageSwitcher();
 
-        const store = useStore();
-
         return {
-            container, cursor, theme, changeTheme,
             changeLanguage, t,
-            store
+            themeStore, cursorStore
         };
     }
 }
@@ -91,9 +91,13 @@ export default {
 @import '@/styles/main.less';
 
 #app {
-    .container {
-        min-height: 200vh;
+    .cursor {
+        z-index: 1000;
+    }
 
+    .container {
+
+        min-height: 200vh;
         transition: background-color ease 1s,
                     color ease 1s;
 
@@ -107,21 +111,27 @@ export default {
             width: 2.5rem;
         }
 
-        /* buttons */
+        /* change theme button */
         .change-theme-button {
             font-size: 3rem;
-        }
-        .change-theme-button:hover {
+            width: 3rem;
+            height: 3rem;
             cursor: pointer;
         }
 
+        /* change language button - flags */
         .change-language-button {
-            width: 3rem;
-            height: 3rem;
-            margin-right: 0.5rem;
-        }
-        .change-language-button:hover {
+            position: relative;
+            width: 4rem;
+            height: 4rem;
+            color: inherit;
+            border: none;
+            background-color: transparent;
             cursor: pointer;
+        }
+        .flag {
+            max-width: 100%;
+            height: auto;
         }
     }
 

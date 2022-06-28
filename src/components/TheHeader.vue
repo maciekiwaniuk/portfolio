@@ -8,8 +8,8 @@
 
         <div class="menu">
             <ul
-                @mouseenter="store.cursorHover = true;"
-                @mouseleave="store.cursorHover = false;"
+                @mouseenter="cursorStore.toggle();"
+                @mouseleave="cursorStore.toggle();"
             >
                 <li>{{ t('header.home') }}</li>
                 <li>{{ t('header.education') }}</li>
@@ -22,17 +22,16 @@
 
 <script>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useStore } from '@/composables/useStore';
-
+import { useCursorStore } from '@/stores/cursor';
 
 export default {
     name: 'TheHeader',
     setup() {
         const { t } = useLanguageSwitcher();
 
-        const store = useStore();
+        const cursorStore = useCursorStore();
 
-        return { t, store };
+        return { t, cursorStore };
     }
 }
 </script>
@@ -58,6 +57,21 @@ export default {
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            font-size: 1rem;
+        }
+        li:first-of-type {
+            position: relative;
+        }
+        li:first-of-type::after {
+            content: '';
+
+            position: absolute;
+            left: 0;
+            bottom: -0.15rem;
+            width: 100%;
+
+            border-width: 0 0 0.15rem 0;
+            border-style: solid;
         }
         li {
             margin-left: 1rem;
