@@ -10,12 +10,13 @@
 // scrollbar
 @scrollbar-background-color: grey;
 @scrollbar-color: @blue-color;
-@scrollbar-hover-color: darken(@scrollbar-color, 20%);
+@scrollbar-hover-color: darken(@scrollbar-color, 40%);
 
 
 #dark() {
     background-color: #0d2438;
     text-color: white;
+    text-color-hover: darken(white, 40%);
     cursor-color: white;
 }
 
@@ -23,5 +24,6 @@
 #light() {
     background-color: #e2e3d5;
     text-color: black;
+    text-color-hover: lighten(black, 20%);
     cursor-color: black;
 }

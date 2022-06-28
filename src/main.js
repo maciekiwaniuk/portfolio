@@ -12,6 +12,8 @@ const pinia = createPinia();
 /* instance of app */
 const app = createApp(App);
 
+
+/* use plugins on application instance */
 app.use(i18n)
     .use(pinia);
 

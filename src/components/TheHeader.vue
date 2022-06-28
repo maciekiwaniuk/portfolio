@@ -1,5 +1,9 @@
 <template>
-    <div class="header">
+    <div
+        class="header"
+        :class="{ 'header-dark-theme' : themeStore.value == 'dark',
+                  'header-light-theme' : themeStore.value == 'light'}"
+    >
         <slot name="changeThemeButton"></slot>
 
         <div class="flags">
@@ -7,33 +11,27 @@
         </div>
 
         <div class="menu">
-            <ul
-                @mouseenter="cursorStore.toggle();"
-                @mouseleave="cursorStore.toggle();"
-            >
-                <li>{{ t('header.home') }}</li>
-                <li>{{ t('header.education') }}</li>
-                <li>{{ t('header.experience') }}</li>
-                <li>{{ t('header.projects') }}</li>
-            </ul>
+<ul>
+    <li v-cursor-hover>{{ t('header.home') }}</li>
+    <li v-cursor-hover>{{ t('header.education') }}</li>
+    <li v-cursor-hover>{{ t('header.projects') }}</li>
+    <li v-cursor-hover>{{ t('header.experience') }}</li>
+</ul>
         </div>
     </div>
 </template>
 
-<script>
+<script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useCursorStore } from '@/stores/cursor';
+import { useCursorHover } from '@/directives/useCursorHover';
+import { useThemeStore } from '@/stores/theme';
 
-export default {
-    name: 'TheHeader',
-    setup() {
-        const { t } = useLanguageSwitcher();
+const { t } = useLanguageSwitcher();
 
-        const cursorStore = useCursorStore();
+const vCursorHover = useCursorHover();
 
-        return { t, cursorStore };
-    }
-}
+const themeStore = useThemeStore();
+
 </script>
 
 <style lang="less" scoped>
@@ -48,6 +46,8 @@ export default {
     border-top: 0.7rem solid @blue-color;
     font-family: 'LatoFont';
     font-weight: 700;
+    transition: background-color ease 1s,
+                color ease 1s;
 
     .menu {
         text-transform: uppercase;
@@ -58,28 +58,43 @@ export default {
             justify-content: flex-start;
             align-items: center;
             font-size: 1rem;
-        }
-        li:first-of-type {
-            position: relative;
-        }
-        li:first-of-type::after {
-            content: '';
 
-            position: absolute;
-            left: 0;
-            bottom: -0.15rem;
-            width: 100%;
+            li:first-of-type {
+                position: relative;
+            }
+            li:first-of-type::after {
+                content: '';
 
-            border-width: 0 0 0.15rem 0;
-            border-style: solid;
-        }
-        li {
-            margin-left: 1rem;
-        }
-        li:hover {
-            cursor: pointer;
+                position: absolute;
+                left: 0;
+                bottom: -0.15rem;
+                width: 100%;
+
+                border-width: 0 0 0.15rem 0;
+                border-style: solid;
+            }
+            li {
+                margin-left: 1rem;
+                transition: color ease 0.1s,
+                            transform ease 0.3s;
+            }
+            li:hover {
+                cursor: pointer;
+                transform: translateY(-0.2rem);
+            }
         }
     }
+}
 
+.header-dark-theme {
+    li:hover {
+        color: #dark[text-color-hover];
+    }
+}
+
+.header-light-theme {
+    li:hover {
+        color: #light[text-color-hover];
+    }
 }
 </style>

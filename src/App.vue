@@ -9,15 +9,14 @@
 
     <div
         class="container"
-        :class="{ 'dark-theme' : themeStore.value == 'dark',
-                  'light-theme' : themeStore.value == 'light' }"
+        :class="{ 'container-dark-theme' : themeStore.value == 'dark',
+                  'container-light-theme' : themeStore.value == 'light' }"
     >
         <TheHeader>
             <template #changeThemeButton>
                 <div
                     class="change-theme-button"
-                    @mouseenter="cursorStore.toggle();"
-                    @mouseleave="cursorStore.toggle();"
+                    v-cursor-hover
                     @click="themeStore.toggle(); cursorStore.toggle();"
                 >
                     <img src="@/assets/icons/sun.svg" class="sun-icon" v-if="themeStore.value == 'dark'" >
@@ -28,8 +27,7 @@
             <template #changeLanguageButtons>
                 <button
                     class="change-language-button"
-                    @mouseenter="cursorStore.toggle();"
-                    @mouseleave="cursorStore.toggle();"
+                    v-cursor-hover
                     @click="changeLanguage('pl');"
                 >
                     <img src="@/assets/flags/pl.png" class="flag">
@@ -37,8 +35,7 @@
 
                 <button
                     class="change-language-button"
-                    @mouseenter="cursorStore.toggle();;"
-                    @mouseleave="cursorStore.toggle();"
+                    v-cursor-hover
                     @click="changeLanguage('en');"
                 >
                     <img src="@/assets/flags/en.png" class="flag">
@@ -48,7 +45,7 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import TheHeader from '@/components/TheHeader.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
@@ -56,34 +53,26 @@ import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useCursorStore } from '@/stores/cursor';
 
+import { useCursorHover } from '@/directives/useCursorHover';
+
 import addEventOnCursor from '@/functions/addEventOnCursor';
 import setLangAttribute from '@/functions/setLangAttribute';
 
 import { onMounted } from '@vue/runtime-core';
 
-export default {
-    name: 'Portfolio',
-    components: {
-        TheHeader
-    },
-    setup() {
-        onMounted(() => {
-            addEventOnCursor();
-            setLangAttribute();
-        });
+onMounted(() => {
+    addEventOnCursor();
+    setLangAttribute();
+});
 
-        const themeStore = useThemeStore();
+const themeStore = useThemeStore();
 
-        const cursorStore = useCursorStore();
+const cursorStore = useCursorStore();
 
-        const { t, changeLanguage } = useLanguageSwitcher();
+const { t, changeLanguage } = useLanguageSwitcher();
 
-        return {
-            changeLanguage, t,
-            themeStore, cursorStore
-        };
-    }
-}
+const vCursorHover = useCursorHover();
+
 </script>
 
 <style lang="less">
@@ -135,7 +124,7 @@ export default {
         }
     }
 
-    .dark-theme {
+    .container-dark-theme {
         background-color: #dark[background-color];
         color: #dark[text-color];
 
@@ -145,7 +134,7 @@ export default {
         }
     }
 
-    .light-theme {
+    .container-light-theme {
         background-color: #light[background-color];
         color: #light[text-color];
 
