@@ -1,8 +1,14 @@
 {
     "header": {
-        "home": "home",
-        "education": "education",
-        "experience": "experience",
-        "projects": "projects"
+        "home": "Home",
+        "education": "Education",
+        "experience": "Experience",
+        "projects": "Projects",
+        "images": {
+            "sun": "Sun",
+            "moon": "Moon",
+            "polishFlag": "Polish flag",
+            "greatBritainFlag": "Great Britain flag"
+        }
     }
 }

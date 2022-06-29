@@ -7,19 +7,24 @@
         <img
             class="sun-icon"
             src="@/assets/icons/sun.svg"
+            :alt="t('header.images.sun')"
             v-show="themeStore.value == 'dark'"
         >
         <img
             class="moon-icon"
             src="@/assets/icons/moon.svg"
+            :alt="t('header.images.moon')"
             v-show="themeStore.value == 'light'"
         >
     </button>
 </template>
 
 <script setup>
+import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useCursorHover } from '@/directives/useCursorHover';
+
+const { t } = useLanguageSwitcher();
 
 const themeStore = useThemeStore();
 

@@ -1,8 +1,14 @@
 {
     "header": {
-        "home": "główna",
-        "education": "edukacja",
-        "experience": "doświadczenie",
-        "projects": "projekty"
+        "home": "Główna",
+        "education": "Edukacja",
+        "experience": "Doświadczenie",
+        "projects": "Projekty",
+        "images": {
+            "sun": "Słońce",
+            "moon": "Księżyc",
+            "polishFlag": "Flaga polski",
+            "greatBritainFlag": "Flaga Wielkiej Brytanii"
+        }
     }
 }
