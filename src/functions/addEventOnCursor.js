@@ -6,8 +6,8 @@ const addEventOnCursor = () => {
     const cursor = document.querySelector('.cursor');
 
     document.addEventListener('mousemove', event => {
-        let cssPositions = `top: ${event.clientY}px; left: ${event.clientX}px;`;
-        cursor.setAttribute('style', cssPositions);
+        cursor.style.top = `${event.clientY}px`;
+        cursor.style.left = `${event.clientX}px`;
     });
 }
 

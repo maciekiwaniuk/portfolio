@@ -6,13 +6,13 @@
     >
         <img
             class="sun-icon"
-            src="@/assets/icons/sun.svg"
+            src="@/assets/images/icons/sun.svg"
             :alt="t('header.images.sun')"
             v-show="themeStore.value == 'dark'"
         >
         <img
             class="moon-icon"
-            src="@/assets/icons/moon.svg"
+            src="@/assets/images/icons/moon.svg"
             :alt="t('header.images.moon')"
             v-show="themeStore.value == 'light'"
         >
@@ -29,11 +29,11 @@ const { t } = useLanguageSwitcher();
 const themeStore = useThemeStore();
 
 const vCursorHover = useCursorHover();
+
 </script>
 
 <style lang="less" scoped>
-/* change theme button */
-        /* icons */
+
 .sun-icon {
     width: 2.5rem;
     // change black svg into white

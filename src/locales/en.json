@@ -10,5 +10,11 @@
             "polishFlag": "Polish flag",
             "greatBritainFlag": "Great Britain flag"
         }
+    },
+
+    "landingPage": {
+        "myNameIs": "Hi, my name is",
+        "name": "Maciek Iwaniuk.",
+        "fullstackSoftwareDeveloper": "Fullstack software developer"
     }
 }

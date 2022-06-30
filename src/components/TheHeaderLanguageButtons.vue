@@ -4,7 +4,7 @@
         v-cursor-hover
         @click="changeLanguage('pl');"
     >
-        <img src="@/assets/flags/pl.png" class="flag" :alt="t('header.images.polishFlag')">
+        <img src="@/assets/images/flags/pl.png" class="flag" :alt="t('header.images.polishFlag')">
     </button>
 
     <button
@@ -12,7 +12,7 @@
         v-cursor-hover
         @click="changeLanguage('en');"
     >
-        <img src="@/assets/flags/en.png" class="flag" :alt="t('header.images.greatBritainFlag')">
+        <img src="@/assets/images/flags/en.png" class="flag" :alt="t('header.images.greatBritainFlag')">
     </button>
 </template>
 
@@ -23,20 +23,21 @@ import { useCursorHover } from '@/directives/useCursorHover';
 const { t, changeLanguage } = useLanguageSwitcher();
 
 const vCursorHover = useCursorHover();
+
 </script>
 
 <style lang="less" scoped>
 .change-language-button {
     position: relative;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     color: inherit;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 .flag {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
 }
 </style>

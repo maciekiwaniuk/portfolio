@@ -1,18 +1,21 @@
 <template>
     <TheCursor />
 
-    <div
-        class="container"
-        :class="{ 'container-dark-theme' : themeStore.value == 'dark',
-                  'container-light-theme' : themeStore.value == 'light' }"
-    >
+    <div class="container"
+         :class="{ 'container-dark-theme' : themeStore.value == 'dark',
+                  'container-light-theme' : themeStore.value == 'light' }">
+
         <TheHeader />
+
+        <TheLandingPage />
+
     </div>
 </template>
 
 <script setup>
-import TheHeader from '@/components/TheHeader.vue';
 import TheCursor from '@/components/TheCursor.vue';
+import TheHeader from '@/components/TheHeader.vue';
+import TheLandingPage from './components/TheLandingPage.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 
@@ -47,8 +50,9 @@ const vCursorHover = useCursorHover();
 
 #app {
     .container {
-
+        font-family: 'LatoFont';
         min-height: 200vh;
+
         transition: background-color ease 1s,
                     color ease 1s;
     }

@@ -46,7 +46,6 @@ const themeStore = useThemeStore();
     min-width: 100%;
     min-height: 5rem;
     border-top: 0.7rem solid @blue-color;
-    font-family: 'LatoFont';
     font-weight: 700;
     transition: background-color ease 1s,
                 color ease 1s;
