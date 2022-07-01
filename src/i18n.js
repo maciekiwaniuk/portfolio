@@ -19,9 +19,6 @@ const loadLocaleMessages = () => {
     return messages
 }
 
-
-console.log(navigator.language);
-
 // Sets default language
 if (localStorage.getItem('language') === null) {
     // checks which language is preferred by the user

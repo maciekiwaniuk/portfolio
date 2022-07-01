@@ -3,9 +3,9 @@
 
     <div class="container"
          :class="{ 'container-dark-theme' : themeStore.value == 'dark',
-                  'container-light-theme' : themeStore.value == 'light' }">
+                   'container-light-theme' : themeStore.value == 'light' }">
 
-        <TheHeader />
+        <TheNavbar />
 
         <TheLandingPage />
 
@@ -14,8 +14,8 @@
 
 <script setup>
 import TheCursor from '@/components/TheCursor.vue';
-import TheHeader from '@/components/TheHeader.vue';
-import TheLandingPage from './components/TheLandingPage.vue';
+import TheNavbar from '@/components/TheNavbar.vue';
+import TheLandingPage from '@/components/TheLandingPage.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 
@@ -26,12 +26,14 @@ import { useCursorHover } from '@/directives/useCursorHover';
 
 import addEventOnCursor from '@/functions/addEventOnCursor';
 import setLangAttribute from '@/functions/setLangAttribute';
+import setBackgroundColorOnScrollbar from '@/functions/setBackgroundColorOnScrollbar';
 
 import { onMounted } from '@vue/runtime-core';
 
 onMounted(() => {
     addEventOnCursor();
     setLangAttribute();
+    setBackgroundColorOnScrollbar();
 });
 
 const themeStore = useThemeStore();

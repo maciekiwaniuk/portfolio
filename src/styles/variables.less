@@ -11,12 +11,6 @@
 
 @blue-color: rgb(0, 179, 255);
 
-// scrollbar
-@scrollbar-background-color: grey;
-@scrollbar-color: @blue-color;
-@scrollbar-hover-color: darken(@scrollbar-color, 10%);
-
-
 #dark() {
     background-color: #0d2438;
     text-color: white;
@@ -24,10 +18,19 @@
     cursor-color: white;
 }
 
-
 #light() {
     background-color: #e2e3d5;
     text-color: black;
     text-color-hover: lighten(black, 20%);
     cursor-color: black;
+}
+
+// scrollbar
+@scrollbar-background-color: grey;
+@scrollbar-color: @blue-color;
+@scrollbar-hover-color: darken(@scrollbar-color, 10%);
+
+:root {
+    --scrollbar-dark-theme-background-color: #dark[background-color];
+    --scrollbar-light-theme-background-color: #light[background-color];
 }

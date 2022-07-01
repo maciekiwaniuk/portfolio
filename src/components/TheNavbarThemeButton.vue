@@ -7,13 +7,13 @@
         <img
             class="sun-icon"
             src="@/assets/images/icons/sun.svg"
-            :alt="t('header.images.sun')"
+            :alt="t('navbar.images.sun')"
             v-show="themeStore.value == 'dark'"
         >
         <img
             class="moon-icon"
             src="@/assets/images/icons/moon.svg"
-            :alt="t('header.images.moon')"
+            :alt="t('navbar.images.moon')"
             v-show="themeStore.value == 'light'"
         >
     </button>
@@ -33,6 +33,7 @@ const vCursorHover = useCursorHover();
 </script>
 
 <style lang="less" scoped>
+@import '@/styles/variables.less';
 
 .sun-icon {
     width: 2.5rem;
@@ -50,6 +51,9 @@ const vCursorHover = useCursorHover();
     height: 3rem;
     background-color: transparent;
     border: none;
+    border-radius: 50%;
     cursor: pointer;
+
+    transition: background-color ease 0.7s;
 }
 </style>
