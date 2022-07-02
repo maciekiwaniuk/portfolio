@@ -1,21 +1,21 @@
 <template>
-    <TheCursor />
+    <Cursor />
 
     <div class="container"
          :class="{ 'container-dark-theme' : themeStore.value == 'dark',
                    'container-light-theme' : themeStore.value == 'light' }">
 
-        <TheNavbar />
+        <Navbar />
 
-        <TheLandingPage />
+        <LandingPage />
 
     </div>
 </template>
 
 <script setup>
-import TheCursor from '@/components/TheCursor.vue';
-import TheNavbar from '@/components/TheNavbar.vue';
-import TheLandingPage from '@/components/TheLandingPage.vue';
+import Cursor from '@/components/Cursor.vue';
+import Navbar from '@/components/Navbar/Navbar.vue';
+import LandingPage from '@/components/LandingPage.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 
@@ -49,6 +49,7 @@ const vCursorHover = useCursorHover();
 <style lang="less">
 @import '@/styles/variables.less';
 @import '@/styles/main.less';
+@import '@/styles/scrollbar.less';
 
 #app {
     .container {

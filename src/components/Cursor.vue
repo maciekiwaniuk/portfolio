@@ -35,6 +35,11 @@ const cursorStore = useCursorStore();
     transform-origin: 100% 100%;
     transition: border-color ease 1s,
                 transform ease 0.3s;
+
+    display: none;
+    @media (min-width: 600px) {
+        display: block;
+    }
 }
 
 /* colors */

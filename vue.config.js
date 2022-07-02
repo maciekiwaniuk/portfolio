@@ -14,7 +14,7 @@ module.exports = defineConfig({
         }
     },
     pwa: {
-        name: 'Maciek Iwaniuk Portfolio',
+        name: 'Maciek Iwaniuk',
         themeColor: '#4DBA87',
         msTileColor: '#000000',
         appleMobileWebAppCapable: 'yes',
