@@ -18,7 +18,9 @@
             <NavigationLinks alignment="horizontal"/>
         </div>
 
-        <div class="nav-links-right-menu" :class="{ 'active': navMenuStore.opened }">
+        <div class="blurred-background" :class="{ 'blurred-background-visible': navMenuStore.opened }"></div>
+
+        <div class="nav-links-mobile-menu" :class="{ 'active': navMenuStore.opened }">
             <NavigationLinks alignment="vertical"/>
         </div>
 
@@ -70,15 +72,28 @@ const vCursorHover = useCursorHover();
         }
     }
     .nav-links {
-        text-transform: uppercase;
-
         display: none;
         @media (min-width: 600px) {
             display: flex;
         }
     }
 
-    .nav-links-right-menu {
+    .blurred-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        opacity: 0.7;
+
+        transition: width ease-in-out 0.2s;
+
+    }
+    .blurred-background-visible {
+        width: calc(100vw - 12rem);
+    }
+
+    .nav-links-mobile-menu {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -88,13 +103,15 @@ const vCursorHover = useCursorHover();
         right: 0;
         width: 0rem;
         min-height: 100vh;
+        border: none;
 
-        transition: width ease-in-out 0.2s;
+        transition: width ease-in-out 0.2s,
+                    border ease-in-out 0.2s;
     }
     .active {
         width: 12rem;
         background-color: orange;
-
+        border-left: solid @blue-color 0.2rem;
     }
 }
 
@@ -106,13 +123,11 @@ const vCursorHover = useCursorHover();
         background-color: #dark[text-color-hover];
     }
 
-    li:hover {
-        color: #dark[text-color-hover];
-    }
-
-    .nav-links-right-menu {
+    .blurred-background {
         background-color: #dark[background-color];
-        background-color: red;
+    }
+    .nav-links-mobile-menu {
+        background-color: #dark[background-color];
     }
 }
 .navigation-light-theme {
@@ -122,13 +137,11 @@ const vCursorHover = useCursorHover();
     .nav-hamburger-toggler:hover .bar {
         background-color: #light[text-color-hover];
     }
-    li:hover {
-        color: #light[text-color-hover];
-    }
-
-    .nav-links-right-menu {
+    .blurred-background {
         background-color: #light[background-color];
-        background-color: yellow;;
+    }
+    .nav-links-mobile-menu {
+        background-color: #light[background-color];
     }
 }
 </style>

@@ -3,7 +3,7 @@
 
     <div class="container"
          :class="{ 'container-dark-theme' : themeStore.value == 'dark',
-                   'container-light-theme' : themeStore.value == 'light' }">
+                   'container-light-theme' : themeStore.value == 'light'}">
 
         <Navbar />
 

@@ -10,7 +10,9 @@
 
     <ul :class="{ 'vertical': props.alignment == 'vertical',
                   'horizontal': props.alignment == 'horizontal',
-                  'hidden': (props.alignment == 'vertical' && !navMenuStore.opened) }">
+                  'links-dark-theme' : themeStore.value == 'dark',
+                  'links-light-theme' : themeStore.value == 'light',
+                  'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }">
         <li v-cursor-hover>{{ t('navbar.aboutMe') }}</li>
         <li v-cursor-hover>{{ t('navbar.education') }}</li>
         <li v-cursor-hover>{{ t('navbar.projects') }}</li>
@@ -20,10 +22,13 @@
 
 <script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
+
+const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
 
@@ -35,6 +40,7 @@ const props = defineProps({
 </script>
 
 <style lang="less" scoped>
+@import '@/styles/variables.less';
 
 .area-to-close-menu {
     position: absolute;
@@ -51,38 +57,53 @@ const props = defineProps({
         cursor: pointer;
     }
 }
-.right-menu-close-button {
-
-}
 .hidden {
     display: none;
 }
+.hidden-text {
+    font-size: 0 !important;
+}
 
 ul {
+    text-transform: uppercase;
     display: flex;
     list-style-type: none;
     font-size: 1rem;
+
+    transition: font-size ease 0.3s;
 
     li {
         margin-left: 1rem;
         transition: color ease 0.1s,
                     transform ease 0.3s;
     }
-    li:hover {
-        cursor: pointer;
-        transform: translateY(-0.2rem);
-    }
 }
 
 .horizontal {
     justify-content: flex-start;
     align-items: center;
+
+    li:hover {
+        cursor: pointer;
+        transform: translateY(-0.2rem);
+    }
 }
 .vertical {
     align-content: center;
     flex-direction: column;
     gap: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+}
+
+.links-dark-theme:hover {
+    li:hover {
+        color: #dark[text-color-hover];
+    }
+}
+.links-light-theme {
+    li:hover {
+        color: #light[text-color-hover];
+    }
 }
 
 </style>
