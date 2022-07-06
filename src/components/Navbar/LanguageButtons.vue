@@ -31,12 +31,17 @@ const vCursorHover = useCursorHover();
 <style lang="less" scoped>
 .change-language-button {
     position: relative;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     color: inherit;
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    @media (min-width: 600px) {
+        width: 3rem;
+        height: 3rem;
+    }
 }
 .flag {
     max-width: 80%;

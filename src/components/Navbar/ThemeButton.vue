@@ -5,13 +5,13 @@
         @click="themeStore.toggle();"
     >
         <img
-            class="sun-icon"
+            class="sun-icon icon"
             src="@/assets/images/icons/sun.svg"
             :alt="t('navbar.images.sun')"
             v-show="themeStore.value == 'dark'"
         >
         <img
-            class="moon-icon"
+            class="moon-icon icon"
             src="@/assets/images/icons/moon.svg"
             :alt="t('navbar.images.moon')"
             v-show="themeStore.value == 'light'"
@@ -35,13 +35,19 @@ const vCursorHover = useCursorHover();
 <style lang="less" scoped>
 @import '@/styles/variables.less';
 
+.icon {
+    width: 2.2rem;
+
+    @media (min-width: 600px) {
+        width: 2.5rem;
+    }
+}
 .sun-icon {
-    width: 2.5rem;
     // change black svg into white
     filter: invert(100%);
 }
 .moon-icon {
-    width: 2.5rem;
+    //
 }
 
 /* change theme button */

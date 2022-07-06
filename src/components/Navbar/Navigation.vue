@@ -9,9 +9,9 @@
             v-cursor-hover
             @click="navMenuStore.toggle();"
         >
+            <span class="bar bar-short"></span>
             <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <span class="bar bar-medium"></span>
         </button>
 
         <div class="nav-links">
@@ -29,14 +29,10 @@
 
 <script setup>
 import NavigationLinks from '@/components/Navbar/NavigationLinks.vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import useNavMenuToggler from '@/composables/useNavMenuToggler';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
-import { ref } from '@vue/reactivity';
-
-const { t } = useLanguageSwitcher();
 
 const themeStore = useThemeStore();
 
@@ -52,7 +48,7 @@ const vCursorHover = useCursorHover();
     .nav-hamburger-toggler {
         flex-direction: column;
         justify-content: space-evenly;
-        width: 3rem;
+        width: 2.6rem;
         height: 1.8rem;
         border: none;
         background-color: transparent;
@@ -68,7 +64,13 @@ const vCursorHover = useCursorHover();
             height: 0.25rem;
             width: 100%;
             border-radius: 10px;
-            transition: background-color ease 0.1s;
+            transition: background-color ease 0.3s;
+        }
+        .bar-short {
+            width: 50%;
+        }
+        .bar-medium {
+            width: 80%;
         }
     }
     .nav-links {
@@ -87,7 +89,6 @@ const vCursorHover = useCursorHover();
         opacity: 0.7;
 
         transition: width ease-in-out 0.2s;
-
     }
     .blurred-background-visible {
         width: calc(100vw - 12rem);
