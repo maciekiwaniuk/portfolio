@@ -7,9 +7,9 @@
 
         <div
             v-if="props.alignment =='vertical'"
-            :class="{ 'hidden': !navMenuStore.opened }"
+            :class="{ 'hidden': !props.navMenuOpened }"
             class="area-to-close-menu"
-            @click="navMenuStore.toggle();"
+            @click="props.navMenuToggle();"
         >
             <button class="close-button">
                 <span class="bar bar-to-right"></span>
@@ -19,7 +19,7 @@
 
         <ul :class="{ 'vertical': props.alignment == 'vertical',
                       'horizontal': props.alignment == 'horizontal',
-                      'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }">
+                      'hidden-text': (props.alignment == 'vertical' && !props.navMenuOpened) }">
             <li v-cursor-hover>{{ t('navbar.aboutMe') }}</li>
             <li v-cursor-hover>{{ t('navbar.education') }}</li>
             <li v-cursor-hover>{{ t('navbar.projects') }}</li>
@@ -32,19 +32,18 @@
 <script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
-import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
 
 const themeStore = useThemeStore();
 
-const navMenuStore = useNavMenuStore();
-
 const vCursorHover = useCursorHover();
 
 const props = defineProps({
-    alignment: String
+    alignment: String,
+    navMenuOpened: Boolean,
+    navMenuToggle: Function
 });
 </script>
 
@@ -100,7 +99,10 @@ const props = defineProps({
         transition: font-size ease 0.3s;
 
         li {
+            position: relative;
+            cursor: pointer;
             margin-left: 1rem;
+
             transition: color ease 0.1s,
                         transform ease 0.3s;
         }
@@ -110,9 +112,19 @@ const props = defineProps({
         justify-content: flex-start;
         align-items: center;
 
-        li:hover {
-            cursor: pointer;
-            transform: translateY(-0.2rem);
+        li::before {
+            content: '';
+            position: absolute;
+            bottom: -0.1rem;
+            left: 0;
+            width: 100%;
+            height: 0.1rem;
+            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+
+            transition: clip-path ease-out 0.3s;
+        }
+        li:hover::before {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
     }
     .vertical {
@@ -128,8 +140,8 @@ const props = defineProps({
 
 }
 .navigation-links-dark-theme {
-    li:hover {
-        color: #dark[text-color-hover];
+    li::before {
+        background-color: #dark[text-color];
     }
 
     .bar {
@@ -137,8 +149,8 @@ const props = defineProps({
     }
 }
 .navigation-links-light-theme {
-    li:hover {
-        color: #light[text-color-hover];
+    li::before {
+        background-color: #light[text-color];
     }
 
     .bar {

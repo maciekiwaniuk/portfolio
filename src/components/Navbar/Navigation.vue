@@ -7,7 +7,7 @@
         <button
             class="nav-hamburger-toggler"
             v-cursor-hover
-            @click="navMenuStore.toggle();"
+            @click="navMenuToggle();"
         >
             <span class="bar bar-short"></span>
             <span class="bar"></span>
@@ -15,13 +15,21 @@
         </button>
 
         <div class="nav-links">
-            <NavigationLinks alignment="horizontal"/>
+            <NavigationLinks
+                alignment="horizontal"
+                :navMenuToggle="navMenuToggle"
+                :navMenuOpened="navMenuOpened"
+            />
         </div>
 
-        <div class="blurred-background" :class="{ 'blurred-background-visible': navMenuStore.opened }"></div>
+        <div class="blurred-background" :class="{ 'blurred-background-visible': navMenuOpened }"></div>
 
-        <div class="nav-links-mobile-menu" :class="{ 'active': navMenuStore.opened }">
-            <NavigationLinks alignment="vertical"/>
+        <div class="nav-links-mobile-menu" :class="{ 'active': navMenuOpened }">
+            <NavigationLinks
+                alignment="vertical"
+                :navMenuToggle="navMenuToggle"
+                :navMenuOpened="navMenuOpened"
+            />
         </div>
 
     </div>
@@ -31,14 +39,23 @@
 import NavigationLinks from '@/components/Navbar/NavigationLinks.vue';
 import useNavMenuToggler from '@/composables/useNavMenuToggler';
 import { useThemeStore } from '@/stores/theme';
-import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
+import { ref } from '@vue/reactivity';
 
 const themeStore = useThemeStore();
 
-const navMenuStore = useNavMenuStore();
-
 const vCursorHover = useCursorHover();
+
+let navMenuOpened = ref(false);
+
+const navMenuToggle = () => {
+    if (navMenuOpened.value) {
+        document.body.style = 'overflow: visible;';
+    } else {
+        document.body.style = 'overflow: hidden;';
+    }
+    navMenuOpened.value = !navMenuOpened.value;
+};
 </script>
 
 <style lang="less" scoped>
