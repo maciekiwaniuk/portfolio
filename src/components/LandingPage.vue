@@ -9,7 +9,7 @@
 
             <div class="name">{{ t('landingPage.name') }}</div>
 
-            <div class="position">{{ t('landingPage.fullstackSoftwareDeveloper') }}</div>
+            <div class="position">{{ t('landingPage.softwareDeveloper') }}</div>
         </div>
 
 
@@ -26,7 +26,6 @@ const { t } = useLanguageSwitcher();
 const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
-
 </script>
 
 <style lang="less" scoped>
@@ -36,10 +35,11 @@ const themeStore = useThemeStore();
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 30rem;
+    padding: 1.5rem;
+    min-height: 50vh;
     min-width: 100%;
     @media (min-height: 40rem) {
-        min-height: 45rem;
+        min-height: 70vh;
     }
 
     .text {
@@ -57,8 +57,24 @@ const themeStore = useThemeStore();
         }
 
         .position {
-            font-size: 3.3rem;
+            font-size: 2.6rem;
             font-style: italic;
+        }
+    }
+}
+
+
+@media (min-width: 600px) {
+    .landing-page {
+        .text {
+            font-size: 4.5rem;
+
+            .my-name-is {
+                font-size: 3rem;
+            }
+            .position {
+                font-size: 4.3rem;
+            }
         }
     }
 }
