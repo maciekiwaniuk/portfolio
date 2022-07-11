@@ -1,5 +1,6 @@
 <template>
     <div
+        data-aos="fade-up-right"
         class="landing-page"
         :class="{ 'landing-page-dark-theme' : themeStore.value == 'dark',
                   'landing-page-light-theme' : themeStore.value == 'light'}"
