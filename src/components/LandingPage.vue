@@ -1,16 +1,17 @@
 <template>
     <div
-        data-aos="fade-up-right"
         class="landing-page"
         :class="{ 'landing-page-dark-theme' : themeStore.value == 'dark',
                   'landing-page-light-theme' : themeStore.value == 'light'}"
     >
-        <div class="text">
+        <div
+            data-aos="fade-up-right"
+            class="text">
             <div class="my-name-is">{{ t('landingPage.myNameIs') }}</div>
 
             <div class="name">{{ t('landingPage.name') }}</div>
 
-            <div class="position">{{ t('landingPage.softwareDeveloper') }}</div>
+            <div class="description">{{ t('landingPage.description') }}</div>
         </div>
 
 
@@ -30,7 +31,7 @@ const themeStore = useThemeStore();
 </script>
 
 <style lang="less" scoped>
-@import url('@/styles/variables.less');
+@import '@/styles/variables.less';
 
 .landing-page {
     display: flex;
@@ -39,27 +40,29 @@ const themeStore = useThemeStore();
     padding: 1.5rem;
     min-height: 50vh;
     min-width: 100%;
+    margin: auto;
     @media (min-height: 40rem) {
         min-height: 70vh;
     }
 
     .text {
-        font-size: 3.5rem;
-        margin-bottom: 0.5rem;
 
         .my-name-is {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-family: 'Caveat';
         }
 
         .name {
+            font-family: 'LatoFontBold';
+            font-size: 3rem;
             color: @blue-color;
             display: block;
+            margin-bottom: 0.5rem;
         }
 
-        .position {
-            font-size: 2.6rem;
-            font-style: italic;
+        .description {
+            font-family: 'LatoFontLight';
+            font-size: 1rem;
         }
     }
 }
@@ -67,14 +70,19 @@ const themeStore = useThemeStore();
 
 @media (min-width: 600px) {
     .landing-page {
+        min-width: 30rem;
+        max-width: 40rem;
         .text {
-            font-size: 4.5rem;
 
             .my-name-is {
-                font-size: 3rem;
+                font-size: 2.2rem;
+
             }
-            .position {
-                font-size: 4.3rem;
+            .name {
+                font-size: 4rem;
+            }
+            .description {
+                font-size: 1.3rem;
             }
         }
     }

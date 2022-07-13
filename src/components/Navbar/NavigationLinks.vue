@@ -17,7 +17,9 @@
             </button>
         </div>
 
-        <ul :class="{ 'vertical': props.alignment == 'vertical',
+        <ul
+            :data-aos="linksAnimation"
+            :class="{ 'vertical': props.alignment == 'vertical',
                       'horizontal': props.alignment == 'horizontal',
                       'hidden-text': (props.alignment == 'vertical' && !props.navMenuOpened) }">
             <li v-cursor-hover>{{ t('navbar.aboutMe') }}</li>
@@ -33,6 +35,7 @@
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useCursorHover } from '@/directives/useCursorHover';
+import { ref } from '@vue/reactivity';
 
 const { t } = useLanguageSwitcher();
 
@@ -45,6 +48,9 @@ const props = defineProps({
     navMenuOpened: Boolean,
     navMenuToggle: Function
 });
+
+// animation only for menu on big screens
+const linksAnimation = ref(props.alignment == 'horizontal' ? 'fade-left' : null);
 </script>
 
 <style lang="less" scoped>

@@ -1,5 +1,7 @@
 <template>
-    <div class="flags">
+    <div
+        data-aos="fade-down"
+        class="flags">
         <button
             class="change-language-button"
             v-cursor-hover

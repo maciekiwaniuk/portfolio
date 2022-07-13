@@ -16,7 +16,11 @@ app.use(pinia);
 /* import AOS library for animations on scroll */
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-app.AOS = new AOS.init();
+app.AOS = new AOS.init({
+    disable: 'mobile',
+    once: true,
+    duration: 800
+});
 
 /* mount app */
 app.mount('#app');

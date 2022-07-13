@@ -19,7 +19,7 @@ const loadLocaleMessages = () => {
     return messages
 }
 
-// Sets default language
+// sets default language
 if (localStorage.getItem('language') === null) {
     // checks which language is preferred by the user
     let userPreferredLanguage = 'pl';

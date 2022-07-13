@@ -62,6 +62,8 @@ const navMenuToggle = () => {
 @import '@/styles/variables.less';
 
 .navigation {
+    font-family: 'LatoFontBold';
+
     .nav-hamburger-toggler {
         flex-direction: column;
         justify-content: space-evenly;

@@ -53,7 +53,7 @@ const vCursorHover = useCursorHover();
 
 #app {
     .container {
-        font-family: 'LatoFont';
+        font-family: 'LatoFontRegular';
         min-height: 200vh;
 
         transition: background-color ease 1s,
