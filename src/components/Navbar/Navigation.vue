@@ -1,8 +1,8 @@
 <template>
     <div
         class="navigation"
-        :class="{ 'navigation-dark-theme' : themeStore.value == 'dark',
-                  'navigation-light-theme' : themeStore.value == 'light'}"
+        :class="{ 'navigation-dark-theme': themeStore.value == 'dark',
+                  'navigation-light-theme': themeStore.value == 'light'}"
     >
         <button
             class="nav-hamburger-toggler"

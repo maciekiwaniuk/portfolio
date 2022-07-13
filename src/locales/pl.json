@@ -1,9 +1,9 @@
 {
     "navbar": {
-        "aboutMe": "O mnie",
         "education": "Edukacja",
         "experience": "Doświadczenie",
         "projects": "Projekty",
+        "contact": "Kontakt",
         "images": {
             "sun": "Słońce",
             "moon": "Księżyc",
@@ -16,5 +16,15 @@
         "myNameIs": "Hej, nazywam się",
         "name": "Maciek Iwaniuk.",
         "description": "Jestem programistą, dla którego nauka nowych rzeczy jest przyjemnością. Obecnie uczę się w Technikum Elektrycznym w Białymstoku."
+    },
+
+    "education": {
+        "title": "Edukacja",
+        "educationItems": {
+            "zse": {
+                "title": "Zespół Szkół Elektrycznych w Białymstoku",
+                "major": "Technik programista"
+            }
+        }
     }
 }

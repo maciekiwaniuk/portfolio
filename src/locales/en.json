@@ -1,9 +1,9 @@
 {
     "navbar": {
-        "aboutMe": "About me",
         "education": "Education",
         "experience": "Experience",
         "projects": "Projects",
+        "contact": "Contact",
         "images": {
             "sun": "Sun",
             "moon": "Moon",
@@ -16,5 +16,15 @@
         "myNameIs": "Hi, my name is",
         "name": "Maciek Iwaniuk.",
         "description": "I am fullstack developer, not afraid of learning new things. Currently I am studying in Secondary Technical School of Electrical Engineering in Bialystok."
+    },
+
+    "education": {
+        "title": "Education",
+        "educationItems": {
+            "zse": {
+                "title": "Secondary Technical School of Electrical Engineering in Bialystok",
+                "major": "Programmer technician"
+            }
+        }
     }
 }

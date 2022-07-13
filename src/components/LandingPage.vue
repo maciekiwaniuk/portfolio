@@ -1,8 +1,8 @@
 <template>
     <div
         class="landing-page"
-        :class="{ 'landing-page-dark-theme' : themeStore.value == 'dark',
-                  'landing-page-light-theme' : themeStore.value == 'light'}"
+        :class="{ 'landing-page-dark-theme': themeStore.value == 'dark',
+                  'landing-page-light-theme': themeStore.value == 'light'}"
     >
         <div
             data-aos="fade-up-right"
@@ -41,9 +41,6 @@ const themeStore = useThemeStore();
     min-height: 50vh;
     min-width: 100%;
     margin: auto;
-    @media (min-height: 40rem) {
-        min-height: 70vh;
-    }
 
     .text {
 
@@ -61,8 +58,7 @@ const themeStore = useThemeStore();
         }
 
         .description {
-            font-family: 'LatoFontLight';
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
     }
 }
@@ -72,6 +68,7 @@ const themeStore = useThemeStore();
     .landing-page {
         min-width: 30rem;
         max-width: 40rem;
+        min-height: 70vh;
         .text {
 
             .my-name-is {

@@ -1,10 +1,10 @@
 <template>
     <div
         class="cursor"
-        :class="{ 'cursor-dark-theme' : themeStore.value == 'dark',
-                  'cursor-light-theme' : themeStore.value == 'light',
-                  'cursor-hover-dark-theme' : (themeStore.value == 'dark' && cursorStore.hover),
-                  'cursor-hover-light-theme' : (themeStore.value == 'light' && cursorStore.hover) }"
+        :class="{ 'cursor-dark-theme': themeStore.value == 'dark',
+                  'cursor-light-theme': themeStore.value == 'light',
+                  'cursor-hover-dark-theme': (themeStore.value == 'dark' && cursorStore.hover),
+                  'cursor-hover-light-theme': (themeStore.value == 'light' && cursorStore.hover) }"
     ></div>
 </template>
 
