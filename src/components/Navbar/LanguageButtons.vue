@@ -39,8 +39,10 @@ const vCursorHover = useCursorHover();
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
 
-    @media (min-width: 600px) {
+@media (min-width: 600px) {
+    .change-language-button {
         width: 3rem;
         height: 3rem;
     }

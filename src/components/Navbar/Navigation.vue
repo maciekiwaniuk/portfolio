@@ -73,11 +73,7 @@ const navMenuToggle = () => {
         background-color: transparent;
         cursor: pointer;
         transition: background-color ease 1s;
-
         display: flex;
-        @media (min-width: 600px) {
-            display: none;
-        }
 
         .bar {
             height: 0.25rem;
@@ -94,9 +90,6 @@ const navMenuToggle = () => {
     }
     .nav-links {
         display: none;
-        @media (min-width: 600px) {
-            display: flex;
-        }
     }
 
     .blurred-background {
@@ -132,6 +125,18 @@ const navMenuToggle = () => {
         width: 12rem;
         background-color: orange;
         border-left: solid @blue-color 0.2rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .navigation {
+        .nav-hamburger-toggler {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+        }
     }
 }
 

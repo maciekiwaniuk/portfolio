@@ -25,9 +25,11 @@ import Navigation from '@/components/Navbar/Navigation.vue';
     min-width: 100%;
     min-height: 5rem;
     border-top: 0.7rem solid @blue-color;
-
     justify-content: space-around;
-    @media (min-width: 600px) {
+}
+
+@media (min-width: 600px) {
+    .navbar {
         justify-content: space-evenly;
     }
 }

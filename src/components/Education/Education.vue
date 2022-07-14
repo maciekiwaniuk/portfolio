@@ -10,7 +10,8 @@
             <EducationItem
                 :title="t('education.educationItems.zse.title')"
                 :major="t('education.educationItems.zse.major')"
-                :period="'2019 - 2023'"
+                :period="zsePeriod"
+                :url="zseUrl"
             />
         </div>
     </div>
@@ -27,6 +28,9 @@ const { t } = useLanguageSwitcher();
 const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
+
+const zsePeriod = '2019 - 2023',
+      zseUrl = 'https://zse.bialystok.pl/';
 </script>
 
 <style lang="less" scoped>
@@ -40,9 +44,6 @@ const themeStore = useThemeStore();
     min-height: 50vh;
     min-width: 100%;
     margin: auto;
-    @media (min-height: 40rem) {
-        min-height: 60vh;
-    }
 
     .title {
         width: 100%;
@@ -58,13 +59,19 @@ const themeStore = useThemeStore();
         width: 100%;
         min-height: 30rem;
         float: left;
+        padding: 0.5rem;
     }
 }
 
+@media (min-height: 40rem) {
+    .education {
+        min-height: 60vh;
+    }
+}
 @media (min-width: 600px) {
     .education {
-        min-width: 30rem;
-        max-width: 40rem;
+        min-width: 28rem;
+        max-width: 33rem;
     }
 }
 

@@ -3,8 +3,7 @@
         class="cursor"
         :class="{ 'cursor-dark-theme': themeStore.value == 'dark',
                   'cursor-light-theme': themeStore.value == 'light',
-                  'cursor-hover-dark-theme': (themeStore.value == 'dark' && cursorStore.hover),
-                  'cursor-hover-light-theme': (themeStore.value == 'light' && cursorStore.hover) }"
+                  'hover': cursorStore.hover }"
     ></div>
 </template>
 
@@ -15,7 +14,6 @@ import { useCursorStore } from '@/stores/cursor';
 const themeStore = useThemeStore();
 
 const cursorStore = useCursorStore();
-
 </script>
 
 <style lang="less" scoped>
@@ -42,6 +40,10 @@ const cursorStore = useCursorStore();
     }
 }
 
+.hover {
+    transform: scale(2);
+}
+
 /* colors */
 .cursor-dark-theme {
     border-color: #dark[cursor-color];
@@ -49,17 +51,6 @@ const cursorStore = useCursorStore();
 
 .cursor-light-theme {
     border-color: #light[cursor-color];
-}
-
-/* cursor hover */
-.cursor-hover-dark-theme {
-    transform: scale(2);
-    // background-color: #dark[cursor-color];
-}
-
-.cursor-hover-light-theme {
-    transform: scale(2);
-    // background-color: #light[cursor-color];
 }
 
 </style>
