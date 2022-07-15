@@ -37,28 +37,28 @@ const themeStore = useThemeStore();
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
-    min-height: 50vh;
+    padding: 1.6rem;
     min-width: 100%;
+    min-height: 60vh;
     margin: auto;
 
     .text {
 
         .my-name-is {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-family: 'FontCaveat';
         }
 
         .name {
             font-family: 'LatoFontBold';
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: @blue-color;
             display: block;
             margin-bottom: 0.5rem;
         }
 
         .description {
-            font-size: 0.9rem;
+            font-size: 1.2rem;
         }
     }
 }
@@ -68,18 +68,19 @@ const themeStore = useThemeStore();
     .landing-page {
         min-width: 30rem;
         max-width: 40rem;
-        min-height: 70vh;
+        min-height: calc(100vh - 5rem - 0.7rem);
+
         .text {
 
             .my-name-is {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
 
             }
             .name {
-                font-size: 4rem;
+                font-size: 5rem;
             }
             .description {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
         }
     }

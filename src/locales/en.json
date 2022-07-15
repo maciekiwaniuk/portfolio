@@ -15,7 +15,7 @@
     "landingPage": {
         "myNameIs": "Hi, my name is",
         "name": "Maciek Iwaniuk.",
-        "description": "I am fullstack developer, not afraid of learning new things. Currently I am studying in Secondary Technical School of Electrical Engineering in Bialystok."
+        "description": "I am fullstack developer, not afraid of learning new things. Currently I am studying in Secondary Technical School of Electrical Engineering in Bialystok. I associate my future with the IT industry."
     },
 
     "education": {
@@ -33,7 +33,7 @@
         "title": "Experience",
         "experienceItems": {
             "merinosoft": {
-                "content": "I participate in the development of an advanced web application. I modify the operation, appearance of various functionalities. I search, debug and eliminate bugs.",
+                "content": "I participate in the development of an advanced web application related to the management of employees of a sizable companies. I modify the operation, appearance of various functionalities. I search, debug and eliminate bugs.",
                 "profession": "PHP Developer",
                 "period": "August 2021 - now"
             }

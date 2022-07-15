@@ -4,17 +4,20 @@
         :class="{ 'experience-dark-theme': themeStore.value == 'dark',
                   'experience-light-theme': themeStore.value == 'light'}"
     >
-        <div class="title">{{ t('experience.title') }}</div>
+        <div data-aos="fade-up-right">
+            <div class="title">{{ t('experience.title') }}</div>
 
-        <div class="items">
-            <ExperienceItem
-                :title="merinosoftTitle"
-                :content="t('experience.experienceItems.merinosoft.content')"
-                :profession="t('experience.experienceItems.merinosoft.profession')"
-                :period="t('experience.experienceItems.merinosoft.period')"
-                :url="merinosoftUrl"
-            />
+            <div class="items">
+                <ExperienceItem
+                    :title="merinosoftTitle"
+                    :content="t('experience.experienceItems.merinosoft.content')"
+                    :profession="t('experience.experienceItems.merinosoft.profession')"
+                    :period="t('experience.experienceItems.merinosoft.period')"
+                    :url="merinosoftUrl"
+                />
+            </div>
         </div>
+
     </div>
 </template>
 

@@ -4,17 +4,20 @@
         :class="{ 'education-dark-theme': themeStore.value == 'dark',
                   'education-light-theme': themeStore.value == 'light'}"
     >
-        <div class="title">{{ t('education.title') }}</div>
+        <div data-aos="fade-up-left">
+            <div class="title">{{ t('education.title') }}</div>
 
-        <div class="items">
-            <EducationItem
-                :title="t('education.educationItems.zse.title')"
-                :content="t('education.educationItems.zse.content')"
-                :major="t('education.educationItems.zse.major')"
-                :period="zsePeriod"
-                :url="zseUrl"
-            />
+            <div class="items">
+                <EducationItem
+                    :title="t('education.educationItems.zse.title')"
+                    :content="t('education.educationItems.zse.content')"
+                    :major="t('education.educationItems.zse.major')"
+                    :period="zsePeriod"
+                    :url="zseUrl"
+                />
+            </div>
         </div>
+
     </div>
 </template>
 
