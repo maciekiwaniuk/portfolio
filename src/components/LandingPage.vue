@@ -46,7 +46,7 @@ const themeStore = useThemeStore();
 
         .my-name-is {
             font-size: 1.5rem;
-            font-family: 'Caveat';
+            font-family: 'FontCaveat';
         }
 
         .name {

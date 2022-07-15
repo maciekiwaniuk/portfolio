@@ -9,6 +9,7 @@
         <div class="items">
             <EducationItem
                 :title="t('education.educationItems.zse.title')"
+                :content="t('education.educationItems.zse.content')"
                 :major="t('education.educationItems.zse.major')"
                 :period="zsePeriod"
                 :url="zseUrl"

@@ -13,7 +13,7 @@
             <div class="title">{{ props.title }}</div>
 
             <div class="content">
-                tutaj opis tego typu
+                {{ props.content }}
             </div>
 
             <div class="down">
@@ -38,6 +38,7 @@ const themeStore = useThemeStore();
 
 const props = defineProps({
     title: String,
+    content: String,
     major: String,
     period: String,
     url: String
@@ -53,39 +54,44 @@ const props = defineProps({
 }
 .education-item {
     display: grid;
-    grid-template-rows: 1fr 1.8fr 0.5fr;
+    grid-template-rows: 1fr 1.2fr 0.5fr;
     min-height: 10rem;
     width: 100%;
     border: solid @blue-color 0.2rem;
     border-radius: 1rem;
-    padding: 0.5rem;
+    padding: 0.6rem 0.9rem 0.6rem 0.9rem;
     text-align: center;
     cursor: pointer;
 
     transition: background-color ease 1s;
 
     .title {
+        display: flex;
+        align-items: center;
+        margin: auto;
         font-size: 1.2rem;
+        padding-bottom: 0.7rem;
     }
-    .major {
-        font-size: 1.4rem;
+    .content {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        font-family: 'LatoFontLight';
+        font-style: italic;
     }
-    .period {
-        font-size: 1.6rem;
-        text-align: right;
-    }
-
-
-
-
     .down {
+        font-family: 'LatoFontLight';
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        padding-top: 0.5rem;
     }
 }
 
 @media (min-width: 600px) {
-
+    .title {
+        max-width: 25rem;
+    }
 }
 
 .education-item-dark-theme {
