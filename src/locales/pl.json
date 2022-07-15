@@ -27,5 +27,16 @@
                 "major": "Technik programista"
             }
         }
+    },
+
+    "experience": {
+        "title": "Doświadczenie",
+        "experienceItems": {
+            "merinosoft": {
+                "content": "Biorę udział w rozwijaniu zaawansowanej aplikacji webowej. Modyfikuję działanie, wygląd różnych funkcjonalności. Wyszukuję, debuguję oraz likwiduję błędy.",
+                "profession": "Programista PHP",
+                "period": "sierpień 2021 - obecnie"
+            }
+        }
     }
 }

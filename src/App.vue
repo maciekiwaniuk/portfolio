@@ -11,6 +11,8 @@
 
         <Education />
 
+        <Experience />
+
     </div>
 </template>
 
@@ -19,6 +21,7 @@ import Cursor from '@/components/Cursor.vue';
 import Navbar from '@/components/Navbar/Navbar.vue';
 import LandingPage from '@/components/LandingPage.vue';
 import Education from '@/components/Education/Education.vue';
+import Experience from '@/components/Experience/Experience.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 

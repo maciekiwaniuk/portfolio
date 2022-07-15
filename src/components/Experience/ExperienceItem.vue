@@ -6,9 +6,9 @@
         v-cursor-hover
     >
         <div
-            class="education-item"
-            :class="{ 'education-item-dark-theme': themeStore.value == 'dark',
-                      'education-item-light-theme': themeStore.value == 'light'}"
+            class="experience-item"
+            :class="{ 'experience-item-dark-theme': themeStore.value == 'dark',
+                      'experience-item-light-theme': themeStore.value == 'light'}"
         >
             <div class="title">{{ props.title }}</div>
 
@@ -17,7 +17,7 @@
             </div>
 
             <div class="down">
-                <span>{{ props.major }}</span>
+                <span>{{ props.profession }}</span>
                 <span>{{ props.period }}</span>
             </div>
         </div>
@@ -39,7 +39,7 @@ const themeStore = useThemeStore();
 const props = defineProps({
     title: String,
     content: String,
-    major: String,
+    profession: String,
     period: String,
     url: String
 });
@@ -52,7 +52,7 @@ const props = defineProps({
     text-decoration: none;
     color: inherit;
 }
-.education-item {
+.experience-item {
     display: grid;
     grid-template-rows: 1fr 1.2fr 0.5fr;
     min-height: 10rem;
@@ -93,11 +93,11 @@ const props = defineProps({
     }
 }
 
-.education-item-dark-theme {
+.experience-item-dark-theme {
     background-color: #dark[background-color-on-element];
 }
 
-.education-item-light-theme {
+.experience-item-light-theme {
     background-color: #light[background-color-on-element];
 }
 </style>

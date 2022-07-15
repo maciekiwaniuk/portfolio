@@ -27,5 +27,16 @@
                 "major": "Programmer technician"
             }
         }
+    },
+
+    "experience": {
+        "title": "Experience",
+        "experienceItems": {
+            "merinosoft": {
+                "content": "I participate in the development of an advanced web application. I modify the operation, appearance of various functionalities. I search, debug and eliminate bugs.",
+                "profession": "PHP Developer",
+                "period": "August 2021 - now"
+            }
+        }
     }
 }
