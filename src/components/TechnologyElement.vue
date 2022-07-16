@@ -5,12 +5,9 @@
                   'technology-element-light-theme': themeStore.value == 'light' }"
     >
 
-        <img
-            class="image"
-            :src="getImageUrl()"
-            :alt="props.title"
-            :width="props.imageSize"
-        >
+        <div class="icon">
+            <Icon :icon="props.icon" :width="props.width" />
+        </div>
 
         <div class="title">{{ props.title }}</div>
 
@@ -18,6 +15,7 @@
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 
@@ -27,15 +25,9 @@ const themeStore = useThemeStore();
 
 const props = defineProps({
     title: String,
-    image: String,
-    imageSize: String
+    icon: String,
+    width: String
 });
-
-// returns path to image of technology from prop
-const getImageUrl = () => {
-    let technologies = require.context('../assets/images/technologies/', false, /\.png$/);
-    return technologies(`./${props.image}.png`);
-};
 </script>
 
 <style lang="less" scoped>
@@ -49,7 +41,9 @@ const getImageUrl = () => {
     border: solid @blue-color 0.1rem;
     border-radius: 1rem;
 
-    .image {
+    .icon {
+        display: flex;
+        align-items: center;
         padding-left: 0.5rem;
     }
     .title {

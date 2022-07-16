@@ -11,9 +11,37 @@
             <div class="title-smaller">{{ t('skills.useDailyBasis') }}</div>
 
             <div class="content">
-                <TechnologyElement title="PHP" image="php" />
-                <TechnologyElement title="Laravel" image="laravel" image-size="40" />
-                <TechnologyElement title="JavaScript" image="javascript" image-size="40" />
+                <TechnologyElement
+                    title="PHP"
+                    icon="logos:php"
+                    width="48"
+                />
+
+                <TechnologyElement
+                    title="Laravel"
+                    icon="logos:laravel"
+                    width="48"
+                />
+
+                <TechnologyElement
+                    title="JavaScript"
+                    icon="vscode-icons:file-type-js-official"
+                    width="48"
+                />
+
+                <TechnologyElement
+                    title="jQuery"
+                    icon="mdi:jquery"
+                    width="48"
+                />
+
+                <TechnologyElement
+                    title="Bootstrap"
+                    icon="fa6-brands:bootstrap"
+                    width="48"
+                />
+
+
             </div>
         </div>
 
@@ -21,7 +49,11 @@
             <div class="title-smaller">{{ t('skills.hadContactWith') }}</div>
 
             <div class="content">
-
+                <TechnologyElement
+                    title="Python"
+                    icon="logos:python"
+                    width="48"
+                />
             </div>
         </div>
 
