@@ -11,21 +11,9 @@
             <div class="title-smaller">{{ t('skills.useDailyBasis') }}</div>
 
             <div class="content">
-                <div class="technology-item">
-                    <img src="@/assets/images/technologies/php.png">
-                    PHP
-                </div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-
+                <TechnologyElement title="PHP" image="php" />
+                <TechnologyElement title="Laravel" image="laravel" image-size="40" />
+                <TechnologyElement title="JavaScript" image="javascript" image-size="40" />
             </div>
         </div>
 
@@ -33,17 +21,7 @@
             <div class="title-smaller">{{ t('skills.hadContactWith') }}</div>
 
             <div class="content">
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
-                <div class="technology-item">Element</div>
+
             </div>
         </div>
 
@@ -51,6 +29,7 @@
 </template>
 
 <script setup>
+import TechnologyElement from '@/components/TechnologyElement.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
@@ -102,14 +81,6 @@ const themeStore = useThemeStore();
             flex-wrap: wrap;
             gap: 0.5rem;
 
-            .technology-item {
-                display: flex;
-                align-items: center;
-                background-color: #dark[background-color-on-element];
-                padding: 0.2rem;
-                border: solid @blue-color 0.1rem;
-                border-radius: 1rem;
-            }
         }
     }
 }
