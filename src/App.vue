@@ -13,6 +13,8 @@
 
         <Experience />
 
+        <Projects />
+
     </div>
 </template>
 
@@ -22,6 +24,7 @@ import Navbar from '@/components/Navbar/Navbar.vue';
 import LandingPage from '@/components/LandingPage.vue';
 import Education from '@/components/Education/Education.vue';
 import Experience from '@/components/Experience/Experience.vue';
+import Projects from '@/components/Projects/Projects.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 

@@ -3,7 +3,7 @@ const setBackgroundColorOnScrollbar = () => {
     // user is on mobile, so background color on scrollbar is useless
     if (navigator.userAgentData.mobile) return;
 
-    let selectedTheme = localStorage.getItem('theme');
+    let selectedTheme = localStorage.getItem('theme') ?? 'dark';
 
     let backgroundColor = getComputedStyle(document.body)
         .getPropertyValue(`--scrollbar-${selectedTheme}-theme-background-color`);
