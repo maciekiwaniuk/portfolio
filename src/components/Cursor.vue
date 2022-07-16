@@ -35,7 +35,7 @@ const cursorStore = useCursorStore();
                 transform ease 0.3s;
 
     display: none;
-    @media (min-width: 600px) {
+    @media (min-width: @first-breakpoint) {
         display: block;
     }
 }

@@ -2,7 +2,7 @@
     <div
         class="education"
         :class="{ 'education-dark-theme': themeStore.value == 'dark',
-                  'education-light-theme': themeStore.value == 'light'}"
+                  'education-light-theme': themeStore.value == 'light' }"
     >
         <div data-aos="fade-up-left">
             <div class="title">{{ t('education.title') }}</div>
@@ -72,7 +72,7 @@ const zsePeriod = '2019 - 2023',
         min-height: 60vh;
     }
 }
-@media (min-width: 600px) {
+@media (min-width: @first-breakpoint) {
     .education {
         min-width: 28rem;
         max-width: 33rem;

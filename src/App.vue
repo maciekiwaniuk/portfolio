@@ -3,7 +3,7 @@
 
     <div class="container"
          :class="{ 'container-dark-theme': themeStore.value == 'dark',
-                   'container-light-theme': themeStore.value == 'light'}">
+                   'container-light-theme': themeStore.value == 'light' }">
 
         <Navbar />
 
@@ -13,7 +13,9 @@
 
         <Experience />
 
-        <Projects />
+        <Skills />
+
+        <!-- <Projects /> -->
 
     </div>
 </template>
@@ -24,6 +26,7 @@ import Navbar from '@/components/Navbar/Navbar.vue';
 import LandingPage from '@/components/LandingPage.vue';
 import Education from '@/components/Education/Education.vue';
 import Experience from '@/components/Experience/Experience.vue';
+import Skills from '@/components/Skills.vue';
 import Projects from '@/components/Projects/Projects.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';

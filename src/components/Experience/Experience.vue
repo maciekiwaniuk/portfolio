@@ -2,7 +2,7 @@
     <div
         class="experience"
         :class="{ 'experience-dark-theme': themeStore.value == 'dark',
-                  'experience-light-theme': themeStore.value == 'light'}"
+                  'experience-light-theme': themeStore.value == 'light' }"
     >
         <div data-aos="fade-up-right">
             <div class="title">{{ t('experience.title') }}</div>
@@ -72,7 +72,7 @@ const merinosoftTitle = 'Merinosoft Sp. z o.o.',
         min-height: 60vh;
     }
 }
-@media (min-width: 600px) {
+@media (min-width: @first-breakpoint) {
     .experience {
         min-width: 28rem;
         max-width: 33rem;

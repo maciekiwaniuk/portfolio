@@ -2,8 +2,8 @@
     "navbar": {
         "education": "Education",
         "experience": "Experience",
+        "skills": "Skills",
         "projects": "Projects",
-        "contact": "Contact",
         "images": {
             "sun": "Sun",
             "moon": "Moon",
@@ -38,5 +38,11 @@
                 "period": "August 2021 - now"
             }
         }
+    },
+
+    "skills": {
+        "title": "skills",
+        "useDailyBasis": "I use it on a daily basis",
+        "hadContactWith": "I had contact with"
     }
 }

@@ -2,7 +2,7 @@
     <div
         class="navigation"
         :class="{ 'navigation-dark-theme': themeStore.value == 'dark',
-                  'navigation-light-theme': themeStore.value == 'light'}"
+                  'navigation-light-theme': themeStore.value == 'light' }"
     >
         <button
             class="nav-hamburger-toggler"
@@ -128,7 +128,7 @@ const navMenuToggle = () => {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: @first-breakpoint) {
     .navigation {
         .nav-hamburger-toggler {
             display: none;

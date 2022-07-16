@@ -8,7 +8,7 @@
         <div
             class="education-item"
             :class="{ 'education-item-dark-theme': themeStore.value == 'dark',
-                      'education-item-light-theme': themeStore.value == 'light'}"
+                      'education-item-light-theme': themeStore.value == 'light' }"
         >
             <div class="title">{{ props.title }}</div>
 
@@ -87,7 +87,7 @@ const props = defineProps({
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: @first-breakpoint) {
     .title {
         max-width: 25rem;
     }

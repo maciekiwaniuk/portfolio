@@ -24,8 +24,8 @@
                       'hidden-text': (props.alignment == 'vertical' && !props.navMenuOpened) }">
             <li v-cursor-hover>{{ t('navbar.education') }}</li>
             <li v-cursor-hover>{{ t('navbar.experience') }}</li>
+            <li v-cursor-hover>{{ t('navbar.skills') }}</li>
             <li v-cursor-hover>{{ t('navbar.projects') }}</li>
-            <li v-cursor-hover>{{ t('navbar.contact') }}</li>
         </ul>
 
     </div>

@@ -2,7 +2,7 @@
     <div
         class="landing-page"
         :class="{ 'landing-page-dark-theme': themeStore.value == 'dark',
-                  'landing-page-light-theme': themeStore.value == 'light'}"
+                  'landing-page-light-theme': themeStore.value == 'light' }"
     >
         <div
             data-aos="fade-up-right"
@@ -64,7 +64,7 @@ const themeStore = useThemeStore();
 }
 
 
-@media (min-width: 600px) {
+@media (min-width: @first-breakpoint) {
     .landing-page {
         min-width: 30rem;
         max-width: 40rem;

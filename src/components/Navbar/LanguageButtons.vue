@@ -31,6 +31,7 @@ const vCursorHover = useCursorHover();
 </script>
 
 <style lang="less" scoped>
+@import '@/styles/variables.less';
 .change-language-button {
     position: relative;
     width: 2.5rem;
@@ -41,7 +42,7 @@ const vCursorHover = useCursorHover();
     cursor: pointer;
 }
 
-@media (min-width: 600px) {
+@media (min-width: @first-breakpoint) {
     .change-language-button {
         width: 3rem;
         height: 3rem;

@@ -39,7 +39,7 @@ const vCursorHover = useCursorHover();
 .icon {
     width: 2.2rem;
 
-    @media (min-width: 600px) {
+    @media (min-width: @first-breakpoint) {
         width: 2.5rem;
     }
 }

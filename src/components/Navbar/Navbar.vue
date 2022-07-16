@@ -28,7 +28,7 @@ import Navigation from '@/components/Navbar/Navigation.vue';
     justify-content: space-around;
 }
 
-@media (min-width: 600px) {
+@media (min-width: @first-breakpoint) {
     .navbar {
         justify-content: space-evenly;
     }
