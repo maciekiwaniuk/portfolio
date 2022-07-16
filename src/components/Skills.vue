@@ -5,56 +5,38 @@
                   'skills-light-theme': themeStore.value == 'light' }"
     >
 
-        <div class="title">{{ t('skills.title') }}</div>
+        <div data-aos="fade-up-left">
 
-        <div class="element">
-            <div class="title-smaller">{{ t('skills.useDailyBasis') }}</div>
+            <div class="title">{{ t('skills.title') }}</div>
 
-            <div class="content">
-                <TechnologyElement
-                    title="PHP"
-                    icon="logos:php"
-                    width="48"
-                />
+            <div class="element">
+                <div class="title-smaller">{{ t('skills.useDailyBasis') }}</div>
 
-                <TechnologyElement
-                    title="Laravel"
-                    icon="logos:laravel"
-                    width="48"
-                />
-
-                <TechnologyElement
-                    title="JavaScript"
-                    icon="vscode-icons:file-type-js-official"
-                    width="48"
-                />
-
-                <TechnologyElement
-                    title="jQuery"
-                    icon="mdi:jquery"
-                    width="48"
-                />
-
-                <TechnologyElement
-                    title="Bootstrap"
-                    icon="fa6-brands:bootstrap"
-                    width="48"
-                />
-
-
+                <div class="content">
+                    <TechnologyElement element="php" />
+                    <TechnologyElement element="laravel" />
+                    <TechnologyElement element="javascript" />
+                    <TechnologyElement element="jquery" />
+                    <TechnologyElement element="sass" />
+                    <TechnologyElement element="bootstrap" />
+                    <TechnologyElement element="mysql" />
+                    <TechnologyElement element="postgresql" />
+                    <TechnologyElement element="git" />
+                    <TechnologyElement element="github" />
+                </div>
             </div>
-        </div>
 
-        <div class="element">
-            <div class="title-smaller">{{ t('skills.hadContactWith') }}</div>
+            <div class="element">
+                <div class="title-smaller">{{ t('skills.hadContactWith') }}</div>
 
-            <div class="content">
-                <TechnologyElement
-                    title="Python"
-                    icon="logos:python"
-                    width="48"
-                />
+                <div class="content">
+                    <TechnologyElement element="python" />
+                    <TechnologyElement element="csharp" />
+                    <TechnologyElement element="vue" />
+
+                </div>
             </div>
+
         </div>
 
     </div>
@@ -109,7 +91,7 @@ const themeStore = useThemeStore();
             padding-top: 0.5rem;
             display: flex;
             align-content: flex-start;
-            justify-content: start;
+            // justify-content: start;
             flex-wrap: wrap;
             gap: 0.5rem;
 
