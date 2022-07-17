@@ -17,6 +17,7 @@
                     <TechnologyElement element="laravel" />
                     <TechnologyElement element="javascript" />
                     <TechnologyElement element="jquery" />
+                    <TechnologyElement element="vue" />
                     <TechnologyElement element="sass" />
                     <TechnologyElement element="bootstrap" />
                     <TechnologyElement element="mysql" />
@@ -27,13 +28,11 @@
             </div>
 
             <div class="element">
-                <div class="title-smaller">{{ t('skills.hadContactWith') }}</div>
+                <div class="title-smaller">{{ t('skills.hadContact') }}</div>
 
                 <div class="content">
                     <TechnologyElement element="python" />
                     <TechnologyElement element="csharp" />
-                    <TechnologyElement element="vue" />
-
                 </div>
             </div>
 
@@ -73,6 +72,7 @@ const themeStore = useThemeStore();
         text-align: center;
         font-family: 'LatoFontBold';
         font-size: 3rem;
+        padding-bottom: 0.4rem;
         color: @blue-color;
         float: left;
     }
@@ -80,10 +80,12 @@ const themeStore = useThemeStore();
     .element {
         width: 100%;
         padding-top: 0.7rem;
+        padding-bottom: 0.5rem;
         .title-smaller {
             width: 100%;
-            text-align: left;
+            text-align: center;
             font-size: 1.5rem;
+            padding-bottom: 0.3rem;
         }
 
         .content {
@@ -105,6 +107,9 @@ const themeStore = useThemeStore();
         max-width: 40rem;
 
         .element {
+            .title-smaller {
+                text-align: left;
+            }
             .content {
                 justify-content: flex-start;
             }

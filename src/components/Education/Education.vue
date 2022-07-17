@@ -50,13 +50,13 @@ const zsePeriod = '2019 - 2023',
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 50vh;
+    padding-bottom: 1rem;
     min-width: 100%;
     margin: auto;
 
     .title {
         width: 100%;
-        min-height: 5rem;
+        min-height: 3rem;
         text-align: center;
         font-family: 'LatoFontBold';
         font-size: 3rem;
@@ -66,21 +66,19 @@ const zsePeriod = '2019 - 2023',
 
     .items {
         width: 100%;
-        min-height: 30rem;
         float: left;
         padding: 0.5rem;
     }
 }
 
-@media (min-height: 40rem) {
-    .education {
-        min-height: 60vh;
-    }
-}
 @media (min-width: @first-breakpoint) {
     .education {
         min-width: 36rem;
         max-width: 38rem;
+        padding-bottom: 7rem;
+        .title {
+            min-height: 4rem;
+        }
     }
 }
 

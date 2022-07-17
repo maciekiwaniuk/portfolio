@@ -71,6 +71,7 @@ const props = defineProps({
     border: solid @blue-color 0.2rem;
     border-radius: 1rem;
     padding: 0.6rem 0.9rem 0.6rem 0.9rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     cursor: pointer;
 
@@ -88,8 +89,8 @@ const props = defineProps({
         text-align: left;
         font-family: 'LatoFontLight';
         font-style: italic;
-        line-height: 1.5rem;
-        font-size: 1.1rem;
+        line-height: 1.3rem;
+        font-size: 1.05rem;
     }
     .technologies {
         padding-top: 0.5rem;
@@ -112,6 +113,9 @@ const props = defineProps({
     .experience-item {
         .title {
             max-width: 25rem;
+        }
+        .content {
+            line-height: 1.4rem;
         }
         .technologies {
             justify-content: flex-start;

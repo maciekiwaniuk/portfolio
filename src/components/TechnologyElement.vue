@@ -110,6 +110,7 @@ const technologies = {
     border-radius: 1rem;
     cursor: pointer;
 
+
     .icon {
         display: flex;
         align-items: center;
@@ -117,13 +118,24 @@ const technologies = {
     }
     .title {
         padding: 0.5rem;
+
+        transition: color ease 0.1s;
     }
 }
 
 .technology-element-dark-theme {
+    color: #dark[text-color];
     background-color: #dark[background-color-on-element];
 }
+.technology-element-dark-theme:hover .title {
+    color: #dark[text-color-hover];
+}
+
 .technology-element-light-theme {
+    color: #light[text-color];
     background-color: #light[background-color-on-element];
+}
+.technology-element-light-theme:hover .title {
+    color: #light[text-color-hover];
 }
 </style>
