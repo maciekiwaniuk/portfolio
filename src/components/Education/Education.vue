@@ -14,6 +14,7 @@
                     :major="t('education.educationItems.zse.major')"
                     :period="zsePeriod"
                     :url="zseUrl"
+                    :technologies="zseTechnologies"
                 />
             </div>
         </div>
@@ -34,7 +35,11 @@ const vCursorHover = useCursorHover();
 const themeStore = useThemeStore();
 
 const zsePeriod = '2019 - 2023',
-      zseUrl = 'https://zse.bialystok.pl/';
+      zseUrl = 'https://zse.bialystok.pl/',
+      zseTechnologies = [
+        'php', 'javascript', 'mysql',
+        'python', 'csharp'
+      ];
 </script>
 
 <style lang="less" scoped>
@@ -74,8 +79,8 @@ const zsePeriod = '2019 - 2023',
 }
 @media (min-width: @first-breakpoint) {
     .education {
-        min-width: 28rem;
-        max-width: 33rem;
+        min-width: 36rem;
+        max-width: 38rem;
     }
 }
 

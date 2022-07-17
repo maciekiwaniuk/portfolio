@@ -1,6 +1,5 @@
 <template>
     <div
-        v-cursor-hover
         class="technology-element"
         :class="{ 'technology-element-dark-theme': themeStore.value == 'dark',
                   'technology-element-light-theme': themeStore.value == 'light' }"
@@ -65,7 +64,7 @@ const technologies = {
     mysql: {
         title: 'MySQL',
         icon: 'logos:mysql',
-        width: 48
+        width: 52
     },
     postgresql: {
         title: 'PostgreSQL',

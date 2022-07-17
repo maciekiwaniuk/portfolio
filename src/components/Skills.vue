@@ -91,7 +91,7 @@ const themeStore = useThemeStore();
             padding-top: 0.5rem;
             display: flex;
             align-content: flex-start;
-            // justify-content: start;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 0.5rem;
 
@@ -103,7 +103,15 @@ const themeStore = useThemeStore();
     .skills {
         min-width: 35rem;
         max-width: 40rem;
+
+        .element {
+            .content {
+                justify-content: flex-start;
+            }
+        }
     }
+
+
 }
 
 .skills-dark-theme {

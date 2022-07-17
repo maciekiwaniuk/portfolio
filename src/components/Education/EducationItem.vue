@@ -16,6 +16,14 @@
                 {{ props.content }}
             </div>
 
+            <div class="technologies">
+                <TechnologyElement
+                    v-for="(technology, index) in props.technologies"
+                    :key="index"
+                    :element="technology"
+                />
+            </div>
+
             <div class="down">
                 <span>{{ props.major }}</span>
                 <span>{{ props.period }}</span>
@@ -26,6 +34,7 @@
 </template>
 
 <script setup>
+import TechnologyElement from '@/components/TechnologyElement.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
@@ -41,7 +50,8 @@ const props = defineProps({
     content: String,
     major: String,
     period: String,
-    url: String
+    url: String,
+    technologies: Array
 });
 </script>
 
@@ -53,8 +63,9 @@ const props = defineProps({
     color: inherit;
 }
 .education-item {
-    display: grid;
-    grid-template-rows: 1fr 1.2fr 0.5fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     min-height: 10rem;
     width: 100%;
     border: solid @blue-color 0.2rem;
@@ -78,6 +89,14 @@ const props = defineProps({
         font-family: 'LatoFontLight';
         font-style: italic;
     }
+    .technologies {
+        padding-top: 0.5rem;
+        display: flex;
+        align-content: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
     .down {
         font-family: 'LatoFontLight';
         display: flex;
@@ -88,9 +107,15 @@ const props = defineProps({
 }
 
 @media (min-width: @first-breakpoint) {
-    .title {
-        max-width: 25rem;
+    .education-item {
+        .title {
+            max-width: 25rem;
+        }
+        .technologies {
+            justify-content: flex-start;
+        }
     }
+
 }
 
 .education-item-dark-theme {

@@ -14,6 +14,7 @@
                     :profession="t('experience.experienceItems.merinosoft.profession')"
                     :period="t('experience.experienceItems.merinosoft.period')"
                     :url="merinosoftUrl"
+                    :technologies="merinosoftTechnologies"
                 />
             </div>
         </div>
@@ -34,7 +35,11 @@ const vCursorHover = useCursorHover();
 const themeStore = useThemeStore();
 
 const merinosoftTitle = 'Merinosoft Sp. z o.o.',
-      merinosoftUrl = 'https://merinosoft.pl/';
+      merinosoftUrl = 'https://merinosoft.pl/',
+      merinosoftTechnologies = [
+        'php', 'laravel', 'javascript', 'jquery',
+        'bootstrap', 'postgresql', 'git'
+      ];
 </script>
 
 <style lang="less" scoped>
@@ -74,8 +79,8 @@ const merinosoftTitle = 'Merinosoft Sp. z o.o.',
 }
 @media (min-width: @first-breakpoint) {
     .experience {
-        min-width: 28rem;
-        max-width: 33rem;
+        min-width: 36rem;
+        max-width: 38rem;
     }
 }
 
