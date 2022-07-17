@@ -1,6 +1,6 @@
 <template>
     <div
-        data-aos="fade-down"
+        data-aos="zoom-in-up"
         class="flags">
         <button
             class="change-language-button"

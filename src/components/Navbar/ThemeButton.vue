@@ -1,6 +1,6 @@
 <template>
     <button
-        data-aos="fade-right"
+        data-aos="zoom-in-up"
         class="change-theme-button"
         v-cursor-hover
         @click="themeStore.toggle();"

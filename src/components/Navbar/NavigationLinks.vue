@@ -50,7 +50,7 @@ const props = defineProps({
 });
 
 // animation only for menu on big screens
-const linksAnimation = ref(props.alignment == 'horizontal' ? 'fade-left' : null);
+const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null);
 </script>
 
 <style lang="less" scoped>

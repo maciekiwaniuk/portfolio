@@ -19,7 +19,7 @@ import 'aos/dist/aos.css';
 app.AOS = new AOS.init({
     disable: 'mobile',
     once: true,
-    duration: 800
+    duration: 700
 });
 
 /* mount app */
