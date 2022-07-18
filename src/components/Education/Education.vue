@@ -2,7 +2,8 @@
     <div
         class="education"
         :class="{ 'education-dark-theme': themeStore.value == 'dark',
-                  'education-light-theme': themeStore.value == 'light' }"
+                  'education-light-theme': themeStore.value == 'light',
+                  'blurr': navMenuStore.opened }"
     >
         <div data-aos="fade-up-left">
             <div class="title">{{ t('education.title') }}</div>
@@ -25,14 +26,17 @@
 <script setup>
 import EducationItem from '@/components/Education/EducationItem.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
+import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
 
-const vCursorHover = useCursorHover();
-
 const themeStore = useThemeStore();
+
+const navMenuStore = useNavMenuStore();
+
+const vCursorHover = useCursorHover();
 
 const zsePeriod = '2019 - 2023',
       zseUrl = 'https://zse.bialystok.pl/',
@@ -53,6 +57,9 @@ const zsePeriod = '2019 - 2023',
     padding-bottom: 1rem;
     min-width: 100%;
     margin: auto;
+
+    transition: filter ease 0.3s;
+    z-index: 9;
 
     .title {
         width: 100%;

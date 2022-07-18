@@ -1,7 +1,9 @@
 <template>
     <div
         data-aos="zoom-in-up"
-        class="flags">
+        class="flags"
+        :class="{ 'blurr': navMenuStore.opened }"
+    >
         <button
             class="change-language-button"
             v-cursor-hover
@@ -22,9 +24,12 @@
 
 <script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t, changeLanguage } = useLanguageSwitcher();
+
+const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
 
@@ -32,24 +37,30 @@ const vCursorHover = useCursorHover();
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';
-.change-language-button {
-    position: relative;
-    width: 2.5rem;
-    height: 2.5rem;
-    color: inherit;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
 
-@media (min-width: @first-breakpoint) {
+.flags {
+    transition: filter ease 0.3s;
+
     .change-language-button {
-        width: 3rem;
-        height: 3rem;
+        position: relative;
+        width: 2.5rem;
+        height: 2.5rem;
+        color: inherit;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    @media (min-width: @first-breakpoint) {
+        .change-language-button {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    .flag {
+        max-width: 80%;
+        height: auto;
     }
 }
-.flag {
-    max-width: 80%;
-    height: auto;
-}
+
 </style>

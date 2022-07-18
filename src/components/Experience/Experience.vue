@@ -2,7 +2,8 @@
     <div
         class="experience"
         :class="{ 'experience-dark-theme': themeStore.value == 'dark',
-                  'experience-light-theme': themeStore.value == 'light' }"
+                  'experience-light-theme': themeStore.value == 'light',
+                  'blurr': navMenuStore.opened }"
     >
         <div data-aos="fade-up-right">
             <div class="title">{{ t('experience.title') }}</div>
@@ -25,14 +26,17 @@
 <script setup>
 import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
+import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
 
-const vCursorHover = useCursorHover();
-
 const themeStore = useThemeStore();
+
+const navMenuStore = useNavMenuStore();
+
+const vCursorHover = useCursorHover();
 
 const merinosoftTitle = 'Merinosoft Sp. z o.o.',
       merinosoftUrl = 'https://merinosoft.pl/',

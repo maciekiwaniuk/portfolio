@@ -2,11 +2,14 @@
     <div
         class="landing-page"
         :class="{ 'landing-page-dark-theme': themeStore.value == 'dark',
-                  'landing-page-light-theme': themeStore.value == 'light' }"
+                  'landing-page-light-theme': themeStore.value == 'light',
+                  'blurr': navMenuStore.opened }"
     >
         <div
             data-aos="fade-up-right"
-            class="text">
+            class="text"
+
+        >
             <div class="my-name-is">{{ t('landingPage.myNameIs') }}</div>
 
             <div class="name">{{ t('landingPage.name') }}</div>
@@ -20,14 +23,18 @@
 
 <script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
+import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
 
+const themeStore = useThemeStore();
+
+const navMenuStore = useNavMenuStore();
+
 const vCursorHover = useCursorHover();
 
-const themeStore = useThemeStore();
 </script>
 
 <style lang="less" scoped>
@@ -41,6 +48,9 @@ const themeStore = useThemeStore();
     min-width: 100%;
     min-height: 60vh;
     margin: auto;
+
+    transition: filter ease 0.3s;
+    z-index: 9;
 
     .text {
 
@@ -58,7 +68,7 @@ const themeStore = useThemeStore();
         }
 
         .description {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
     }
 }
@@ -80,7 +90,7 @@ const themeStore = useThemeStore();
                 font-size: 5rem;
             }
             .description {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
         }
     }

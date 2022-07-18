@@ -82,5 +82,9 @@ const vCursorHover = useCursorHover();
         color: #light[text-color];
     }
 
+    /* Every element which is above z-index: 9; shouldn't be blurred */
+    .blurr {
+        filter: blur(2px);
+    }
 }
 </style>

@@ -7,9 +7,9 @@
 
         <div
             v-if="props.alignment =='vertical'"
-            :class="{ 'hidden': !props.navMenuOpened }"
+            :class="{ 'hidden': !navMenuStore.opened }"
             class="area-to-close-menu"
-            @click="props.navMenuToggle();"
+            @click="navMenuStore.toggle();"
         >
             <button class="close-button">
                 <span class="bar bar-to-right"></span>
@@ -21,7 +21,7 @@
             :data-aos="linksAnimation"
             :class="{ 'vertical': props.alignment == 'vertical',
                       'horizontal': props.alignment == 'horizontal',
-                      'hidden-text': (props.alignment == 'vertical' && !props.navMenuOpened) }">
+                      'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }">
             <li v-cursor-hover>{{ t('navbar.education') }}</li>
             <li v-cursor-hover>{{ t('navbar.experience') }}</li>
             <li v-cursor-hover>{{ t('navbar.skills') }}</li>
@@ -34,6 +34,7 @@
 <script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { ref } from '@vue/reactivity';
 
@@ -41,12 +42,12 @@ const { t } = useLanguageSwitcher();
 
 const themeStore = useThemeStore();
 
+const navMenuStore = useNavMenuStore();
+
 const vCursorHover = useCursorHover();
 
 const props = defineProps({
-    alignment: String,
-    navMenuOpened: Boolean,
-    navMenuToggle: Function
+    alignment: String
 });
 
 // animation only for menu on big screens

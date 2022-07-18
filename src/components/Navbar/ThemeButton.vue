@@ -2,6 +2,7 @@
     <button
         data-aos="zoom-in-up"
         class="change-theme-button"
+        :class="{ 'blurr': navMenuStore.opened }"
         v-cursor-hover
         @click="themeStore.toggle();"
     >
@@ -23,11 +24,14 @@
 <script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
 
 const themeStore = useThemeStore();
+
+const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
 
@@ -35,6 +39,21 @@ const vCursorHover = useCursorHover();
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';
+
+/* change theme button */
+.change-theme-button {
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: background-color ease 0.7s,
+                filter ease 0.3s;
+
+}
 
 .icon {
     width: 2.2rem;
@@ -51,16 +70,5 @@ const vCursorHover = useCursorHover();
     //
 }
 
-/* change theme button */
-.change-theme-button {
-    font-size: 3rem;
-    width: 3rem;
-    height: 3rem;
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
 
-    transition: background-color ease 0.7s;
-}
 </style>

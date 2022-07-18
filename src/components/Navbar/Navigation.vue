@@ -7,7 +7,7 @@
         <button
             class="nav-hamburger-toggler"
             v-cursor-hover
-            @click="navMenuToggle();"
+            @click="navMenuStore.toggle();"
         >
             <span class="bar bar-short"></span>
             <span class="bar"></span>
@@ -15,21 +15,13 @@
         </button>
 
         <div class="nav-links">
-            <NavigationLinks
-                alignment="horizontal"
-                :navMenuToggle="navMenuToggle"
-                :navMenuOpened="navMenuOpened"
-            />
+            <NavigationLinks alignment="horizontal" />
         </div>
 
-        <div class="blurred-background" :class="{ 'blurred-background-visible': navMenuOpened }"></div>
+        <div class="background-blocking-content" :class="{ 'background-blocking-content-visible': navMenuStore.opened }"></div>
 
-        <div class="nav-links-mobile-menu" :class="{ 'active': navMenuOpened }">
-            <NavigationLinks
-                alignment="vertical"
-                :navMenuToggle="navMenuToggle"
-                :navMenuOpened="navMenuOpened"
-            />
+        <div class="nav-links-mobile-menu" :class="{ 'active': navMenuStore.opened }">
+            <NavigationLinks alignment="vertical" />
         </div>
 
     </div>
@@ -37,25 +29,16 @@
 
 <script setup>
 import NavigationLinks from '@/components/Navbar/NavigationLinks.vue';
-import useNavMenuToggler from '@/composables/useNavMenuToggler';
 import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { ref } from '@vue/reactivity';
 
 const themeStore = useThemeStore();
 
+const navMenuStore = useNavMenuStore();
+
 const vCursorHover = useCursorHover();
-
-let navMenuOpened = ref(false);
-
-const navMenuToggle = () => {
-    if (navMenuOpened.value) {
-        document.body.style = 'overflow: visible;';
-    } else {
-        document.body.style = 'overflow: hidden;';
-    }
-    navMenuOpened.value = !navMenuOpened.value;
-};
 </script>
 
 <style lang="less" scoped>
@@ -63,6 +46,7 @@ const navMenuToggle = () => {
 
 .navigation {
     font-family: 'LatoFontBold';
+    z-index: 10;
 
     .nav-hamburger-toggler {
         flex-direction: column;
@@ -92,17 +76,14 @@ const navMenuToggle = () => {
         display: none;
     }
 
-    .blurred-background {
+    .background-blocking-content {
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         width: 0;
-        opacity: 0.7;
-
-        transition: width ease-in-out 0.2s;
     }
-    .blurred-background-visible {
+    .background-blocking-content-visible {
         width: calc(100vw - 12rem);
     }
 
@@ -148,9 +129,6 @@ const navMenuToggle = () => {
         background-color: #dark[text-color-hover];
     }
 
-    .blurred-background {
-        background-color: #dark[background-color];
-    }
     .nav-links-mobile-menu {
         background-color: #dark[background-color];
     }
@@ -161,9 +139,6 @@ const navMenuToggle = () => {
     }
     .nav-hamburger-toggler:hover .bar {
         background-color: #light[text-color-hover];
-    }
-    .blurred-background {
-        background-color: #light[background-color];
     }
     .nav-links-mobile-menu {
         background-color: #light[background-color];
