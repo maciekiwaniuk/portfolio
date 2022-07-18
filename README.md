@@ -1,18 +1,37 @@
-# portfolio
 
-## Project setup
-```
-npm install
-```
+# Portfolio ![](https://github.com/maciekiwaniuk/portfolio/blob/main/public/img/icons/32x32.png?raw=true)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+> ### Project of the portfolio website
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Application is made in JavaScript with [Vue 3](https://vuejs.org/) using Composition API.
+- Global state management is organised by [pinia library](https://pinia.vuejs.org/).
+- Multilingualism of app is managed by [i18n plugin](https://vue-i18n.intlify.dev/). Content of app is available in two languages - English and Polish.
+- Website is responsive, made with [less](https://lesscss.org/).
+- Night mode has been implemented for the sake of users' eyes.
+- Animations on scroll are handled by [AOS library](https://michalsnik.github.io/aos/).
+- To show beatiful icons is used [iconify library](https://iconify.design/).
+- In application has been implemented PWA system, what means website can run in a offline mode (without an internet connection - caches things while first visit). /--WILL BE--/
 
-### Project is still under development...
+# Installation
+
+To successfully install application you need to have installed [npm](https://docs.npmjs.com/cli/v7/commands/npm-install).
+
+Open folder where you want to have project files, open console and then clone the repository
+
+    git clone https://github.com/maciekiwaniuk/portfolio
+
+Change folder in console to created folder with project files
+
+	cd portfolio
+
+Run npm install command
+
+	npm install
+
+Start the local development server
+
+    npm run serve
+
+You can now access the server at http://localhost:8080 or http://10.3.10.10:8080
+
+# Application is still under development...
