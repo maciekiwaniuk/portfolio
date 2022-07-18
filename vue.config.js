@@ -3,6 +3,7 @@ const { defineConfig } = require('@vue/cli-service');
 module.exports = defineConfig({
     transpileDependencies: true,
     pluginOptions: {
+        // https://vue-i18n.intlify.dev/guide/advanced/composition.html
         i18n: {
             locale: 'en',
             fallbackLocale: 'en',
@@ -13,9 +14,12 @@ module.exports = defineConfig({
             fullInstall: true
         }
     },
+    // https://cli.vuejs.org/core-plugins/pwa.html#configuration
     pwa: {
+        workboxPluginMode: 'GenerateSW',
+        manifestPath: 'manifest.json',
         name: 'Maciek Iwaniuk',
-        themeColor: '#4DBA87',
+        themeColor: '#00b3ff',
         msTileColor: '#000000',
         appleMobileWebAppCapable: 'yes',
         appleMobileWebAppStatusBarStyle: 'black',

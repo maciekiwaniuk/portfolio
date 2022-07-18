@@ -119,7 +119,7 @@ const technologies = {
     .title {
         padding: 0.5rem;
 
-        transition: color ease 0.1s;
+        transition: color ease 0.2s;
     }
 }
 
