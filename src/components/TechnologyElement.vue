@@ -51,9 +51,19 @@ const technologies = {
         icon: 'mdi:jquery',
         width: 42
     },
+    css: {
+        title: 'CSS',
+        icon: 'logos:css-3',
+        width: 38
+    },
     sass: {
         title: 'Sass',
         icon: 'vscode-icons:file-type-sass',
+        width: 42
+    },
+    less: {
+        title: 'less',
+        icon: 'logos:less',
         width: 42
     },
     bootstrap: {
@@ -95,6 +105,31 @@ const technologies = {
         title: 'Vue',
         icon: 'logos:vue',
         width: 38
+    },
+    redis: {
+        title: 'Redis',
+        icon: 'logos:redis',
+        width: 40
+    },
+    pygame: {
+        title: 'pygame',
+        icon: 'noto:snake',
+        width: 40
+    },
+    pyqt5: {
+        title: 'pyqt5',
+        icon: 'logos:qt',
+        width: 40
+    },
+    tkinter: {
+        title: 'tkinter',
+        icon: 'mdi:language-python',
+        width: 40
+    },
+    pwa: {
+        title: 'PWA',
+        icon: 'logos:pwa',
+        width: 36
     }
 }
 </script>
