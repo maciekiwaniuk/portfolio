@@ -2,8 +2,7 @@
     <div
         class="education"
         :class="{ 'education-dark-theme': themeStore.value == 'dark',
-                  'education-light-theme': themeStore.value == 'light',
-                  'blurr': navMenuStore.opened }"
+                  'education-light-theme': themeStore.value == 'light' }"
     >
         <div data-aos="fade-up-left">
             <div class="title">{{ t('education.title') }}</div>
@@ -27,14 +26,11 @@
 import EducationItem from '@/components/Education/EducationItem.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
-import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
 
 const themeStore = useThemeStore();
-
-const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
 

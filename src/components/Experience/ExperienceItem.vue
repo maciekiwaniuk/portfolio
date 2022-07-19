@@ -121,7 +121,6 @@ const props = defineProps({
             justify-content: flex-start;
         }
     }
-
 }
 
 .experience-item-dark-theme {

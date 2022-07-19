@@ -2,8 +2,7 @@
     <div
         class="experience"
         :class="{ 'experience-dark-theme': themeStore.value == 'dark',
-                  'experience-light-theme': themeStore.value == 'light',
-                  'blurr': navMenuStore.opened }"
+                  'experience-light-theme': themeStore.value == 'light' }"
     >
         <div data-aos="fade-up-right">
             <div class="title">{{ t('experience.title') }}</div>
@@ -27,14 +26,11 @@
 import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
-import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
 
 const themeStore = useThemeStore();
-
-const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
 

@@ -35,7 +35,8 @@
             "merinosoft": {
                 "content": "Biorę udział w rozwijaniu zaawansowanej aplikacji webowej związanej z zarządzaniem pracownikami przez firmy. Modyfikuję działanie, wygląd różnych funkcjonalności. Wyszukuję, debuguję oraz likwiduję błędy.",
                 "profession": "Programista PHP",
-                "period": "sierpień 2021 - obecnie"
+                "period": "sierpień 2021 - obecnie",
+                "city": "Białystok"
             }
         }
     },
@@ -44,5 +45,14 @@
         "title": "Technologie",
         "useDailyBasis": "Na co dzień używam",
         "hadContact": "Miałem styczność z"
+    },
+
+    "projects": {
+        "title": "Projekty",
+        "projectsItems": {
+            "snakeWebApp": {
+                "content": "Aplikacja obsługuje dane przesyłane przez grę na komputer napisaną w pythonie. Posiada rozbudowane funkcjonalności kont użytkowników, wraz z obszernym, bogatym w funkcjonalności panelem administratora."
+            }
+        }
     }
 }

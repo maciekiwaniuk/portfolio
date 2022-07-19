@@ -7,16 +7,21 @@
 
         <Navbar />
 
-        <LandingPage />
+        <div
+            class="elements-to-blurr-while-nav-menu-is-opened"
+            :class="{ 'blurr': navMenuStore.opened }"
+        >
+            <LandingPage />
 
-        <Education />
+            <Education />
 
-        <Experience />
+            <Experience />
 
-        <Skills />
+            <Skills />
 
-        <!-- <Projects /> -->
+            <Projects />
 
+        </div>
     </div>
 </template>
 
@@ -32,6 +37,7 @@ import Projects from '@/components/Projects/Projects.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 
 import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorStore } from '@/stores/cursor';
 
 import { useCursorHover } from '@/directives/useCursorHover';
@@ -52,6 +58,8 @@ const themeStore = useThemeStore();
 
 const cursorStore = useCursorStore();
 
+const navMenuStore = useNavMenuStore();
+
 const { t, changeLanguage } = useLanguageSwitcher();
 
 const vCursorHover = useCursorHover();
@@ -70,6 +78,10 @@ const vCursorHover = useCursorHover();
 
         transition: background-color ease 1s,
                     color ease 1s;
+
+        .elements-to-blurr-while-nav-menu-is-opened {
+            transition: filter ease 0.3s;
+        }
     }
 
     .container-dark-theme {

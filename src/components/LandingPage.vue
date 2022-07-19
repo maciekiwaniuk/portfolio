@@ -2,8 +2,7 @@
     <div
         class="landing-page"
         :class="{ 'landing-page-dark-theme': themeStore.value == 'dark',
-                  'landing-page-light-theme': themeStore.value == 'light',
-                  'blurr': navMenuStore.opened }"
+                  'landing-page-light-theme': themeStore.value == 'light' }"
     >
         <div
             data-aos="fade-up-right"
@@ -24,14 +23,11 @@
 <script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
-import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t } = useLanguageSwitcher();
 
 const themeStore = useThemeStore();
-
-const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
 
@@ -49,9 +45,6 @@ const vCursorHover = useCursorHover();
     min-height: 60vh;
     margin: auto;
 
-    transition: filter ease 0.3s;
-    z-index: 9;
-
     .text {
 
         .my-name-is {
@@ -68,7 +61,7 @@ const vCursorHover = useCursorHover();
         }
 
         .description {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
     }
 }
