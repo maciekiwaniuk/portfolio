@@ -63,6 +63,7 @@ const themeStore = useThemeStore();
     justify-content: center;
     flex-direction: column;
     min-width: 50%;
+    padding-bottom: 2rem;
     margin: auto;
 
     .title {
@@ -103,6 +104,7 @@ const themeStore = useThemeStore();
     .skills {
         min-width: 35rem;
         max-width: 40rem;
+        padding-bottom: 7rem;
 
         .element {
             .title-smaller {

@@ -24,7 +24,7 @@
                 />
             </div>
 
-            <div class="down">
+            <div class="below">
                 <span>{{ props.profession }}</span>
                 <span>{{ props.period }}</span>
             </div>
@@ -100,7 +100,7 @@ const props = defineProps({
         flex-wrap: wrap;
         gap: 0.5rem;
     }
-    .down {
+    .below {
         font-family: 'LatoFontLight';
         display: flex;
         justify-content: space-between;

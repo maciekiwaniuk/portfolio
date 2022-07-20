@@ -29,8 +29,9 @@ const vCursorHover = useCursorHover();
 const themeStore = useThemeStore();
 
 const snakeWebAppTechnologies = [
-    'php', 'laravel', 'jquery',
-    'bootstrap', 'mysql'
+    'php', 'laravel', 'javascript',
+    'jquery', 'bootstrap', 'mysql',
+    'redis', 'pwa'
 ]
 </script>
 
@@ -55,12 +56,17 @@ const snakeWebAppTechnologies = [
         color: @blue-color;
         float: left;
     }
+    .items {
+        width: 100%;
+        float: left;
+        padding: 0.5rem;
+    }
 }
 
 @media (min-width: @first-breakpoint) {
-    .experience {
-        min-width: 36rem;
-        max-width: 38rem;
+    .projects {
+        min-width: 40rem;
+        max-width: 42rem;
         padding-bottom: 7rem;
 
         .title {

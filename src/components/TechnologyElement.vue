@@ -143,6 +143,7 @@ const technologies = {
     padding: 0.2rem;
     border: solid @blue-color 0.1rem;
     border-radius: 1rem;
+    min-height: 3.2rem;
     cursor: pointer;
 
 
