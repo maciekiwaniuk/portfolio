@@ -1,28 +1,60 @@
 <template>
-    <div
-        class="projects-item"
-        :class="{ 'projects-item-dark-theme': themeStore.value == 'dark',
-                  'projects-item-light-theme': themeStore.value == 'light' }"
-    >
-        <div class="title">
-            {{ props.title }}
-        </div>
+    <div :data-aos="props.animation">
+        <div
+            class="projects-item"
+            :class="{ 'projects-item-dark-theme': themeStore.value == 'dark',
+                      'projects-item-light-theme': themeStore.value == 'light' }"
+        >
+            <div class="title">
+                {{ props.title }}
+            </div>
 
-        <div class="content">
-            {{ props.content }}
-        </div>
+            <div class="content">
+                {{ props.content }}
+            </div>
 
-        <div class="technologies">
-            <TechnologyElement
-                v-for="(technology, index) in props.technologies"
-                :key="index"
-                :element="technology"
-            />
+            <div class="technologies">
+                <TechnologyElement
+                    v-for="(technology, index) in props.technologies"
+                    :key="index"
+                    :element="technology"
+                />
+            </div>
+
+            <div class="below" v-if="props.github || props.online">
+                <a
+                    class="link"
+                    v-cursor-hover
+                    v-if="props.github"
+                    :href="props.github"
+                >
+                    <span class="text">GitHub</span>
+                    <Icon
+                        icon="icon-park-outline:github"
+                        width="38"
+                    />
+                </a>
+
+
+                <a
+                    class="link"
+                    v-cursor-hover
+                    v-if="props.online"
+                    :href="props.online"
+                >
+                    <span class="text">Online</span>
+                    <Icon
+                        icon="ci:external-link"
+                        width="38"
+                    />
+                </a>
+            </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
@@ -37,7 +69,10 @@ const themeStore = useThemeStore();
 const props = defineProps({
     title: String,
     content: String,
-    technologies: Array
+    technologies: Array,
+    github: String,
+    online: String,
+    animation: String
 });
 </script>
 
@@ -82,6 +117,28 @@ const props = defineProps({
         justify-content: center;
         flex-wrap: wrap;
         gap: 0.5rem;
+    }
+
+    .below {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.5rem;
+
+        .link {
+            display: flex;
+            text-decoration: none;
+            color: inherit;
+            padding-right: 1rem;
+
+            cursor: pointer;
+
+            .text {
+                display: flex;
+                align-items: center;
+                padding-right: 0.3rem;
+            }
+        }
     }
 }
 

@@ -43,7 +43,7 @@
 
     "skills": {
         "title": "Skills",
-        "useDailyBasis": "I use it on a daily basis",
+        "useRegularly": "I use regularly with",
         "hadContact": "I had contact with"
     },
 
@@ -51,7 +51,16 @@
         "title": "Projects",
         "projectsItems": {
             "snakeWebApp": {
+                "title": "Snake - web app",
                 "content": "The application handles data sent by the game application written in python. It has extensive user account functionality, along with a comprehensive, feature-rich admin panel."
+            },
+            "snakeGame": {
+                "title": "Snake - game",
+                "content": "The game reads and writes data through a web application API. The user competes against other users through ranking, earning currency that can then be spent on upgrades or skins that improve the gameplay experience."
+            },
+            "minesweeper": {
+                "title": "Minesweeper",
+                "content": "A sapper game with selectable game difficulty and saving of choices as well as user records to local browser memory."
             }
         }
     }

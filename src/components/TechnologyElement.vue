@@ -102,7 +102,7 @@ const technologies = {
         width: 44
     },
     vue: {
-        title: 'Vue',
+        title: 'VueJS',
         icon: 'logos:vue',
         width: 38
     },
@@ -117,7 +117,7 @@ const technologies = {
         width: 40
     },
     pyqt5: {
-        title: 'pyqt5',
+        title: 'PyQt5',
         icon: 'logos:qt',
         width: 40
     },
@@ -130,6 +130,11 @@ const technologies = {
         title: 'PWA',
         icon: 'logos:pwa',
         width: 36
+    },
+    css: {
+        title: 'CSS',
+        icon: 'logos:css-3',
+        width: 30
     }
 }
 </script>
@@ -146,6 +151,7 @@ const technologies = {
     min-height: 3.2rem;
     cursor: pointer;
 
+    transition: background-color ease 1s;
 
     .icon {
         display: flex;

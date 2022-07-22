@@ -10,7 +10,7 @@
             <div class="title">{{ t('skills.title') }}</div>
 
             <div class="element">
-                <div class="title-smaller">{{ t('skills.useDailyBasis') }}</div>
+                <div class="title-smaller">{{ t('skills.useRegularly') }}</div>
 
                 <div class="content">
                     <TechnologyElement element="php" />
@@ -33,6 +33,8 @@
                 <div class="content">
                     <TechnologyElement element="python" />
                     <TechnologyElement element="csharp" />
+                    <TechnologyElement element="pwa" />
+                    <TechnologyElement element="redis" />
                 </div>
             </div>
 

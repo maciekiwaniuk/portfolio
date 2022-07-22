@@ -43,7 +43,7 @@
 
     "skills": {
         "title": "Technologie",
-        "useDailyBasis": "Na co dzień używam",
+        "useRegularly": "Regularnie używam z",
         "hadContact": "Miałem styczność z"
     },
 
@@ -51,7 +51,16 @@
         "title": "Projekty",
         "projectsItems": {
             "snakeWebApp": {
+                "title": "Snake - aplikacja webowa",
                 "content": "Aplikacja obsługuje dane przesyłane przez grę na komputer napisaną w pythonie. Posiada rozbudowane funkcjonalności kont użytkowników, wraz z obszernym, bogatym w funkcjonalności panelem administratora."
+            },
+            "snakeGame": {
+                "title": "Snake - gra",
+                "content": "Gra odczytuje oraz zapisuje dane poprzez API aplikacji webowej. Użytkownik rywalizuje z innymi użytkownikami poprzez ranking, zdobywa walutę, którą może następnie wydać na ulepszenia lub skórki poprawiające odczucia z rozgrywki."
+            },
+            "minesweeper": {
+                "title": "Saper",
+                "content": "Gra w sapera z możliwością wyboru trudności gry oraz zapisywaniem wyborów jak i rekordów użytkownika do lokalnej pamięci przeglądarki."
             }
         }
     }

@@ -8,9 +8,30 @@
 
         <div class="items">
             <ProjectsItem
-                title="Snake Web App"
+                :title="t('projects.projectsItems.snakeWebApp.title')"
                 :content="t('projects.projectsItems.snakeWebApp.content')"
-                :technologies="snakeWebAppTechnologies"
+                :technologies="snakeWebApp.technologies"
+                :github="snakeWebApp.github"
+                :online="snakeOnline"
+                animation="fade-right"
+            />
+
+            <ProjectsItem
+                :title="t('projects.projectsItems.snakeGame.title')"
+                :content="t('projects.projectsItems.snakeGame.content')"
+                :technologies="snakeGame.technologies"
+                :github="snakeGame.github"
+                :online="snakeOnline"
+                animation="fade-left"
+            />
+
+            <ProjectsItem
+                :title="t('projects.projectsItems.minesweeper.title')"
+                :content="t('projects.projectsItems.minesweeper.content')"
+                :technologies="minesweeper.technologies"
+                :github="minesweeper.github"
+                :online="minesweeper.online"
+                animation="fade-right"
             />
         </div>
     </div>
@@ -28,11 +49,30 @@ const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
 
-const snakeWebAppTechnologies = [
-    'php', 'laravel', 'javascript',
-    'jquery', 'bootstrap', 'mysql',
-    'redis', 'pwa'
-]
+
+/************ Projects ***********/
+const snakeOnline = 'https://snake-gra.pl';
+
+const snakeWebApp = {
+    github: 'https://github.com/maciekiwaniuk/snake-web-app',
+    technologies: [
+        'php', 'laravel', 'javascript',
+        'jquery', 'bootstrap', 'mysql',
+        'redis', 'pwa'
+    ]
+};
+
+const snakeGame = {
+    github: 'https://github.com/maciekiwaniuk/snake-game',
+    technologies: ['python', 'pygame', 'pyqt5']
+};
+
+const minesweeper = {
+    github: 'https://github.com/maciekiwaniuk/minesweeper',
+    online: 'https://maciekiwaniuk-minesweeper.herokuapp.com/',
+    technologies: ['javascript', 'css']
+}
+
 </script>
 
 <style lang="less" scoped>
