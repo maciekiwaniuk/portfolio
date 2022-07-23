@@ -17,21 +17,22 @@
             </button>
         </div>
 
-        <ul
+        <nav
             :data-aos="linksAnimation"
             :class="{ 'vertical': props.alignment == 'vertical',
                       'horizontal': props.alignment == 'horizontal',
                       'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }">
-            <li v-cursor-hover>{{ t('navbar.education') }}</li>
-            <li v-cursor-hover>{{ t('navbar.experience') }}</li>
-            <li v-cursor-hover>{{ t('navbar.skills') }}</li>
-            <li v-cursor-hover>{{ t('navbar.projects') }}</li>
-        </ul>
+            <NavigationLinksLink element="education" :text="t('navbar.education')" />
+            <NavigationLinksLink element="experience" :text="t('navbar.experience')" />
+            <NavigationLinksLink element="skills" :text="t('navbar.skills')" />
+            <NavigationLinksLink element="projects" :text="t('navbar.projects')" />
+        </nav>
 
     </div>
 </template>
 
 <script setup>
+import NavigationLinksLink from '@/components/Navbar/NavigationLinksLink.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
@@ -97,7 +98,7 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
         font-size: 0 !important;
     }
 
-    ul {
+    nav {
         text-transform: uppercase;
         display: flex;
         list-style-type: none;
@@ -105,21 +106,13 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
 
         transition: font-size ease 0.3s;
 
-        li {
-            position: relative;
-            cursor: pointer;
-            margin-left: 1rem;
-
-            transition: color ease 0.1s,
-                        transform ease 0.3s;
-        }
     }
 
     .horizontal {
         justify-content: flex-start;
         align-items: center;
 
-        li::before {
+        a::before {
             content: '';
             position: absolute;
             bottom: -0.1rem;
@@ -130,7 +123,7 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
 
             transition: clip-path ease-out 0.3s;
         }
-        li:hover::before {
+        a:hover::before {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
     }
@@ -140,14 +133,14 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
         row-gap: 2rem;
         font-size: 1rem;
 
-        li {
+        a {
             margin-right: 1rem;
         }
     }
 
 }
 .navigation-links-dark-theme {
-    li::before {
+    a::before {
         background-color: #dark[text-color];
     }
 
@@ -156,7 +149,7 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
     }
 }
 .navigation-links-light-theme {
-    li::before {
+    a::before {
         background-color: #light[text-color];
     }
 

@@ -89,7 +89,7 @@ const currentYear = new Date().getFullYear();
     .footer {
         .info {
             font-size: 1.1rem;
-            padding-right: 0.5rem;
+            padding-right: 0.7rem;
         }
         .icons {
             padding-top: 0.2rem;

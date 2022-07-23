@@ -1,5 +1,6 @@
 <template>
     <div
+        id="education"
         class="education"
         :class="{ 'education-dark-theme': themeStore.value == 'dark',
                   'education-light-theme': themeStore.value == 'light' }"

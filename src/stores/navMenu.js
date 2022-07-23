@@ -13,6 +13,11 @@ export const useNavMenuStore = defineStore('navMenu', {
             }
 
             this.opened = !this.opened;
+        },
+        close() {
+            document.body.style = 'overflow: visible;';
+
+            this.opened = false;
         }
     }
 });
