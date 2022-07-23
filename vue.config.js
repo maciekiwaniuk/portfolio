@@ -2,7 +2,7 @@ const { defineConfig } = require('@vue/cli-service');
 
 module.exports = defineConfig({
     transpileDependencies: true,
-    publicPath: '/portfolio/',
+    publicPath: '/',
     pluginOptions: {
         // https://vue-i18n.intlify.dev/guide/advanced/composition.html
         i18n: {

@@ -21,11 +21,12 @@
             :data-aos="linksAnimation"
             :class="{ 'vertical': props.alignment == 'vertical',
                       'horizontal': props.alignment == 'horizontal',
-                      'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }">
-            <NavigationLinksLink element="education" :text="t('navbar.education')" />
-            <NavigationLinksLink element="experience" :text="t('navbar.experience')" />
-            <NavigationLinksLink element="skills" :text="t('navbar.skills')" />
-            <NavigationLinksLink element="projects" :text="t('navbar.projects')" />
+                      'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }"
+        >
+            <NavigationLinksLink element="education" :text="t('navbar.education')" :alignment="props.alignment" />
+            <NavigationLinksLink element="experience" :text="t('navbar.experience')" :alignment="props.alignment" />
+            <NavigationLinksLink element="skills" :text="t('navbar.skills')" :alignment="props.alignment" />
+            <NavigationLinksLink element="projects" :text="t('navbar.projects')" :alignment="props.alignment" />
         </nav>
 
     </div>
@@ -105,54 +106,27 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
         font-size: 1rem;
 
         transition: font-size ease 0.3s;
-
     }
 
     .horizontal {
         justify-content: flex-start;
         align-items: center;
-
-        a::before {
-            content: '';
-            position: absolute;
-            bottom: -0.1rem;
-            left: 0;
-            width: 100%;
-            height: 0.1rem;
-            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-
-            transition: clip-path ease-out 0.3s;
-        }
-        a:hover::before {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
     }
     .vertical {
         align-content: center;
         flex-direction: column;
         row-gap: 2rem;
         font-size: 1rem;
-
-        a {
-            margin-right: 1rem;
-        }
     }
 
 }
-.navigation-links-dark-theme {
-    a::before {
-        background-color: #dark[text-color];
-    }
 
+.navigation-links-dark-theme {
     .bar {
         background-color: #dark[text-color];
     }
 }
 .navigation-links-light-theme {
-    a::before {
-        background-color: #light[text-color];
-    }
-
     .bar {
         background-color: #light[text-color];
     }
