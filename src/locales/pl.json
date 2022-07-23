@@ -61,7 +61,20 @@
             "minesweeper": {
                 "title": "Saper",
                 "content": "Gra w sapera z możliwością wyboru trudności gry oraz zapisywaniem wyborów jak i rekordów użytkownika do lokalnej pamięci przeglądarki."
+            },
+            "portfolio": {
+                "content": "Strona internetowa streszczająca informacje o mojej osobie. Zawarte są w niej wiadomości na temat mojej edukacji, doświadczenia komercyjnego czy projektów."
+            },
+            "youtubeDownloader": {
+                "title": "Pobieracz YouTube",
+                "content": "Aplikacja desktopowa która umożliwia pobieranie filmików z YouTube. Posiada zakładkę z ustawieniami pobieranie, gdzie użytkownik może m.in. wybrać jakość pobieranych treści czy zmienić rozszerzenie."
             }
         }
-    }
+    },
+
+    "footer": {
+        "allRightsReserved": "© Wszelkie prawa zastrzeżone"
+    },
+
+    "author": "Maciek Iwaniuk"
 }

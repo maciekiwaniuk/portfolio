@@ -61,7 +61,20 @@
             "minesweeper": {
                 "title": "Minesweeper",
                 "content": "A sapper game with selectable game difficulty and saving of choices as well as user records to local browser memory."
+            },
+            "portfolio": {
+                "content": "A website summarizing information about my person. It includes news about my education, commercial experience or projects."
+            },
+            "youtubeDownloader": {
+                "title": "YouTube Downloader",
+                "content": "A desktop application that allows users to download videos from YouTube. It has a tab with download settings, where the user can, among other things, choose the quality of the downloaded content or change the extension."
             }
         }
-    }
+    },
+
+    "footer": {
+        "allRightsReserved": "© All rights reserved"
+    },
+
+    "author": "Maciek Iwaniuk"
 }

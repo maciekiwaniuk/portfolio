@@ -33,6 +33,23 @@
                 :online="minesweeper.online"
                 animation="fade-right"
             />
+
+            <ProjectsItem
+                title="Portfolio"
+                :content="t('projects.projectsItems.portfolio.content')"
+                :technologies="portfolio.technologies"
+                :github="portfolio.github"
+                :online="portfolio.online"
+                animation="fade-left"
+            />
+
+            <ProjectsItem
+                :title="t('projects.projectsItems.youtubeDownloader.title')"
+                :content="t('projects.projectsItems.youtubeDownloader.content')"
+                :technologies="youtubeDownloader.technologies"
+                :github="youtubeDownloader.github"
+                animation="fade-right"
+            />
         </div>
     </div>
 </template>
@@ -48,7 +65,6 @@ const { t } = useLanguageSwitcher();
 const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
-
 
 /************ Projects ***********/
 const snakeOnline = 'https://snake-gra.pl';
@@ -71,6 +87,17 @@ const minesweeper = {
     github: 'https://github.com/maciekiwaniuk/minesweeper',
     online: 'https://maciekiwaniuk-minesweeper.herokuapp.com/',
     technologies: ['javascript', 'css']
+}
+
+const portfolio = {
+    github: 'https://github.com/maciekiwaniuk/portfolio',
+    online: 'https://maciekiwaniuk.pl',
+    technologies: ['javascript', 'vue', 'less', 'pwa']
+}
+
+const youtubeDownloader = {
+    github: 'https://github.com/maciekiwaniuk/youtube-downloader',
+    technologies: ['python', 'tkinter']
 }
 
 </script>

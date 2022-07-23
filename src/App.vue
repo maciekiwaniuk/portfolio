@@ -11,6 +11,7 @@
             class="elements-to-blurr-while-nav-menu-is-opened"
             :class="{ 'blurr': navMenuStore.opened }"
         >
+
             <LandingPage />
 
             <Education />
@@ -20,6 +21,8 @@
             <Skills />
 
             <Projects />
+
+            <Footer />
 
         </div>
     </div>
@@ -33,6 +36,7 @@ import Education from '@/components/Education/Education.vue';
 import Experience from '@/components/Experience/Experience.vue';
 import Skills from '@/components/Skills.vue';
 import Projects from '@/components/Projects/Projects.vue';
+import Footer from '@/components/Footer.vue';
 
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 

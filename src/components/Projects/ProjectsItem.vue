@@ -24,6 +24,7 @@
             <div class="below" v-if="props.github || props.online">
                 <a
                     class="link"
+                    target="_blank"
                     v-cursor-hover
                     v-if="props.github"
                     :href="props.github"
@@ -38,6 +39,7 @@
 
                 <a
                     class="link"
+                    target="_blank"
                     v-cursor-hover
                     v-if="props.online"
                     :href="props.online"
@@ -123,7 +125,7 @@ const props = defineProps({
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        padding: 0.5rem;
+        padding: 0.4rem 0.2rem 0.1rem 0.2rem;
 
         .link {
             display: flex;
@@ -152,6 +154,8 @@ const props = defineProps({
         }
         .technologies {
             justify-content: flex-start;
+        }
+        .below {
         }
     }
 }

@@ -4,8 +4,7 @@ import App from './App.vue';
 const app = createApp(App);
 
 /* import i18n plugin for translations */
-import i18n from './i18n';
-import './registerServiceWorker';
+import i18n from './plugins/i18n';
 app.use(i18n);
 
 /* import pinia for state management */
@@ -21,6 +20,9 @@ app.AOS = new AOS.init({
     once: true,
     duration: 700
 });
+
+/* register service worker */
+import './plugins/registerServiceWorker';
 
 /* mount app */
 app.mount('#app');
