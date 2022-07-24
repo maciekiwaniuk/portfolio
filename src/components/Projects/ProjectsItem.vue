@@ -30,10 +30,7 @@
                     :href="props.github"
                 >
                     <span class="text">GitHub</span>
-                    <Icon
-                        icon="icon-park-outline:github"
-                        width="38"
-                    />
+                    <Icon icon="icon-park-outline:github" width="38" />
                 </a>
 
 
@@ -45,10 +42,7 @@
                     :href="props.online"
                 >
                     <span class="text">Online</span>
-                    <Icon
-                        icon="ci:external-link"
-                        width="38"
-                    />
+                    <Icon icon="ci:external-link" width="38" />
                 </a>
             </div>
         </div>

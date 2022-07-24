@@ -23,7 +23,6 @@
                         'horizontal': props.alignment == 'horizontal',
                         'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }"
             >
-
                 <NavigationLinksLink element="education" :text="t('navbar.education')" :alignment="props.alignment" />
                 <NavigationLinksLink element="experience" :text="t('navbar.experience')" :alignment="props.alignment" />
                 <NavigationLinksLink element="skills" :text="t('navbar.skills')" :alignment="props.alignment" />
