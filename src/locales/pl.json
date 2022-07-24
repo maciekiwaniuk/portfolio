@@ -42,8 +42,8 @@
     },
 
     "skills": {
-        "title": "Technologie",
-        "useRegularly": "Regularnie używam z",
+        "title": "Umiejętności",
+        "useRegularly": "Regularnie używam",
         "hadContact": "Miałem styczność z"
     },
 
@@ -52,7 +52,7 @@
         "projectsItems": {
             "snakeWebApp": {
                 "title": "Snake - aplikacja webowa",
-                "content": "Aplikacja obsługuje dane przesyłane przez grę na komputer napisaną w pythonie. Posiada rozbudowane funkcjonalności kont użytkowników, wraz z obszernym, bogatym w funkcjonalności panelem administratora."
+                "content": "Aplikacja obsługuje dane przesyłane przez grę na komputer napisaną w pythonie. Posiada rozbudowane funkcjonalności kont użytkowników wraz z obszernym, bogatym w funkcjonalności panelem administratora."
             },
             "snakeGame": {
                 "title": "Snake - gra",
@@ -67,7 +67,7 @@
             },
             "youtubeDownloader": {
                 "title": "Pobieracz YouTube",
-                "content": "Aplikacja desktopowa która umożliwia pobieranie filmików z YouTube. Posiada zakładkę z ustawieniami pobieranie, gdzie użytkownik może m.in. wybrać jakość pobieranych treści czy zmienić rozszerzenie."
+                "content": "Aplikacja desktopowa która umożliwia pobieranie filmików z YouTube. Posiada zakładkę z ustawieniami pobierania, gdzie użytkownik może m.in. wybrać jakość pobieranych treści czy zmienić rozszerzenie."
             }
         }
     },

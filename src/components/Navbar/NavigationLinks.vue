@@ -17,17 +17,19 @@
             </button>
         </div>
 
-        <nav
-            :data-aos="linksAnimation"
-            :class="{ 'vertical': props.alignment == 'vertical',
-                      'horizontal': props.alignment == 'horizontal',
-                      'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }"
-        >
-            <NavigationLinksLink element="education" :text="t('navbar.education')" :alignment="props.alignment" />
-            <NavigationLinksLink element="experience" :text="t('navbar.experience')" :alignment="props.alignment" />
-            <NavigationLinksLink element="skills" :text="t('navbar.skills')" :alignment="props.alignment" />
-            <NavigationLinksLink element="projects" :text="t('navbar.projects')" :alignment="props.alignment" />
-        </nav>
+        <div :data-aos="linksAnimation">
+            <nav
+                :class="{ 'vertical': props.alignment == 'vertical',
+                        'horizontal': props.alignment == 'horizontal',
+                        'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }"
+            >
+
+                <NavigationLinksLink element="education" :text="t('navbar.education')" :alignment="props.alignment" />
+                <NavigationLinksLink element="experience" :text="t('navbar.experience')" :alignment="props.alignment" />
+                <NavigationLinksLink element="skills" :text="t('navbar.skills')" :alignment="props.alignment" />
+                <NavigationLinksLink element="projects" :text="t('navbar.projects')" :alignment="props.alignment" />
+            </nav>
+        </div>
 
     </div>
 </template>

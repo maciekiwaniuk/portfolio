@@ -16,12 +16,12 @@
     "purpose": "any maskable",
     "icons": [
         {
-            "src": "img/icons/16x16.png",
+            "src": "img/icons/favicon-16x16.png",
             "type": "image/png",
             "sizes": "16x16"
         },
         {
-            "src": "img/icons/32x32.png",
+            "src": "img/icons/favicon-32x32.png",
             "type": "image/png",
             "sizes": "32x32"
         },
@@ -61,7 +61,7 @@
             "sizes": "180x180"
         },
         {
-            "src": "img/icons/192x192.png",
+            "src": "img/icons/android-chrome-192x192.png",
             "type": "image/png",
             "sizes": "192x192"
         },
@@ -71,7 +71,7 @@
             "sizes": "384x384"
         },
         {
-            "src": "img/icons/512x512.png",
+            "src": "img/icons/android-chrome-512x512.png",
             "type": "image/png",
             "sizes": "512x512"
         }
