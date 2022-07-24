@@ -8,6 +8,7 @@
             {{ t('author') }} - {{ currentYear }} {{ t('footer.allRightsReserved') }}
         </div>
 
+        <!-- icons visible on footer while screen is small -->
         <div class="icons">
             <a
                 class="link"
@@ -15,10 +16,7 @@
                 v-cursor-hover
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
             >
-                <Icon
-                    icon="logos:linkedin-icon"
-                    width="20"
-                />
+                <Icon icon="logos:linkedin-icon" width="20" class="linkedin-icon" />
             </a>
 
 
@@ -28,10 +26,29 @@
                 v-cursor-hover
                 href="https://github.com/maciekiwaniuk"
             >
-                <Icon
-                    icon="codicon:github"
-                    width="20"
-                />
+                <Icon icon="codicon:github" width="20" />
+            </a>
+        </div>
+
+        <!-- icons on left side of screen while screen is big -->
+        <div class="icons-on-big-screens">
+            <a
+                class="link"
+                target="_blank"
+                v-cursor-hover
+                href="https://www.linkedin.com/in/iwaniuk-maciej/"
+            >
+                <Icon icon="logos:linkedin-icon" width="40" class="linkedin-icon" />
+            </a>
+
+
+            <a
+                class="link"
+                target="_blank"
+                v-cursor-hover
+                href="https://github.com/maciekiwaniuk"
+            >
+                <Icon icon="icon-park-outline:github" width="40" />
             </a>
         </div>
 
@@ -57,7 +74,6 @@ const currentYear = new Date().getFullYear();
 @import '@/styles/variables.less';
 
 .footer {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,6 +83,17 @@ const currentYear = new Date().getFullYear();
     border-top: solid @blue-color 0.2rem;
     border-bottom: solid @blue-color 0.2rem;
 
+    a {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    .linkedin-icon {
+        background-color: white;
+        border-radius: 10%;
+    }
+
     .info {
         font-family: 'LatoFontLight';
         font-size: 0.90rem;
@@ -75,12 +102,27 @@ const currentYear = new Date().getFullYear();
         padding-right: 0.3rem;
     }
     .icons {
+        display: block;
         text-align: center;
 
         .link {
-            text-decoration: none;
-            color: inherit;
             padding-right: 0.3rem;
+        }
+    }
+    .icons-on-big-screens {
+        position: fixed;
+        bottom: 0rem;
+        left: 0;
+        width: 4rem;
+        height: 7rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        a {
+            width: 100%;
+            text-align: center;
         }
     }
 }
@@ -93,6 +135,18 @@ const currentYear = new Date().getFullYear();
         }
         .icons {
             padding-top: 0.2rem;
+        }
+    }
+}
+
+@media (min-width: @footer-icons-breakpoint) {
+    .footer {
+        .icons {
+            display: none;
+        }
+
+        .icons-on-big-screens {
+            display: flex;
         }
     }
 }

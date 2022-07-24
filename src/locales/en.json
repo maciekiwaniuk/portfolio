@@ -43,7 +43,7 @@
 
     "skills": {
         "title": "Skills",
-        "useRegularly": "I use regularly with",
+        "useRegularly": "I use regularly",
         "hadContact": "I had contact with"
     },
 
@@ -63,7 +63,7 @@
                 "content": "A sapper game with selectable game difficulty and saving of choices as well as user records to local browser memory."
             },
             "portfolio": {
-                "content": "A website summarizing information about my person. It includes news about my education, commercial experience or projects."
+                "content": "A website summarizing information about my person. It includes info about my education, commercial experience and projects."
             },
             "youtubeDownloader": {
                 "title": "YouTube Downloader",

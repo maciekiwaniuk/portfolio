@@ -16,15 +16,15 @@
 
             <Education />
 
-            <Experience />
-
-            <Skills />
-
-            <Projects />
-
-            <Footer />
-
         </div>
+
+        <Experience />
+
+        <Skills />
+
+        <Projects />
+
+        <Footer />
     </div>
 </template>
 
@@ -100,7 +100,7 @@ const vCursorHover = useCursorHover();
 
     /* Every element which is above z-index: 9; shouldn't be blurred */
     .blurr {
-        filter: blur(2px);
+        // filter: blur(2px);
     }
 }
 </style>

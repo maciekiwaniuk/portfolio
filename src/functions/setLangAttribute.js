@@ -4,7 +4,7 @@
 const setLangAttribute = () => {
     document.documentElement.setAttribute(
         'lang',
-        localStorage.getItem('language')
+        localStorage.getItem('language') ?? 'en'
     );
 };
 
