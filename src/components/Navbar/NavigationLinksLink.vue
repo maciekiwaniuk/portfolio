@@ -27,23 +27,23 @@ const props = defineProps({
     element: String,
     text: String,
     alignment: String
-})
+});
+
 </script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';
 
 a {
+    position: relative;
+    margin-left: 1rem;
     text-decoration: none;
     color: inherit;
-    position: relative;
     cursor: pointer;
-    margin-left: 1rem;
 
     transition: color ease 0.1s,
-                transform ease 0.3s;
+                transform ease @hover-time;
 }
-
 .vertical-alignment {
     margin-right: 1rem;
 }
@@ -56,7 +56,7 @@ a {
     height: 0.1rem;
     clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
 
-    transition: clip-path ease-out 0.3s;
+    transition: clip-path ease-out @hover-time;
 }
 .horizontal-alignment:hover::before {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);

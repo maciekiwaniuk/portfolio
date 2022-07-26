@@ -2,7 +2,7 @@
  * Adds currently selected theme styles and event that
  * changes styles of cursor position
  */
-const addEventOnCursor = () => {
+export const addEventOnCursor = () => {
     const cursor = document.querySelector('.cursor');
 
     document.addEventListener('mousemove', event => {
@@ -10,5 +10,3 @@ const addEventOnCursor = () => {
         cursor.style.left = `${event.clientX}px`;
     });
 }
-
-export default addEventOnCursor;

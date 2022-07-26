@@ -36,13 +36,13 @@ import NavigationLinks from '@/components/Navbar/NavigationLinks.vue';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
-import { ref } from '@vue/reactivity';
 
 const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
+
 </script>
 
 <style lang="less" scoped>
@@ -52,6 +52,7 @@ const vCursorHover = useCursorHover();
     font-family: 'LatoFontBold';
 
     .nav-hamburger-toggler {
+        display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         width: 2.6rem;
@@ -59,14 +60,14 @@ const vCursorHover = useCursorHover();
         border: none;
         background-color: transparent;
         cursor: pointer;
-        transition: background-color ease 1s;
-        display: flex;
+
+        transition: background-color ease @theme-switch-time;
 
         .bar {
             height: 0.25rem;
             width: 100%;
             border-radius: 10px;
-            transition: background-color ease 0.3s;
+            transition: background-color ease @hover-time;
         }
         .bar-short {
             width: 50%;
@@ -102,8 +103,8 @@ const vCursorHover = useCursorHover();
         min-height: 100vh;
         border: none;
 
-        transition: width ease-in-out 0.2s,
-                    border ease-in-out 0.2s;
+        transition: width ease-in-out @mobile-menu-time,
+                    border ease-in-out @mobile-menu-time;
     }
     .active {
         width: 12rem;

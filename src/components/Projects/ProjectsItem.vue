@@ -5,13 +5,13 @@
             :class="{ 'projects-item-dark-theme': themeStore.value == 'dark',
                       'projects-item-light-theme': themeStore.value == 'light' }"
         >
-            <div class="title">
+            <h3 class="title">
                 {{ props.title }}
-            </div>
+            </h3>
 
-            <div class="content">
+            <p class="content">
                 {{ props.content }}
-            </div>
+            </p>
 
             <div class="technologies">
                 <TechnologyElement
@@ -21,7 +21,7 @@
                 />
             </div>
 
-            <div class="below" v-if="props.github || props.online">
+            <p class="below" v-if="props.github || props.online">
                 <a
                     class="link"
                     target="_blank"
@@ -44,7 +44,7 @@
                     <span class="text">Online</span>
                     <Icon icon="ci:external-link" width="38" />
                 </a>
-            </div>
+            </p>
         </div>
     </div>
 </template>
@@ -52,7 +52,7 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import TechnologyElement from '@/components/TechnologyElement.vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 
@@ -78,6 +78,7 @@ const props = defineProps({
 .projects-item {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 0.5rem;
     min-height: 10rem;
     width: 100%;
@@ -85,9 +86,8 @@ const props = defineProps({
     border-radius: 1rem;
     padding: 0.6rem 0.9rem 0.6rem 0.9rem;
     margin-bottom: 1.5rem;
-    text-align: center;
 
-    transition: background-color ease 1s;
+    transition: background-color ease @theme-switch-time;
 
     .title {
         display: flex;
@@ -95,26 +95,23 @@ const props = defineProps({
         margin: auto;
         font-size: 1.4rem;
     }
-
     .content {
         display: flex;
         align-items: center;
         text-align: left;
+        line-height: 1.3rem;
         font-family: 'LatoFontLight';
         font-style: italic;
-        line-height: 1.3rem;
         font-size: 1.05rem;
     }
-
     .technologies {
-        padding-top: 0.5rem;
         display: flex;
         align-content: flex-start;
         justify-content: center;
         flex-wrap: wrap;
         gap: 0.5rem;
+        padding-top: 0.5rem;
     }
-
     .below {
         display: flex;
         justify-content: flex-start;
@@ -123,9 +120,9 @@ const props = defineProps({
 
         .link {
             display: flex;
+            padding-right: 1rem;
             text-decoration: none;
             color: inherit;
-            padding-right: 1rem;
 
             cursor: pointer;
 
@@ -148,8 +145,6 @@ const props = defineProps({
         }
         .technologies {
             justify-content: flex-start;
-        }
-        .below {
         }
     }
 }

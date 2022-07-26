@@ -1,12 +1,7 @@
 <template>
-    <div
-        id="experience"
-        class="experience"
-        :class="{ 'experience-dark-theme': themeStore.value == 'dark',
-                  'experience-light-theme': themeStore.value == 'light' }"
-    >
+    <div id="experience" class="experience">
         <div data-aos="fade-up-right">
-            <div class="title">{{ t('experience.title') }}</div>
+            <h2 class="title">{{ t('experience.title') }}</h2>
 
             <div class="items">
                 <ExperienceItem
@@ -25,15 +20,9 @@
 
 <script setup>
 import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useThemeStore } from '@/stores/theme';
-import { useCursorHover } from '@/directives/useCursorHover';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 
 const { t } = useLanguageSwitcher();
-
-const themeStore = useThemeStore();
-
-const vCursorHover = useCursorHover();
 
 const merinosoftTitle = 'Merinosoft Sp. z o.o.',
       merinosoftUrl = 'https://merinosoft.pl/',
@@ -41,6 +30,7 @@ const merinosoftTitle = 'Merinosoft Sp. z o.o.',
         'php', 'laravel', 'javascript', 'jquery',
         'bootstrap', 'postgresql', 'git'
       ];
+
 </script>
 
 <style lang="less" scoped>
@@ -51,23 +41,23 @@ const merinosoftTitle = 'Merinosoft Sp. z o.o.',
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 1rem;
     min-width: 100%;
     margin: auto;
+    padding-bottom: 1rem;
 
     .title {
+        float: left;
         width: 100%;
         min-height: 3rem;
         text-align: center;
         font-family: 'LatoFontBold';
         font-size: 3rem;
         color: @blue-color;
-        float: left;
     }
 
     .items {
-        width: 100%;
         float: left;
+        width: 100%;
         padding: 0.5rem;
     }
 }
@@ -84,11 +74,4 @@ const merinosoftTitle = 'Merinosoft Sp. z o.o.',
     }
 }
 
-.experience-dark-theme {
-
-}
-
-.experience-light-theme {
-
-}
 </style>

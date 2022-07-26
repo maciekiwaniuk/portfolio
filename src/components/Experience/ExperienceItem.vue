@@ -10,11 +10,11 @@
             :class="{ 'experience-item-dark-theme': themeStore.value == 'dark',
                       'experience-item-light-theme': themeStore.value == 'light' }"
         >
-            <div class="title">{{ props.title }}</div>
+            <h3 class="title">{{ props.title }}</h3>
 
-            <div class="content">
+            <p class="content">
                 {{ props.content }}
-            </div>
+            </p>
 
             <div class="technologies">
                 <TechnologyElement
@@ -24,10 +24,10 @@
                 />
             </div>
 
-            <div class="below">
+            <p class="below">
                 <span>{{ props.profession }}</span>
                 <span>{{ props.period }}</span>
-            </div>
+            </p>
         </div>
     </a>
 
@@ -35,7 +35,7 @@
 
 <script setup>
 import TechnologyElement from '@/components/TechnologyElement.vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 
@@ -53,6 +53,7 @@ const props = defineProps({
     url: String,
     technologies: Array
 });
+
 </script>
 
 <style lang="less" scoped>
@@ -65,6 +66,7 @@ const props = defineProps({
 .experience-item {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 0.5rem;
     min-height: 10rem;
     width: 100%;
@@ -72,10 +74,9 @@ const props = defineProps({
     border-radius: 1rem;
     padding: 0.6rem 0.9rem 0.6rem 0.9rem;
     margin-bottom: 1.5rem;
-    text-align: center;
     cursor: pointer;
 
-    transition: background-color ease 1s;
+    transition: background-color ease @theme-switch-time;
 
     .title {
         display: flex;
@@ -93,18 +94,18 @@ const props = defineProps({
         font-size: 1.05rem;
     }
     .technologies {
-        padding-top: 0.5rem;
         display: flex;
         align-content: flex-start;
         justify-content: center;
         flex-wrap: wrap;
+        padding-top: 0.5rem;
         gap: 0.5rem;
     }
     .below {
-        font-family: 'LatoFontLight';
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-family: 'LatoFontLight';
         padding-top: 0.5rem;
     }
 }

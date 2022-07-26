@@ -1,5 +1,7 @@
-
-const setBackgroundColorOnScrollbar = () => {
+/**
+ * Sets background color on scrollbar
+ */
+export const setBackgroundColorOnScrollbar = () => {
     let selectedTheme = localStorage.getItem('theme') ?? 'dark';
 
     let backgroundColor = getComputedStyle(document.body)
@@ -10,5 +12,3 @@ const setBackgroundColorOnScrollbar = () => {
         `background-color: ${backgroundColor};`
     );
 }
-
-export default setBackgroundColorOnScrollbar;

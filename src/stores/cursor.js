@@ -1,5 +1,8 @@
 import { defineStore } from 'pinia';
 
+/**
+ * Handles animation on cursor
+ */
 export const useCursorStore = defineStore('cursor', {
     state: () => ({
         hover: false

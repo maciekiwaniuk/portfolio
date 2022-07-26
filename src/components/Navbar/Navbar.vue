@@ -14,6 +14,7 @@
 import ThemeButton from '@/components/Navbar/ThemeButton.vue';
 import LanguageButtons from '@/components/Navbar/LanguageButtons.vue';
 import Navigation from '@/components/Navbar/Navigation.vue';
+
 </script>
 
 <style lang="less" scoped>
@@ -22,10 +23,10 @@ import Navigation from '@/components/Navbar/Navigation.vue';
 .navbar {
     display: flex;
     align-items: center;
-    min-width: 100%;
-    min-height: 5rem;
-    border-top: 0.7rem solid @blue-color;
     justify-content: space-around;
+    min-width: 100%;
+    min-height: @navbar-height;
+    border-top: @navbar-border solid @blue-color;
 }
 
 @media (min-width: @first-breakpoint) {

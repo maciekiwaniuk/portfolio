@@ -12,17 +12,14 @@
             />
         </div>
 
-        <div class="title">{{ technologies[props.element].title }}</div>
+        <span class="title">{{ technologies[props.element].title }}</span>
 
     </div>
 </template>
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
-
-const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
 
@@ -145,13 +142,13 @@ const technologies = {
 .technology-element {
     display: flex;
     align-items: center;
+    min-height: 3.2rem;
     padding: 0.2rem;
     border: solid @blue-color 0.1rem;
     border-radius: 1rem;
-    min-height: 3.2rem;
     cursor: pointer;
 
-    transition: background-color ease 1s;
+    transition: background-color ease @theme-switch-time;
 
     .icon {
         display: flex;
@@ -161,7 +158,7 @@ const technologies = {
     .title {
         padding: 0.5rem;
 
-        transition: color ease 0.2s;
+        transition: color ease @hover-time;
     }
 }
 

@@ -1,11 +1,6 @@
 <template>
-    <div
-        id="projects"
-        class="projects"
-        :class="{ 'projects-dark-theme': themeStore.value == 'dark',
-                  'projects-light-theme': themeStore.value == 'light' }"
-    >
-        <div data-aos="fade-down" class="title">{{ t('projects.title') }}</div>
+    <div id="projects" class="projects">
+        <h2 data-aos="fade-down" class="title">{{ t('projects.title') }}</h2>
 
         <div class="items">
             <ProjectsItem
@@ -57,15 +52,9 @@
 
 <script setup>
 import ProjectsItem from '@/components/Projects/ProjectsItem.vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useCursorHover } from '@/directives/useCursorHover';
-import { useThemeStore } from '@/stores/theme';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 
 const { t } = useLanguageSwitcher();
-
-const vCursorHover = useCursorHover();
-
-const themeStore = useThemeStore();
 
 /************ Projects ***********/
 const snakeOnline = 'https://snake-gra.pl';
@@ -111,22 +100,23 @@ const youtubeDownloader = {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 1rem;
     min-width: 100%;
     min-height: 50vh;
     margin: auto;
+    padding-bottom: 1rem;
+
     .title {
+        float: left;
         width: 100%;
         min-height: 3rem;
         text-align: center;
         font-family: 'LatoFontBold';
         font-size: 3rem;
         color: @blue-color;
-        float: left;
     }
     .items {
-        width: 100%;
         float: left;
+        width: 100%;
         padding: 0.5rem;
     }
 }
@@ -143,10 +133,4 @@ const youtubeDownloader = {
     }
 }
 
-.projects-dark-theme {
-
-}
-.projects-light-theme {
-
-}
 </style>

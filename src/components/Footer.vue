@@ -4,9 +4,9 @@
         :class="{ 'footer-dark-theme': themeStore.value == 'dark',
                   'footer-light-theme': themeStore.value == 'light' }"
     >
-        <div class="info">
+        <p class="info">
             {{ t('author') }} - {{ currentYear }} {{ t('footer.allRightsReserved') }}
-        </div>
+        </p>
 
         <!-- icons visible on footer while screen is small -->
         <div class="icons">
@@ -57,7 +57,7 @@
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 
@@ -88,18 +88,16 @@ const currentYear = new Date().getFullYear();
         color: inherit;
         cursor: pointer;
     }
-
     .linkedin-icon {
         background-color: white;
         border-radius: 10%;
     }
-
     .info {
+        text-align: center;
+        padding-right: 0.3rem;
         font-family: 'LatoFontLight';
         font-size: 0.90rem;
         font-style: italic;
-        text-align: center;
-        padding-right: 0.3rem;
     }
     .icons {
         display: block;
@@ -110,15 +108,15 @@ const currentYear = new Date().getFullYear();
         }
     }
     .icons-on-big-screens {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
         position: fixed;
         bottom: 0rem;
         left: 0;
         width: 4rem;
         height: 7rem;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
 
         a {
             width: 100%;

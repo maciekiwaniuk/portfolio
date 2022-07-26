@@ -1,35 +1,23 @@
 <template>
-    <div
-        class="landing-page"
-        :class="{ 'landing-page-dark-theme': themeStore.value == 'dark',
-                  'landing-page-light-theme': themeStore.value == 'light' }"
-    >
+    <div class="landing-page">
         <div
             data-aos="fade-up-right"
             class="text"
 
         >
-            <div class="my-name-is">{{ t('landingPage.myNameIs') }}</div>
+            <h2 class="my-name-is">{{ t('landingPage.myNameIs') }}</h2>
 
-            <div class="name">{{ t('landingPage.name') }}</div>
+            <h1 class="name">{{ t('landingPage.name') }}</h1>
 
-            <div class="description">{{ t('landingPage.description') }}</div>
+            <p class="description">{{ t('landingPage.description') }}</p>
         </div>
-
-
     </div>
 </template>
 
 <script setup>
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useThemeStore } from '@/stores/theme';
-import { useCursorHover } from '@/directives/useCursorHover';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 
 const { t } = useLanguageSwitcher();
-
-const themeStore = useThemeStore();
-
-const vCursorHover = useCursorHover();
 
 </script>
 
@@ -40,10 +28,10 @@ const vCursorHover = useCursorHover();
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.6rem;
     min-width: 100%;
     min-height: 60vh;
     margin: auto;
+    padding: 1.6rem;
 
     .text {
 
@@ -51,15 +39,13 @@ const vCursorHover = useCursorHover();
             font-size: 1.7rem;
             font-family: 'FontCaveat';
         }
-
         .name {
+            display: block;
+            margin-bottom: 0.5rem;
             font-family: 'LatoFontBold';
             font-size: 3.5rem;
             color: @blue-color;
-            display: block;
-            margin-bottom: 0.5rem;
         }
-
         .description {
             font-size: 1.4rem;
         }
@@ -71,13 +57,11 @@ const vCursorHover = useCursorHover();
     .landing-page {
         min-width: 30rem;
         max-width: 40rem;
-        min-height: calc(100vh - 5rem - 0.7rem);
+        min-height: calc(100vh - @navbar-height - @navbar-border);
 
         .text {
-
             .my-name-is {
                 font-size: 2.5rem;
-
             }
             .name {
                 font-size: 5rem;
@@ -89,11 +73,4 @@ const vCursorHover = useCursorHover();
     }
 }
 
-.landing-page-dark-theme {
-
-}
-
-.landing-page-light-theme {
-
-}
 </style>

@@ -9,7 +9,7 @@
             v-if="props.alignment =='vertical'"
             :class="{ 'hidden': !navMenuStore.opened }"
             class="area-to-close-menu"
-            @click="navMenuStore.toggle();"
+            @click="navMenuStore.close();"
         >
             <button class="close-button">
                 <span class="bar bar-to-right"></span>
@@ -30,17 +30,16 @@
             </nav>
         </div>
 
-        <div class="area-below-to-close-menu" @click="navMenuStore.toggle();"></div>
+        <div class="area-below-to-close-menu" @click="navMenuStore.close();"></div>
 
     </div>
 </template>
 
 <script setup>
 import NavigationLinksLink from '@/components/Navbar/NavigationLinksLink.vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
-import { useCursorHover } from '@/directives/useCursorHover';
 import { ref } from '@vue/reactivity';
 
 const { t } = useLanguageSwitcher();
@@ -49,14 +48,13 @@ const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
 
-const vCursorHover = useCursorHover();
-
 const props = defineProps({
     alignment: String
 });
 
 // animation only for menu on big screens
 const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null);
+
 </script>
 
 <style lang="less" scoped>
@@ -72,7 +70,9 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
         display: flex;
         justify-content: center;
         align-items: center;
+
         .close-button {
+            display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             height: 3rem;
@@ -81,7 +81,6 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
             background-color: transparent;
             cursor: pointer;
 
-            display: flex;
             .bar {
                 height: 0.2rem;
                 width: 80%;
@@ -108,16 +107,13 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
     .hidden-text {
         font-size: 0 !important;
     }
-
     nav {
-        text-transform: uppercase;
         display: flex;
-        list-style-type: none;
+        text-transform: uppercase;
         font-size: 1rem;
 
-        transition: font-size ease 0.3s;
+        transition: font-size ease @hover-time;
     }
-
     .horizontal {
         justify-content: flex-start;
         align-items: center;
@@ -128,7 +124,6 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
         row-gap: 2rem;
         font-size: 1rem;
     }
-
 }
 
 .navigation-links-dark-theme {

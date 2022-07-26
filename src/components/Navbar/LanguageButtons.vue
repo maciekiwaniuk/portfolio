@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t, changeLanguage } = useLanguageSwitcher();
@@ -41,12 +41,10 @@ const vCursorHover = useCursorHover();
         background-color: transparent;
         cursor: pointer;
     }
-
     .flag {
         max-width: 80%;
         height: auto;
     }
-
 }
 
 @media (min-width: @first-breakpoint) {
@@ -56,7 +54,6 @@ const vCursorHover = useCursorHover();
             height: 3rem;
         }
     }
-
 }
 
 </style>

@@ -14,12 +14,14 @@ import { useCursorStore } from '@/stores/cursor';
 const themeStore = useThemeStore();
 
 const cursorStore = useCursorStore();
+
 </script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';
 
 .cursor {
+    display: none;
     position: fixed;
     width: 2rem;
     height: 2rem;
@@ -31,17 +33,18 @@ const cursorStore = useCursorStore();
     z-index: 1000;
     transform: translate(-50%, -50%);
     transform-origin: 100% 100%;
-    transition: border-color ease 1s,
-                transform ease 0.3s;
 
-    display: none;
-    @media (min-width: @first-breakpoint) {
-        display: block;
-    }
+    transition: border-color ease @theme-switch-time,
+                transform ease @hover-time;
 }
-
 .hover {
     transform: scale(2);
+}
+
+@media (min-width: @first-breakpoint) {
+    .cursor {
+        display: block;
+    }
 }
 
 /* colors */

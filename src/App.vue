@@ -4,7 +4,6 @@
     <div class="container"
          :class="{ 'container-dark-theme': themeStore.value == 'dark',
                    'container-light-theme': themeStore.value == 'light' }">
-
         <Navbar />
 
         <LandingPage />
@@ -31,16 +30,14 @@ import Skills from '@/components/Skills.vue';
 import Projects from '@/components/Projects/Projects.vue';
 import Footer from '@/components/Footer.vue';
 
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 
 import { useThemeStore } from '@/stores/theme';
 import { useCursorStore } from '@/stores/cursor';
 
-import { useCursorHover } from '@/directives/useCursorHover';
-
-import addEventOnCursor from '@/functions/addEventOnCursor';
-import setLangAttribute from '@/functions/setLangAttribute';
-import setBackgroundColorOnScrollbar from '@/functions/setBackgroundColorOnScrollbar';
+import { addEventOnCursor } from '@/functions/addEventOnCursor';
+import { setLangAttribute } from '@/functions/setLangAttribute';
+import { setBackgroundColorOnScrollbar } from '@/functions/setBackgroundColorOnScrollbar';
 
 import { onMounted } from '@vue/runtime-core';
 
@@ -56,8 +53,6 @@ const cursorStore = useCursorStore();
 
 const { t, changeLanguage } = useLanguageSwitcher();
 
-const vCursorHover = useCursorHover();
-
 </script>
 
 <style lang="less">
@@ -67,11 +62,11 @@ const vCursorHover = useCursorHover();
 
 #app {
     .container {
-        font-family: 'LatoFontRegular';
         min-height: 200vh;
+        font-family: 'LatoFontRegular';
 
-        transition: background-color ease 1s,
-                    color ease 1s;
+        transition: background-color ease @theme-switch-time,
+                    color ease @theme-switch-time;
 
     }
 

@@ -6,7 +6,7 @@ import { useI18n } from 'vue-i18n';
  * @returns t => translations - t('key')
  * @returns changeLanguage() => changes currently selected language
  */
-const useLanguageSwitcher = () => {
+export const useLanguageSwitcher = () => {
     // t => translations
     // locale => currently selected language
     const { t, locale } = useI18n({
@@ -26,5 +26,3 @@ const useLanguageSwitcher = () => {
 
     return { t, changeLanguage };
 };
-
-export default useLanguageSwitcher;

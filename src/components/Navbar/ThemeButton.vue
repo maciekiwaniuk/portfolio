@@ -7,13 +7,13 @@
     >
 
         <img
-            class="sun-icon icon"
+            class="icon sun-icon"
             src="@/assets/images/icons/sun.svg"
             :alt="t('navbar.images.sun')"
             v-show="themeStore.value == 'dark'"
         >
         <img
-            class="moon-icon icon"
+            class="icon"
             src="@/assets/images/icons/moon.svg"
             :alt="t('navbar.images.moon')"
             v-show="themeStore.value == 'light'"
@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useCursorHover } from '@/directives/useCursorHover';
 
@@ -40,16 +40,13 @@ const vCursorHover = useCursorHover();
 
 /* change theme button */
 .change-theme-button {
-    font-size: 3rem;
     width: 3rem;
     height: 3rem;
+    font-size: 3rem;
     background-color: transparent;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-
-    transition: background-color ease 0.7s,
-                filter ease 0.3s;
 
     .icon {
         width: 2.2rem;
@@ -57,9 +54,6 @@ const vCursorHover = useCursorHover();
     .sun-icon {
         // change black svg into white
         filter: invert(100%);
-    }
-    .moon-icon {
-        //
     }
 }
 

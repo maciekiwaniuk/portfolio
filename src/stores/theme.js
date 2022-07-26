@@ -1,7 +1,10 @@
 import { defineStore } from 'pinia';
-import getTheme from '@/functions/getTheme';
-import setBackgroundColorOnScrollbar from '@/functions/setBackgroundColorOnScrollbar';
+import { getTheme } from '@/functions/getTheme';
+import { setBackgroundColorOnScrollbar } from '@/functions/setBackgroundColorOnScrollbar';
 
+/**
+ * Handles themes - dark/light
+ */
 export const useThemeStore = defineStore('theme', {
     state: () => ({
         value: getTheme()

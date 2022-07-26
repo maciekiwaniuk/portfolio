@@ -1,17 +1,11 @@
 <template>
-    <div
-        id="skills"
-        class="skills"
-        :class="{ 'skills-dark-theme': themeStore.value == 'dark',
-                  'skills-light-theme': themeStore.value == 'light' }"
-    >
-
+    <div id="skills" class="skills">
         <div data-aos="fade-up-left">
 
-            <div class="title">{{ t('skills.title') }}</div>
+            <h2 class="title">{{ t('skills.title') }}</h2>
 
             <div class="element">
-                <div class="title-smaller">{{ t('skills.useRegularly') }}</div>
+                <h3 class="title-smaller">{{ t('skills.useRegularly') }}</h3>
 
                 <div class="content">
                     <TechnologyElement element="php" />
@@ -29,7 +23,7 @@
             </div>
 
             <div class="element">
-                <div class="title-smaller">{{ t('skills.hadContact') }}</div>
+                <h3 class="title-smaller">{{ t('skills.hadContact') }}</h3>
 
                 <div class="content">
                     <TechnologyElement element="python" />
@@ -40,21 +34,15 @@
             </div>
 
         </div>
-
     </div>
 </template>
 
 <script setup>
 import TechnologyElement from '@/components/TechnologyElement.vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useCursorHover } from '@/directives/useCursorHover';
-import { useThemeStore } from '@/stores/theme';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 
 const { t } = useLanguageSwitcher();
 
-const vCursorHover = useCursorHover();
-
-const themeStore = useThemeStore();
 </script>
 
 <style lang="less" scoped>
@@ -65,24 +53,24 @@ const themeStore = useThemeStore();
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: auto;
     min-width: 50%;
     padding-bottom: 2rem;
-    margin: auto;
 
     .title {
+        float: left;
         width: 100%;
         text-align: center;
         font-family: 'LatoFontBold';
         font-size: 3rem;
         padding-bottom: 0.4rem;
         color: @blue-color;
-        float: left;
     }
-
     .element {
         width: 100%;
         padding-top: 0.7rem;
         padding-bottom: 0.5rem;
+
         .title-smaller {
             width: 100%;
             text-align: center;
@@ -91,14 +79,13 @@ const themeStore = useThemeStore();
         }
 
         .content {
-            width: 100%;
-            padding-top: 0.5rem;
             display: flex;
             align-content: flex-start;
             justify-content: center;
             flex-wrap: wrap;
             gap: 0.5rem;
-
+            width: 100%;
+            padding-top: 0.5rem;
         }
     }
 }
@@ -122,10 +109,4 @@ const themeStore = useThemeStore();
 
 }
 
-.skills-dark-theme {
-
-}
-.skills-light-theme {
-
-}
 </style>

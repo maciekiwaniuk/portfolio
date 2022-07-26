@@ -1,12 +1,7 @@
 <template>
-    <div
-        id="education"
-        class="education"
-        :class="{ 'education-dark-theme': themeStore.value == 'dark',
-                  'education-light-theme': themeStore.value == 'light' }"
-    >
+    <div id="education" class="education">
         <div data-aos="fade-up-left">
-            <div class="title">{{ t('education.title') }}</div>
+            <h2 class="title">{{ t('education.title') }}</h2>
 
             <div class="items">
                 <EducationItem
@@ -25,15 +20,9 @@
 
 <script setup>
 import EducationItem from '@/components/Education/EducationItem.vue';
-import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useThemeStore } from '@/stores/theme';
-import { useCursorHover } from '@/directives/useCursorHover';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 
 const { t } = useLanguageSwitcher();
-
-const themeStore = useThemeStore();
-
-const vCursorHover = useCursorHover();
 
 const zsePeriod = '2019 - 2023',
       zseUrl = 'https://zse.bialystok.pl/',
@@ -41,6 +30,7 @@ const zsePeriod = '2019 - 2023',
         'php', 'javascript', 'mysql',
         'python', 'csharp'
       ];
+
 </script>
 
 <style lang="less" scoped>
@@ -51,23 +41,23 @@ const zsePeriod = '2019 - 2023',
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 1rem;
     min-width: 100%;
     margin: auto;
+    padding-bottom: 1rem;
 
     .title {
+        float: left;
         width: 100%;
         min-height: 3rem;
         text-align: center;
         font-family: 'LatoFontBold';
         font-size: 3rem;
         color: @blue-color;
-        float: left;
     }
 
     .items {
-        width: 100%;
         float: left;
+        width: 100%;
         padding: 0.5rem;
     }
 }
@@ -77,17 +67,11 @@ const zsePeriod = '2019 - 2023',
         min-width: 36rem;
         max-width: 38rem;
         padding-bottom: 7rem;
+
         .title {
             min-height: 4rem;
         }
     }
 }
 
-.education-dark-theme {
-
-}
-
-.education-light-theme {
-
-}
 </style>

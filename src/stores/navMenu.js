@@ -1,5 +1,8 @@
 import { defineStore } from 'pinia';
 
+/**
+ * Handles nav menu
+ */
 export const useNavMenuStore = defineStore('navMenu', {
     state: () => ({
         opened: false

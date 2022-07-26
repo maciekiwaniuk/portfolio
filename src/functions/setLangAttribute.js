@@ -1,11 +1,9 @@
 /**
  * Sets lang attribute
  */
-const setLangAttribute = () => {
+export const setLangAttribute = () => {
     document.documentElement.setAttribute(
         'lang',
         localStorage.getItem('language') ?? 'en'
     );
 };
-
-export default setLangAttribute;
