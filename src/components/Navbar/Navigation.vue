@@ -18,7 +18,11 @@
             <NavigationLinks alignment="horizontal" />
         </div>
 
-        <div class="background-blocking-content" :class="{ 'background-blocking-content-visible': navMenuStore.opened }"></div>
+        <div
+            class="background-blocking-content"
+            :class="{ 'background-blocking-content-visible': navMenuStore.opened }"
+            @click="navMenuStore.toggle();">
+        </div>
 
         <div class="nav-links-mobile-menu" :class="{ 'active': navMenuStore.opened }">
             <NavigationLinks alignment="vertical" />
@@ -46,7 +50,6 @@ const vCursorHover = useCursorHover();
 
 .navigation {
     font-family: 'LatoFontBold';
-    z-index: 10;
 
     .nav-hamburger-toggler {
         flex-direction: column;

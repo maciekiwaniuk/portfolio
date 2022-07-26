@@ -55,9 +55,6 @@ const zsePeriod = '2019 - 2023',
     min-width: 100%;
     margin: auto;
 
-    transition: filter ease 0.3s;
-    z-index: 9;
-
     .title {
         width: 100%;
         min-height: 3rem;

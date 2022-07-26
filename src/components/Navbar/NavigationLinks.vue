@@ -30,6 +30,8 @@
             </nav>
         </div>
 
+        <div class="area-below-to-close-menu" @click="navMenuStore.toggle();"></div>
+
     </div>
 </template>
 
@@ -92,6 +94,13 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
                 transform: translateY(17px) rotate(-45deg);
             }
         }
+    }
+    .area-below-to-close-menu {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 12rem;
+        height: 30vh;
     }
     .hidden {
         display: none;

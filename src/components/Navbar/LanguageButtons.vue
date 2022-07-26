@@ -1,33 +1,28 @@
 <template>
     <div data-aos="zoom-in-up" class="flags">
-        <div class="blurrable" :class="{ 'blurr': navMenuStore.opened }">
-            <button
-                class="change-language-button"
-                v-cursor-hover
-                @click="changeLanguage('pl');"
-            >
-                <img src="@/assets/images/flags/pl.png" class="flag" :alt="t('navbar.images.polishFlag')">
-            </button>
+        <button
+            class="change-language-button"
+            v-cursor-hover
+            @click="changeLanguage('pl');"
+        >
+            <img src="@/assets/images/flags/pl.png" class="flag" :alt="t('navbar.images.polishFlag')">
+        </button>
 
-            <button
-                class="change-language-button"
-                v-cursor-hover
-                @click="changeLanguage('en');"
-            >
-                <img src="@/assets/images/flags/en.png" class="flag" :alt="t('navbar.images.greatBritainFlag')">
-            </button>
-        </div>
+        <button
+            class="change-language-button"
+            v-cursor-hover
+            @click="changeLanguage('en');"
+        >
+            <img src="@/assets/images/flags/en.png" class="flag" :alt="t('navbar.images.greatBritainFlag')">
+        </button>
     </div>
 </template>
 
 <script setup>
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
-import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 
 const { t, changeLanguage } = useLanguageSwitcher();
-
-const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
 
@@ -37,34 +32,28 @@ const vCursorHover = useCursorHover();
 @import '@/styles/variables.less';
 
 .flags {
-    .blurrable {
-        transition: filter ease 0.3s;
+    .change-language-button {
+        position: relative;
+        width: 2.5rem;
+        height: 2.5rem;
+        color: inherit;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
 
-        .change-language-button {
-            position: relative;
-            width: 2.5rem;
-            height: 2.5rem;
-            color: inherit;
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-        }
-
-        .flag {
-            max-width: 80%;
-            height: auto;
-        }
+    .flag {
+        max-width: 80%;
+        height: auto;
     }
 
 }
 
 @media (min-width: @first-breakpoint) {
     .flags {
-        .blurrable {
-            .change-language-button {
-                width: 3rem;
-                height: 3rem;
-            }
+        .change-language-button {
+            width: 3rem;
+            height: 3rem;
         }
     }
 

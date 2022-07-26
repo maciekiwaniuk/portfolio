@@ -7,16 +7,9 @@
 
         <Navbar />
 
-        <div
-            class="elements-to-blurr-while-nav-menu-is-opened"
-            :class="{ 'blurr': navMenuStore.opened }"
-        >
+        <LandingPage />
 
-            <LandingPage />
-
-            <Education />
-
-        </div>
+        <Education />
 
         <Experience />
 
@@ -41,7 +34,6 @@ import Footer from '@/components/Footer.vue';
 import useLanguageSwitcher from '@/composables/useLanguageSwitcher';
 
 import { useThemeStore } from '@/stores/theme';
-import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorStore } from '@/stores/cursor';
 
 import { useCursorHover } from '@/directives/useCursorHover';
@@ -62,8 +54,6 @@ const themeStore = useThemeStore();
 
 const cursorStore = useCursorStore();
 
-const navMenuStore = useNavMenuStore();
-
 const { t, changeLanguage } = useLanguageSwitcher();
 
 const vCursorHover = useCursorHover();
@@ -83,9 +73,6 @@ const vCursorHover = useCursorHover();
         transition: background-color ease 1s,
                     color ease 1s;
 
-        .elements-to-blurr-while-nav-menu-is-opened {
-            transition: filter ease 0.3s;
-        }
     }
 
     .container-dark-theme {
@@ -96,11 +83,6 @@ const vCursorHover = useCursorHover();
     .container-light-theme {
         background-color: #light[background-color];
         color: #light[text-color];
-    }
-
-    /* Every element which is above z-index: 9; shouldn't be blurred */
-    .blurr {
-        // filter: blur(2px);
     }
 }
 </style>
