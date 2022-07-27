@@ -1,5 +1,5 @@
 
-# Portfolio ![](https://github.com/maciekiwaniuk/portfolio/blob/main/public/img/icons/32x32.png?raw=true)
+# Portfolio ![](https://github.com/maciekiwaniuk/portfolio/blob/main/public/img/icons/favicon-32x32.png?raw=true)
 
 > ### Project of the portfolio website
 
@@ -10,7 +10,7 @@
 - Night mode has been implemented for the sake of users' eyes.
 - Animations on scroll are handled by [AOS library](https://michalsnik.github.io/aos/).
 - To show beatiful icons is used [iconify library](https://iconify.design/).
-- In application has been implemented PWA system, what means website can run in a offline mode (without an internet connection - caches things while first visit). /--WILL BE--/
+- In application is used [cli-plugin-pwa](https://cli.vuejs.org/core-plugins/pwa.html#configuration). Website caches assets while first visit.
 
 # Installation
 
@@ -34,4 +34,6 @@ Start the local development server
 
 You can now access the server at http://localhost:8080 or http://10.3.10.10:8080
 
-# Application is still under development...
+# Application appearance
+
+![](https://github.com/maciekiwaniuk/portfolio/blob/main/src/assets/readme/appearance.gif)
