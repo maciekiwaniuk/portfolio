@@ -1,5 +1,8 @@
 <template>
-    <div class="landing-page">
+    <section
+        role="region"
+        class="landing-page"
+    >
         <div
             data-aos="fade-up-right"
             class="text"
@@ -11,7 +14,7 @@
 
             <p class="description">{{ t('landingPage.description') }}</p>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup>

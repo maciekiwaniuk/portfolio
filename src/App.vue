@@ -1,9 +1,11 @@
 <template>
     <Cursor />
 
-    <div class="container"
-         :class="{ 'container-dark-theme': themeStore.value == 'dark',
-                   'container-light-theme': themeStore.value == 'light' }">
+    <main
+        role="main"
+        class="container"
+        :class="{ 'container-dark-theme': themeStore.value == 'dark',
+                  'container-light-theme': themeStore.value == 'light' }">
         <Navbar />
 
         <LandingPage />
@@ -17,7 +19,7 @@
         <Projects />
 
         <Footer />
-    </div>
+    </main>
 </template>
 
 <script setup>

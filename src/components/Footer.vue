@@ -1,5 +1,6 @@
 <template>
-    <div
+    <footer
+        role="contentinfo"
         class="footer"
         :class="{ 'footer-dark-theme': themeStore.value == 'dark',
                   'footer-light-theme': themeStore.value == 'light' }"
@@ -15,6 +16,7 @@
                 target="_blank"
                 v-cursor-hover
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
+                aria-label="Linkedin"
             >
                 <Icon icon="logos:linkedin-icon" width="20" class="linkedin-icon" />
             </a>
@@ -25,6 +27,7 @@
                 target="_blank"
                 v-cursor-hover
                 href="https://github.com/maciekiwaniuk"
+                aria-label="GitHub"
             >
                 <Icon icon="codicon:github" width="20" />
             </a>
@@ -37,6 +40,7 @@
                 target="_blank"
                 v-cursor-hover
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
+                aria-label="Linkedin"
             >
                 <Icon icon="logos:linkedin-icon" width="40" class="linkedin-icon" />
             </a>
@@ -47,12 +51,12 @@
                 target="_blank"
                 v-cursor-hover
                 href="https://github.com/maciekiwaniuk"
+                aria-label="GitHub"
             >
                 <Icon icon="icon-park-outline:github" width="40" />
             </a>
         </div>
-
-    </div>
+    </footer>
 </template>
 
 <script setup>

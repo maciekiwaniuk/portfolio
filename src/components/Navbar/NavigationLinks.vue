@@ -19,6 +19,7 @@
 
         <div :data-aos="linksAnimation">
             <nav
+                role="navigation"
                 :class="{ 'vertical': props.alignment == 'vertical',
                         'horizontal': props.alignment == 'horizontal',
                         'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }"

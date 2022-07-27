@@ -1,5 +1,9 @@
 <template>
-    <div id="experience" class="experience">
+    <section
+        role="region"
+        id="experience"
+        class="experience"
+    >
         <div data-aos="fade-up-right">
             <h2 class="title">{{ t('experience.title') }}</h2>
 
@@ -15,7 +19,7 @@
             </div>
         </div>
 
-    </div>
+    </section>
 </template>
 
 <script setup>

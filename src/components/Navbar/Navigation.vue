@@ -1,5 +1,6 @@
 <template>
-    <div
+    <header
+        role="banner"
         class="navigation"
         :class="{ 'navigation-dark-theme': themeStore.value == 'dark',
                   'navigation-light-theme': themeStore.value == 'light' }"
@@ -8,6 +9,7 @@
             class="nav-hamburger-toggler"
             v-cursor-hover
             @click="navMenuStore.toggle();"
+            aria-label="Hamburger"
         >
             <span class="bar bar-short"></span>
             <span class="bar"></span>
@@ -27,8 +29,7 @@
         <div class="nav-links-mobile-menu" :class="{ 'active': navMenuStore.opened }">
             <NavigationLinks alignment="vertical" />
         </div>
-
-    </div>
+    </header>
 </template>
 
 <script setup>
