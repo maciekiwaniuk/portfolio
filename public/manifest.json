@@ -4,7 +4,7 @@
     "name": "Maciek Iwaniuk",
     "description": "Portfolio - Maciek Iwaniuk",
     "background": {
-        "service_worker": "sw.js"
+        "service_worker": "service-worker.js"
     },
     "id": "/",
     "start_url": "/",
