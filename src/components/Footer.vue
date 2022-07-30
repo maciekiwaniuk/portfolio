@@ -5,18 +5,18 @@
         :class="{ 'footer-dark-theme': themeStore.value == 'dark',
                   'footer-light-theme': themeStore.value == 'light' }"
     >
-        <p class="info">
+        <h4 class="info">
             {{ t('author') }} - {{ currentYear }} {{ t('footer.allRightsReserved') }}
-        </p>
+        </h4>
 
         <!-- icons visible on footer while screen is small -->
         <div class="icons">
             <a
                 class="link"
                 target="_blank"
-                v-cursor-hover
-                href="https://www.linkedin.com/in/iwaniuk-maciej/"
                 aria-label="Linkedin"
+                href="https://www.linkedin.com/in/iwaniuk-maciej/"
+                v-cursor-hover
             >
                 <Icon icon="logos:linkedin-icon" width="20" class="linkedin-icon" />
             </a>
@@ -25,9 +25,9 @@
             <a
                 class="link"
                 target="_blank"
-                v-cursor-hover
-                href="https://github.com/maciekiwaniuk"
                 aria-label="GitHub"
+                href="https://github.com/maciekiwaniuk"
+                v-cursor-hover
             >
                 <Icon icon="codicon:github" width="20" />
             </a>
@@ -38,9 +38,9 @@
             <a
                 class="link"
                 target="_blank"
-                v-cursor-hover
-                href="https://www.linkedin.com/in/iwaniuk-maciej/"
                 aria-label="Linkedin"
+                href="https://www.linkedin.com/in/iwaniuk-maciej/"
+                v-cursor-hover
             >
                 <Icon icon="logos:linkedin-icon" width="40" class="linkedin-icon" />
             </a>
@@ -49,9 +49,9 @@
             <a
                 class="link"
                 target="_blank"
-                v-cursor-hover
-                href="https://github.com/maciekiwaniuk"
                 aria-label="GitHub"
+                href="https://github.com/maciekiwaniuk"
+                v-cursor-hover
             >
                 <Icon icon="icon-park-outline:github" width="40" />
             </a>
@@ -101,7 +101,6 @@ const currentYear = new Date().getFullYear();
         padding-right: 0.3rem;
         font-family: 'LatoFontLight';
         font-size: 0.90rem;
-        font-style: italic;
     }
     .icons {
         display: block;

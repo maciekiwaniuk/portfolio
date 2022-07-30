@@ -1,5 +1,6 @@
 <template>
     <div
+        aria-hidden="true"
         class="cursor"
         :class="{ 'cursor-dark-theme': themeStore.value == 'dark',
                   'cursor-light-theme': themeStore.value == 'light',

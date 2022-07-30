@@ -25,6 +25,7 @@
                 <a
                     class="link"
                     target="_blank"
+                    aria-label="GitHub"
                     v-cursor-hover
                     v-if="props.github"
                     :href="props.github"
@@ -40,6 +41,7 @@
                     v-cursor-hover
                     v-if="props.online"
                     :href="props.online"
+
                 >
                     <span class="text">Online</span>
                     <Icon icon="ci:external-link" width="38" />
