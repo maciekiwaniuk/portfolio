@@ -15,7 +15,7 @@
     "landingPage": {
         "myNameIs": "Hi, my name is",
         "name": "Maciek Iwaniuk.",
-        "description": "I am software developer, not afraid of learning new things. Currently I am studying in Secondary Technical School of Electrical Engineering in Bialystok. I associate my future with the IT industry."
+        "description": "An ambitious software developer who is not afraid of learning new things, whilst visualising my future within the IT industry. I currently attend the Secondary Technical School of Electrical Engineering in Bialystok."
     },
 
     "education": {
@@ -23,7 +23,7 @@
         "educationItems": {
             "zse": {
                 "title": "Secondary Technical School of Electrical Engineering in Bialystok",
-                "content": "Thanks to my education at this institution, I have gained a basic understanding of computer science. I broadened my horizons with knowledge of databases, development of desktop and web applications.",
+                "content": "Thanks to the education from this institution, I have gained a basic understanding of computer science, which not only broadened my horizons, but also gave me plenty of knowledge about databases and the development of desktop or web applications.",
                 "major": "Programmer technician"
             }
         }
@@ -33,7 +33,7 @@
         "title": "Experience",
         "experienceItems": {
             "merinosoft": {
-                "content": "I take part in the development of an advanced web application related to the management of an employees of the company. I modify the operation, appearance of various functionalities. I search, debug and eliminate bugs.",
+                "content": "I am taking part in the development of an advanced web application related to the management of employees in companies. I am to modify the operation and the appearance of various functionalities, as well as searching, debugging and eliminating bugs.",
                 "profession": "PHP Developer",
                 "period": "August 2021 - now",
                 "city": "Bialystok"
@@ -52,22 +52,22 @@
         "projectsItems": {
             "snakeWebApp": {
                 "title": "Snake - web app",
-                "content": "The application handles data sent by the game application written in python. It has extensive user account functionality, along with a comprehensive, feature-rich admin panel."
+                "content": "This application handles data sent by the game application written in python. It has extensive user account functionality, along with a comprehensive, feature-rich admin panel."
             },
             "snakeGame": {
                 "title": "Snake - game",
-                "content": "The game reads and writes data through a web application API. The user competes against other users through ranking, earning currency that can then be spent on upgrades or skins that improve the gameplay experience."
+                "content": "This game reads and writes data through a web application API. The user competes against other users through a ranking, whilst earning currency that can then be spent on upgrades or skins that improve the gameplay experience."
             },
             "minesweeper": {
                 "title": "Minesweeper",
-                "content": "A sapper game with selectable game difficulty and saving of choices as well as user records to local browser memory."
+                "content": "A sapper game with a selectable game difficulty and a save option, which saves choices as well as user records to the local browser memory."
             },
             "portfolio": {
-                "content": "A website summarizing information about my person. It includes info about my education, commercial experience and projects."
+                "content": "A website summarizing information about myself. It includes information about my education, commercial experience and projects, whilst being interactive and animated."
             },
             "youtubeDownloader": {
                 "title": "YouTube Downloader",
-                "content": "A desktop application that allows users to download videos from YouTube. It has a tab with download settings, where the user can, among other things, choose the quality of the downloaded content or change the extension."
+                "content": "A desktop application that allows users to download videos from YouTube. It has a tab with download settings, where the user can, among other things, choose the quality of the downloaded content and change the extension."
             }
         }
     },

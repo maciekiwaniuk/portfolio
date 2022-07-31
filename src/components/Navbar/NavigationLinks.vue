@@ -31,7 +31,11 @@
             </nav>
         </div>
 
-        <div class="area-below-to-close-menu" @click="navMenuStore.close();"></div>
+        <div
+            class="area-below-to-close-menu"
+            :class="{ 'hidden': !navMenuStore.opened }"
+            @click="navMenuStore.close();"
+        ></div>
 
     </div>
 </template>
