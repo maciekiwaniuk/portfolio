@@ -134,6 +134,7 @@ const technologies = {
         width: 30
     }
 }
+
 </script>
 
 <style lang="less" scoped>
@@ -146,7 +147,6 @@ const technologies = {
     padding: 0.2rem;
     border: solid @blue-color 0.1rem;
     border-radius: 1rem;
-    cursor: pointer;
 
     transition: background-color ease @theme-switch-time;
 

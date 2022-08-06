@@ -72,6 +72,7 @@ const props = defineProps({
     online: String,
     animation: String
 });
+
 </script>
 
 <style lang="less" scoped>

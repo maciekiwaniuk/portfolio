@@ -5,7 +5,8 @@ import { defineStore } from 'pinia';
  */
 export const useCursorStore = defineStore('cursor', {
     state: () => ({
-        hover: false
+        hover: false,
+        visibility: localStorage.getItem('cursor-visibility') ?? 'visible'
     }),
     actions: {
         toggle() {
@@ -13,6 +14,16 @@ export const useCursorStore = defineStore('cursor', {
         },
         setCursorToHover() {
             this.hover = true;
+        },
+        toggleVisibility() {
+            if (this.visibility == 'visible') {
+                this.visibility = 'hidden';
+                localStorage.setItem('cursor-visibility', 'hidden');
+
+            } else {
+                this.visibility = 'visible';
+                localStorage.setItem('cursor-visibility', 'visible');
+            }
         }
     }
 });

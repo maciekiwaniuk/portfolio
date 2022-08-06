@@ -2,15 +2,31 @@
     <div
         aria-hidden="true"
         class="cursor"
+        v-show="cursorStore.visibility == 'visible'"
         :class="{ 'cursor-dark-theme': themeStore.value == 'dark',
                   'cursor-light-theme': themeStore.value == 'light',
                   'hover': cursorStore.hover }"
     ></div>
+
+    <button
+        class="toggle-visibility-of-cursor-button"
+        v-cursor-hover
+        @click="cursorStore.toggleVisibility();"
+    >
+        <Icon
+            icon="clarity:cursor-hand-click-line"
+            width="30"
+        />
+    </button>
 </template>
 
 <script setup>
+import { Icon } from '@iconify/vue';
+import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 import { useCursorStore } from '@/stores/cursor';
+
+const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
 
@@ -42,8 +58,25 @@ const cursorStore = useCursorStore();
     transform: scale(2);
 }
 
-@media (min-width: @first-breakpoint) {
+.toggle-visibility-of-cursor-button {
+    display: none;
+    position: fixed;
+    bottom: 0.6rem;
+    right: 0.7rem;
+    width: 3rem;
+    height: 3rem;
+    padding-left: 0.1rem;
+    border-radius: 50%;
+    border: solid @blue-color 0.2rem;
+
+    cursor: pointer;
+}
+
+@media (min-width: @footer-icons-breakpoint) {
     .cursor {
+        display: block;
+    }
+    .toggle-visibility-of-cursor-button {
         display: block;
     }
 }

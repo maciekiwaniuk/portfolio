@@ -72,6 +72,7 @@ const vCursorHover = useCursorHover();
 const themeStore = useThemeStore();
 
 const currentYear = new Date().getFullYear();
+
 </script>
 
 <style lang="less" scoped>
@@ -116,7 +117,7 @@ const currentYear = new Date().getFullYear();
         justify-content: center;
         flex-wrap: wrap;
         position: fixed;
-        bottom: 0rem;
+        bottom: 0;
         left: 0;
         width: 4rem;
         height: 7rem;
