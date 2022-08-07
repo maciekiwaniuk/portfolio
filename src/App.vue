@@ -32,10 +32,7 @@ import Skills from '@/components/Skills.vue';
 import Projects from '@/components/Projects/Projects.vue';
 import Footer from '@/components/Footer.vue';
 
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-
 import { useThemeStore } from '@/stores/theme';
-import { useCursorStore } from '@/stores/cursor';
 
 import { addEventOnCursor } from '@/functions/addEventOnCursor';
 import { setLangAttribute } from '@/functions/setLangAttribute';
@@ -50,10 +47,6 @@ onMounted(() => {
 });
 
 const themeStore = useThemeStore();
-
-const cursorStore = useCursorStore();
-
-const { t, changeLanguage } = useLanguageSwitcher();
 
 </script>
 
