@@ -11,7 +11,7 @@
 - Animations on scroll are handled by [AOS library](https://michalsnik.github.io/aos/).
 - To show beatiful icons is used [iconify library](https://iconify.design/).
 - App got 100 score for accessibility in Google Chrome Lighthouse.
-- In application is used [cli-plugin-pwa](https://cli.vuejs.org/core-plugins/pwa.html#configuration). Website caches assets so there is possibility to visit app without internet connection.
+- In application is used [cli-plugin-pwa](https://cli.vuejs.org/core-plugins/pwa.html#configuration).
 
 # Installation
 
