@@ -79,7 +79,7 @@ const snakeGame = {
 
 const minesweeper = {
     github: 'https://github.com/maciekiwaniuk/minesweeper',
-    online: 'https://maciekiwaniuk-minesweeper.herokuapp.com/',
+    online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
     technologies: ['javascript', 'css']
 }
 

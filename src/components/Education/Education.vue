@@ -32,7 +32,7 @@ const zsePeriod = '2019 - 2023',
       zseUrl = 'https://zse.bialystok.pl/',
       zseTechnologies = [
         'php', 'javascript', 'mysql',
-        'python', 'csharp'
+        'python', 'csharp', 'java'
       ];
 
 </script>
