@@ -10,13 +10,11 @@
                 <div class="content">
                     <TechnologyElement element="php" />
                     <TechnologyElement element="laravel" />
+                    <TechnologyElement element="symfony" />
                     <TechnologyElement element="javascript" />
-                    <TechnologyElement element="jquery" />
                     <TechnologyElement element="vue" />
                     <TechnologyElement element="sass" />
-                    <TechnologyElement element="bootstrap" />
                     <TechnologyElement element="mysql" />
-                    <TechnologyElement element="postgresql" />
                     <TechnologyElement element="git" />
                     <TechnologyElement element="github" />
                 </div>
@@ -28,6 +26,14 @@
                 <div class="content">
                     <TechnologyElement element="python" />
                     <TechnologyElement element="csharp" />
+                    <TechnologyElement element="java" />
+                    <TechnologyElement element="phpunit" />
+                    <TechnologyElement element="docker" />
+                    <TechnologyElement element="jwt" />
+                    <TechnologyElement element="jquery" />
+                    <TechnologyElement element="bootstrap" />
+                    <TechnologyElement element="postgresql" />
+                    <TechnologyElement element="typescript" />
                     <TechnologyElement element="pwa" />
                     <TechnologyElement element="redis" />
                 </div>

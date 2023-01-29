@@ -40,18 +40,13 @@ const technologies = {
     },
     javascript: {
         title: 'JavaScript',
-        icon: 'vscode-icons:file-type-js-official',
-        width: 42
+        icon: 'skill-icons:javascript',
+        width: 35
     },
     jquery: {
         title: 'jQuery',
         icon: 'mdi:jquery',
         width: 42
-    },
-    css: {
-        title: 'CSS',
-        icon: 'logos:css-3',
-        width: 38
     },
     sass: {
         title: 'Sass',
@@ -132,6 +127,36 @@ const technologies = {
         title: 'CSS',
         icon: 'logos:css-3',
         width: 30
+    },
+    java: {
+        title: 'Java',
+        icon: 'logos:java',
+        width: 30
+    },
+    symfony: {
+        title: 'Symfony',
+        icon: 'logos:symfony',
+        width: 40
+    },
+    jwt: {
+        title: 'JWT',
+        icon: 'logos:jwt-icon',
+        width: 32
+    },
+    docker: {
+        title: 'Docker',
+        icon: 'logos:docker-icon',
+        width: 48
+    },
+    phpunit: {
+        title: 'PHPUnit',
+        icon: 'vscode-icons:file-type-phpunit',
+        width: 38
+    },
+    typescript: {
+        title: 'TypeScript',
+        icon: 'skill-icons:typescript',
+        width: 35
     }
 }
 
