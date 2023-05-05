@@ -18,6 +18,10 @@ module.exports = defineConfig({
     // https://cli.vuejs.org/core-plugins/pwa.html#configuration
     pwa: {
         workboxPluginMode: 'GenerateSW',
+        workboxOptions: {
+            skipWaiting: true,
+            clientsClaim: true,
+        },
         manifestPath: 'manifest.json',
         name: 'Maciek Iwaniuk',
         themeColor: '#00b3ff',
