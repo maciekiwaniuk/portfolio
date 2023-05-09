@@ -17,9 +17,12 @@ export const useNavMenuStore = defineStore('navMenu', {
 
             this.opened = !this.opened;
         },
+        open() {
+            document.body.style = 'overflow: hidden;';
+            this.opened = true;
+        },
         close() {
             document.body.style = 'overflow: visible;';
-
             this.opened = false;
         }
     }

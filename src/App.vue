@@ -35,6 +35,7 @@ import Footer from '@/components/Footer.vue';
 import { useThemeStore } from '@/stores/theme';
 
 import { addEventOnCursor } from '@/functions/addEventOnCursor';
+import { addEventOnOpeningNavBySliding } from '@/functions/addEventOnOpeningNavBySliding';
 import { setLangAttribute } from '@/functions/setLangAttribute';
 import { setBackgroundColorOnScrollbar } from '@/functions/setBackgroundColorOnScrollbar';
 
@@ -42,6 +43,7 @@ import { onMounted } from '@vue/runtime-core';
 
 onMounted(() => {
     addEventOnCursor();
+    addEventOnOpeningNavBySliding();
     setLangAttribute();
     setBackgroundColorOnScrollbar();
 });

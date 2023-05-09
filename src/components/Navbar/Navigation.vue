@@ -8,7 +8,7 @@
         <button
             class="nav-hamburger-toggler"
             v-cursor-hover
-            @click="navMenuStore.toggle();"
+            @click="navMenuStore.open();"
             aria-label="Hamburger"
         >
             <span class="bar bar-short"></span>
@@ -23,7 +23,7 @@
         <div
             class="background-blocking-content"
             :class="{ 'background-blocking-content-visible': navMenuStore.opened }"
-            @click="navMenuStore.toggle();">
+            @click="navMenuStore.close();">
         </div>
 
         <div class="nav-links-mobile-menu" :class="{ 'active': navMenuStore.opened }">
