@@ -6,8 +6,11 @@ import { useNavMenuStore } from '@/stores/navMenu';
 export const addEventOnOpeningNavBySliding = () => {
     const navMenuStore = useNavMenuStore();
 
+    const sizeOfSlideToTargetEvent = 150;
+
     let touchStartPosition = 0,
-        touchEndPosition = 0;
+        touchEndPosition = 0,
+        difference = 0;
 
     document.addEventListener('touchstart', e => {
         touchStartPosition = e.changedTouches[0].screenX;
@@ -15,11 +18,12 @@ export const addEventOnOpeningNavBySliding = () => {
 
     document.addEventListener('touchend', e => {
         touchEndPosition = e.changedTouches[0].screenX;
+        difference = Math.abs(touchStartPosition - touchEndPosition);
 
-        if (touchEndPosition < touchStartPosition) {
+        if (touchEndPosition < touchStartPosition && difference > sizeOfSlideToTargetEvent) {
             navMenuStore.open();
         }
-        if (touchEndPosition > touchStartPosition) {
+        if (touchEndPosition > touchStartPosition && difference > sizeOfSlideToTargetEvent) {
             navMenuStore.close();
         }
     })
