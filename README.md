@@ -7,7 +7,7 @@
 - Global state management is organised by [pinia library](https://pinia.vuejs.org/).
 - Multilingualism of app is managed by [i18n plugin](https://vue-i18n.intlify.dev/). Content of app is available in two languages - English and Polish.
 - Website is responsive, made with [less](https://lesscss.org/).
-- Night mode has been implemented for the sake of users' eyes.
+- Dark mode has been implemented for the sake of users' eyes.
 - Animations on scroll are handled by [AOS library](https://michalsnik.github.io/aos/).
 - To show beatiful icons is used [iconify library](https://iconify.design/).
 - App got 100 score for accessibility in Google Chrome Lighthouse.
