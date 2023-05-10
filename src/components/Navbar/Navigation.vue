@@ -85,7 +85,7 @@ const vCursorHover = useCursorHover();
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
+        height: 270rem;
         width: 0;
     }
     .background-blocking-content-visible {

@@ -8,15 +8,6 @@ export const useNavMenuStore = defineStore('navMenu', {
         opened: false
     }),
     actions: {
-        toggle() {
-            if (this.opened) {
-                document.body.style = 'overflow: visible;';
-            } else {
-                document.body.style = 'overflow: hidden;';
-            }
-
-            this.opened = !this.opened;
-        },
         open() {
             document.body.style = 'overflow: hidden;';
             this.opened = true;
