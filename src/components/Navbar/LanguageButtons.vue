@@ -1,11 +1,17 @@
 <template>
-    <div data-aos="zoom-in-up" class="flags">
+    <div data-aos="zoom-in-up">
         <button
             class="change-language-button"
             v-cursor-hover
             @click="changeLanguage('pl');"
         >
-            <img src="@/assets/images/flags/pl.png" class="flag" :alt="t('navbar.images.polishFlag')">
+            <img
+                src="@/assets/images/flags/pl.png"
+                class="flag"
+                width="1000"
+                height="1000"
+                :alt="t('navbar.images.polishFlag')"
+            >
         </button>
 
         <button
@@ -13,7 +19,13 @@
             v-cursor-hover
             @click="changeLanguage('en');"
         >
-            <img src="@/assets/images/flags/en.png" class="flag" :alt="t('navbar.images.greatBritainFlag')">
+            <img
+                src="@/assets/images/flags/en.png"
+                class="flag"
+                width="1000"
+                height="1000"
+                :alt="t('navbar.images.greatBritainFlag')"
+            >
         </button>
     </div>
 </template>
@@ -31,28 +43,24 @@ const vCursorHover = useCursorHover();
 <style lang="less" scoped>
 @import '@/styles/variables.less';
 
-.flags {
-    .change-language-button {
-        position: relative;
-        width: 2.5rem;
-        height: 2.5rem;
-        color: inherit;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-    }
-    .flag {
-        max-width: 80%;
-        height: auto;
-    }
+.change-language-button {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.flag {
+    max-width: 80%;
+    height: auto;
 }
 
 @media (min-width: @first-breakpoint) {
-    .flags {
-        .change-language-button {
-            width: 3rem;
-            height: 3rem;
-        }
+    .change-language-button {
+        width: 3rem;
+        height: 3rem;
     }
 }
 

@@ -7,14 +7,18 @@
     >
 
         <img
-            class="icon sun-icon"
             src="@/assets/images/icons/sun.svg"
+            class="icon sun-icon"
+            width="1000"
+            height="1000"
             :alt="t('navbar.images.sun')"
             v-show="themeStore.value == 'dark'"
         >
         <img
-            class="icon"
             src="@/assets/images/icons/moon.svg"
+            class="icon"
+            width="1000"
+            height="1000"
             :alt="t('navbar.images.moon')"
             v-show="themeStore.value == 'light'"
         >
