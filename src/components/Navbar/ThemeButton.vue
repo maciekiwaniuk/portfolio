@@ -54,6 +54,7 @@ const vCursorHover = useCursorHover();
 
     .icon {
         width: 2.2rem;
+        height: auto;
     }
     .sun-icon {
         // change black svg into white
