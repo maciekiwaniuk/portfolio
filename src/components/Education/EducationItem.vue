@@ -35,11 +35,8 @@
 
 <script setup>
 import TechnologyElement from '@/components/TechnologyElement.vue';
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
-
-const { t } = useLanguageSwitcher();
 
 const vCursorHover = useCursorHover();
 
