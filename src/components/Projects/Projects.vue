@@ -85,7 +85,6 @@ const minesweeper = {
 
 const portfolio = {
     github: 'https://github.com/maciekiwaniuk/portfolio',
-    online: 'https://maciekiwaniuk.pl',
     technologies: ['javascript', 'vue', 'less', 'pwa']
 }
 
