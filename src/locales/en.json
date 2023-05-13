@@ -35,7 +35,8 @@
             "merinosoft": {
                 "content": "Development of a web application relating to the management of employees in a company.",
                 "profession": "PHP Developer",
-                "period": "Aug 2021 - Dec 2022 (1 year 5 months)",
+                "period": "Aug 2021 - Dec 2022 ",
+                "length": "(1 year 5 months)",
                 "city": "Bialystok"
             }
         }

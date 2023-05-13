@@ -35,7 +35,8 @@
             "merinosoft": {
                 "content": "Development aplikacji webowej związanej z zarządzaniem pracownikami przez firmy.",
                 "profession": "Programista PHP",
-                "period": "sie 2021 - gru 2022 (1 rok 5 mies.)",
+                "period": "sie 2021 - gru 2022",
+                "length": "(1 rok 5 mies.)",
                 "city": "Białystok"
             }
         }

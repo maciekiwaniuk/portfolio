@@ -13,6 +13,7 @@
                     :content="t('experience.experienceItems.merinosoft.content')"
                     :profession="t('experience.experienceItems.merinosoft.profession')"
                     :period="t('experience.experienceItems.merinosoft.period')"
+                    :length="t('experience.experienceItems.merinosoft.length')"
                     :url="merinosoftUrl"
                     :technologies="merinosoftTechnologies"
                 />

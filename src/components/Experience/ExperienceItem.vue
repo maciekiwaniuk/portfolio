@@ -26,7 +26,10 @@
 
             <p class="below">
                 <span>{{ props.profession }}</span>
-                <span>{{ props.period }}</span>
+                <div class="job-time">
+                    <span>{{ props.period }}</span>
+                    <span>{{ props.length }}</span>
+                </div>
             </p>
         </div>
     </a>
@@ -47,6 +50,7 @@ const props = defineProps({
     content: String,
     profession: String,
     period: String,
+    length: String,
     url: String,
     technologies: Array
 });
@@ -104,6 +108,10 @@ const props = defineProps({
         align-items: center;
         font-family: 'LatoFontLight';
         padding-top: 0.5rem;
+
+        .job-time span {
+            display: block;
+        }
     }
 }
 
@@ -117,6 +125,12 @@ const props = defineProps({
         }
         .technologies {
             justify-content: flex-start;
+        }
+
+        .below {
+            .job-time span {
+                display: inline;
+            }
         }
     }
 }
