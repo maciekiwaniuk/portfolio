@@ -6,7 +6,7 @@ import { useNavMenuStore } from '@/stores/navMenu';
 export const addEventOnOpeningNavBySliding = () => {
     const navMenuStore = useNavMenuStore();
 
-    const sizeOfSlideToTargetEvent = 150;
+    const sizeOfSlideToTargetEvent = 140;
 
     let touchStartPosition = 0,
         touchEndPosition = 0,
