@@ -26,7 +26,6 @@
                     <TechnologyElement element="csharp" />
                     <TechnologyElement element="java" />
                     <TechnologyElement element="laravel" />
-                    <TechnologyElement element="jwt" />
                     <TechnologyElement element="jquery" />
                     <TechnologyElement element="sass" />
                     <TechnologyElement element="bootstrap" />

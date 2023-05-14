@@ -138,11 +138,6 @@ const technologies = {
         icon: 'logos:symfony',
         width: 40
     },
-    jwt: {
-        title: 'JWT',
-        icon: 'logos:jwt-icon',
-        width: 32
-    },
     docker: {
         title: 'Docker',
         icon: 'logos:docker-icon',
