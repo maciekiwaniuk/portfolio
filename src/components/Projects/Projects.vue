@@ -8,6 +8,14 @@
 
         <div class="items">
             <ProjectsItem
+                :title="t('projects.projectsItems.demoCryptoExchange.title')"
+                :content="t('projects.projectsItems.demoCryptoExchange.content')"
+                :technologies="demoCryptoExchange.technologies"
+                :github="demoCryptoExchange.github"
+                animation="fade-left"
+            />
+
+            <ProjectsItem
                 :title="t('projects.projectsItems.snakeWebApp.title')"
                 :content="t('projects.projectsItems.snakeWebApp.content')"
                 :technologies="snakeWebApp.technologies"
@@ -62,6 +70,14 @@ const { t } = useLanguageSwitcher();
 
 /************ Projects ***********/
 const snakeOnline = 'https://snake-gra.pl';
+
+const demoCryptoExchange = {
+    github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
+    technologies: [
+        'php', 'phpunit', 'symfony',
+        'typescript', 'vue', 'mysql'
+    ]
+};
 
 const snakeWebApp = {
     github: 'https://github.com/maciekiwaniuk/snake-web-app',

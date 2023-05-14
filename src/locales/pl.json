@@ -51,6 +51,10 @@
     "projects": {
         "title": "Projekty",
         "projectsItems": {
+            "demoCryptoExchange": {
+                "title": "Demo giełda kryptowalut",
+                "content": "Projekt demo giełdy kryptowalut, która symuluje rzeczywiste funkcjonowanie giełdy, jednak używa fikcyjnej waluty. Dane dotyczące cen kryptowalut są pobierane z API udostępnianego przez giełdę Binance."
+            },
             "snakeWebApp": {
                 "title": "Snake - aplikacja webowa",
                 "content": "Aplikacja obsługuje dane przesyłane przez grę na komputer napisaną w pythonie. Posiada rozbudowane funkcjonalności kont użytkowników wraz z obszernym, bogatym w funkcjonalności panelem administratora."

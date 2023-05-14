@@ -51,6 +51,10 @@
     "projects": {
         "title": "Projects",
         "projectsItems": {
+            "demoCryptoExchange": {
+                "title": "Demo crypto exchange",
+                "content": "A project of a demo cryptocurrency exchange that simulates the real functioning of an exchange, but uses fictional currency. Data regarding cryptocurrency prices is obtained from the API provided by the Binance exchange."
+            },
             "snakeWebApp": {
                 "title": "Snake - web app",
                 "content": "This application handles data sent by the game application written in python. It has extensive user account functionality, along with a comprehensive, feature-rich admin panel."
