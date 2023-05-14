@@ -11,7 +11,8 @@
     <button
         class="toggle-visibility-of-cursor-button"
         v-cursor-hover
-        @click="cursorStore.toggleVisibility();"
+        @click="cursorStore.toggleVisibility(div, $event);"
+        aira-label="Cursor toggler"
     >
         <Icon
             icon="clarity:cursor-hand-click-line"
