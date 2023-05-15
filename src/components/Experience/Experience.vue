@@ -17,6 +17,15 @@
                     :url="merinosoftUrl"
                     :technologies="merinosoftTechnologies"
                 />
+
+                <ExperienceItem
+                    :title="ebrandTitle"
+                    :content="t('experience.experienceItems.ebrand.content')"
+                    :profession="t('experience.experienceItems.ebrand.profession')"
+                    :period="t('experience.experienceItems.ebrand.period')"
+                    :url="ebrandUrl"
+                    :technologies="ebrandTechnologies"
+                />
             </div>
         </div>
 
@@ -34,6 +43,12 @@ const merinosoftTitle = 'Merinosoft Sp. z o.o.',
       merinosoftTechnologies = [
         'php', 'laravel', 'javascript', 'jquery',
         'bootstrap', 'postgresql', 'git'
+      ];
+
+const ebrandTitle = 'EBRAND Sp. z o.o.',
+      ebrandUrl = 'https://ebrand.com/',
+      ebrandTechnologies = [
+        'php', 'phpunit', 'symfony', 'git'
       ];
 
 </script>
