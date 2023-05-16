@@ -39,7 +39,7 @@ const restartAnimation = (event) => {
 }
 
 @keyframes move-text {
-    0% { bottom: 0em; opacity: 1; }
+    0% { bottom: 0; opacity: 1; }
     50% { bottom: 0.2em; }
     100% { bottom: 0; opacity: 1; }
 }

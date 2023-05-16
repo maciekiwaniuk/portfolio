@@ -3,14 +3,14 @@ import { useNavMenuStore } from '@/stores/navMenu';
 /**
  * Adds possibility of toggling navigation by sliding
  */
-export const addEventOnOpeningNavBySliding = () => {
+export const addEventOnOpeningNavBySliding = (): void => {
     const navMenuStore = useNavMenuStore();
 
-    const sizeOfSlideToTargetEvent = 140;
+    const sizeOfSlideToTargetEvent: number = 140;
 
-    let touchStartPosition = 0,
-        touchEndPosition = 0,
-        difference = 0;
+    let touchStartPosition: number = 0,
+        touchEndPosition: number = 0,
+        difference: number = 0;
 
     document.addEventListener('touchstart', e => {
         touchStartPosition = e.changedTouches[0].screenX;

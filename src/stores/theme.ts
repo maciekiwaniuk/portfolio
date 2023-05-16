@@ -6,7 +6,7 @@ import { ThemeType } from '@/types/ThemeType';
 /**
  * Handles themes - dark/light
  */
-export const useThemeStore: StoreDefinition = defineStore('theme', {
+export const useThemeStore = defineStore('theme', {
     state: (): { value: ThemeType } => ({
         value: getTheme() as ThemeType
     }),

@@ -1,9 +1,9 @@
-import { defineStore, StoreDefinition } from 'pinia';
+import { defineStore } from 'pinia';
 
 /**
  * Handles nav menu
  */
-export const useNavMenuStore: StoreDefinition = defineStore('navMenu', {
+export const useNavMenuStore = defineStore('navMenu', {
     state: (): { opened: boolean } => ({
         opened: false
     }),
