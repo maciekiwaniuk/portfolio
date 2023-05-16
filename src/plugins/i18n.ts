@@ -7,29 +7,29 @@ import { createI18n } from 'vue-i18n';
  * See: https://github.com/intlify/vue-i18n-loader#rocket-i18n-resource-pre-compilation
  */
 const loadLocaleMessages = () => {
-    const locales = require.context('../locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
-    const messages: any = {}
+    const locales = require.context('../locales', true, /[A-Za-z0-9-_,\s]+\.json$/i);
+    const messages: any = {};
     locales.keys().forEach(key => {
-        const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+        const matched: any = key.match(/([A-Za-z0-9-_]+)\./i);
         if (matched && matched.length > 1) {
-            const locale = matched[1]
-            messages[locale] = locales(key).default
+            const locale = matched[1];
+            messages[locale] = locales(key).default;
         }
     })
-    return messages
+    return messages;
 }
 
 // sets default language
 if (localStorage.getItem('language') === null) {
     // checks which language is preferred by the user
-    let userPreferredLanguage = 'pl';
+    let userPreferredLanguage: string = 'pl';
     if (navigator.language.match(/^en\b/)) {
         // user's preferred language is english
         userPreferredLanguage = 'en';
     }
     localStorage.setItem('language', userPreferredLanguage);
 }
-let selectedLanguage: any = localStorage.getItem('language');
+let selectedLanguage: string = localStorage.getItem('language')!;
 
 export default createI18n({
     legacy: false,
