@@ -64,7 +64,6 @@ const themeStore = useThemeStore();
 
         transition: background-color ease @theme-switch-time,
                     color ease @theme-switch-time;
-
     }
 
     .container-dark-theme {

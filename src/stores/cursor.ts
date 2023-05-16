@@ -1,21 +1,22 @@
-import { defineStore } from 'pinia';
+import { defineStore, StoreDefinition } from 'pinia';
+import { CursorVisibilityType } from '@/types/CursorVisibilityType';
 
 /**
  * Handles animation on cursor
  */
-export const useCursorStore = defineStore('cursor', {
-    state: () => ({
+export const useCursorStore: StoreDefinition = defineStore('cursor', {
+    state: (): { hover: boolean, visibility: CursorVisibilityType } => ({
         hover: false,
-        visibility: localStorage.getItem('cursor-visibility') ?? 'visible'
+        visibility: localStorage.getItem('cursor-visibility') as CursorVisibilityType ?? 'visible'
     }),
     actions: {
-        toggle() {
+        toggle(): void {
             this.hover = !this.hover;
         },
-        setCursorToHover() {
+        setCursorToHover(): void {
             this.hover = true;
         },
-        toggleVisibility() {
+        toggleVisibility(): void {
             if (this.visibility == 'visible') {
                 this.visibility = 'hidden';
                 localStorage.setItem('cursor-visibility', 'hidden');
