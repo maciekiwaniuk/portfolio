@@ -3,7 +3,7 @@ import { createApp } from 'vue';
 import { Pinia, createPinia } from 'pinia';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import i18n from './plugins/i18n';
+import { i18n } from './plugins/i18n';
 import App from './App.vue';
 
 /* register service worker */

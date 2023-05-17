@@ -31,9 +31,11 @@ if (localStorage.getItem('language') === null) {
 }
 let selectedLanguage: string = localStorage.getItem('language')!;
 
-export default createI18n({
+const i18n =  createI18n({
     legacy: false,
     locale: selectedLanguage,
     fallbackLocale: selectedLanguage,
     messages: loadLocaleMessages()
 });
+
+export { i18n };
