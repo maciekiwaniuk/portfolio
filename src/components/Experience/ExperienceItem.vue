@@ -7,8 +7,8 @@
     >
         <div
             class="experience-item"
-            :class="{ 'experience-item-dark-theme': themeStore.value == 'dark',
-                      'experience-item-light-theme': themeStore.value == 'light' }"
+            :class="{ 'experience-item-dark-theme': themeStore.theme === 'dark',
+                      'experience-item-light-theme': themeStore.theme === 'light' }"
         >
             <h3 class="title">{{ props.title }}</h3>
 
@@ -36,24 +36,25 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
+import { TechnologyType } from '@/types/TechnologyType';
 
 const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
 
-const props = defineProps({
-    title: String,
-    content: String,
-    profession: String,
-    period: String,
-    length: String,
-    url: String,
-    technologies: Array
-});
+const props = defineProps<{
+    title: string,
+    content: string,
+    profession: string,
+    period: string,
+    length?: string,
+    url: string,
+    technologies: TechnologyType[]
+}>();
 
 </script>
 
@@ -89,7 +90,7 @@ const props = defineProps({
         display: flex;
         align-items: center;
         text-align: left;
-        font-family: 'LatoFontLight';
+        font-family: 'LatoFontLight', serif;
         font-style: italic;
         line-height: 1.3rem;
         font-size: 1.05rem;
@@ -106,7 +107,7 @@ const props = defineProps({
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-family: 'LatoFontLight';
+        font-family: 'LatoFontLight', serif;
         padding-top: 0.5rem;
 
         .job-time span {
@@ -142,4 +143,5 @@ const props = defineProps({
 .experience-item-light-theme {
     background-color: #light[background-color-on-element];
 }
+
 </style>

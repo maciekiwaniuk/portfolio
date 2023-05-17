@@ -1,8 +1,8 @@
 <template>
     <div
         class="navigation-links"
-        :class="{ 'navigation-links-dark-theme': themeStore.value == 'dark',
-                  'navigation-links-light-theme': themeStore.value == 'light' }"
+        :class="{ 'navigation-links-dark-theme': themeStore.theme === 'dark',
+                  'navigation-links-light-theme': themeStore.theme === 'light' }"
     >
 
         <div
@@ -20,9 +20,9 @@
         <div :data-aos="linksAnimation">
             <nav
                 role="navigation"
-                :class="{ 'vertical': props.alignment == 'vertical',
-                        'horizontal': props.alignment == 'horizontal',
-                        'hidden-text': (props.alignment == 'vertical' && !navMenuStore.opened) }"
+                :class="{ 'vertical': props.alignment === 'vertical',
+                          'horizontal': props.alignment === 'horizontal',
+                          'hidden-text': (props.alignment === 'vertical' && !navMenuStore.opened) }"
             >
                 <NavigationLinksLink element="education" :text="t('navbar.education')" :alignment="props.alignment" />
                 <NavigationLinksLink element="experience" :text="t('navbar.experience')" :alignment="props.alignment" />
@@ -40,12 +40,14 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import NavigationLinksLink from '@/components/Navbar/NavigationLinksLink.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { ref } from '@vue/reactivity';
+import { Ref } from 'vue';
+import { AlignmentType } from '@/types/AlignmentType';
 
 const { t } = useLanguageSwitcher();
 
@@ -53,12 +55,13 @@ const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
 
-const props = defineProps({
-    alignment: String
-});
+const props = defineProps<{
+    alignment: AlignmentType
+}>()
 
 // animation only for menu on big screens
-const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null);
+type LinksAnimation = 'zoom-in-up' | null;
+const linksAnimation: Ref<LinksAnimation> = ref(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
 
 </script>
 
@@ -99,6 +102,7 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
             }
         }
     }
+
     .area-below-to-close-menu {
         position: absolute;
         right: 0;
@@ -141,6 +145,5 @@ const linksAnimation = ref(props.alignment == 'horizontal' ? 'zoom-in-up' : null
         background-color: #light[text-color];
     }
 }
-
 
 </style>

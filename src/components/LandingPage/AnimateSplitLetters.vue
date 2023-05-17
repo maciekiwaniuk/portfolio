@@ -13,20 +13,21 @@
     </span>
 </template>
 
-<script setup>
-const props = defineProps({
-    text: String
-});
+<script setup lang="ts">
+const props = defineProps<{
+    text: string
+}>();
 
 const splitLetters = props.text.split('');
 
-const smallDevice = window.innerWidth <= 800;
+const minScreenWidthToDisplayAnimation = 800;
+const smallDevice = window.innerWidth <= minScreenWidthToDisplayAnimation;
 
-const restartAnimation = (event) => {
-    const element = event.target;
+const restartAnimation = (event: Event) => {
+    const element = event.target! as HTMLElement;
     element.style.animation = 'none';
     element.offsetHeight; /* trigger reflow */
-    element.style.animation = null;
+    element.style.animation = '';
 };
 
 </script>
@@ -43,4 +44,5 @@ const restartAnimation = (event) => {
     50% { bottom: 0.2em; }
     100% { bottom: 0; opacity: 1; }
 }
+
 </style>

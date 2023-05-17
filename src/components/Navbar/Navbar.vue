@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ThemeButton from '@/components/Navbar/ThemeButton.vue';
 import LanguageButtons from '@/components/Navbar/LanguageButtons.vue';
 import Navigation from '@/components/Navbar/Navigation.vue';
@@ -34,4 +34,5 @@ import Navigation from '@/components/Navbar/Navigation.vue';
         justify-content: space-evenly;
     }
 }
+
 </style>

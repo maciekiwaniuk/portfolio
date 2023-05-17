@@ -4,8 +4,8 @@
     <main
         role="main"
         class="container"
-        :class="{ 'container-dark-theme': themeStore.value == 'dark',
-                  'container-light-theme': themeStore.value == 'light' }">
+        :class="{ 'container-dark-theme': themeStore.theme === 'dark',
+                  'container-light-theme': themeStore.theme === 'light' }">
         <Navbar />
 
         <LandingPage />
@@ -22,7 +22,7 @@
     </main>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Cursor from '@/components/Cursor.vue';
 import Navbar from '@/components/Navbar/Navbar.vue';
 import LandingPage from '@/components/LandingPage/LandingPage.vue';
@@ -60,7 +60,7 @@ const themeStore = useThemeStore();
 #app {
     .container {
         min-height: 200vh;
-        font-family: 'LatoFontRegular';
+        font-family: 'LatoFontRegular', serif;
 
         transition: background-color ease @theme-switch-time,
                     color ease @theme-switch-time;

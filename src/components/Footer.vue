@@ -2,8 +2,8 @@
     <footer
         role="contentinfo"
         class="footer"
-        :class="{ 'footer-dark-theme': themeStore.value == 'dark',
-                  'footer-light-theme': themeStore.value == 'light' }"
+        :class="{ 'footer-dark-theme': themeStore.theme === 'dark',
+                  'footer-light-theme': themeStore.theme === 'light' }"
     >
         <h4 class="info">
             {{ t('author') }} - {{ currentYear }} {{ t('footer.allRightsReserved') }}
@@ -59,7 +59,7 @@
     </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Icon } from '@iconify/vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
@@ -71,7 +71,7 @@ const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
 
-const currentYear = new Date().getFullYear();
+const currentYear: number = new Date().getFullYear();
 
 </script>
 
@@ -100,7 +100,7 @@ const currentYear = new Date().getFullYear();
     .info {
         text-align: center;
         padding-right: 0.3rem;
-        font-family: 'LatoFontLight';
+        font-family: 'LatoFontLight', serif;
         font-size: 0.90rem;
     }
     .icons {
@@ -159,4 +159,5 @@ const currentYear = new Date().getFullYear();
 .footer-light-theme {
     background-color: #light[background-color-on-element];
 }
+
 </style>

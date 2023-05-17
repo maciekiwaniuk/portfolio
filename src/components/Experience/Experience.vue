@@ -32,22 +32,23 @@
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { TechnologyType } from '@/types/TechnologyType';
 
 const { t } = useLanguageSwitcher();
 
-const merinosoftTitle = 'Merinosoft Sp. z o.o.',
-      merinosoftUrl = 'https://merinosoft.pl/',
-      merinosoftTechnologies = [
+const merinosoftTitle: string = 'Merinosoft Sp. z o.o.',
+      merinosoftUrl: string = 'https://merinosoft.pl/',
+      merinosoftTechnologies: TechnologyType[] = [
         'php', 'laravel', 'javascript', 'jquery',
         'bootstrap', 'postgresql', 'git'
       ];
 
-const ebrandTitle = 'EBRAND Sp. z o.o.',
-      ebrandUrl = 'https://ebrand.com/',
-      ebrandTechnologies = [
+const ebrandTitle: string = 'EBRAND Sp. z o.o.',
+      ebrandUrl: string = 'https://ebrand.com/',
+      ebrandTechnologies: TechnologyType[] = [
         'php', 'phpunit', 'symfony', 'git'
       ];
 
@@ -70,7 +71,7 @@ const ebrandTitle = 'EBRAND Sp. z o.o.',
         width: 100%;
         min-height: 3rem;
         text-align: center;
-        font-family: 'LatoFontBold';
+        font-family: 'LatoFontBold', serif;
         font-size: 3rem;
         color: @blue-color;
     }

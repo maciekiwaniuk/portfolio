@@ -42,7 +42,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 
@@ -66,7 +66,7 @@ const { t } = useLanguageSwitcher();
         float: left;
         width: 100%;
         text-align: center;
-        font-family: 'LatoFontBold';
+        font-family: 'LatoFontBold', serif;
         font-size: 3rem;
         padding-bottom: 0.4rem;
         color: @blue-color;
@@ -110,8 +110,6 @@ const { t } = useLanguageSwitcher();
             }
         }
     }
-
-
 }
 
 </style>

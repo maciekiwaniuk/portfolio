@@ -7,11 +7,11 @@ export const useCursorHover = () => {
     const cursorStore = useCursorStore();
 
     return {
-        mounted: (el, binding) => {
-            el.addEventListener('mouseenter', () => {
+        mounted: (element: HTMLElement): void => {
+            element.addEventListener('mouseenter', (): void => {
                 cursorStore.toggle();
             });
-            el.addEventListener('mouseleave', () => {
+            element.addEventListener('mouseleave', (): void => {
                 cursorStore.toggle();
             });
         }

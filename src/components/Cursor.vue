@@ -2,17 +2,17 @@
     <div
         aria-hidden="true"
         class="cursor"
-        v-show="cursorStore.visibility == 'visible'"
-        :class="{ 'cursor-dark-theme': themeStore.value == 'dark',
-                  'cursor-light-theme': themeStore.value == 'light',
+        v-show="cursorStore.visibility === 'visible'"
+        :class="{ 'cursor-dark-theme': themeStore.theme === 'dark',
+                  'cursor-light-theme': themeStore.theme === 'light',
                   'hover': cursorStore.hover }"
     ></div>
 
     <button
         class="toggle-visibility-of-cursor-button"
         v-cursor-hover
-        @click="cursorStore.toggleVisibility(div, $event);"
-        aira-label="Cursor toggler"
+        @click="cursorStore.toggleVisibility();"
+        aria-label="Cursor switch"
     >
         <Icon
             icon="clarity:cursor-hand-click-line"
@@ -21,7 +21,7 @@
     </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Icon } from '@iconify/vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
@@ -82,7 +82,6 @@ const cursorStore = useCursorStore();
     }
 }
 
-/* colors */
 .cursor-dark-theme {
     border-color: #dark[cursor-color];
 }

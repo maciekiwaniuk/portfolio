@@ -20,7 +20,7 @@
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AnimateSplitLetters from '@/components/LandingPage/AnimateSplitLetters.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 
@@ -41,15 +41,14 @@ const { t } = useLanguageSwitcher();
     padding: 1.6rem;
 
     .text {
-
         .my-name-is {
             font-size: 1.7rem;
-            font-family: 'FontCaveat';
+            font-family: 'FontCaveat', serif;
         }
         .name {
             display: block;
             margin-bottom: 0.5rem;
-            font-family: 'LatoFontBold';
+            font-family: 'LatoFontBold', serif;
             font-size: 3.5rem;
             color: @blue-color;
         }
@@ -58,7 +57,6 @@ const { t } = useLanguageSwitcher();
         }
     }
 }
-
 
 @media (min-width: @first-breakpoint) {
     .landing-page {

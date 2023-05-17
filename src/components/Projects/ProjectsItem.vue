@@ -2,8 +2,8 @@
     <div :data-aos="props.animation">
         <div
             class="projects-item"
-            :class="{ 'projects-item-dark-theme': themeStore.value == 'dark',
-                      'projects-item-light-theme': themeStore.value == 'light' }"
+            :class="{ 'projects-item-dark-theme': themeStore.theme === 'dark',
+                      'projects-item-light-theme': themeStore.theme === 'light' }"
         >
             <h3 class="title">
                 {{ props.title }}
@@ -51,24 +51,25 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Icon } from '@iconify/vue';
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
+import { TechnologyType } from '@/types/TechnologyType';
 
 const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
 
-const props = defineProps({
-    title: String,
-    content: String,
-    technologies: Array,
-    github: String,
-    online: String,
-    animation: String
-});
+const props = defineProps<{
+    title: string,
+    content: string,
+    technologies: TechnologyType[],
+    github: string,
+    online?: string,
+    animation: string
+}>()
 
 </script>
 
@@ -100,7 +101,7 @@ const props = defineProps({
         align-items: center;
         text-align: left;
         line-height: 1.3rem;
-        font-family: 'LatoFontLight';
+        font-family: 'LatoFontLight', serif;
         font-style: italic;
         font-size: 1.05rem;
     }
@@ -156,4 +157,5 @@ const props = defineProps({
 .projects-item-light-theme {
     background-color: #light[background-color-on-element];
 }
+
 </style>

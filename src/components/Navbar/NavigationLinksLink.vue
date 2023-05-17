@@ -1,9 +1,9 @@
 <template>
     <a
-        :class="{ 'vertical-alignment': props.alignment == 'vertical',
-                  'horizontal-alignment': props.alignment == 'horizontal',
-                  'link-dark-theme': themeStore.value == 'dark',
-                  'link-light-theme': themeStore.value == 'light' }"
+        :class="{ 'vertical-alignment': props.alignment === 'vertical',
+                  'horizontal-alignment': props.alignment === 'horizontal',
+                  'link-dark-theme': themeStore.theme === 'dark',
+                  'link-light-theme': themeStore.theme === 'light' }"
         v-cursor-hover
         :href="`#${element}`"
         @click="navMenuStore.close()"
@@ -12,10 +12,11 @@
     </a>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
+import { AlignmentType } from '@/types/AlignmentType';
 
 const themeStore = useThemeStore();
 
@@ -23,11 +24,11 @@ const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
 
-const props = defineProps({
-    element: String,
-    text: String,
-    alignment: String
-});
+const props = defineProps<{
+    element: string,
+    text: string,
+    alignment: AlignmentType
+}>();
 
 </script>
 
@@ -68,4 +69,5 @@ a {
 .link-light-theme::before {
     background-color: #light[text-color];
 }
+
 </style>

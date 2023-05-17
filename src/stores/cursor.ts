@@ -13,11 +13,8 @@ export const useCursorStore = defineStore('cursor', {
         toggle(): void {
             this.hover = !this.hover;
         },
-        setCursorToHover(): void {
-            this.hover = true;
-        },
         toggleVisibility(): void {
-            if (this.visibility == 'visible') {
+            if (this.visibility === 'visible') {
                 this.visibility = 'hidden';
                 localStorage.setItem('cursor-visibility', 'hidden');
 

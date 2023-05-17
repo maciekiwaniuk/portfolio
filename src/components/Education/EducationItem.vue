@@ -7,8 +7,8 @@
     >
         <div
             class="education-item"
-            :class="{ 'education-item-dark-theme': themeStore.value == 'dark',
-                      'education-item-light-theme': themeStore.value == 'light' }"
+            :class="{ 'education-item-dark-theme': themeStore.theme === 'dark',
+                      'education-item-light-theme': themeStore.theme === 'light' }"
         >
             <h3 class="title">{{ props.title }}</h3>
 
@@ -33,23 +33,24 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
+import {TechnologyType} from "@/types/TechnologyType";
 
 const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
 
-const props = defineProps({
-    title: String,
-    content: String,
-    major: String,
-    period: String,
-    url: String,
-    technologies: Array
-});
+const props = defineProps<{
+    title: string,
+    content: string,
+    major: string,
+    period: string,
+    url: string,
+    technologies: TechnologyType[]
+}>();
 
 </script>
 
@@ -86,7 +87,7 @@ const props = defineProps({
         align-items: center;
         text-align: left;
         line-height: 1.3rem;
-        font-family: 'LatoFontLight';
+        font-family: 'LatoFontLight', serif;
         font-style: italic;
         font-size: 1.05rem;
     }
@@ -103,7 +104,7 @@ const props = defineProps({
         justify-content: space-between;
         align-items: center;
         padding-top: 0.5rem;
-        font-family: 'LatoFontLight';
+        font-family: 'LatoFontLight', serif;
     }
 }
 
@@ -129,4 +130,5 @@ const props = defineProps({
 .education-item-light-theme {
     background-color: #light[background-color-on-element];
 }
+
 </style>

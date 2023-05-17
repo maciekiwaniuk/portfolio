@@ -1,8 +1,8 @@
 <template>
     <div
         class="technology-element"
-        :class="{ 'technology-element-dark-theme': themeStore.value == 'dark',
-                  'technology-element-light-theme': themeStore.value == 'light' }"
+        :class="{ 'technology-element-dark-theme': themeStore.theme === 'dark',
+                  'technology-element-light-theme': themeStore.theme === 'light' }"
     >
 
         <div class="icon">
@@ -17,9 +17,10 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Icon } from '@iconify/vue';
 import { useThemeStore } from '@/stores/theme';
+import { TechnologyType } from '@/types/TechnologyType';
 
 const themeStore = useThemeStore();
 
@@ -27,7 +28,15 @@ const props = defineProps({
     element: String
 });
 
-const technologies = {
+interface TechnologyConfig {
+    title: string,
+    icon: string
+    width: number
+}
+type Technologies = {
+    [key in TechnologyType]: TechnologyConfig;
+};
+const technologies: Technologies = {
     php: {
         title: 'PHP',
         icon: 'logos:php',
@@ -189,4 +198,5 @@ const technologies = {
     color: #light[text-color];
     background-color: #light[background-color-on-element];
 }
+
 </style>

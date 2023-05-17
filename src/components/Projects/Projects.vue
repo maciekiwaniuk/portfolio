@@ -47,7 +47,6 @@
                 :content="t('projects.projectsItems.portfolio.content')"
                 :technologies="portfolio.technologies"
                 :github="portfolio.github"
-                :online="portfolio.online"
                 animation="fade-left"
             />
 
@@ -62,16 +61,22 @@
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ProjectsItem from '@/components/Projects/ProjectsItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { TechnologyType } from '@/types/TechnologyType';
 
 const { t } = useLanguageSwitcher();
 
-/************ Projects ***********/
-const snakeOnline = 'https://snake-gra.pl';
+const snakeOnline: string = 'https://snake-gra.pl';
 
-const demoCryptoExchange = {
+interface Project {
+    github: string,
+    online?: string,
+    technologies: TechnologyType[]
+}
+
+const demoCryptoExchange: Project = {
     github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
     technologies: [
         'php', 'phpunit', 'symfony',
@@ -79,7 +84,7 @@ const demoCryptoExchange = {
     ]
 };
 
-const snakeWebApp = {
+const snakeWebApp: Project = {
     github: 'https://github.com/maciekiwaniuk/snake-web-app',
     technologies: [
         'php', 'laravel', 'javascript',
@@ -88,26 +93,26 @@ const snakeWebApp = {
     ]
 };
 
-const snakeGame = {
+const snakeGame: Project = {
     github: 'https://github.com/maciekiwaniuk/snake-game',
     technologies: ['python', 'pygame', 'pyqt5']
 };
 
-const minesweeper = {
+const minesweeper: Project = {
     github: 'https://github.com/maciekiwaniuk/minesweeper',
     online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
     technologies: ['javascript', 'css']
-}
+};
 
-const portfolio = {
+const portfolio: Project = {
     github: 'https://github.com/maciekiwaniuk/portfolio',
     technologies: ['javascript', 'vue', 'less', 'pwa']
-}
+};
 
-const youtubeDownloader = {
+const youtubeDownloader: Project = {
     github: 'https://github.com/maciekiwaniuk/youtube-downloader',
     technologies: ['python', 'tkinter']
-}
+};
 
 </script>
 
@@ -129,7 +134,7 @@ const youtubeDownloader = {
         width: 100%;
         min-height: 3rem;
         text-align: center;
-        font-family: 'LatoFontBold';
+        font-family: 'LatoFontBold', serif;
         font-size: 3rem;
         color: @blue-color;
     }

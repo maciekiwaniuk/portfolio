@@ -1,4 +1,5 @@
 import { useI18n } from 'vue-i18n';
+import { LanguageType } from '@/types/LanguageType';
 
 /**
  * locale => currently selected language
@@ -13,11 +14,10 @@ export const useLanguageSwitcher = () => {
         useScope: 'global'
     });
 
-    const changeLanguage = (selectedLanguage) => {
+    const changeLanguage = (selectedLanguage: LanguageType): void => {
         localStorage.setItem('language', selectedLanguage)
         locale.value = selectedLanguage;
 
-        // set lang attribute
         document.documentElement.setAttribute(
             'lang',
             selectedLanguage

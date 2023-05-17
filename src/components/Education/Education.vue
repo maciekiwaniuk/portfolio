@@ -22,15 +22,16 @@
     </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import EducationItem from '@/components/Education/EducationItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { TechnologyType } from '@/types/TechnologyType';
 
 const { t } = useLanguageSwitcher();
 
-const zsePeriod = '2019 - 2023',
-      zseUrl = 'https://zse.bialystok.pl/',
-      zseTechnologies = [
+const zsePeriod: string = '2019 - 2023',
+      zseUrl: string = 'https://zse.bialystok.pl/',
+      zseTechnologies: TechnologyType[] = [
         'php', 'javascript', 'mysql',
         'python', 'csharp', 'java'
       ];
@@ -54,7 +55,7 @@ const zsePeriod = '2019 - 2023',
         width: 100%;
         min-height: 3rem;
         text-align: center;
-        font-family: 'LatoFontBold';
+        font-family: 'LatoFontBold', serif;
         font-size: 3rem;
         color: @blue-color;
     }

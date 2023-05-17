@@ -12,7 +12,7 @@
             width="1000"
             height="1000"
             :alt="t('navbar.images.sun')"
-            v-show="themeStore.value == 'dark'"
+            v-show="themeStore.theme === 'dark'"
         >
         <img
             src="@/assets/images/icons/moon.svg"
@@ -20,13 +20,13 @@
             width="1000"
             height="1000"
             :alt="t('navbar.images.moon')"
-            v-show="themeStore.value == 'light'"
+            v-show="themeStore.theme === 'light'"
         >
 
     </button>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useCursorHover } from '@/directives/useCursorHover';
@@ -42,7 +42,6 @@ const vCursorHover = useCursorHover();
 <style lang="less" scoped>
 @import '@/styles/variables.less';
 
-/* change theme button */
 .change-theme-button {
     width: 3rem;
     height: 3rem;
@@ -69,6 +68,5 @@ const vCursorHover = useCursorHover();
         }
     }
 }
-
 
 </style>

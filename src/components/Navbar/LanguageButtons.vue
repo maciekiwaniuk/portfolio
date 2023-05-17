@@ -8,8 +8,8 @@
             <img
                 src="@/assets/images/flags/pl.png"
                 class="flag"
-                width="1000"
-                height="1000"
+                width="50"
+                height="50"
                 :alt="t('navbar.images.polishFlag')"
             >
         </button>
@@ -22,15 +22,15 @@
             <img
                 src="@/assets/images/flags/en.png"
                 class="flag"
-                width="1000"
-                height="1000"
+                width="50"
+                height="50"
                 :alt="t('navbar.images.greatBritainFlag')"
             >
         </button>
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 
