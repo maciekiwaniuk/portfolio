@@ -57,6 +57,7 @@ import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 import { TechnologyType } from '@/types/TechnologyType';
+import { AnimationsType } from '@/types/AnimationsType';
 
 const vCursorHover = useCursorHover();
 
@@ -68,7 +69,7 @@ const props = defineProps<{
     technologies: TechnologyType[],
     github: string,
     online?: string,
-    animation: string
+    animation: AnimationsType
 }>()
 
 </script>

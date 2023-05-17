@@ -4,29 +4,29 @@
         id="experience"
         class="experience"
     >
-        <div data-aos="fade-up-right">
-            <h2 class="title">{{ t('experience.title') }}</h2>
+        <h2 data-aos="fade-down" class="title">{{ t('experience.title') }}</h2>
 
-            <div class="items">
-                <ExperienceItem
-                    :title="merinosoftTitle"
-                    :content="t('experience.experienceItems.merinosoft.content')"
-                    :profession="t('experience.experienceItems.merinosoft.profession')"
-                    :period="t('experience.experienceItems.merinosoft.period')"
-                    :length="t('experience.experienceItems.merinosoft.length')"
-                    :url="merinosoftUrl"
-                    :technologies="merinosoftTechnologies"
-                />
+        <div class="items">
+            <ExperienceItem
+                :title="merinosoftTitle"
+                :content="t('experience.experienceItems.merinosoft.content')"
+                :profession="t('experience.experienceItems.merinosoft.profession')"
+                :period="t('experience.experienceItems.merinosoft.period')"
+                :length="t('experience.experienceItems.merinosoft.length')"
+                :url="merinosoftUrl"
+                :technologies="merinosoftTechnologies"
+                animation="fade-right"
+            />
 
-                <ExperienceItem
-                    :title="ebrandTitle"
-                    :content="t('experience.experienceItems.ebrand.content')"
-                    :profession="t('experience.experienceItems.ebrand.profession')"
-                    :period="t('experience.experienceItems.ebrand.period')"
-                    :url="ebrandUrl"
-                    :technologies="ebrandTechnologies"
-                />
-            </div>
+            <ExperienceItem
+                :title="ebrandTitle"
+                :content="t('experience.experienceItems.ebrand.content')"
+                :profession="t('experience.experienceItems.ebrand.profession')"
+                :period="t('experience.experienceItems.ebrand.period')"
+                :url="ebrandUrl"
+                :technologies="ebrandTechnologies"
+                animation="fade-left"
+            />
         </div>
 
     </section>

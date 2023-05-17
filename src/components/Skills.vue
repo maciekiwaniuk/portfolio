@@ -1,10 +1,10 @@
 <template>
     <div id="skills" class="skills">
-        <div data-aos="fade-up-left">
+        <div>
 
-            <h2 class="title">{{ t('skills.title') }}</h2>
+            <h2 class="title" data-aos="fade-down">{{ t('skills.title') }}</h2>
 
-            <div class="element">
+            <div class="element" data-aos="fade-right">
                 <h3 class="title-smaller">{{ t('skills.useRegularly') }}</h3>
 
                 <div class="content">
@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div class="element">
+            <div class="element" data-aos="fade-left">
                 <h3 class="title-smaller">{{ t('skills.hadContact') }}</h3>
 
                 <div class="content">
