@@ -58,6 +58,8 @@ const themeStore = useThemeStore();
 @import '@/styles/scrollbar.less';
 
 #app {
+    user-select: none;
+
     .container {
         min-height: 200vh;
         font-family: 'LatoFontRegular', serif;
