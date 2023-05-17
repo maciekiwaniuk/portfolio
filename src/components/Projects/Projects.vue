@@ -106,7 +106,7 @@ const minesweeper: Project = {
 
 const portfolio: Project = {
     github: 'https://github.com/maciekiwaniuk/portfolio',
-    technologies: ['javascript', 'vue', 'less', 'pwa']
+    technologies: ['typescript', 'vue', 'less', 'pwa']
 };
 
 const youtubeDownloader: Project = {
