@@ -33,6 +33,7 @@ import Projects from '@/components/Projects/Projects.vue';
 import Footer from '@/components/Footer.vue';
 
 import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
 
 import { addEventOnCursor } from '@/functions/addEventOnCursor';
 import { addEventOnOpeningNavBySliding } from '@/functions/addEventOnOpeningNavBySliding';
@@ -40,6 +41,7 @@ import { setLangAttribute } from '@/functions/setLangAttribute';
 import { setBackgroundColorOnScrollbar } from '@/functions/setBackgroundColorOnScrollbar';
 
 import { onMounted } from '@vue/runtime-core';
+import {watch} from "vue";
 
 onMounted(() => {
     addEventOnCursor();
@@ -49,6 +51,14 @@ onMounted(() => {
 });
 
 const themeStore = useThemeStore();
+
+const navMenuStore = useNavMenuStore();
+watch(
+    () => navMenuStore.opened,
+    (opened) => {
+        document.body.setAttribute('overflow', opened ? 'hidden' : 'visible');
+    }
+);
 
 </script>
 
