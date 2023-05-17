@@ -2,7 +2,7 @@
 
 > ### Project of the portfolio website
 
-- Application is made in JavaScript with [Vue 3](https://vuejs.org/) using Composition API.
+- Application is made in TypeScript with [Vue 3](https://vuejs.org/) using Composition API.
 - Global state management is organised by [pinia library](https://pinia.vuejs.org/).
 - Multilingualism of app is managed by [i18n plugin](https://vue-i18n.intlify.dev/). Content of app is available in two languages - English and Polish.
 - Website is responsive, made with [less](https://lesscss.org/).
