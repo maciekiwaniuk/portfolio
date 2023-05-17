@@ -24,10 +24,6 @@ import { TechnologyType } from '@/types/TechnologyType';
 
 const themeStore = useThemeStore();
 
-const props = defineProps({
-    element: String
-});
-
 interface TechnologyConfig {
     title: string,
     icon: string
@@ -36,6 +32,11 @@ interface TechnologyConfig {
 type Technologies = {
     [key in TechnologyType]: TechnologyConfig;
 };
+
+const props = defineProps({
+    element: String as () => keyof Technologies
+});
+
 const technologies: Technologies = {
     php: {
         title: 'PHP',
@@ -162,7 +163,7 @@ const technologies: Technologies = {
         icon: 'skill-icons:typescript',
         width: 35
     }
-}
+};
 
 </script>
 

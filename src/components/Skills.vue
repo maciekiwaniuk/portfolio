@@ -8,13 +8,11 @@
                 <h3 class="title-smaller">{{ t('skills.useRegularly') }}</h3>
 
                 <div class="content">
-                    <TechnologyElement element="php" />
-                    <TechnologyElement element="phpunit" />
-                    <TechnologyElement element="symfony" />
-                    <TechnologyElement element="mysql" />
-                    <TechnologyElement element="docker" />
-                    <TechnologyElement element="git" />
-                    <TechnologyElement element="github" />
+                    <TechnologyElement
+                        v-for="(technology, index) in useRegularlyTechnologies"
+                        :key="index"
+                        :element="technology"
+                    />
                 </div>
             </div>
 
@@ -22,19 +20,11 @@
                 <h3 class="title-smaller">{{ t('skills.hadContact') }}</h3>
 
                 <div class="content">
-                    <TechnologyElement element="python" />
-                    <TechnologyElement element="csharp" />
-                    <TechnologyElement element="java" />
-                    <TechnologyElement element="laravel" />
-                    <TechnologyElement element="jquery" />
-                    <TechnologyElement element="sass" />
-                    <TechnologyElement element="bootstrap" />
-                    <TechnologyElement element="postgresql" />
-                    <TechnologyElement element="javascript" />
-                    <TechnologyElement element="typescript" />
-                    <TechnologyElement element="vue" />
-                    <TechnologyElement element="pwa" />
-                    <TechnologyElement element="redis" />
+                    <TechnologyElement
+                        v-for="(technology, index) in hadContactTechnologies"
+                        :key="index"
+                        :element="technology"
+                    />
                 </div>
             </div>
 
@@ -45,8 +35,20 @@
 <script setup lang="ts">
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { TechnologyType } from '@/types/TechnologyType';
 
 const { t } = useLanguageSwitcher();
+
+const useRegularlyTechnologies: TechnologyType[] = [
+    'php', 'phpunit', 'symfony', 'mysql',
+    'docker','git', 'github'
+];
+
+const hadContactTechnologies: TechnologyType[] = [
+    'python', 'csharp', 'java', 'laravel', 'jquery',
+    'sass', 'bootstrap', 'postgresql', 'javascript',
+    'typescript', 'vue', 'pwa', 'redis'
+];
 
 </script>
 
