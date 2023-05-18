@@ -41,7 +41,7 @@ import { setLangAttribute } from '@/functions/setLangAttribute';
 import { setBackgroundColorOnScrollbar } from '@/functions/setBackgroundColorOnScrollbar';
 
 import { onMounted } from '@vue/runtime-core';
-import {watch} from "vue";
+import { watch } from 'vue';
 
 onMounted(() => {
     addEventOnCursor();
