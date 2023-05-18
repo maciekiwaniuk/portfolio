@@ -1,37 +1,37 @@
 <template>
-    <a
-        class="link"
-        target="_blank"
-        :href="props.url"
-        v-cursor-hover
-    >
-        <div
-            class="education-item"
-            :class="{ 'education-item-dark-theme': themeStore.theme === 'dark',
-                      'education-item-light-theme': themeStore.theme === 'light' }"
-            :data-aos="props.animation"
+    <div :data-aos="props.animation">
+        <a
+            class="link"
+            target="_blank"
+            :href="props.url"
+            v-cursor-hover
         >
-            <h3 class="title">{{ props.title }}</h3>
+            <div
+                class="education-item"
+                :class="{ 'education-item-dark-theme': themeStore.theme === 'dark',
+                      'education-item-light-theme': themeStore.theme === 'light' }"
+            >
+                <h3 class="title">{{ props.title }}</h3>
 
-            <p class="content">
-                {{ props.content }}
-            </p>
+                <p class="content">
+                    {{ props.content }}
+                </p>
 
-            <div class="technologies">
-                <TechnologyElement
-                    v-for="(technology, index) in props.technologies"
-                    :key="index"
-                    :element="technology"
-                />
+                <div class="technologies">
+                    <TechnologyElement
+                        v-for="(technology, index) in props.technologies"
+                        :key="index"
+                        :element="technology"
+                    />
+                </div>
+
+                <p class="below">
+                    <span>{{ props.major }}</span>
+                    <span>{{ props.period }}</span>
+                </p>
             </div>
-
-            <p class="below">
-                <span>{{ props.major }}</span>
-                <span>{{ props.period }}</span>
-            </p>
-        </div>
-    </a>
-
+        </a>
+    </div>
 </template>
 
 <script setup lang="ts">

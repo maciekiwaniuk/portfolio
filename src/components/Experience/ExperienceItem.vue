@@ -1,40 +1,40 @@
 <template>
-    <a
-        class="link"
-        target="_blank"
-        :href="props.url"
-        v-cursor-hover
-    >
-        <div
-            class="experience-item"
-            :class="{ 'experience-item-dark-theme': themeStore.theme === 'dark',
-                      'experience-item-light-theme': themeStore.theme === 'light' }"
-            :data-aos="props.animation"
+    <div :data-aos="props.animation">
+        <a
+            class="link"
+            target="_blank"
+            :href="props.url"
+            v-cursor-hover
         >
-            <h3 class="title">{{ props.title }}</h3>
+            <div
+                class="experience-item"
+                :class="{ 'experience-item-dark-theme': themeStore.theme === 'dark',
+                      'experience-item-light-theme': themeStore.theme === 'light' }"
+            >
+                <h3 class="title">{{ props.title }}</h3>
 
-            <p class="content">
-                {{ props.content }}
-            </p>
+                <p class="content">
+                    {{ props.content }}
+                </p>
 
-            <div class="technologies">
-                <TechnologyElement
-                    v-for="(technology, index) in props.technologies"
-                    :key="index"
-                    :element="technology"
-                />
-            </div>
-
-            <p class="below">
-                <span>{{ props.profession }}</span>
-                <div class="job-time">
-                    <span>{{ props.period }}</span>
-                    <span>{{ props.length }}</span>
+                <div class="technologies">
+                    <TechnologyElement
+                        v-for="(technology, index) in props.technologies"
+                        :key="index"
+                        :element="technology"
+                    />
                 </div>
-            </p>
-        </div>
-    </a>
 
+                <p class="below">
+                    <span>{{ props.profession }}</span>
+                    <div class="job-time">
+                        <span>{{ props.period }}</span>
+                        <span>{{ props.length }}</span>
+                    </div>
+                </p>
+            </div>
+        </a>
+    </div>
 </template>
 
 <script setup lang="ts">

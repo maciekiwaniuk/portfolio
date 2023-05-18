@@ -1,34 +1,32 @@
 <template>
     <div id="skills" class="skills">
-        <div>
 
-            <h2 class="title" data-aos="fade-down">{{ t('skills.title') }}</h2>
+        <h2 class="title" data-aos="fade-down">{{ t('skills.title') }}</h2>
 
-            <div class="element" data-aos="fade-right">
-                <h3 class="title-smaller">{{ t('skills.useRegularly') }}</h3>
+        <div class="element" data-aos="fade-right">
+            <h3 class="title-smaller">{{ t('skills.useRegularly') }}</h3>
 
-                <div class="content">
-                    <TechnologyElement
-                        v-for="(technology, index) in useRegularlyTechnologies"
-                        :key="index"
-                        :element="technology"
-                    />
-                </div>
+            <div class="content">
+                <TechnologyElement
+                    v-for="(technology, index) in useRegularlyTechnologies"
+                    :key="index"
+                    :element="technology"
+                />
             </div>
-
-            <div class="element" data-aos="fade-left">
-                <h3 class="title-smaller">{{ t('skills.hadContact') }}</h3>
-
-                <div class="content">
-                    <TechnologyElement
-                        v-for="(technology, index) in hadContactTechnologies"
-                        :key="index"
-                        :element="technology"
-                    />
-                </div>
-            </div>
-
         </div>
+
+        <div class="element" data-aos="fade-left">
+            <h3 class="title-smaller">{{ t('skills.hadContact') }}</h3>
+
+            <div class="content">
+                <TechnologyElement
+                    v-for="(technology, index) in hadContactTechnologies"
+                    :key="index"
+                    :element="technology"
+                />
+            </div>
+        </div>
+
     </div>
 </template>
 
