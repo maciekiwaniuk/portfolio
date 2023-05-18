@@ -9,6 +9,7 @@
             class="education-item"
             :class="{ 'education-item-dark-theme': themeStore.theme === 'dark',
                       'education-item-light-theme': themeStore.theme === 'light' }"
+            :data-aos="props.animation"
         >
             <h3 class="title">{{ props.title }}</h3>
 
@@ -37,7 +38,8 @@
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
-import {TechnologyType} from "@/types/TechnologyType";
+import { TechnologyType } from '@/types/TechnologyType';
+import { AnimationType } from '@/types/AnimationType';
 
 const vCursorHover = useCursorHover();
 
@@ -49,7 +51,8 @@ const props = defineProps<{
     major: string,
     period: string,
     url: string,
-    technologies: TechnologyType[]
+    technologies: TechnologyType[],
+    animation: AnimationType
 }>();
 
 </script>

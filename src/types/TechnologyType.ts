@@ -23,5 +23,6 @@ export type TechnologyType =
     'symfony' |
     'docker' |
     'phpunit' |
-    'typescript';
+    'typescript'|
+    'microservices';
 

@@ -162,6 +162,11 @@ const technologies: Technologies = {
         title: 'TypeScript',
         icon: 'skill-icons:typescript',
         width: 35
+    },
+    microservices: {
+        title: 'Microservices',
+        icon: 'carbon:microservices-1',
+        width: 35
     }
 };
 

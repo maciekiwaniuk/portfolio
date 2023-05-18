@@ -4,19 +4,18 @@
         id="education"
         class="education"
     >
-        <div data-aos="fade-up-left">
-            <h2 class="title">{{ t('education.title') }}</h2>
+        <h2 data-aos="fade-down" class="title">{{ t('education.title') }}</h2>
 
-            <div class="items">
-                <EducationItem
-                    :title="t('education.educationItems.zse.title')"
-                    :content="t('education.educationItems.zse.content')"
-                    :major="t('education.educationItems.zse.major')"
-                    :period="zsePeriod"
-                    :url="zseUrl"
-                    :technologies="zseTechnologies"
-                />
-            </div>
+        <div class="items">
+            <EducationItem
+                :title="t('education.educationItems.zse.title')"
+                :content="t('education.educationItems.zse.content')"
+                :major="t('education.educationItems.zse.major')"
+                :period="zsePeriod"
+                :url="zseUrl"
+                :technologies="zseTechnologies"
+                animation="fade-up"
+            />
         </div>
 
     </section>
