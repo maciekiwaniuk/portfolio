@@ -41,3 +41,7 @@ You can now access the server at http://localhost:8080
 # Google Lighthouse
 
 ![](https://github.com/maciekiwaniuk/portfolio/blob/main/src/assets/readme/lighthouse.jpg?raw=true)
+
+# Personal usage
+
+Feel free to use this project for personal purposes.
