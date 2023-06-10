@@ -9,8 +9,10 @@ export const setBackgroundColorOnScrollbar = (): void => {
     let backgroundColor: string = getComputedStyle(document.body)
         .getPropertyValue(`--scrollbar-${selectedTheme}-theme-background-color`);
 
-    document.styleSheets[0].addRule(
-        '::-webkit-scrollbar-track',
-        `background-color: ${backgroundColor};`
-    );
+    if (document && document.styleSheets[0]) {
+        document.styleSheets[0].addRule(
+            '::-webkit-scrollbar-track',
+            `background-color: ${backgroundColor};`
+        );
+    }
 }

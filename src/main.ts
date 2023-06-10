@@ -1,4 +1,3 @@
-/* instance of app */
 import { createApp } from 'vue';
 import { Pinia, createPinia } from 'pinia';
 import AOS from 'aos';
