@@ -1,4 +1,3 @@
-
 export class LocalStorageMock {
     private store: {};
     constructor() {

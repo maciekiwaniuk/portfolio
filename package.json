@@ -1,7 +1,8 @@
 {
     "name": "portfolio",
-    "version": "2.1.5",
+    "version": "2.1.9",
     "private": true,
+    "author": "Maciek Iwaniuk",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",

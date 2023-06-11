@@ -7,7 +7,7 @@ describe('updateLangAttribute function', (): void => {
         value: localStorageMock
     });
 
-    beforeEach(() => {
+    beforeEach((): void => {
         localStorageMock.clear();
     });
 
