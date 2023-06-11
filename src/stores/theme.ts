@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { getTheme } from '@/functions/getTheme';
-import { setBackgroundColorOnScrollbar } from '@/functions/setBackgroundColorOnScrollbar';
+import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundColorOnScrollbar';
 import { ThemeType } from '@/types/ThemeType';
 
 /**
@@ -16,7 +16,7 @@ export const useThemeStore = defineStore('theme', {
 
             localStorage.setItem('theme', this.theme);
 
-            setBackgroundColorOnScrollbar();
+            updateBackgroundColorOnScrollbar();
         }
     }
 });

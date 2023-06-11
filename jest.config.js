@@ -21,7 +21,8 @@ const config = {
         customExportConditions: ['node', 'node-addons'],
     },
     moduleNameMapper: {
-        '^@/(.*)$': '<rootDir>/src/$1'
+        '^@/(.*)$': '<rootDir>/src/$1',
+        '^@tests/(.*)$': '<rootDir>/tests/$1'
     }
 };
 

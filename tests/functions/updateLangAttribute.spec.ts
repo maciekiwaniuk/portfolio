@@ -1,7 +1,7 @@
-import { LocalStorageMock } from '../mocks/LocalStorageMock';
-import { setLangAttribute } from '@/functions/setLangAttribute';
+import { LocalStorageMock } from '@tests/mocks/LocalStorageMock';
+import { updateLangAttribute } from '@/functions/updateLangAttribute';
 
-describe('setLangAttribute function', (): void => {
+describe('updateLangAttribute function', (): void => {
     const localStorageMock: LocalStorageMock = new LocalStorageMock();
     Object.defineProperty(window, 'localStorage', {
         value: localStorageMock
@@ -12,7 +12,7 @@ describe('setLangAttribute function', (): void => {
     });
 
     it('updates default lang attribute when localStorage is empty', (): void => {
-        setLangAttribute();
+        updateLangAttribute();
 
         expect(document.documentElement.getAttribute('lang'))
             .toBe('en');
@@ -22,12 +22,12 @@ describe('setLangAttribute function', (): void => {
         const documentElement: HTMLElement = document.documentElement;
 
         localStorageMock.setItem('language', 'pl');
-        setLangAttribute();
+        updateLangAttribute();
         expect(documentElement.getAttribute('lang'))
             .toBe('pl');
 
         localStorageMock.setItem('language', 'en');
-        setLangAttribute();
+        updateLangAttribute();
         expect(documentElement.getAttribute('lang'))
             .toBe('en');
     });

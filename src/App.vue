@@ -37,8 +37,8 @@ import { useNavMenuStore } from '@/stores/navMenu';
 
 import { addEventOnCursor } from '@/functions/addEventOnCursor';
 import { addEventOnOpeningNavBySliding } from '@/functions/addEventOnOpeningNavBySliding';
-import { setLangAttribute } from '@/functions/setLangAttribute';
-import { setBackgroundColorOnScrollbar } from '@/functions/setBackgroundColorOnScrollbar';
+import { updateLangAttribute } from '@/functions/updateLangAttribute';
+import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundColorOnScrollbar';
 
 import { onMounted } from '@vue/runtime-core';
 import { watch } from 'vue';
@@ -46,8 +46,8 @@ import { watch } from 'vue';
 onMounted(() => {
     addEventOnCursor();
     addEventOnOpeningNavBySliding();
-    setLangAttribute();
-    setBackgroundColorOnScrollbar();
+    updateLangAttribute();
+    updateBackgroundColorOnScrollbar();
 });
 
 const themeStore = useThemeStore();

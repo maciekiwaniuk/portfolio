@@ -1,9 +1,9 @@
 import { ThemeType } from '@/types/ThemeType';
 
 /**
- * Sets background color on scrollbar
+ * Updates background color on scrollbar based on theme value from localStorage
  */
-export const setBackgroundColorOnScrollbar = (): void => {
+export const updateBackgroundColorOnScrollbar = (): void => {
     let selectedTheme: ThemeType = localStorage.getItem('theme') as ThemeType ?? 'dark';
 
     let backgroundColor: string = getComputedStyle(document.body)

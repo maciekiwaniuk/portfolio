@@ -1,7 +1,7 @@
 /**
- * Sets lang attribute
+ * Updates lang attribute based on language value from localStorage
  */
-export const setLangAttribute = (): void => {
+export const updateLangAttribute = (): void => {
     document.documentElement.setAttribute(
         'lang',
         localStorage.getItem('language') ?? 'en'
