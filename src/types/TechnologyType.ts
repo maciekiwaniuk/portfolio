@@ -24,5 +24,6 @@ export type TechnologyType =
     'docker' |
     'phpunit' |
     'typescript'|
-    'microservices';
+    'microservices' |
+    'rabbitmq';
 

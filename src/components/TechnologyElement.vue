@@ -167,6 +167,11 @@ const technologies: Technologies = {
         title: 'Microservices',
         icon: 'carbon:microservices-1',
         width: 35
+    },
+    rabbitmq: {
+        title: 'RabbitMQ',
+        icon: 'logos:rabbitmq-icon',
+        width: 30
     }
 };
 

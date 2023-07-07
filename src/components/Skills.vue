@@ -39,7 +39,7 @@ const { t } = useLanguageSwitcher();
 
 const useRegularlyTechnologies: TechnologyType[] = [
     'php', 'phpunit', 'symfony', 'mysql',
-    'docker','git', 'github'
+    'rabbitmq', 'docker','git', 'github'
 ];
 
 const hadContactTechnologies: TechnologyType[] = [

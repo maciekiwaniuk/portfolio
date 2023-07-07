@@ -42,14 +42,15 @@ const { t } = useLanguageSwitcher();
 const merinosoftTitle: string = 'Merinosoft Sp. z o.o.',
       merinosoftUrl: string = 'https://merinosoft.pl/',
       merinosoftTechnologies: TechnologyType[] = [
-        'php', 'laravel', 'javascript', 'jquery',
-        'bootstrap', 'postgresql', 'git'
+          'php', 'laravel', 'javascript', 'jquery',
+          'bootstrap', 'postgresql', 'git'
       ];
 
 const ebrandTitle: string = 'EBRAND Sp. z o.o.',
       ebrandUrl: string = 'https://ebrand.com/',
       ebrandTechnologies: TechnologyType[] = [
-        'php', 'phpunit', 'symfony', 'git', 'microservices'
+          'php', 'phpunit', 'symfony', 'rabbitmq',
+          'microservices', 'git'
       ];
 
 </script>
