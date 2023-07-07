@@ -46,7 +46,7 @@ const merinosoftTitle: string = 'Merinosoft Sp. z o.o.',
           'bootstrap', 'postgresql', 'git'
       ];
 
-const ebrandTitle: string = 'EBRAND Sp. z o.o.',
+const ebrandTitle: string = 'EBRAND',
       ebrandUrl: string = 'https://ebrand.com/',
       ebrandTechnologies: TechnologyType[] = [
           'php', 'phpunit', 'symfony', 'rabbitmq',
