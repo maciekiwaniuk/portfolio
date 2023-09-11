@@ -173,6 +173,11 @@ const technologies: Technologies = {
         title: 'RabbitMQ',
         icon: 'logos:rabbitmq-icon',
         width: 30
+    },
+    tailwind: {
+        title: 'Tailwind',
+        icon: 'logos:tailwindcss-icon',
+        width: 33
     }
 };
 

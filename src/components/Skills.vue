@@ -39,13 +39,14 @@ const { t } = useLanguageSwitcher();
 
 const useRegularlyTechnologies: TechnologyType[] = [
     'php', 'phpunit', 'symfony', 'mysql',
-    'rabbitmq', 'docker','git', 'github'
+    'rabbitmq', 'redis', 'docker', 'git',
+    'github'
 ];
 
 const hadContactTechnologies: TechnologyType[] = [
     'python', 'csharp', 'java', 'laravel', 'jquery',
-    'sass', 'bootstrap', 'postgresql', 'javascript',
-    'typescript', 'vue', 'pwa', 'redis'
+    'sass', 'tailwind', 'bootstrap', 'postgresql',
+    'javascript', 'typescript', 'vue', 'pwa'
 ];
 
 </script>

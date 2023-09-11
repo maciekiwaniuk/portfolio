@@ -25,5 +25,5 @@ export type TechnologyType =
     'phpunit' |
     'typescript'|
     'microservices' |
-    'rabbitmq';
-
+    'rabbitmq' |
+    'tailwind';

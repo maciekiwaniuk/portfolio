@@ -49,8 +49,8 @@ const merinosoftTitle: string = 'Merinosoft Sp. z o.o.',
 const ebrandTitle: string = 'EBRAND',
       ebrandUrl: string = 'https://ebrand.com/',
       ebrandTechnologies: TechnologyType[] = [
-          'php', 'phpunit', 'symfony', 'rabbitmq',
-          'microservices', 'git'
+          'php', 'phpunit', 'symfony', 'redis',
+          'rabbitmq', 'microservices', 'git'
       ];
 
 </script>
