@@ -20,7 +20,6 @@
                 :content="t('projects.projectsItems.snakeWebApp.content')"
                 :technologies="snakeWebApp.technologies"
                 :github="snakeWebApp.github"
-                :online="snakeOnline"
                 animation="fade-right"
             />
 
@@ -29,7 +28,6 @@
                 :content="t('projects.projectsItems.snakeGame.content')"
                 :technologies="snakeGame.technologies"
                 :github="snakeGame.github"
-                :online="snakeOnline"
                 animation="fade-left"
             />
 
@@ -67,8 +65,6 @@ import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { TechnologyType } from '@/types/TechnologyType';
 
 const { t } = useLanguageSwitcher();
-
-const snakeOnline: string = 'https://snake-gra.pl';
 
 interface Project {
     github: string,
