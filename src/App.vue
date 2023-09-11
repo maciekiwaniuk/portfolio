@@ -74,6 +74,7 @@ watch(
     .container {
         min-height: 200vh;
         font-family: 'LatoFontRegular', serif;
+        background-image: url('assets/images/background.png');
 
         transition: background-color ease @theme-switch-time,
                     color ease @theme-switch-time;
