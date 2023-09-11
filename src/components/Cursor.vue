@@ -2,9 +2,9 @@
     <div
         aria-hidden="true"
         class="cursor"
-        v-show="cursorStore.visibility === 'visible'"
-        :class="{ 'cursor-dark-theme': themeStore.theme === 'dark',
-                  'cursor-light-theme': themeStore.theme === 'light',
+        v-show="cursorStore.visibility === CursorVisible"
+        :class="{ 'cursor-dark-theme': themeStore.theme === DarkTheme,
+                  'cursor-light-theme': themeStore.theme === LightTheme,
                   'hover': cursorStore.hover }"
     ></div>
 
@@ -26,6 +26,7 @@ import { Icon } from '@iconify/vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 import { useCursorStore } from '@/stores/cursor';
+import { CursorVisible, DarkTheme, LightTheme } from '@/constants/app';
 
 const vCursorHover = useCursorHover();
 

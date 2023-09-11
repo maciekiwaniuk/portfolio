@@ -3,7 +3,7 @@
         <button
             class="change-language-button"
             v-cursor-hover
-            @click="changeLanguage('pl');"
+            @click="changeLanguage(PolishLanguage);"
         >
             <img
                 src="@/assets/images/flags/pl.png"
@@ -17,7 +17,7 @@
         <button
             class="change-language-button"
             v-cursor-hover
-            @click="changeLanguage('en');"
+            @click="changeLanguage(EnglishLanguage);"
         >
             <img
                 src="@/assets/images/flags/en.png"
@@ -33,6 +33,7 @@
 <script setup lang="ts">
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
+import { EnglishLanguage, PolishLanguage } from '@/constants/app';
 
 const { t, changeLanguage } = useLanguageSwitcher();
 

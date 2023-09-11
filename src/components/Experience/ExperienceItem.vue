@@ -8,8 +8,8 @@
         >
             <div
                 class="experience-item"
-                :class="{ 'experience-item-dark-theme': themeStore.theme === 'dark',
-                      'experience-item-light-theme': themeStore.theme === 'light' }"
+                :class="{ 'experience-item-dark-theme': themeStore.theme === DarkTheme,
+                      'experience-item-light-theme': themeStore.theme === LightTheme }"
             >
                 <h3 class="title">{{ props.title }}</h3>
 
@@ -43,6 +43,7 @@ import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 import { TechnologyType } from '@/types/TechnologyType';
 import { AnimationType } from '@/types/AnimationType';
+import { DarkTheme, LightTheme } from '@/constants/app';
 
 const vCursorHover = useCursorHover();
 

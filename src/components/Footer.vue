@@ -2,8 +2,8 @@
     <footer
         role="contentinfo"
         class="footer"
-        :class="{ 'footer-dark-theme': themeStore.theme === 'dark',
-                  'footer-light-theme': themeStore.theme === 'light' }"
+        :class="{ 'footer-dark-theme': themeStore.theme === DarkTheme,
+                  'footer-light-theme': themeStore.theme === LightTheme }"
     >
         <h4 class="info">
             {{ t('author') }} - {{ currentYear }} {{ t('footer.allRightsReserved') }}
@@ -64,6 +64,7 @@ import { Icon } from '@iconify/vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
+import { DarkTheme, LightTheme } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 

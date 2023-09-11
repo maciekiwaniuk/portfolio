@@ -2,8 +2,8 @@
     <header
         role="banner"
         class="navigation"
-        :class="{ 'navigation-dark-theme': themeStore.theme === 'dark',
-                  'navigation-light-theme': themeStore.theme === 'light' }"
+        :class="{ 'navigation-dark-theme': themeStore.theme === DarkTheme,
+                  'navigation-light-theme': themeStore.theme === LightTheme }"
     >
         <button
             class="nav-hamburger-toggler"
@@ -37,6 +37,7 @@ import NavigationLinks from '@/components/Navbar/NavigationLinks.vue';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
+import { DarkTheme, LightTheme } from '@/constants/app';
 
 const themeStore = useThemeStore();
 

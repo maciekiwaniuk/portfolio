@@ -1,8 +1,8 @@
 <template>
     <div
         class="technology-element"
-        :class="{ 'technology-element-dark-theme': themeStore.theme === 'dark',
-                  'technology-element-light-theme': themeStore.theme === 'light' }"
+        :class="{ 'technology-element-dark-theme': themeStore.theme === DarkTheme,
+                  'technology-element-light-theme': themeStore.theme === LightTheme }"
     >
 
         <div class="icon">
@@ -21,6 +21,7 @@
 import { Icon } from '@iconify/vue';
 import { useThemeStore } from '@/stores/theme';
 import { TechnologyType } from '@/types/TechnologyType';
+import { DarkTheme, LightTheme } from '@/constants/app';
 
 const themeStore = useThemeStore();
 

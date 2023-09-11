@@ -12,7 +12,7 @@
             width="1000"
             height="1000"
             :alt="t('navbar.images.sun')"
-            v-show="themeStore.theme === 'dark'"
+            v-show="themeStore.theme === DarkTheme"
         >
         <img
             src="@/assets/images/icons/moon.svg"
@@ -20,7 +20,7 @@
             width="1000"
             height="1000"
             :alt="t('navbar.images.moon')"
-            v-show="themeStore.theme === 'light'"
+            v-show="themeStore.theme === LightTheme"
         >
 
     </button>
@@ -30,6 +30,7 @@
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useCursorHover } from '@/directives/useCursorHover';
+import { DarkTheme, LightTheme } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 

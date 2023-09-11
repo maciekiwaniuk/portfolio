@@ -4,8 +4,8 @@
     <main
         role="main"
         class="container"
-        :class="{ 'container-dark-theme': themeStore.theme === 'dark',
-                  'container-light-theme': themeStore.theme === 'light' }">
+        :class="{ 'container-dark-theme': themeStore.theme === DarkTheme,
+                  'container-light-theme': themeStore.theme === LightTheme }">
         <Navbar />
 
         <LandingPage />
@@ -42,6 +42,7 @@ import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundCo
 
 import { onMounted } from '@vue/runtime-core';
 import { watch } from 'vue';
+import { DarkTheme, LightTheme } from '@/constants/app';
 
 onMounted(() => {
     addEventOnCursor();

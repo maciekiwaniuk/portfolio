@@ -2,8 +2,8 @@
     <div :data-aos="props.animation">
         <div
             class="projects-item"
-            :class="{ 'projects-item-dark-theme': themeStore.theme === 'dark',
-                      'projects-item-light-theme': themeStore.theme === 'light' }"
+            :class="{ 'projects-item-dark-theme': themeStore.theme === DarkTheme,
+                      'projects-item-light-theme': themeStore.theme === LightTheme }"
         >
             <h3 class="title">
                 {{ props.title }}
@@ -58,6 +58,7 @@ import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 import { TechnologyType } from '@/types/TechnologyType';
 import { AnimationType } from '@/types/AnimationType';
+import { DarkTheme, LightTheme } from '@/constants/app';
 
 const vCursorHover = useCursorHover();
 

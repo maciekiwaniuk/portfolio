@@ -1,12 +1,12 @@
 <template>
     <div
         class="navigation-links"
-        :class="{ 'navigation-links-dark-theme': themeStore.theme === 'dark',
-                  'navigation-links-light-theme': themeStore.theme === 'light' }"
+        :class="{ 'navigation-links-dark-theme': themeStore.theme === DarkTheme,
+                  'navigation-links-light-theme': themeStore.theme === LightTheme }"
     >
 
         <div
-            v-if="props.alignment =='vertical'"
+            v-if="props.alignment === VerticalNavigationAlignment"
             :class="{ 'hidden': !navMenuStore.opened }"
             class="area-to-close-menu"
             @click="navMenuStore.close();"
@@ -20,9 +20,9 @@
         <div :data-aos="linksAnimation">
             <nav
                 role="navigation"
-                :class="{ 'vertical': props.alignment === 'vertical',
-                          'horizontal': props.alignment === 'horizontal',
-                          'hidden-text': (props.alignment === 'vertical' && !navMenuStore.opened) }"
+                :class="{ 'vertical': props.alignment === VerticalNavigationAlignment,
+                          'horizontal': props.alignment === HorizontalNavigationAlignment,
+                          'hidden-text': (props.alignment === VerticalNavigationAlignment && !navMenuStore.opened) }"
             >
                 <NavigationLinksLink element="education" :text="t('navbar.education')" :alignment="props.alignment" />
                 <NavigationLinksLink element="experience" :text="t('navbar.experience')" :alignment="props.alignment" />
@@ -46,8 +46,8 @@ import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { ref } from '@vue/reactivity';
-import { Ref } from 'vue';
 import { AlignmentType } from '@/types/AlignmentType';
+import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
@@ -61,7 +61,7 @@ const props = defineProps<{
 
 // animation only for menu on big screens
 type LinksAnimation = 'zoom-in-up' | null;
-const linksAnimation: Ref<LinksAnimation> = ref(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
+const linksAnimation = ref<LinksAnimation>(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
 
 </script>
 

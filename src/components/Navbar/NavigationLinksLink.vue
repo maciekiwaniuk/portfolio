@@ -1,9 +1,9 @@
 <template>
     <a
-        :class="{ 'vertical-alignment': props.alignment === 'vertical',
-                  'horizontal-alignment': props.alignment === 'horizontal',
-                  'link-dark-theme': themeStore.theme === 'dark',
-                  'link-light-theme': themeStore.theme === 'light' }"
+        :class="{ 'vertical-alignment': props.alignment === VerticalNavigationAlignment,
+                  'horizontal-alignment': props.alignment === HorizontalNavigationAlignment,
+                  'link-dark-theme': themeStore.theme === DarkTheme,
+                  'link-light-theme': themeStore.theme === LightTheme }"
         v-cursor-hover
         :href="`#${element}`"
         @click="navMenuStore.close()"
@@ -17,6 +17,7 @@ import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { AlignmentType } from '@/types/AlignmentType';
+import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '@/constants/app';
 
 const themeStore = useThemeStore();
 
