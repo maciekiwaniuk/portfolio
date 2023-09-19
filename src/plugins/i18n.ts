@@ -17,9 +17,9 @@ const loadLocaleMessages = () => {
             const locale = matched[1];
             messages[locale] = locales(key).default;
         }
-    })
+    });
     return messages;
-}
+};
 
 if (localStorage.getItem('language') === null) {
     const userPreferredLanguage: LanguageType = navigator.language.match(/^en\b/)

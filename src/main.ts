@@ -15,7 +15,7 @@ const app: any = createApp(App);
 /* import AOS library for animations on scroll */
 const aosOptions = {
     disable: (): boolean => {
-        let maxWidth: number = 1000;
+        const maxWidth: number = 1000;
         return window.innerWidth < maxWidth;
     },
     once: true as boolean,

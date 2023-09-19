@@ -15,5 +15,5 @@ export const useCursorHover = () => {
                 cursorStore.toggle();
             });
         }
-    }
-}
+    };
+};

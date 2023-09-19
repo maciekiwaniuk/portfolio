@@ -14,7 +14,7 @@ export const addEventOnOpeningNavBySliding = (): void => {
 
     document.addEventListener('touchstart', e => {
         touchStartPosition = e.changedTouches[0].screenX;
-    })
+    });
 
     document.addEventListener('touchend', e => {
         touchEndPosition = e.changedTouches[0].screenX;
@@ -26,5 +26,5 @@ export const addEventOnOpeningNavBySliding = (): void => {
         if (touchEndPosition > touchStartPosition && difference > sizeOfSlideToTargetEvent) {
             navMenuStore.close();
         }
-    })
-}
+    });
+};

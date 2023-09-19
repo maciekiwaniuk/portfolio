@@ -9,4 +9,4 @@ export const addEventOnCursor = (): void => {
         cursor.style.top = `${event.clientY}px`;
         cursor.style.left = `${event.clientX}px`;
     });
-}
+};

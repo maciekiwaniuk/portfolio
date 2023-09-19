@@ -15,7 +15,7 @@ export const useLanguageSwitcher = () => {
     });
 
     const changeLanguage = (selectedLanguage: LanguageType): void => {
-        localStorage.setItem('language', selectedLanguage)
+        localStorage.setItem('language', selectedLanguage);
         locale.value = selectedLanguage;
 
         document.documentElement.setAttribute(
