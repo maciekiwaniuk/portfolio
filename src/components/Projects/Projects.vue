@@ -66,13 +66,13 @@ import { TechnologyType } from '@/types/TechnologyType';
 
 const { t } = useLanguageSwitcher();
 
-interface Project {
+type ProjectType = {
     github: string,
     online?: string,
     technologies: TechnologyType[]
 }
 
-const demoCryptoExchange: Project = {
+const demoCryptoExchange: ProjectType = {
     github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
     technologies: [
         'php', 'phpunit', 'symfony',
@@ -80,7 +80,7 @@ const demoCryptoExchange: Project = {
     ]
 };
 
-const snakeWebApp: Project = {
+const snakeWebApp: ProjectType = {
     github: 'https://github.com/maciekiwaniuk/snake-web-app',
     technologies: [
         'php', 'laravel', 'javascript',
@@ -89,23 +89,23 @@ const snakeWebApp: Project = {
     ]
 };
 
-const snakeGame: Project = {
+const snakeGame: ProjectType = {
     github: 'https://github.com/maciekiwaniuk/snake-game',
     technologies: ['python', 'pygame', 'pyqt5']
 };
 
-const minesweeper: Project = {
+const minesweeper: ProjectType = {
     github: 'https://github.com/maciekiwaniuk/minesweeper',
     online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
     technologies: ['javascript', 'css']
 };
 
-const portfolio: Project = {
+const portfolio: ProjectType = {
     github: 'https://github.com/maciekiwaniuk/portfolio',
     technologies: ['typescript', 'vue', 'less', 'pwa']
 };
 
-const youtubeDownloader: Project = {
+const youtubeDownloader: ProjectType = {
     github: 'https://github.com/maciekiwaniuk/youtube-downloader',
     technologies: ['python', 'tkinter']
 };

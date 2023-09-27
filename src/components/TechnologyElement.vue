@@ -25,20 +25,20 @@ import { DarkTheme, LightTheme } from '@/constants/app';
 
 const themeStore = useThemeStore();
 
-interface TechnologyConfig {
+type TechnologyConfigType = {
     title: string,
     icon: string
     width: number
 }
-type Technologies = {
-    [key in TechnologyType]: TechnologyConfig;
+type TechnologiesType = {
+    [key in TechnologyType]: TechnologyConfigType;
 };
 
-const props = defineProps({
-    element: String as () => keyof Technologies
-});
+const props = defineProps<{
+    element: keyof TechnologiesType
+}>();
 
-const technologies: Technologies = {
+const technologies: TechnologiesType = {
     php: {
         title: 'PHP',
         icon: 'logos:php',

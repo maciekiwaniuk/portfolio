@@ -60,8 +60,8 @@ const props = defineProps<{
 }>()
 
 // animation only for menu on big screens
-type LinksAnimation = 'zoom-in-up' | null;
-const linksAnimation = ref<LinksAnimation>(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
+type LinksAnimationType = 'zoom-in-up' | null;
+const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
 
 </script>
 
