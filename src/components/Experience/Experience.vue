@@ -23,6 +23,7 @@
                 :content="t('experience.experienceItems.ebrand.content')"
                 :profession="t('experience.experienceItems.ebrand.profession')"
                 :period="t('experience.experienceItems.ebrand.period')"
+                :length="t('experience.experienceItems.ebrand.length')"
                 :url="ebrandUrl"
                 :technologies="ebrandTechnologies"
                 animation="fade-left"

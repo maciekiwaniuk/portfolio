@@ -86,8 +86,7 @@ const currentYear: number = new Date().getFullYear();
     flex-wrap: wrap;
     min-height: 4rem;
     min-width: 100%;
-    border-top: solid @blue-color 0.2rem;
-    border-bottom: solid @blue-color 0.2rem;
+    border-top: solid @blue-color 0.1rem;
 
     a {
         text-decoration: none;

@@ -36,14 +36,13 @@
                 "content": "Development of a web application relating to the management of employees in a company.",
                 "profession": "PHP Developer",
                 "period": "Aug 2021 - Dec 2022 ",
-                "length": "(1 year 5 months)",
-                "city": "Bialystok"
+                "length": "(1 year 5 months)"
             },
             "ebrand": {
-                "content": "",
+                "content": "Development of a distributed microservices-based system relating to online brand protection. Integration with multiple external APIs.",
                 "profession":"PHP Developer",
-                "period": "May 2023 - now",
-                "city": "Bialystok"
+                "period": "Apr 2023 - Sep 2023 ",
+                "length": "(6 months)"
             }
         }
     },

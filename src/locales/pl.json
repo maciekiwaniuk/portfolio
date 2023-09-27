@@ -35,15 +35,14 @@
             "merinosoft": {
                 "content": "Rozwój aplikacji webowej związanej z zarządzaniem pracownikami przez firmy.",
                 "profession": "Programista PHP",
-                "period": "sie 2021 - gru 2022",
-                "length": "(1 rok 5 mies.)",
-                "city": "Białystok"
+                "period": "sie 2021 - gru 2022 ",
+                "length": "(1 rok 5 mies.)"
             },
             "ebrand": {
-                "content": "",
+                "content": "Rozwój rozproszonego systemu opartego na architekturę mikroserwioswą związanego z ochroną marek online. Integracje z licznymi zewnętrznymi systemami przez API.",
                 "profession":"Programista PHP",
-                "period": "maj 2023 - teraz",
-                "city": "Bialystok"
+                "period": "kwi 2023 - wrz 2023 ",
+                "length": "(6 mies.)"
             }
         }
     },
