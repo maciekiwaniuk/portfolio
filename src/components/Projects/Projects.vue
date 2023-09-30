@@ -10,44 +10,40 @@ type ProjectType = {
     online?: string,
     technologies: TechnologyType[]
 }
-
-const demoCryptoExchange: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
-    technologies: [
-        'php', 'phpunit', 'symfony',
-        'typescript', 'vue', 'mysql'
-    ]
-};
-
-const snakeWebApp: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/snake-web-app',
-    technologies: [
-        'php', 'laravel', 'javascript',
-        'jquery', 'bootstrap', 'mysql',
-        'redis', 'pwa'
-    ]
-};
-
-const snakeGame: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/snake-game',
-    technologies: ['python', 'pygame', 'pyqt5']
-};
-
-const minesweeper: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/minesweeper',
-    online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
-    technologies: ['javascript', 'css']
-};
-
-const portfolio: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/portfolio',
-    technologies: ['typescript', 'vue', 'less', 'pwa']
-};
-
-const youtubeDownloader: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/youtube-downloader',
-    technologies: ['python', 'tkinter']
-};
+const projects: ProjectType[] = [
+    {
+        github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
+        technologies: [
+            'php', 'phpunit', 'symfony',
+            'typescript', 'vue', 'mysql'
+        ]
+    },
+    {
+        github: 'https://github.com/maciekiwaniuk/snake-web-app',
+        technologies: [
+            'php', 'laravel', 'javascript',
+            'jquery', 'bootstrap', 'mysql',
+            'redis', 'pwa'
+        ]
+    },
+    {
+        github: 'https://github.com/maciekiwaniuk/snake-game',
+        technologies: ['python', 'pygame', 'pyqt5']
+    },
+    {
+        github: 'https://github.com/maciekiwaniuk/minesweeper',
+        online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
+        technologies: ['javascript', 'css']
+    },
+    {
+        github: 'https://github.com/maciekiwaniuk/portfolio',
+        technologies: ['typescript', 'vue', 'less', 'pwa']
+    },
+    {
+        github: 'https://github.com/maciekiwaniuk/youtube-downloader',
+        technologies: ['python', 'tkinter']
+    }
+];
 
 </script>
 
@@ -61,52 +57,13 @@ const youtubeDownloader: ProjectType = {
 
         <div class="items">
             <ProjectsItem
+                v-for="(project, index) in projects"
+                :key="index"
                 :title="t('projects.projectsItems.demoCryptoExchange.title')"
                 :content="t('projects.projectsItems.demoCryptoExchange.content')"
-                :technologies="demoCryptoExchange.technologies"
-                :github="demoCryptoExchange.github"
-                animation="fade-left"
-            />
-
-            <ProjectsItem
-                :title="t('projects.projectsItems.snakeWebApp.title')"
-                :content="t('projects.projectsItems.snakeWebApp.content')"
-                :technologies="snakeWebApp.technologies"
-                :github="snakeWebApp.github"
-                animation="fade-right"
-            />
-
-            <ProjectsItem
-                :title="t('projects.projectsItems.snakeGame.title')"
-                :content="t('projects.projectsItems.snakeGame.content')"
-                :technologies="snakeGame.technologies"
-                :github="snakeGame.github"
-                animation="fade-left"
-            />
-
-            <ProjectsItem
-                :title="t('projects.projectsItems.minesweeper.title')"
-                :content="t('projects.projectsItems.minesweeper.content')"
-                :technologies="minesweeper.technologies"
-                :github="minesweeper.github"
-                :online="minesweeper.online"
-                animation="fade-right"
-            />
-
-            <ProjectsItem
-                title="Portfolio"
-                :content="t('projects.projectsItems.portfolio.content')"
-                :technologies="portfolio.technologies"
-                :github="portfolio.github"
-                animation="fade-left"
-            />
-
-            <ProjectsItem
-                :title="t('projects.projectsItems.youtubeDownloader.title')"
-                :content="t('projects.projectsItems.youtubeDownloader.content')"
-                :technologies="youtubeDownloader.technologies"
-                :github="youtubeDownloader.github"
-                animation="fade-right"
+                :technologies="project.technologies"
+                :github="project.github"
+                :animation="index % 2 === 0 ? 'fade-right' : 'fade-left'"
             />
         </div>
     </section>
