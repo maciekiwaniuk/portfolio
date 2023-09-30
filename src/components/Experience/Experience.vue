@@ -1,3 +1,26 @@
+<script setup lang="ts">
+import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { TechnologyType } from '@/types/TechnologyType';
+
+const { t } = useLanguageSwitcher();
+
+const merinosoftTitle: string = 'Merinosoft Sp. z o.o.',
+      merinosoftUrl: string = 'https://merinosoft.pl/',
+      merinosoftTechnologies: TechnologyType[] = [
+          'php', 'laravel', 'javascript', 'jquery',
+          'bootstrap', 'postgresql', 'git'
+      ];
+
+const ebrandTitle: string = 'EBRAND',
+      ebrandUrl: string = 'https://ebrand.com/',
+      ebrandTechnologies: TechnologyType[] = [
+          'php', 'phpunit', 'symfony', 'redis',
+          'rabbitmq', 'microservices', 'git'
+      ];
+
+</script>
+
 <template>
     <section
         role="region"
@@ -32,29 +55,6 @@
 
     </section>
 </template>
-
-<script setup lang="ts">
-import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { TechnologyType } from '@/types/TechnologyType';
-
-const { t } = useLanguageSwitcher();
-
-const merinosoftTitle: string = 'Merinosoft Sp. z o.o.',
-      merinosoftUrl: string = 'https://merinosoft.pl/',
-      merinosoftTechnologies: TechnologyType[] = [
-          'php', 'laravel', 'javascript', 'jquery',
-          'bootstrap', 'postgresql', 'git'
-      ];
-
-const ebrandTitle: string = 'EBRAND',
-      ebrandUrl: string = 'https://ebrand.com/',
-      ebrandTechnologies: TechnologyType[] = [
-          'php', 'phpunit', 'symfony', 'redis',
-          'rabbitmq', 'microservices', 'git'
-      ];
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

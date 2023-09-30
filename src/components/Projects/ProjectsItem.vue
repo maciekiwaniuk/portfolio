@@ -1,3 +1,27 @@
+<script setup lang="ts">
+import { Icon } from '@iconify/vue';
+import TechnologyElement from '@/components/TechnologyElement.vue';
+import { useCursorHover } from '@/directives/useCursorHover';
+import { useThemeStore } from '@/stores/theme';
+import { TechnologyType } from '@/types/TechnologyType';
+import { AnimationType } from '@/types/AnimationType';
+import { DarkTheme, LightTheme } from '@/constants/app';
+
+const vCursorHover = useCursorHover();
+
+const themeStore = useThemeStore();
+
+const props = defineProps<{
+    title: string,
+    content: string,
+    technologies: TechnologyType[],
+    github: string,
+    online?: string,
+    animation: AnimationType
+}>()
+
+</script>
+
 <template>
     <div :data-aos="props.animation">
         <div
@@ -50,30 +74,6 @@
         </div>
     </div>
 </template>
-
-<script setup lang="ts">
-import { Icon } from '@iconify/vue';
-import TechnologyElement from '@/components/TechnologyElement.vue';
-import { useCursorHover } from '@/directives/useCursorHover';
-import { useThemeStore } from '@/stores/theme';
-import { TechnologyType } from '@/types/TechnologyType';
-import { AnimationType } from '@/types/AnimationType';
-import { DarkTheme, LightTheme } from '@/constants/app';
-
-const vCursorHover = useCursorHover();
-
-const themeStore = useThemeStore();
-
-const props = defineProps<{
-    title: string,
-    content: string,
-    technologies: TechnologyType[],
-    github: string,
-    online?: string,
-    animation: AnimationType
-}>()
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

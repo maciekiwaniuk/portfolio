@@ -1,22 +1,3 @@
-<template>
-    <div
-        class="technology-element"
-        :class="{ 'technology-element-dark-theme': themeStore.theme === DarkTheme,
-                  'technology-element-light-theme': themeStore.theme === LightTheme }"
-    >
-
-        <div class="icon">
-            <Icon
-                :icon="technologies[props.element].icon"
-                :width="technologies[props.element].width"
-            />
-        </div>
-
-        <span class="title">{{ technologies[props.element].title }}</span>
-
-    </div>
-</template>
-
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
 import { useThemeStore } from '@/stores/theme';
@@ -182,6 +163,25 @@ const technologies: TechnologiesType = {
 };
 
 </script>
+
+<template>
+    <div
+        class="technology-element"
+        :class="{ 'technology-element-dark-theme': themeStore.theme === DarkTheme,
+                  'technology-element-light-theme': themeStore.theme === LightTheme }"
+    >
+
+        <div class="icon">
+            <Icon
+                :icon="technologies[props.element].icon"
+                :width="technologies[props.element].width"
+            />
+        </div>
+
+        <span class="title">{{ technologies[props.element].title }}</span>
+
+    </div>
+</template>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

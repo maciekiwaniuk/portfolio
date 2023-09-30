@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import { Icon } from '@iconify/vue';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { useCursorHover } from '@/directives/useCursorHover';
+import { useThemeStore } from '@/stores/theme';
+import { DarkTheme, LightTheme } from '@/constants/app';
+
+const { t } = useLanguageSwitcher();
+
+const vCursorHover = useCursorHover();
+
+const themeStore = useThemeStore();
+
+const currentYear: number = new Date().getFullYear();
+
+</script>
+
 <template>
     <footer
         role="contentinfo"
@@ -58,23 +75,6 @@
         </div>
     </footer>
 </template>
-
-<script setup lang="ts">
-import { Icon } from '@iconify/vue';
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { useCursorHover } from '@/directives/useCursorHover';
-import { useThemeStore } from '@/stores/theme';
-import { DarkTheme, LightTheme } from '@/constants/app';
-
-const { t } = useLanguageSwitcher();
-
-const vCursorHover = useCursorHover();
-
-const themeStore = useThemeStore();
-
-const currentYear: number = new Date().getFullYear();
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

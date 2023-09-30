@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import TechnologyElement from '@/components/TechnologyElement.vue';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { TechnologyType } from '@/types/TechnologyType';
+
+const { t } = useLanguageSwitcher();
+
+const useRegularlyTechnologies: TechnologyType[] = [
+    'php', 'phpunit', 'symfony', 'mysql',
+    'rabbitmq', 'redis', 'docker', 'git',
+    'github'
+];
+
+const hadContactTechnologies: TechnologyType[] = [
+    'python', 'csharp', 'java', 'laravel', 'jquery',
+    'sass', 'tailwind', 'bootstrap', 'postgresql',
+    'javascript', 'typescript', 'vue', 'pwa'
+];
+
+</script>
+
 <template>
     <div id="skills" class="skills">
 
@@ -29,27 +50,6 @@
 
     </div>
 </template>
-
-<script setup lang="ts">
-import TechnologyElement from '@/components/TechnologyElement.vue';
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { TechnologyType } from '@/types/TechnologyType';
-
-const { t } = useLanguageSwitcher();
-
-const useRegularlyTechnologies: TechnologyType[] = [
-    'php', 'phpunit', 'symfony', 'mysql',
-    'rabbitmq', 'redis', 'docker', 'git',
-    'github'
-];
-
-const hadContactTechnologies: TechnologyType[] = [
-    'python', 'csharp', 'java', 'laravel', 'jquery',
-    'sass', 'tailwind', 'bootstrap', 'postgresql',
-    'javascript', 'typescript', 'vue', 'pwa'
-];
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

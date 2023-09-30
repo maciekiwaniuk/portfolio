@@ -1,17 +1,3 @@
-<template>
-    <a
-        :class="{ 'vertical-alignment': props.alignment === VerticalNavigationAlignment,
-                  'horizontal-alignment': props.alignment === HorizontalNavigationAlignment,
-                  'link-dark-theme': themeStore.theme === DarkTheme,
-                  'link-light-theme': themeStore.theme === LightTheme }"
-        v-cursor-hover
-        :href="`#${element}`"
-        @click="navMenuStore.close()"
-    >
-        {{ text }}
-    </a>
-</template>
-
 <script setup lang="ts">
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
@@ -32,6 +18,20 @@ const props = defineProps<{
 }>();
 
 </script>
+
+<template>
+    <a
+        :class="{ 'vertical-alignment': props.alignment === VerticalNavigationAlignment,
+                  'horizontal-alignment': props.alignment === HorizontalNavigationAlignment,
+                  'link-dark-theme': themeStore.theme === DarkTheme,
+                  'link-light-theme': themeStore.theme === LightTheme }"
+        v-cursor-hover
+        :href="`#${element}`"
+        @click="navMenuStore.close()"
+    >
+        {{ text }}
+    </a>
+</template>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

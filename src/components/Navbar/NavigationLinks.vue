@@ -1,3 +1,28 @@
+<script setup lang="ts">
+import NavigationLinksLink from '@/components/Navbar/NavigationLinksLink.vue';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
+import { ref } from '@vue/reactivity';
+import { AlignmentType } from '@/types/AlignmentType';
+import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '@/constants/app';
+
+const { t } = useLanguageSwitcher();
+
+const themeStore = useThemeStore();
+
+const navMenuStore = useNavMenuStore();
+
+const props = defineProps<{
+    alignment: AlignmentType
+}>()
+
+// animation only for menu on big screens
+type LinksAnimationType = 'zoom-in-up' | null;
+const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
+
+</script>
+
 <template>
     <div
         class="navigation-links"
@@ -39,31 +64,6 @@
 
     </div>
 </template>
-
-<script setup lang="ts">
-import NavigationLinksLink from '@/components/Navbar/NavigationLinksLink.vue';
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { useThemeStore } from '@/stores/theme';
-import { useNavMenuStore } from '@/stores/navMenu';
-import { ref } from '@vue/reactivity';
-import { AlignmentType } from '@/types/AlignmentType';
-import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '@/constants/app';
-
-const { t } = useLanguageSwitcher();
-
-const themeStore = useThemeStore();
-
-const navMenuStore = useNavMenuStore();
-
-const props = defineProps<{
-    alignment: AlignmentType
-}>()
-
-// animation only for menu on big screens
-type LinksAnimationType = 'zoom-in-up' | null;
-const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { Icon } from '@iconify/vue';
+import { useCursorHover } from '@/directives/useCursorHover';
+import { useThemeStore } from '@/stores/theme';
+import { useCursorStore } from '@/stores/cursor';
+import { CursorVisible, DarkTheme, LightTheme } from '@/constants/app';
+
+const vCursorHover = useCursorHover();
+
+const themeStore = useThemeStore();
+
+const cursorStore = useCursorStore();
+
+</script>
+
 <template>
     <div
         aria-hidden="true"
@@ -20,21 +35,6 @@
         />
     </button>
 </template>
-
-<script setup lang="ts">
-import { Icon } from '@iconify/vue';
-import { useCursorHover } from '@/directives/useCursorHover';
-import { useThemeStore } from '@/stores/theme';
-import { useCursorStore } from '@/stores/cursor';
-import { CursorVisible, DarkTheme, LightTheme } from '@/constants/app';
-
-const vCursorHover = useCursorHover();
-
-const themeStore = useThemeStore();
-
-const cursorStore = useCursorStore();
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

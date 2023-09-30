@@ -1,3 +1,56 @@
+<script setup lang="ts">
+import ProjectsItem from '@/components/Projects/ProjectsItem.vue';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { TechnologyType } from '@/types/TechnologyType';
+
+const { t } = useLanguageSwitcher();
+
+type ProjectType = {
+    github: string,
+    online?: string,
+    technologies: TechnologyType[]
+}
+
+const demoCryptoExchange: ProjectType = {
+    github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
+    technologies: [
+        'php', 'phpunit', 'symfony',
+        'typescript', 'vue', 'mysql'
+    ]
+};
+
+const snakeWebApp: ProjectType = {
+    github: 'https://github.com/maciekiwaniuk/snake-web-app',
+    technologies: [
+        'php', 'laravel', 'javascript',
+        'jquery', 'bootstrap', 'mysql',
+        'redis', 'pwa'
+    ]
+};
+
+const snakeGame: ProjectType = {
+    github: 'https://github.com/maciekiwaniuk/snake-game',
+    technologies: ['python', 'pygame', 'pyqt5']
+};
+
+const minesweeper: ProjectType = {
+    github: 'https://github.com/maciekiwaniuk/minesweeper',
+    online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
+    technologies: ['javascript', 'css']
+};
+
+const portfolio: ProjectType = {
+    github: 'https://github.com/maciekiwaniuk/portfolio',
+    technologies: ['typescript', 'vue', 'less', 'pwa']
+};
+
+const youtubeDownloader: ProjectType = {
+    github: 'https://github.com/maciekiwaniuk/youtube-downloader',
+    technologies: ['python', 'tkinter']
+};
+
+</script>
+
 <template>
     <section
         role="region"
@@ -58,59 +111,6 @@
         </div>
     </section>
 </template>
-
-<script setup lang="ts">
-import ProjectsItem from '@/components/Projects/ProjectsItem.vue';
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { TechnologyType } from '@/types/TechnologyType';
-
-const { t } = useLanguageSwitcher();
-
-type ProjectType = {
-    github: string,
-    online?: string,
-    technologies: TechnologyType[]
-}
-
-const demoCryptoExchange: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
-    technologies: [
-        'php', 'phpunit', 'symfony',
-        'typescript', 'vue', 'mysql'
-    ]
-};
-
-const snakeWebApp: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/snake-web-app',
-    technologies: [
-        'php', 'laravel', 'javascript',
-        'jquery', 'bootstrap', 'mysql',
-        'redis', 'pwa'
-    ]
-};
-
-const snakeGame: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/snake-game',
-    technologies: ['python', 'pygame', 'pyqt5']
-};
-
-const minesweeper: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/minesweeper',
-    online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
-    technologies: ['javascript', 'css']
-};
-
-const portfolio: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/portfolio',
-    technologies: ['typescript', 'vue', 'less', 'pwa']
-};
-
-const youtubeDownloader: ProjectType = {
-    github: 'https://github.com/maciekiwaniuk/youtube-downloader',
-    technologies: ['python', 'tkinter']
-};
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

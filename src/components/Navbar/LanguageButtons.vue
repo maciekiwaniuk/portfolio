@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { useCursorHover } from '@/directives/useCursorHover';
+import { EnglishLanguage, PolishLanguage } from '@/constants/app';
+
+const { t, changeLanguage } = useLanguageSwitcher();
+
+const vCursorHover = useCursorHover();
+
+</script>
+
 <template>
     <div data-aos="zoom-in-up">
         <button
@@ -29,17 +40,6 @@
         </button>
     </div>
 </template>
-
-<script setup lang="ts">
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { useCursorHover } from '@/directives/useCursorHover';
-import { EnglishLanguage, PolishLanguage } from '@/constants/app';
-
-const { t, changeLanguage } = useLanguageSwitcher();
-
-const vCursorHover = useCursorHover();
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

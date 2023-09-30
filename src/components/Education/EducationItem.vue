@@ -1,3 +1,27 @@
+<script setup lang="ts">
+import TechnologyElement from '@/components/TechnologyElement.vue';
+import { useCursorHover } from '@/directives/useCursorHover';
+import { useThemeStore } from '@/stores/theme';
+import { TechnologyType } from '@/types/TechnologyType';
+import { AnimationType } from '@/types/AnimationType';
+import { DarkTheme, LightTheme } from '@/constants/app';
+
+const vCursorHover = useCursorHover();
+
+const themeStore = useThemeStore();
+
+const props = defineProps<{
+    title: string,
+    content: string,
+    major: string,
+    period: string,
+    url: string,
+    technologies: TechnologyType[],
+    animation: AnimationType
+}>();
+
+</script>
+
 <template>
     <div :data-aos="props.animation">
         <a
@@ -33,30 +57,6 @@
         </a>
     </div>
 </template>
-
-<script setup lang="ts">
-import TechnologyElement from '@/components/TechnologyElement.vue';
-import { useCursorHover } from '@/directives/useCursorHover';
-import { useThemeStore } from '@/stores/theme';
-import { TechnologyType } from '@/types/TechnologyType';
-import { AnimationType } from '@/types/AnimationType';
-import { DarkTheme, LightTheme } from '@/constants/app';
-
-const vCursorHover = useCursorHover();
-
-const themeStore = useThemeStore();
-
-const props = defineProps<{
-    title: string,
-    content: string,
-    major: string,
-    period: string,
-    url: string,
-    technologies: TechnologyType[],
-    animation: AnimationType
-}>();
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

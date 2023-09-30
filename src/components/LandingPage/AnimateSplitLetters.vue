@@ -1,18 +1,3 @@
-<template>
-    <span v-if="smallDevice">{{ props.text }}</span>
-
-    <span
-        v-if="!smallDevice"
-        v-for="(letter, index) in splitLetters"
-        :key="index"
-        :style="{ animationDelay: (index / 10) + 's' }"
-        @mouseover="restartAnimation($event);"
-        class="animation"
-    >
-        {{ letter }}
-    </span>
-</template>
-
 <script setup lang="ts">
 const props = defineProps<{
     text: string
@@ -31,6 +16,21 @@ const restartAnimation = (event: Event) => {
 };
 
 </script>
+
+<template>
+    <span v-if="smallDevice">{{ props.text }}</span>
+
+    <span
+        v-if="!smallDevice"
+        v-for="(letter, index) in splitLetters"
+        :key="index"
+        :style="{ animationDelay: (index / 10) + 's' }"
+        @mouseover="restartAnimation($event);"
+        class="animation"
+    >
+        {{ letter }}
+    </span>
+</template>
 
 <style lang="less">
 .animation {

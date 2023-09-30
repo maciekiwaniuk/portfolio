@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import AnimateSplitLetters from '@/components/LandingPage/AnimateSplitLetters.vue';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+
+const { t } = useLanguageSwitcher();
+
+</script>
+
 <template>
     <section
         role="region"
@@ -19,14 +27,6 @@
         </div>
     </section>
 </template>
-
-<script setup lang="ts">
-import AnimateSplitLetters from '@/components/LandingPage/AnimateSplitLetters.vue';
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-
-const { t } = useLanguageSwitcher();
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

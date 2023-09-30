@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import EducationItem from '@/components/Education/EducationItem.vue';
+import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { TechnologyType } from '@/types/TechnologyType';
+
+const { t } = useLanguageSwitcher();
+
+const zsePeriod: string = '2019 - 2023',
+    zseUrl: string = 'https://zse.bialystok.pl/',
+    zseTechnologies: TechnologyType[] = [
+        'php', 'javascript', 'mysql',
+        'python', 'csharp', 'java'
+    ];
+
+</script>
+
 <template>
     <section
         role="region"
@@ -20,22 +36,6 @@
 
     </section>
 </template>
-
-<script setup lang="ts">
-import EducationItem from '@/components/Education/EducationItem.vue';
-import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { TechnologyType } from '@/types/TechnologyType';
-
-const { t } = useLanguageSwitcher();
-
-const zsePeriod: string = '2019 - 2023',
-      zseUrl: string = 'https://zse.bialystok.pl/',
-      zseTechnologies: TechnologyType[] = [
-        'php', 'javascript', 'mysql',
-        'python', 'csharp', 'java'
-      ];
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';

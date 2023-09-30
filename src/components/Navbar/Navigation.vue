@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import NavigationLinks from '@/components/Navbar/NavigationLinks.vue';
+import { useThemeStore } from '@/stores/theme';
+import { useNavMenuStore } from '@/stores/navMenu';
+import { useCursorHover } from '@/directives/useCursorHover';
+import { DarkTheme, LightTheme } from '@/constants/app';
+
+const themeStore = useThemeStore();
+
+const navMenuStore = useNavMenuStore();
+
+const vCursorHover = useCursorHover();
+
+</script>
+
 <template>
     <header
         role="banner"
@@ -31,21 +46,6 @@
         </div>
     </header>
 </template>
-
-<script setup lang="ts">
-import NavigationLinks from '@/components/Navbar/NavigationLinks.vue';
-import { useThemeStore } from '@/stores/theme';
-import { useNavMenuStore } from '@/stores/navMenu';
-import { useCursorHover } from '@/directives/useCursorHover';
-import { DarkTheme, LightTheme } from '@/constants/app';
-
-const themeStore = useThemeStore();
-
-const navMenuStore = useNavMenuStore();
-
-const vCursorHover = useCursorHover();
-
-</script>
 
 <style lang="less" scoped>
 @import '@/styles/variables.less';
