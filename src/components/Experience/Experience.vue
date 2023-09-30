@@ -2,6 +2,7 @@
 import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { TechnologyType } from '@/types/TechnologyType';
+import ProjectsItem from "@/components/Projects/ProjectsItem.vue";
 
 const { t } = useLanguageSwitcher();
 
@@ -11,11 +12,11 @@ type Experience = {
     profession: string,
     period: string,
     length?: string,
-    url?: string,
+    url: string,
     technologies: TechnologyType[]
 };
 
-const experienceList: Experience[] = [
+const experienceItems: Experience[] = [
     {
         title: 'Merinosoft Sp. z o.o.',
         content: t('experience.experienceItems.merinosoft.content'),
@@ -54,7 +55,7 @@ const experienceList: Experience[] = [
 
         <div class="items">
             <ExperienceItem
-                v-for="(experience, index) in experienceList"
+                v-for="(experience, index) in experienceItems"
                 :key="index"
                 :title="experience.title"
                 :content="experience.content"
@@ -63,7 +64,7 @@ const experienceList: Experience[] = [
                 :length="experience.length"
                 :url="experience.url"
                 :technologies="experience.technologies"
-                animation="fade-left"
+                :animation="index % 2 === 0 ? 'fade-right' : 'fade-left'"
             />
         </div>
 

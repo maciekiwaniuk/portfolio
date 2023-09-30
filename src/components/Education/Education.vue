@@ -5,12 +5,27 @@ import { TechnologyType } from '@/types/TechnologyType';
 
 const { t } = useLanguageSwitcher();
 
-const zsePeriod: string = '2019 - 2023',
-    zseUrl: string = 'https://zse.bialystok.pl/',
-    zseTechnologies: TechnologyType[] = [
-        'php', 'javascript', 'mysql',
-        'python', 'csharp', 'java'
-    ];
+type Education = {
+    title: string,
+    content: string,
+    major: string,
+    period: string,
+    url: string,
+    technologies: TechnologyType[]
+};
+const educationItems: Education[] = [
+    {
+        title: t('education.educationItems.zse.title'),
+        content: t('education.educationItems.zse.content'),
+        major: t('education.educationItems.zse.major'),
+        period: '2019 - 2023',
+        url: 'https://zse.bialystok.pl/',
+        technologies: [
+            'php', 'javascript', 'mysql',
+            'python', 'csharp', 'java'
+        ]
+    }
+];
 
 </script>
 
@@ -24,12 +39,14 @@ const zsePeriod: string = '2019 - 2023',
 
         <div class="items">
             <EducationItem
-                :title="t('education.educationItems.zse.title')"
-                :content="t('education.educationItems.zse.content')"
-                :major="t('education.educationItems.zse.major')"
-                :period="zsePeriod"
-                :url="zseUrl"
-                :technologies="zseTechnologies"
+                v-for="(education, index) in educationItems"
+                :key="index"
+                :title="education.title"
+                :content="education.content"
+                :major="education.major"
+                :period="education.period"
+                :url="education.url"
+                :technologies="education.technologies"
                 animation="fade-up"
             />
         </div>
