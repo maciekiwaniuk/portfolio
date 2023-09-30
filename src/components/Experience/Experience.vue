@@ -5,19 +5,42 @@ import { TechnologyType } from '@/types/TechnologyType';
 
 const { t } = useLanguageSwitcher();
 
-const merinosoftTitle: string = 'Merinosoft Sp. z o.o.',
-      merinosoftUrl: string = 'https://merinosoft.pl/',
-      merinosoftTechnologies: TechnologyType[] = [
-          'php', 'laravel', 'javascript', 'jquery',
-          'bootstrap', 'postgresql', 'git'
-      ];
+type Experience = {
+    title: string,
+    content: string,
+    profession: string,
+    period: string,
+    length?: string,
+    url?: string,
+    technologies: TechnologyType[]
+};
 
-const ebrandTitle: string = 'EBRAND',
-      ebrandUrl: string = 'https://ebrand.com/',
-      ebrandTechnologies: TechnologyType[] = [
-          'php', 'phpunit', 'symfony', 'redis',
-          'rabbitmq', 'microservices', 'git'
-      ];
+const experienceList: Experience[] = [
+    {
+        title: 'Merinosoft Sp. z o.o.',
+        content: t('experience.experienceItems.merinosoft.content'),
+        profession: t('experience.experienceItems.merinosoft.profession'),
+        period: t('experience.experienceItems.merinosoft.period'),
+        length: t('experience.experienceItems.merinosoft.length'),
+        url: 'https://merinosoft.pl/',
+        technologies: [
+            'php', 'laravel', 'javascript', 'jquery',
+            'bootstrap', 'postgresql', 'git'
+        ]
+    },
+    {
+        title: 'EBRAND',
+        content: t('experience.experienceItems.ebrand.content'),
+        profession: t('experience.experienceItems.ebrand.profession'),
+        period: t('experience.experienceItems.ebrand.period'),
+        length: t('experience.experienceItems.ebrand.length'),
+        url: 'https://ebrand.com/',
+        technologies: [
+            'php', 'phpunit', 'symfony', 'redis',
+            'rabbitmq', 'microservices', 'git'
+        ]
+    }
+];
 
 </script>
 
@@ -31,24 +54,15 @@ const ebrandTitle: string = 'EBRAND',
 
         <div class="items">
             <ExperienceItem
-                :title="merinosoftTitle"
-                :content="t('experience.experienceItems.merinosoft.content')"
-                :profession="t('experience.experienceItems.merinosoft.profession')"
-                :period="t('experience.experienceItems.merinosoft.period')"
-                :length="t('experience.experienceItems.merinosoft.length')"
-                :url="merinosoftUrl"
-                :technologies="merinosoftTechnologies"
-                animation="fade-right"
-            />
-
-            <ExperienceItem
-                :title="ebrandTitle"
-                :content="t('experience.experienceItems.ebrand.content')"
-                :profession="t('experience.experienceItems.ebrand.profession')"
-                :period="t('experience.experienceItems.ebrand.period')"
-                :length="t('experience.experienceItems.ebrand.length')"
-                :url="ebrandUrl"
-                :technologies="ebrandTechnologies"
+                v-for="(experience, index) in experienceList"
+                :key="index"
+                :title="experience.title"
+                :content="experience.content"
+                :profession="experience.profession"
+                :period="experience.period"
+                :length="experience.length"
+                :url="experience.url"
+                :technologies="experience.technologies"
                 animation="fade-left"
             />
         </div>

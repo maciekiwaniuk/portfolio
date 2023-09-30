@@ -16,7 +16,7 @@ const props = defineProps<{
     profession: string,
     period: string,
     length?: string,
-    url: string,
+    url?: string,
     technologies: TechnologyType[],
     animation: AnimationType
 }>();

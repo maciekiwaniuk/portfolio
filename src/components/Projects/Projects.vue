@@ -9,7 +9,7 @@ type ProjectType = {
     github: string,
     online?: string,
     technologies: TechnologyType[]
-}
+};
 const projects: ProjectType[] = [
     {
         github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
