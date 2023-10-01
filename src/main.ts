@@ -10,7 +10,7 @@ import './plugins/registerServiceWorker';
 
 const pinia: Pinia = createPinia();
 
-const app: any = createApp(App);
+const app = createApp(App);
 
 /* import AOS library for animations on scroll */
 const aosOptions = {
@@ -21,6 +21,7 @@ const aosOptions = {
     once: true as boolean,
     duration: 700 as number
 };
+// @ts-ignore
 app.AOS = AOS.init(aosOptions);
 
 app

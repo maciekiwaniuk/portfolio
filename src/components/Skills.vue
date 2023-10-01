@@ -7,14 +7,14 @@ const { t } = useLanguageSwitcher();
 
 const useRegularlyTechnologies: TechnologyType[] = [
     'php', 'phpunit', 'symfony', 'mysql',
-    'rabbitmq', 'redis', 'docker', 'git',
-    'github'
+    'redis', 'docker', 'git', 'github'
 ];
 
 const hadContactTechnologies: TechnologyType[] = [
-    'python', 'csharp', 'java', 'laravel', 'jquery',
-    'sass', 'tailwind', 'bootstrap', 'postgresql',
-    'javascript', 'typescript', 'vue', 'pwa'
+    'python', 'csharp', 'java', 'laravel',
+    'rabbitmq', 'jquery', 'sass', 'tailwind',
+    'bootstrap', 'postgresql', 'javascript', 'typescript',
+    'vue', 'pwa'
 ];
 
 </script>

@@ -6,12 +6,16 @@ import { TechnologyType } from '@/types/TechnologyType';
 const { t } = useLanguageSwitcher();
 
 type ProjectType = {
+    title: string,
+    content: string,
     github: string,
     online?: string,
     technologies: TechnologyType[]
 };
 const projects: ProjectType[] = [
     {
+        title: t('projects.projectsItems.demoCryptoExchange.title'),
+        content: t('projects.projectsItems.demoCryptoExchange.content'),
         github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
         technologies: [
             'php', 'phpunit', 'symfony',
@@ -19,6 +23,8 @@ const projects: ProjectType[] = [
         ]
     },
     {
+        title: t('projects.projectsItems.snakeWebApp.title'),
+        content: t('projects.projectsItems.snakeWebApp.content'),
         github: 'https://github.com/maciekiwaniuk/snake-web-app',
         technologies: [
             'php', 'laravel', 'javascript',
@@ -27,19 +33,27 @@ const projects: ProjectType[] = [
         ]
     },
     {
+        title: t('projects.projectsItems.snakeGame.title'),
+        content: t('projects.projectsItems.snakeGame.content'),
         github: 'https://github.com/maciekiwaniuk/snake-game',
         technologies: ['python', 'pygame', 'pyqt5']
     },
     {
+        title: t('projects.projectsItems.minesweeper.title'),
+        content: t('projects.projectsItems.minesweeper.content'),
         github: 'https://github.com/maciekiwaniuk/minesweeper',
         online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
         technologies: ['javascript', 'css']
     },
     {
+        title: t('projects.projectsItems.portfolio.title'),
+        content: t('projects.projectsItems.portfolio.content'),
         github: 'https://github.com/maciekiwaniuk/portfolio',
         technologies: ['typescript', 'vue', 'less', 'pwa']
     },
     {
+        title: t('projects.projectsItems.youtubeDownloader.title'),
+        content: t('projects.projectsItems.youtubeDownloader.content'),
         github: 'https://github.com/maciekiwaniuk/youtube-downloader',
         technologies: ['python', 'tkinter']
     }
@@ -59,8 +73,8 @@ const projects: ProjectType[] = [
             <ProjectsItem
                 v-for="(project, index) in projects"
                 :key="index"
-                :title="t('projects.projectsItems.demoCryptoExchange.title')"
-                :content="t('projects.projectsItems.demoCryptoExchange.content')"
+                :title="project.title"
+                :content="project.content"
                 :technologies="project.technologies"
                 :github="project.github"
                 :animation="index % 2 === 0 ? 'fade-right' : 'fade-left'"

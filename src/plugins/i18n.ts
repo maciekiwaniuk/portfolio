@@ -10,11 +10,12 @@ import { LanguageType } from '@/types/LanguageType';
  */
 const loadLocaleMessages = () => {
     const locales = require.context('../locales', true, /[A-Za-z0-9-_,\s]+\.json$/i);
-    const messages: any = {};
+    const messages = {};
     locales.keys().forEach(key => {
         const matched: any = key.match(/([A-Za-z0-9-_]+)\./i);
         if (matched && matched.length > 1) {
             const locale = matched[1];
+            // @ts-ignore
             messages[locale] = locales(key).default;
         }
     });

@@ -73,6 +73,7 @@
                 "content": "A sapper game with a selectable game difficulty and a save option, which saves choices as well as user records to the local browser memory."
             },
             "portfolio": {
+                "title": "Portfolio",
                 "content": "A website summarizing information about myself. It includes information about my education, commercial experience and projects, whilst being interactive and animated."
             },
             "youtubeDownloader": {
