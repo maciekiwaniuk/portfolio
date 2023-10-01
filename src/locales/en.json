@@ -83,6 +83,10 @@
         }
     },
 
+    "contact": {
+        "title": "Contact"
+    },
+
     "footer": {
         "allRightsReserved": "© All rights reserved"
     },

@@ -18,6 +18,8 @@
 
         <Projects />
 
+        <Contact />
+
         <Footer />
     </main>
 </template>
@@ -30,6 +32,7 @@ import Education from '@/components/Education/Education.vue';
 import Experience from '@/components/Experience/Experience.vue';
 import Skills from '@/components/Skills.vue';
 import Projects from '@/components/Projects/Projects.vue';
+import Contact from '@/components/Contact.vue';
 import Footer from '@/components/Footer.vue';
 
 import { useThemeStore } from '@/stores/theme';
