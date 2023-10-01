@@ -1,6 +1,7 @@
 import { createI18n } from 'vue-i18n';
 import { EnglishLanguage, PolishLanguage } from '@/constants/app';
 import { LanguageType } from '@/types/LanguageType';
+import { LanguageKey } from '@/constants/localStorage';
 
 /**
  * Load locale messages
@@ -22,14 +23,14 @@ const loadLocaleMessages = () => {
     return messages;
 };
 
-if (localStorage.getItem('language') === null) {
+if (localStorage.getItem(LanguageKey) === null) {
     const userPreferredLanguage: LanguageType = navigator.language.match(/^en\b/)
         ? EnglishLanguage
         : PolishLanguage;
 
-    localStorage.setItem('language', userPreferredLanguage);
+    localStorage.setItem(LanguageKey, userPreferredLanguage);
 }
-const selectedLanguage: string = localStorage.getItem('language')!;
+const selectedLanguage: string = localStorage.getItem(LanguageKey)!;
 
 const i18n =  createI18n({
     legacy: false,

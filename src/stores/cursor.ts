@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { CursorVisibilityType } from '@/types/CursorVisibilityType';
 import { CursorHidden, CursorVisible } from '@/constants/app';
+import { CursorVisibilityKey } from '@/constants/localStorage';
 
 /**
  * Handles animation on cursor
@@ -8,7 +9,7 @@ import { CursorHidden, CursorVisible } from '@/constants/app';
 export const useCursorStore = defineStore('cursor', {
     state: (): { hover: boolean, visibility: CursorVisibilityType } => ({
         hover: false,
-        visibility: localStorage.getItem('cursor-visibility') as CursorVisibilityType ?? 'visible'
+        visibility: localStorage.getItem(CursorVisibilityKey) as CursorVisibilityType ?? CursorVisible
     }),
     actions: {
         toggle(): void {
@@ -17,11 +18,11 @@ export const useCursorStore = defineStore('cursor', {
         toggleVisibility(): void {
             if (this.visibility === CursorVisible) {
                 this.visibility = CursorHidden;
-                localStorage.setItem('cursor-visibility', CursorHidden);
+                localStorage.setItem(CursorVisibilityKey, CursorHidden);
 
             } else {
                 this.visibility = CursorVisible;
-                localStorage.setItem('cursor-visibility', CursorVisible);
+                localStorage.setItem(CursorVisibilityKey, CursorVisible);
             }
         }
     }

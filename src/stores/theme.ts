@@ -3,6 +3,7 @@ import { getTheme } from '@/functions/getTheme';
 import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundColorOnScrollbar';
 import { ThemeType } from '@/types/ThemeType';
 import { DarkTheme, LightTheme } from '@/constants/app';
+import { ThemeKey } from '@/constants/localStorage';
 
 /**
  * Handles themes - dark/light
@@ -17,7 +18,7 @@ export const useThemeStore = defineStore('theme', {
                 ? this.theme = LightTheme
                 : this.theme = DarkTheme;
 
-            localStorage.setItem('theme', this.theme);
+            localStorage.setItem(ThemeKey, this.theme);
 
             updateBackgroundColorOnScrollbar();
         }
