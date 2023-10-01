@@ -2,6 +2,7 @@
 import ProjectsItem from '@/components/Projects/ProjectsItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { TechnologyType } from '@/types/TechnologyType';
+import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
@@ -67,7 +68,7 @@ const projects: ProjectType[] = [
         id="projects"
         class="projects"
     >
-        <h2 data-aos="fade-down" class="title">{{ t('projects.title') }}</h2>
+        <h2 :data-aos="FadeDown" class="title">{{ t('projects.title') }}</h2>
 
         <div class="items">
             <ProjectsItem
@@ -77,7 +78,7 @@ const projects: ProjectType[] = [
                 :content="project.content"
                 :technologies="project.technologies"
                 :github="project.github"
-                :animation="index % 2 === 0 ? 'fade-right' : 'fade-left'"
+                :animation="index % 2 === 0 ? FadeRight : FadeLeft"
             />
         </div>
     </section>

@@ -2,6 +2,7 @@
 import EducationItem from '@/components/Education/EducationItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { TechnologyType } from '@/types/TechnologyType';
+import { FadeDown, FadeUp } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
@@ -35,7 +36,7 @@ const educationItems: Education[] = [
         id="education"
         class="education"
     >
-        <h2 data-aos="fade-down" class="title">{{ t('education.title') }}</h2>
+        <h2 :data-aos="FadeDown" class="title">{{ t('education.title') }}</h2>
 
         <div class="items">
             <EducationItem
@@ -47,7 +48,7 @@ const educationItems: Education[] = [
                 :period="education.period"
                 :url="education.url"
                 :technologies="education.technologies"
-                animation="fade-up"
+                :animation="FadeUp"
             />
         </div>
 

@@ -2,7 +2,7 @@
 import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { TechnologyType } from '@/types/TechnologyType';
-import ProjectsItem from "@/components/Projects/ProjectsItem.vue";
+import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
@@ -51,7 +51,7 @@ const experienceItems: Experience[] = [
         id="experience"
         class="experience"
     >
-        <h2 data-aos="fade-down" class="title">{{ t('experience.title') }}</h2>
+        <h2 :data-aos="FadeDown" class="title">{{ t('experience.title') }}</h2>
 
         <div class="items">
             <ExperienceItem
@@ -64,7 +64,7 @@ const experienceItems: Experience[] = [
                 :length="experience.length"
                 :url="experience.url"
                 :technologies="experience.technologies"
-                :animation="index % 2 === 0 ? 'fade-right' : 'fade-left'"
+                :animation="index % 2 === 0 ? FadeRight : FadeLeft"
             />
         </div>
 

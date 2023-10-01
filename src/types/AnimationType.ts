@@ -3,5 +3,4 @@ export type AnimationType =
     'fade-up' |
     'fade-left' |
     'fade-right' |
-    'fade-up-right' |
-    'fade-up-left';
+    'fade-up-right';

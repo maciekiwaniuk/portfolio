@@ -5,9 +5,6 @@ import { ThemeType } from '@/types/ThemeType';
 import { DarkTheme, LightTheme } from '@/constants/app';
 import { ThemeKey } from '@/constants/localStorage';
 
-/**
- * Handles themes - dark/light
- */
 export const useThemeStore = defineStore('theme', {
     state: (): { theme: ThemeType } => ({
         theme: getTheme()

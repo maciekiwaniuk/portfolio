@@ -2,6 +2,7 @@
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { TechnologyType } from '@/types/TechnologyType';
+import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
@@ -22,9 +23,9 @@ const hadContactTechnologies: TechnologyType[] = [
 <template>
     <div id="skills" class="skills">
 
-        <h2 class="title" data-aos="fade-down">{{ t('skills.title') }}</h2>
+        <h2 class="title" :data-aos="FadeDown">{{ t('skills.title') }}</h2>
 
-        <div class="element" data-aos="fade-right">
+        <div class="element" :data-aos="FadeRight">
             <h3 class="title-smaller">{{ t('skills.useRegularly') }}</h3>
 
             <div class="content">
@@ -36,7 +37,7 @@ const hadContactTechnologies: TechnologyType[] = [
             </div>
         </div>
 
-        <div class="element" data-aos="fade-left">
+        <div class="element" :data-aos="FadeLeft">
             <h3 class="title-smaller">{{ t('skills.hadContact') }}</h3>
 
             <div class="content">
