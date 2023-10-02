@@ -8,10 +8,10 @@ const { t } = useLanguageSwitcher();
 
 type Experience = {
     title: string,
-    content: string,
-    profession: string,
-    period: string,
-    length?: string,
+    contentKey: string,
+    professionKey: string,
+    periodKey: string,
+    lengthKey?: string,
     url: string,
     technologies: TechnologyType[]
 };
@@ -19,10 +19,10 @@ type Experience = {
 const experienceItems: Experience[] = [
     {
         title: 'Merinosoft Sp. z o.o.',
-        content: t('experience.experienceItems.merinosoft.content'),
-        profession: t('experience.experienceItems.merinosoft.profession'),
-        period: t('experience.experienceItems.merinosoft.period'),
-        length: t('experience.experienceItems.merinosoft.length'),
+        contentKey: 'experience.experienceItems.merinosoft.content',
+        professionKey: 'experience.experienceItems.merinosoft.profession',
+        periodKey: 'experience.experienceItems.merinosoft.period',
+        lengthKey: 'experience.experienceItems.merinosoft.length',
         url: 'https://merinosoft.pl/',
         technologies: [
             'php', 'laravel', 'javascript', 'jquery',
@@ -31,10 +31,10 @@ const experienceItems: Experience[] = [
     },
     {
         title: 'EBRAND',
-        content: t('experience.experienceItems.ebrand.content'),
-        profession: t('experience.experienceItems.ebrand.profession'),
-        period: t('experience.experienceItems.ebrand.period'),
-        length: t('experience.experienceItems.ebrand.length'),
+        contentKey: 'experience.experienceItems.ebrand.content',
+        professionKey: 'experience.experienceItems.ebrand.profession',
+        periodKey: 'experience.experienceItems.ebrand.period',
+        lengthKey: 'experience.experienceItems.ebrand.length',
         url: 'https://ebrand.com/',
         technologies: [
             'php', 'phpunit', 'symfony', 'redis',
@@ -58,10 +58,10 @@ const experienceItems: Experience[] = [
                 v-for="(experience, index) in experienceItems"
                 :key="index"
                 :title="experience.title"
-                :content="experience.content"
-                :profession="experience.profession"
-                :period="experience.period"
-                :length="experience.length"
+                :content="t(experience.contentKey)"
+                :profession="t(experience.professionKey)"
+                :period="t(experience.periodKey)"
+                :length="t(experience.lengthKey ?? '')"
                 :url="experience.url"
                 :technologies="experience.technologies"
                 :animation="index % 2 === 0 ? FadeRight : FadeLeft"
