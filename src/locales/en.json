@@ -56,6 +56,10 @@
     "projects": {
         "title": "Projects",
         "projectsItems": {
+            "shopSystem": {
+                "title": "Shop system",
+                "content": "A project of backend of basic shop."
+            },
             "demoCryptoExchange": {
                 "title": "Demo crypto exchange",
                 "content": "A project of a demo cryptocurrency exchange that simulates the real functioning of an exchange, but uses fictional currency. Data regarding cryptocurrency prices is obtained from the API provided by the Binance exchange."

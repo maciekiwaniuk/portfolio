@@ -15,6 +15,15 @@ type ProjectType = {
 };
 const projects: ProjectType[] = [
     {
+        titleKey: 'projects.projectsItems.shopSystem.title',
+        contentKey: 'projects.projectsItems.shopSystem.content',
+        github: 'https://github.com/maciekiwaniuk/shop-system',
+        technologies: [
+            'php', 'phpunit', 'symfony',
+            'redis', 'mysql'
+        ]
+    },
+    {
         titleKey: 'projects.projectsItems.demoCryptoExchange.title',
         contentKey: 'projects.projectsItems.demoCryptoExchange.content',
         github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',

@@ -56,6 +56,10 @@
     "projects": {
         "title": "Projekty",
         "projectsItems": {
+            "shopSystem": {
+                "title": "System sklepu",
+                "content": "Projekt mechanizmu działania prostego sklepu."
+            },
             "demoCryptoExchange": {
                 "title": "Demo giełda kryptowalut",
                 "content": "Projekt demo giełdy kryptowalut, która symuluje rzeczywiste funkcjonowanie giełdy, jednak używa fikcyjnej waluty. Dane dotyczące cen kryptowalut są pobierane z API udostępnianego przez giełdę Binance."
