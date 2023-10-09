@@ -25,6 +25,11 @@
                 "title": "Secondary Technical School of Electrical Engineering in Bialystok",
                 "content": "Thanks to the education from this institution, I have gained a basic understanding of computer science, which not only broadened my horizons, but also gave me plenty of knowledge about databases and the development of desktop or web applications.",
                 "major": "Programmer technician"
+            },
+            "universityOfTechnology": {
+                "title": "Bialystok University of Technology",
+                "content": "Will expand IT-related knowledge",
+                "major": "Computer science"
             }
         }
     },

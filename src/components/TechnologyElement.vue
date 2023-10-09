@@ -159,6 +159,11 @@ const technologies: TechnologiesType = {
         title: 'Tailwind',
         icon: 'logos:tailwindcss-icon',
         width: 33
+    },
+    c: {
+        title: 'C',
+        icon: 'logos:c',
+        width: 33
     }
 };
 

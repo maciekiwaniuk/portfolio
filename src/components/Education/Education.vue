@@ -2,7 +2,7 @@
 import EducationItem from '@/components/Education/EducationItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { TechnologyType } from '@/types/TechnologyType';
-import { FadeDown, FadeUp } from '@/constants/app';
+import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
@@ -25,6 +25,14 @@ const educationItems: Education[] = [
             'php', 'javascript', 'mysql',
             'python', 'csharp', 'java'
         ]
+    },
+    {
+        titleKey: 'education.educationItems.universityOfTechnology.title',
+        contentKey: 'education.educationItems.universityOfTechnology.content',
+        majorKey: 'education.educationItems.universityOfTechnology.major',
+        period: '2023 - 2027',
+        url: 'https://pb.edu.pl/',
+        technologies: ['c']
     }
 ];
 
@@ -48,7 +56,7 @@ const educationItems: Education[] = [
                 :period="education.period"
                 :url="education.url"
                 :technologies="education.technologies"
-                :animation="FadeUp"
+                :animation="index % 2 === 0 ? FadeRight : FadeLeft"
             />
         </div>
 

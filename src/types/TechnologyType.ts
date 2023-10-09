@@ -26,4 +26,5 @@ export type TechnologyType =
     'typescript'|
     'microservices' |
     'rabbitmq' |
-    'tailwind';
+    'tailwind'|
+    'c';
