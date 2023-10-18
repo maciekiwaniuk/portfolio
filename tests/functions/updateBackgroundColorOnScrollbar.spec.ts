@@ -1,6 +1,8 @@
 import { LocalStorageMock } from '@tests/mocks/LocalStorageMock';
 import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundColorOnScrollbar';
 import { ThemeType } from '@/types/ThemeType';
+import { DarkTheme, LightTheme } from '@/constants/app';
+import { ThemeKey } from '@/constants/localStorage';
 
 describe('updateBackgroundColorOnScrollbar function', (): void => {
     const localStorageMock: LocalStorageMock = new LocalStorageMock();
@@ -9,8 +11,6 @@ describe('updateBackgroundColorOnScrollbar function', (): void => {
     });
 
     const scrollbarSelector = '::-webkit-scrollbar-track';
-    const lightTheme: ThemeType = 'light',
-          darkTheme: ThemeType = 'dark';
 
     const documentMock = {
         body: {},
@@ -31,7 +31,7 @@ describe('updateBackgroundColorOnScrollbar function', (): void => {
     it('updates default color on scrollbar when localStorage is empty', (): void => {
         const mockGetComputedStyle = jest.fn().mockReturnValue({
             getPropertyValue: jest.fn().mockReturnValue(
-                localStorage.getItem('theme') as ThemeType ?? 'dark'
+                localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme
             ),
         });
         Object.defineProperty(window, 'getComputedStyle', {
@@ -41,16 +41,16 @@ describe('updateBackgroundColorOnScrollbar function', (): void => {
         updateBackgroundColorOnScrollbar();
         expect(documentMock.styleSheets[0].addRule).toHaveBeenCalledWith(
             scrollbarSelector,
-            `background-color: ${darkTheme};`
+            `background-color: ${DarkTheme};`
         );
     });
 
     it('updates color on scrollbar when localStorage contains value', () => {
-        localStorageMock.setItem('theme', lightTheme);
+        localStorageMock.setItem(ThemeKey, LightTheme);
 
         const mockGetComputedStyle = jest.fn().mockReturnValue({
             getPropertyValue: jest.fn().mockReturnValue(
-                localStorage.getItem('theme') as ThemeType ?? 'dark'
+                localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme
             ),
         });
         Object.defineProperty(window, 'getComputedStyle', {
@@ -61,7 +61,7 @@ describe('updateBackgroundColorOnScrollbar function', (): void => {
 
         expect(documentMock.styleSheets[0].addRule).toHaveBeenCalledWith(
             scrollbarSelector,
-            `background-color: ${lightTheme};`
+            `background-color: ${LightTheme};`
         );
     });
 });

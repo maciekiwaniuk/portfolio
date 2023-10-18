@@ -28,4 +28,3 @@ app
     .use(i18n)
     .use(pinia)
     .mount('#app');
-

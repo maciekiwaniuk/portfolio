@@ -1,5 +1,7 @@
 import { LocalStorageMock } from '@tests/mocks/LocalStorageMock';
 import { updateLangAttribute } from '@/functions/updateLangAttribute';
+import { EnglishLanguage, PolishLanguage } from '@/constants/app';
+import { LanguageKey } from '@/constants/localStorage';
 
 describe('updateLangAttribute function', (): void => {
     const localStorageMock: LocalStorageMock = new LocalStorageMock();
@@ -14,21 +16,21 @@ describe('updateLangAttribute function', (): void => {
     it('updates default lang attribute when localStorage is empty', (): void => {
         updateLangAttribute();
 
-        expect(document.documentElement.getAttribute('lang'))
-            .toBe('en');
+        expect(document.documentElement.getAttribute(LanguageKey))
+            .toBe(EnglishLanguage);
     });
 
     it('updates lang attribute when localStorage contains value', (): void => {
         const documentElement: HTMLElement = document.documentElement;
 
-        localStorageMock.setItem('language', 'pl');
+        localStorageMock.setItem(LanguageKey, PolishLanguage);
         updateLangAttribute();
-        expect(documentElement.getAttribute('lang'))
-            .toBe('pl');
+        expect(documentElement.getAttribute(LanguageKey))
+            .toBe(PolishLanguage);
 
-        localStorageMock.setItem('language', 'en');
+        localStorageMock.setItem(LanguageKey, EnglishLanguage);
         updateLangAttribute();
-        expect(documentElement.getAttribute('lang'))
-            .toBe('en');
+        expect(documentElement.getAttribute(LanguageKey))
+            .toBe(EnglishLanguage);
     });
 });

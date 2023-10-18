@@ -1,4 +1,4 @@
-import { setActivePinia, createPinia } from 'pinia'
+import { setActivePinia, createPinia } from 'pinia';
 import { useNavMenuStore } from '@/stores/navMenu';
 
 describe('Nav menu store', () => {
