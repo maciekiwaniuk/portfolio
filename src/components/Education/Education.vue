@@ -16,6 +16,14 @@ type Education = {
 };
 const educationItems: Education[] = [
     {
+        titleKey: 'education.educationItems.universityOfTechnology.title',
+        contentKey: 'education.educationItems.universityOfTechnology.content',
+        majorKey: 'education.educationItems.universityOfTechnology.major',
+        period: '2023 - 2027',
+        url: 'https://pb.edu.pl/',
+        technologies: ['c']
+    },
+    {
         titleKey: 'education.educationItems.zse.title',
         contentKey: 'education.educationItems.zse.content',
         majorKey: 'education.educationItems.zse.major',
@@ -25,14 +33,6 @@ const educationItems: Education[] = [
             'php', 'javascript', 'mysql',
             'python', 'csharp', 'java'
         ]
-    },
-    {
-        titleKey: 'education.educationItems.universityOfTechnology.title',
-        contentKey: 'education.educationItems.universityOfTechnology.content',
-        majorKey: 'education.educationItems.universityOfTechnology.major',
-        period: '2023 - 2027',
-        url: 'https://pb.edu.pl/',
-        technologies: ['c']
     }
 ];
 

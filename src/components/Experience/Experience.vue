@@ -18,18 +18,6 @@ type Experience = {
 
 const experienceItems: Experience[] = [
     {
-        title: 'Merinosoft Sp. z o.o.',
-        contentKey: 'experience.experienceItems.merinosoft.content',
-        professionKey: 'experience.experienceItems.merinosoft.profession',
-        periodKey: 'experience.experienceItems.merinosoft.period',
-        lengthKey: 'experience.experienceItems.merinosoft.length',
-        url: 'https://merinosoft.pl/',
-        technologies: [
-            'php', 'laravel', 'javascript', 'jquery',
-            'bootstrap', 'postgresql', 'git'
-        ]
-    },
-    {
         title: 'EBRAND',
         contentKey: 'experience.experienceItems.ebrand.content',
         professionKey: 'experience.experienceItems.ebrand.profession',
@@ -39,6 +27,18 @@ const experienceItems: Experience[] = [
         technologies: [
             'php', 'phpunit', 'symfony', 'redis',
             'rabbitmq', 'microservices', 'git'
+        ]
+    },
+    {
+        title: 'Merinosoft Sp. z o.o.',
+        contentKey: 'experience.experienceItems.merinosoft.content',
+        professionKey: 'experience.experienceItems.merinosoft.profession',
+        periodKey: 'experience.experienceItems.merinosoft.period',
+        lengthKey: 'experience.experienceItems.merinosoft.length',
+        url: 'https://merinosoft.pl/',
+        technologies: [
+            'php', 'laravel', 'javascript', 'jquery',
+            'bootstrap', 'postgresql', 'git'
         ]
     }
 ];
