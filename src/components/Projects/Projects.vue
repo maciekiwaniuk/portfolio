@@ -20,7 +20,7 @@ const projects: ProjectType[] = [
         github: 'https://github.com/maciekiwaniuk/shop-system',
         technologies: [
             'php', 'phpunit', 'symfony',
-            'redis', 'mysql'
+            'redis', 'mysql', 'docker'
         ]
     },
     {
@@ -29,7 +29,8 @@ const projects: ProjectType[] = [
         github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
         technologies: [
             'php', 'phpunit', 'symfony',
-            'typescript', 'vue', 'mysql'
+            'typescript', 'vue', 'mysql',
+            'docker'
         ]
     },
     {

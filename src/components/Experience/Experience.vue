@@ -25,8 +25,9 @@ const experienceItems: Experience[] = [
         lengthKey: 'experience.experienceItems.ebrand.length',
         url: 'https://ebrand.com/',
         technologies: [
-            'php', 'phpunit', 'symfony', 'redis',
-            'rabbitmq', 'microservices', 'git'
+            'php', 'phpunit', 'microservices',  'git', 'symfony',  'mysql',
+            'redis', 'rabbitmq',
+            'docker',
         ]
     },
     {

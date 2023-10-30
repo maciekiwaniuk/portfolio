@@ -63,7 +63,7 @@
         "projectsItems": {
             "shopSystem": {
                 "title": "Shop system",
-                "content": "A project of backend of basic shop."
+                "content": "Backend of a simple store system. The project is based on CQRS made as a modular monolith. Directories are organized using Domain-Driven-Design approach."
             },
             "demoCryptoExchange": {
                 "title": "Demo crypto exchange",

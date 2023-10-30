@@ -63,7 +63,7 @@
         "projectsItems": {
             "shopSystem": {
                 "title": "System sklepu",
-                "content": "Projekt mechanizmu działania prostego sklepu."
+                "content": "Backend prostego systemu sklepu. Projekt oparty jest na CQRS wykonanym jako modułowy monolit. Foldery są posegregowane przy użyciu podejścia Domain-Driven-Design."
             },
             "demoCryptoExchange": {
                 "title": "Demo giełda kryptowalut",

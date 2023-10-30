@@ -10,9 +10,9 @@
 
         <LandingPage />
 
-        <Education />
-
         <Experience />
+
+        <Education />
 
         <Skills />
 
