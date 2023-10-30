@@ -21,7 +21,9 @@ const educationItems: Education[] = [
         majorKey: 'education.educationItems.universityOfTechnology.major',
         period: '2023 - 2027',
         url: 'https://pb.edu.pl/',
-        technologies: ['c']
+        technologies: [
+            'c', 'linux'
+        ]
     },
     {
         titleKey: 'education.educationItems.zse.title',

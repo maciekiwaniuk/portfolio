@@ -27,4 +27,5 @@ export type TechnologyType =
     'microservices' |
     'rabbitmq' |
     'tailwind'|
-    'c';
+    'c' |
+    'linux';

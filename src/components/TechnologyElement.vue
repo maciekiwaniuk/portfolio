@@ -164,6 +164,11 @@ const technologies: TechnologiesType = {
         title: 'C',
         icon: 'logos:c',
         width: 33
+    },
+    linux: {
+        title: 'Linux',
+        icon: 'devicon:linux',
+        width: 39
     }
 };
 
