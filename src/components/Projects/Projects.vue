@@ -61,12 +61,6 @@ const projects: ProjectType[] = [
         contentKey: 'projects.projectsItems.portfolio.content',
         github: 'https://github.com/maciekiwaniuk/portfolio',
         technologies: ['typescript', 'vue', 'less', 'pwa']
-    },
-    {
-        titleKey: 'projects.projectsItems.youtubeDownloader.title',
-        contentKey: 'projects.projectsItems.youtubeDownloader.content',
-        github: 'https://github.com/maciekiwaniuk/youtube-downloader',
-        technologies: ['python', 'tkinter']
     }
 ];
 
@@ -88,6 +82,7 @@ const projects: ProjectType[] = [
                 :content="t(project.contentKey)"
                 :technologies="project.technologies"
                 :github="project.github"
+                :online="project.online"
                 :animation="index % 2 === 0 ? FadeRight : FadeLeft"
             />
         </div>

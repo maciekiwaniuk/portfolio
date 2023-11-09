@@ -105,11 +105,6 @@ const technologies: TechnologiesType = {
         icon: 'logos:qt',
         width: 40
     },
-    tkinter: {
-        title: 'tkinter',
-        icon: 'mdi:language-python',
-        width: 40
-    },
     pwa: {
         title: 'PWA',
         icon: 'logos:pwa',

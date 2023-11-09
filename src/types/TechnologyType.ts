@@ -16,7 +16,6 @@ export type TechnologyType =
     'redis' |
     'pygame' |
     'pyqt5' |
-    'tkinter' |
     'pwa' |
     'css' |
     'java' |
