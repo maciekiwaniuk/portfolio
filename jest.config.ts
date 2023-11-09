@@ -1,5 +1,6 @@
-/** @type {import('jest').Config} */
-const config = {
+import type { Config } from 'jest';
+
+const config: Config = {
     verbose: true,
     moduleFileExtensions: [
         'js', 'jsx', 'ts', 'vue'
