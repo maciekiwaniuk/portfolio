@@ -15,7 +15,6 @@ const vCursorHover = useCursorHover();
 
 <template>
     <header
-        role="banner"
         class="navigation"
         :class="{ 'navigation-dark-theme': themeStore.theme === DarkTheme,
                   'navigation-light-theme': themeStore.theme === LightTheme }"

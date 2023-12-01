@@ -17,14 +17,13 @@ const currentYear: number = new Date().getFullYear();
 
 <template>
     <footer
-        role="contentinfo"
         class="footer"
         :class="{ 'footer-dark-theme': themeStore.theme === DarkTheme,
                   'footer-light-theme': themeStore.theme === LightTheme }"
     >
-        <h4 class="info">
+        <h3 class="info">
             {{ t('author') }} - {{ currentYear }} {{ t('footer.allRightsReserved') }}
-        </h4>
+        </h3>
 
         <!-- icons visible on footer while screen is small -->
         <div class="icons">

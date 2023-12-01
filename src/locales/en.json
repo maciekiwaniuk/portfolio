@@ -5,10 +5,10 @@
         "skills": "Skills",
         "projects": "Projects",
         "images": {
-            "sun": "Sun",
-            "moon": "Moon",
-            "polishFlag": "Polish flag",
-            "greatBritainFlag": "Great Britain flag"
+            "sun": "Change theme to light",
+            "moon": "Change theme to dark",
+            "polishFlag": "Change language to Polish",
+            "greatBritainFlag": "Change language to English"
         }
     },
 

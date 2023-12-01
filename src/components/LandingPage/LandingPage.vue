@@ -9,7 +9,6 @@ const { t } = useLanguageSwitcher();
 
 <template>
     <section
-        role="region"
         class="landing-page"
     >
         <div

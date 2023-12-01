@@ -42,7 +42,6 @@ const educationItems: Education[] = [
 
 <template>
     <section
-        role="region"
         id="education"
         class="education"
     >

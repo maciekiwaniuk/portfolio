@@ -68,7 +68,6 @@ const projects: ProjectType[] = [
 
 <template>
     <section
-        role="region"
         id="projects"
         class="projects"
     >

@@ -9,7 +9,6 @@ const { t } = useLanguageSwitcher();
 
 <template>
     <section
-        role="region"
         id="contact"
         class="contact"
     >

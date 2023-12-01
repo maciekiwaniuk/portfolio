@@ -2,7 +2,6 @@
     <Cursor />
 
     <main
-        role="main"
         class="container"
         :class="{ 'container-dark-theme': themeStore.theme === DarkTheme,
                   'container-light-theme': themeStore.theme === LightTheme }">

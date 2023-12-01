@@ -44,7 +44,6 @@ const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' 
 
         <div :data-aos="linksAnimation">
             <nav
-                role="navigation"
                 :class="{ 'vertical': props.alignment === VerticalNavigationAlignment,
                           'horizontal': props.alignment === HorizontalNavigationAlignment,
                           'hidden-text': (props.alignment === VerticalNavigationAlignment && !navMenuStore.opened) }"

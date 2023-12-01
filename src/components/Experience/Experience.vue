@@ -48,7 +48,6 @@ const experienceItems: Experience[] = [
 
 <template>
     <section
-        role="region"
         id="experience"
         class="experience"
     >

@@ -5,10 +5,10 @@
         "skills": "Umiejętności",
         "projects": "Projekty",
         "images": {
-            "sun": "Słońce",
-            "moon": "Księżyc",
-            "polishFlag": "Flaga polski",
-            "greatBritainFlag": "Flaga Wielkiej Brytanii"
+            "sun": "Zmień motyw na jasny",
+            "moon": "Zmień motyw na ciemny",
+            "polishFlag": "Zmień język na polski",
+            "greatBritainFlag": "Zmień język na angielski"
         }
     },
 
