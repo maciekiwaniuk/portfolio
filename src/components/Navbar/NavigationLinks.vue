@@ -52,6 +52,7 @@ const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' 
                 <NavigationLinksLink element="experience" :text="t('navbar.experience')" :alignment="props.alignment" />
                 <NavigationLinksLink element="skills" :text="t('navbar.skills')" :alignment="props.alignment" />
                 <NavigationLinksLink element="projects" :text="t('navbar.projects')" :alignment="props.alignment" />
+                <NavigationLinksLink element="contact" :text="t('navbar.contact')" :alignment="props.alignment" />
             </nav>
         </div>
 

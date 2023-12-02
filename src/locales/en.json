@@ -4,6 +4,7 @@
         "experience": "Experience",
         "skills": "Skills",
         "projects": "Projects",
+        "contact": "Contact",
         "images": {
             "sun": "Change theme to light",
             "moon": "Change theme to dark",
