@@ -162,8 +162,8 @@ const technologies: TechnologiesType = {
     },
     linux: {
         title: 'Linux',
-        icon: 'devicon:linux',
-        width: 39
+        icon: 'flat-color-icons:linux',
+        width: 41
     }
 };
 
