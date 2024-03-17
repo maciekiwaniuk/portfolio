@@ -15,7 +15,7 @@ const hadContactTechnologies: TechnologyType[] = [
     'python', 'csharp', 'java', 'laravel',
     'rabbitmq', 'jquery', 'sass', 'tailwind',
     'bootstrap', 'postgresql', 'javascript', 'typescript',
-    'vue', 'pwa'
+    'vue', 'nuxt', 'pwa'
 ];
 
 </script>

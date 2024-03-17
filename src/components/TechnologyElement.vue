@@ -88,7 +88,7 @@ const technologies: TechnologiesType = {
     vue: {
         title: 'VueJS',
         icon: 'logos:vue',
-        width: 38
+        width: 35
     },
     redis: {
         title: 'Redis',
@@ -164,6 +164,11 @@ const technologies: TechnologiesType = {
         title: 'Linux',
         icon: 'flat-color-icons:linux',
         width: 41
+    },
+    nuxt: {
+        title: 'Nuxt',
+        icon: 'logos:nuxt-icon',
+        width: 42
     }
 };
 

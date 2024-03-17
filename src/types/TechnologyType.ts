@@ -27,4 +27,5 @@ export type TechnologyType =
     'rabbitmq' |
     'tailwind'|
     'c' |
-    'linux';
+    'linux' |
+    'nuxt';
