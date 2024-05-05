@@ -32,4 +32,4 @@ describe('Theme store', () => {
         cursorStore.toggleVisibility();
         expect(cursorStore.visibility).toBe(CursorVisible);
     });
-})
+});

@@ -21,4 +21,4 @@ describe('Theme store', () => {
         themeStore.toggle();
         expect(themeStore.theme).toBe(DarkTheme);
     });
-})
+});

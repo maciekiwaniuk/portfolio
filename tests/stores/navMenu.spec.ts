@@ -23,4 +23,4 @@ describe('Nav menu store', () => {
         navMenuStore.close();
         expect(navMenuStore.opened).toBe(false);
     });
-})
+});
