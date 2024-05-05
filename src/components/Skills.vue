@@ -7,14 +7,14 @@ import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 const { t } = useLanguageSwitcher();
 
 const useRegularlyTechnologies: TechnologyType[] = [
-    'php', 'phpunit', 'symfony', 'mysql',
+    'php', 'phpunit', 'symfony', 'laravel', 'mysql',
     'redis', 'docker', 'git', 'github'
 ];
 
 const hadContactTechnologies: TechnologyType[] = [
-    'python', 'csharp', 'java', 'laravel',
-    'rabbitmq', 'jquery', 'sass', 'tailwind',
-    'bootstrap', 'postgresql', 'javascript', 'typescript',
+    'python', 'csharp', 'java', 'rabbitmq',
+    'jquery', 'sass', 'tailwind', 'bootstrap',
+    'postgresql', 'javascript', 'typescript',
     'vue', 'nuxt', 'pwa'
 ];
 
