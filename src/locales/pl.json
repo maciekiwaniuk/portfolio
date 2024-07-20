@@ -24,7 +24,7 @@
         "educationItems": {
             "zse": {
                 "title": "Zespół Szkół Elektrycznych w Białymstoku",
-                "content": "Dzięki edukacji w tej placówce zdobyłem podstawową wiedzę z zakresu informatyki. Poszerzyłem swoje horyzonty z zakresu wiedzy na temat baz danych, tworzenia aplikacji desktopowych oraz webowych. ",
+                "content": "Zdobyłem podstawową wiedzę z zakresu informatyki. Poszerzyłem swoje horyzonty z zakresu wiedzy na temat baz danych, tworzenia aplikacji desktopowych oraz webowych. ",
                 "major": "Technik programista"
             },
             "universityOfTechnology": {
@@ -37,18 +37,33 @@
 
     "experience": {
         "title": "Doświadczenie",
+        "now": "teraz",
+        "year": "rok",
+        "years": "lata",
+        "month": "mies.",
+        "months": "mies.",
+        "monthNames": {
+            "1": "sty",
+            "2": "lut",
+            "3": "mar",
+            "4": "kwi",
+            "5": "maj",
+            "6": "cze",
+            "7": "lip",
+            "8": "sie",
+            "9": "wrz",
+            "10": "paź",
+            "11": "lis",
+            "12": "gru"
+        },
         "experienceItems": {
             "merinosoft": {
                 "content": "Rozwój aplikacji webowej związanej z zarządzaniem pracownikami przez firmy.",
-                "profession": "Programista PHP",
-                "period": "sie 2021 - gru 2022 ",
-                "length": "(1 rok 5 mies.)"
+                "profession": "Programista PHP"
             },
             "ebrand": {
                 "content": "Rozwój rozproszonego systemu opartego na architekturę mikroserwioswą związanego z ochroną marek online. Integracje z licznymi zewnętrznymi systemami przez API.",
-                "profession":"Programista PHP",
-                "period": "kwi 2023 - wrz 2023 ",
-                "length": "(6 mies.)"
+                "profession":"Programista PHP"
             }
         }
     },

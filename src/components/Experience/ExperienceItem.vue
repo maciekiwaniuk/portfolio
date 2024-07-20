@@ -14,8 +14,8 @@ const props = defineProps<{
     title: string,
     content: string,
     profession: string,
+    dateRange: string,
     period: string,
-    length?: string,
     url: string,
     technologies: TechnologyType[],
     animation: AnimationType
@@ -34,7 +34,7 @@ const props = defineProps<{
             <div
                 class="experience-item"
                 :class="{ 'experience-item-dark-theme': themeStore.theme === DarkTheme,
-                      'experience-item-light-theme': themeStore.theme === LightTheme }"
+                          'experience-item-light-theme': themeStore.theme === LightTheme }"
             >
                 <h3 class="title">{{ props.title }}</h3>
 
@@ -53,8 +53,8 @@ const props = defineProps<{
                 <p class="below">
                     <span>{{ props.profession }}</span>
                     <div class="job-time">
-                        <span>{{ props.period }}</span>
-                        <span>{{ props.length }}</span>
+                        <span class="date-range">{{ dateRange }}</span>
+                        <span>{{ period }}</span>
                     </div>
                 </p>
             </div>
@@ -114,8 +114,13 @@ const props = defineProps<{
         font-family: 'LatoFontLight', serif;
         padding-top: 0.5rem;
 
-        .job-time span {
-            display: block;
+        .job-time {
+            span {
+                display: block;
+            }
+            .date-range::after {
+                content: ' ';
+            }
         }
     }
 }

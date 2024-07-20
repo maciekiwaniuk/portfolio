@@ -24,7 +24,7 @@
         "educationItems": {
             "zse": {
                 "title": "Secondary Technical School of Electrical Engineering in Bialystok",
-                "content": "Thanks to the education from this institution, I have gained a basic understanding of computer science, which not only broadened my horizons, but also gave me plenty of knowledge about databases and the development of desktop or web applications.",
+                "content": "I have gained a basic understanding of computer science, which not only broadened my horizons, but also gave me plenty of knowledge about databases and the development of desktop or web applications.",
                 "major": "Programmer technician"
             },
             "universityOfTechnology": {
@@ -37,18 +37,33 @@
 
     "experience": {
         "title": "Experience",
+        "now": "now",
+        "year": "year",
+        "years": "years",
+        "month": "month",
+        "months": "months",
+        "monthNames": {
+            "1": "Jan",
+            "2": "Feb",
+            "3": "Mar",
+            "4": "Apr",
+            "5": "May",
+            "6": "Jun",
+            "7": "Jul",
+            "8": "Aug",
+            "9": "Sep",
+            "10": "Oct",
+            "11": "Nov",
+            "12": "Dec"
+        },
         "experienceItems": {
             "merinosoft": {
                 "content": "Development of a web application relating to the management of employees in a company.",
-                "profession": "PHP Developer",
-                "period": "Aug 2021 - Dec 2022 ",
-                "length": "(1 year 5 months)"
+                "profession": "PHP Developer"
             },
             "ebrand": {
                 "content": "Development of a distributed microservices-based system relating to online brand protection. Integration with multiple external APIs.",
-                "profession":"PHP Developer",
-                "period": "Apr 2023 - Sep 2023 ",
-                "length": "(6 months)"
+                "profession":"PHP Developer"
             }
         }
     },

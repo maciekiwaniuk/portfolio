@@ -10,8 +10,8 @@ type Experience = {
     title: string,
     contentKey: string,
     professionKey: string,
-    periodKey: string,
-    lengthKey?: string,
+    startDate: Date,
+    endDate: Date | null,
     url: string,
     technologies: TechnologyType[]
 };
@@ -21,8 +21,8 @@ const experienceItems: Experience[] = [
         title: 'EBRAND',
         contentKey: 'experience.experienceItems.ebrand.content',
         professionKey: 'experience.experienceItems.ebrand.profession',
-        periodKey: 'experience.experienceItems.ebrand.period',
-        lengthKey: 'experience.experienceItems.ebrand.length',
+        startDate: new Date('2023-04'),
+        endDate: new Date('2023-09'),
         url: 'https://ebrand.com/',
         technologies: [
             'php', 'phpunit', 'microservices', 'git',
@@ -31,11 +31,11 @@ const experienceItems: Experience[] = [
         ]
     },
     {
-        title: 'Merinosoft Sp. z o.o.',
+        title: 'Merinosoft',
         contentKey: 'experience.experienceItems.merinosoft.content',
         professionKey: 'experience.experienceItems.merinosoft.profession',
-        periodKey: 'experience.experienceItems.merinosoft.period',
-        lengthKey: 'experience.experienceItems.merinosoft.length',
+        startDate: new Date('2021-08'),
+        endDate: new Date('2022-12'),
         url: 'https://merinosoft.pl/',
         technologies: [
             'php', 'laravel', 'javascript', 'jquery',
@@ -43,6 +43,57 @@ const experienceItems: Experience[] = [
         ]
     }
 ];
+
+function getTranslatedDateRange(startDate: Date, endDate: Date | null): string {
+    const startMonth = (startDate.getMonth()) + 1;
+    const startMonthString = t(`experience.monthNames.${startMonth}`);
+    const fullStartDateString = `${startMonthString} ${startDate.getFullYear()}`;
+
+    if (endDate) {
+        const endMonth = (endDate.getMonth()) + 1;
+        const endMonthString = t(`experience.monthNames.${endMonth}`);
+        const fullEndDateString = `${endMonthString} ${endDate.getFullYear()}`;
+
+        return `${fullStartDateString} - ${fullEndDateString}`;
+    }
+    return `${fullStartDateString} - ${t('experience.now')}`;
+}
+
+function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
+    if (!endDate) {
+        endDate = new Date();
+    }
+    const yearsDifference = endDate.getFullYear() - startDate.getFullYear();
+    const monthsDifference = (endDate.getMonth() - startDate.getMonth()) + 1;
+
+    let yearsString = '';
+    if (yearsDifference > 0) {
+        if (yearsDifference === 1) {
+            yearsString = t('experience.year');
+        } else {
+            yearsString = t('experience.years');
+        }
+    }
+
+    let monthsString = '';
+    if (monthsDifference > 0) {
+        if (monthsDifference === 1) {
+            monthsString = t('experience.month');
+        } else {
+            monthsString = t('experience.months');
+        }
+    }
+
+    if (yearsString && monthsString) {
+        return `(${yearsDifference} ${yearsString} ${monthsDifference} ${monthsString})`;
+    } else if (yearsString) {
+        return `(${yearsDifference} ${yearsString})`;
+    } else if (monthsString) {
+        return `(${monthsDifference} ${monthsString})`;
+    } else {
+        return '';
+    }
+}
 
 </script>
 
@@ -60,8 +111,8 @@ const experienceItems: Experience[] = [
                 :title="experience.title"
                 :content="t(experience.contentKey)"
                 :profession="t(experience.professionKey)"
-                :period="t(experience.periodKey)"
-                :length="t(experience.lengthKey ?? '')"
+                :date-range="getTranslatedDateRange(experience.startDate, experience.endDate)"
+                :period="getTranslatedPeriod(experience.startDate, experience.endDate)"
                 :url="experience.url"
                 :technologies="experience.technologies"
                 :animation="index % 2 === 0 ? FadeRight : FadeLeft"
