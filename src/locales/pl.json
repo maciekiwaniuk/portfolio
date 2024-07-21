@@ -39,7 +39,8 @@
         "title": "Doświadczenie",
         "now": "teraz",
         "year": "rok",
-        "years": "lata",
+        "yearsFirstForm": "lata",
+        "yearsSecondForm": "lat",
         "month": "mies.",
         "months": "mies.",
         "monthNames": {

@@ -39,7 +39,8 @@
         "title": "Experience",
         "now": "now",
         "year": "year",
-        "years": "years",
+        "yearsFirstForm": "years",
+        "yearsSecondForm": "years",
         "month": "month",
         "months": "months",
         "monthNames": {

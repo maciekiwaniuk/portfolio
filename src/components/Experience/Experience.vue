@@ -67,21 +67,19 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
     const monthsDifference = (endDate.getMonth() - startDate.getMonth()) + 1;
 
     let yearsString = '';
-    if (yearsDifference > 0) {
-        if (yearsDifference === 1) {
-            yearsString = t('experience.year');
-        } else {
-            yearsString = t('experience.years');
-        }
+    if (yearsDifference === 1) {
+        yearsString = t('experience.year');
+    } else if (yearsDifference > 1 && ![12, 13, 14].includes(yearsDifference % 100) && [2, 3, 4].includes(yearsDifference % 10)) {
+        yearsString = t('experience.yearsFirstForm');
+    } else if (yearsDifference > 1) {
+        yearsString = t ('experience.yearsSecondForm');
     }
 
     let monthsString = '';
-    if (monthsDifference > 0) {
-        if (monthsDifference === 1) {
-            monthsString = t('experience.month');
-        } else {
-            monthsString = t('experience.months');
-        }
+    if (monthsDifference === 1) {
+        monthsString = t('experience.month');
+    } else if (monthsDifference > 1) {
+        monthsString = t('experience.months');
     }
 
     if (yearsString && monthsString) {
