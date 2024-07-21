@@ -101,10 +101,6 @@
             "portfolio": {
                 "title": "Portfolio",
                 "content": "A website summarizing information about myself. It includes information about my education, commercial experience and projects, whilst being interactive and animated."
-            },
-            "youtubeDownloader": {
-                "title": "YouTube Downloader",
-                "content": "A desktop application that allows users to download videos from YouTube. It has a tab with download settings, where the user can, among other things, choose the quality of the downloaded content and change the extension."
             }
         }
     },
