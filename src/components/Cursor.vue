@@ -70,7 +70,6 @@ const cursorStore = useCursorStore();
     padding-left: 0.1rem;
     border-radius: 50%;
     border: solid @blue-color 0.2rem;
-
     cursor: pointer;
 }
 

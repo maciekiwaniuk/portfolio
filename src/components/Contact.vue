@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
+import { useCursorHover } from '@/directives/useCursorHover';
 import { FadeDown, FadeUp } from '@/constants/app';
 import { Icon } from '@iconify/vue';
 
+const vCursorHover = useCursorHover();
+
 const { t } = useLanguageSwitcher();
+
+function copyEmailToClipboard() {
+    navigator.clipboard.writeText('iwaniukmaciej1@gmail.com');
+}
 
 </script>
 
@@ -14,7 +21,12 @@ const { t } = useLanguageSwitcher();
     >
         <h2 :data-aos="FadeDown" class="title">{{ t('contact.title') }}</h2>
 
-        <div :data-aos="FadeUp" class="content">
+        <div
+            :data-aos="FadeUp"
+            v-cursor-hover
+            @click="copyEmailToClipboard();"
+            class="content"
+        >
             <Icon
                 icon="clarity:email-solid"
                 width="35"
@@ -53,6 +65,7 @@ const { t } = useLanguageSwitcher();
         align-items: center;
         justify-content: center;
         margin-top: 1rem;
+        cursor: pointer;
     }
     .email {
         padding-left: 0.5rem;
