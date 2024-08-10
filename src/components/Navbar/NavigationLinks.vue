@@ -3,7 +3,7 @@ import NavigationLinksLink from '@/components/Navbar/NavigationLinksLink.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
-import { ref } from '@vue/reactivity';
+import { ref } from 'vue';
 import { AlignmentType } from '@/types/AlignmentType';
 import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '@/constants/app';
 

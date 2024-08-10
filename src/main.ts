@@ -21,7 +21,7 @@ const aosOptions = {
     once: true as boolean,
     duration: 700 as number
 };
-// @ts-ignore
+// @ts-expect-error currently no way around
 app.AOS = AOS.init(aosOptions);
 
 app

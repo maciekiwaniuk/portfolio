@@ -1,5 +1,6 @@
 export class LocalStorageMock {
-    private store: {};
+    private store: Record<string, string>;
+
     constructor() {
         this.store = {};
     }
@@ -8,15 +9,15 @@ export class LocalStorageMock {
         this.store = {};
     }
 
-    getItem(key: any): any {
-        return this.store[key as keyof Object] || null;
+    getItem(key: string): string | null {
+        return this.store[key] || null;
     }
 
-    setItem(key: any, value: any): void {
-        this.store[key as keyof Object] = value;
+    setItem(key: string, value: string): void {
+        this.store[key] = value;
     }
 
-    removeItem(key: any): void {
-        delete this.store[key as keyof Object];
+    removeItem(key: string): void {
+        delete this.store[key];
     }
 }

@@ -52,10 +52,10 @@ const props = defineProps<{
 
                 <p class="below">
                     <span>{{ props.profession }}</span>
-                    <div class="job-time">
+                    <span class="job-time">
                         <span class="date-range">{{ dateRange }}</span>
                         <span>{{ period }}</span>
-                    </div>
+                    </span>
                 </p>
             </div>
         </a>

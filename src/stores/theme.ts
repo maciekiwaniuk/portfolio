@@ -11,9 +11,7 @@ export const useThemeStore = defineStore('theme', {
     }),
     actions: {
         toggle(): void {
-            this.theme === DarkTheme
-                ? this.theme = LightTheme
-                : this.theme = DarkTheme;
+            this.theme = (this.theme === DarkTheme) ? DarkTheme : LightTheme;
 
             localStorage.setItem(ThemeKey, this.theme);
 

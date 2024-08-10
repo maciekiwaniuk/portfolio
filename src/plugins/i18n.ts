@@ -16,7 +16,7 @@ const loadLocaleMessages = () => {
         const matched = key.match(/([A-Za-z0-9-_]+)\./i);
         if (matched && matched.length > 1) {
             const locale = matched[1];
-            // @ts-ignore
+            // @ts-expect-error todo fix
             messages[locale] = locales(key).default;
         }
     });

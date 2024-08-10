@@ -42,7 +42,7 @@ import { addEventOnOpeningNavBySliding } from '@/functions/addEventOnOpeningNavB
 import { updateLangAttribute } from '@/functions/updateLangAttribute';
 import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundColorOnScrollbar';
 
-import { onMounted } from '@vue/runtime-core';
+import { onMounted } from 'vue';
 import { watch } from 'vue';
 import { DarkTheme, LightTheme } from '@/constants/app';
 

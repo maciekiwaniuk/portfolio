@@ -11,6 +11,7 @@ const smallDevice = window.innerWidth <= minScreenWidthToDisplayAnimation;
 const restartAnimation = (event: Event) => {
     const element = event.target! as HTMLElement;
     element.style.animation = 'none';
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     element.offsetHeight; /* trigger reflow */
     element.style.animation = '';
 };
@@ -21,7 +22,7 @@ const restartAnimation = (event: Event) => {
     <span v-if="smallDevice">{{ props.text }}</span>
 
     <span
-        v-if="!smallDevice"
+        v-else
         v-for="(letter, index) in splitLetters"
         :key="index"
         :style="{ animationDelay: (index / 10) + 's' }"
