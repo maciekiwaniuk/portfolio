@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import NavigationLinksLink from '@/components/Navbar/NavigationLinksLink.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
-import { ref } from 'vue';
-import { AlignmentType } from '@/types/AlignmentType';
+import type { AlignmentType } from '@/types/AlignmentType';
 import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '@/constants/app';
+
+const props = defineProps<{
+    alignment: AlignmentType;
+}>();
 
 const { t } = useLanguageSwitcher();
 
@@ -13,14 +17,9 @@ const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
 
-const props = defineProps<{
-    alignment: AlignmentType
-}>()
-
 // animation only for menu on big screens
 type LinksAnimationType = 'zoom-in-up' | null;
 const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
-
 </script>
 
 <template>
@@ -29,16 +28,15 @@ const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' 
         :class="{ 'navigation-links-dark-theme': themeStore.theme === DarkTheme,
                   'navigation-links-light-theme': themeStore.theme === LightTheme }"
     >
-
         <div
             v-if="props.alignment === VerticalNavigationAlignment"
-            :class="{ 'hidden': !navMenuStore.opened }"
+            :class="{ hidden: !navMenuStore.opened }"
             class="area-to-close-menu"
             @click="navMenuStore.close();"
         >
             <button class="close-button">
-                <span class="bar bar-to-right"></span>
-                <span class="bar bar-to-left"></span>
+                <span class="bar bar-to-right" />
+                <span class="bar bar-to-left" />
             </button>
         </div>
 
@@ -58,10 +56,9 @@ const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' 
 
         <div
             class="area-below-to-close-menu"
-            :class="{ 'hidden': !navMenuStore.opened }"
+            :class="{ hidden: !navMenuStore.opened }"
             @click="navMenuStore.close();"
-        ></div>
-
+        />
     </div>
 </template>
 
@@ -145,5 +142,4 @@ const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' 
         background-color: #light[text-color];
     }
 }
-
 </style>

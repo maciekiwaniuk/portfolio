@@ -26,7 +26,7 @@ Change folder in console to created folder with project files
 
 Run npm install command
 
-	npm install
+    npm install
 
 Start the local development server
 

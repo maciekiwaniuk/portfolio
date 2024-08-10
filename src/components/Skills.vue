@@ -1,32 +1,51 @@
 <script setup lang="ts">
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { TechnologyType } from '@/types/TechnologyType';
+import type { TechnologyType } from '@/types/TechnologyType';
 import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
 const useRegularlyTechnologies: TechnologyType[] = [
-    'php', 'phpunit', 'symfony', 'laravel', 'mysql',
-    'redis', 'docker', 'git', 'github'
+    'php',
+    'phpunit',
+    'symfony',
+    'laravel',
+    'mysql',
+    'redis',
+    'docker',
+    'git',
+    'github',
 ];
 
 const hadContactTechnologies: TechnologyType[] = [
-    'python', 'csharp', 'java', 'rabbitmq',
-    'jquery', 'sass', 'tailwind', 'bootstrap',
-    'postgresql', 'javascript', 'typescript',
-    'vue', 'nuxt', 'pwa'
+    'python',
+    'csharp',
+    'java',
+    'rabbitmq',
+    'jquery',
+    'sass',
+    'tailwind',
+    'bootstrap',
+    'postgresql',
+    'javascript',
+    'typescript',
+    'vue',
+    'nuxt',
+    'pwa',
 ];
-
 </script>
 
 <template>
     <div id="skills" class="skills">
-
-        <h2 class="title" :data-aos="FadeDown">{{ t('skills.title') }}</h2>
+        <h2 class="title" :data-aos="FadeDown">
+            {{ t('skills.title') }}
+        </h2>
 
         <div class="element" :data-aos="FadeRight">
-            <h3 class="title-smaller">{{ t('skills.useRegularly') }}</h3>
+            <h3 class="title-smaller">
+                {{ t('skills.useRegularly') }}
+            </h3>
 
             <div class="content">
                 <TechnologyElement
@@ -38,7 +57,9 @@ const hadContactTechnologies: TechnologyType[] = [
         </div>
 
         <div class="element" :data-aos="FadeLeft">
-            <h3 class="title-smaller">{{ t('skills.hadContact') }}</h3>
+            <h3 class="title-smaller">
+                {{ t('skills.hadContact') }}
+            </h3>
 
             <div class="content">
                 <TechnologyElement
@@ -48,7 +69,6 @@ const hadContactTechnologies: TechnologyType[] = [
                 />
             </div>
         </div>
-
     </div>
 </template>
 
@@ -113,5 +133,4 @@ const hadContactTechnologies: TechnologyType[] = [
         }
     }
 }
-
 </style>

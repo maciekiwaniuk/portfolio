@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-    text: string
+    text: string;
 }>();
 
 const splitLetters = props.text.split('');
@@ -8,26 +8,25 @@ const splitLetters = props.text.split('');
 const minScreenWidthToDisplayAnimation = 800;
 const smallDevice = window.innerWidth <= minScreenWidthToDisplayAnimation;
 
-const restartAnimation = (event: Event) => {
+function restartAnimation(event: Event) {
     const element = event.target! as HTMLElement;
     element.style.animation = 'none';
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    // eslint-disable-next-line ts/no-unused-expressions
     element.offsetHeight; /* trigger reflow */
     element.style.animation = '';
-};
-
+}
 </script>
 
 <template>
     <span v-if="smallDevice">{{ props.text }}</span>
 
     <span
-        v-else
         v-for="(letter, index) in splitLetters"
+        v-else
         :key="index"
-        :style="{ animationDelay: (index / 10) + 's' }"
-        @mouseover="restartAnimation($event);"
+        :style="{ animationDelay: `${index / 10}s` }"
         class="animation"
+        @mouseover="restartAnimation($event);"
     >
         {{ letter }}
     </span>
@@ -45,5 +44,4 @@ const restartAnimation = (event: Event) => {
     50% { bottom: 0.2em; }
     100% { bottom: 0; opacity: 1; }
 }
-
 </style>

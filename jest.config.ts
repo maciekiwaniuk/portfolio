@@ -3,11 +3,14 @@ import type { Config } from 'jest';
 const config: Config = {
     verbose: true,
     moduleFileExtensions: [
-        'js', 'jsx', 'ts', 'vue'
+        'js',
+        'jsx',
+        'ts',
+        'vue',
     ],
     transform: {
         '^.+\\.(js|ts)$': 'ts-jest',
-        '^.+\\.vue$': '@vue/vue3-jest'
+        '^.+\\.vue$': '@vue/vue3-jest',
     },
     transformIgnorePatterns: [
         '/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.js$',
@@ -15,7 +18,7 @@ const config: Config = {
         '/node_modules/(?![@autofiy/autofiyable|@autofiy/property]).+\\.tsx$',
     ],
     roots: [
-        '<rootDir>/tests'
+        '<rootDir>/tests',
     ],
     testEnvironment: 'jsdom',
     testEnvironmentOptions: {
@@ -23,8 +26,8 @@ const config: Config = {
     },
     moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',
-        '^@tests/(.*)$': '<rootDir>/tests/$1'
-    }
+        '^@tests/(.*)$': '<rootDir>/tests/$1',
+    },
 };
 
 module.exports = config;

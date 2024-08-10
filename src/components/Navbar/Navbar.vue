@@ -2,18 +2,15 @@
 import ThemeButton from '@/components/Navbar/ThemeButton.vue';
 import LanguageButtons from '@/components/Navbar/LanguageButtons.vue';
 import Navigation from '@/components/Navbar/Navigation.vue';
-
 </script>
 
 <template>
     <div class="navbar">
-
         <ThemeButton />
 
         <LanguageButtons />
 
         <Navigation />
-
     </div>
 </template>
 
@@ -34,5 +31,4 @@ import Navigation from '@/components/Navbar/Navigation.vue';
         justify-content: space-evenly;
     }
 }
-
 </style>

@@ -5,7 +5,7 @@ import { defineStore } from 'pinia';
  */
 export const useNavMenuStore = defineStore('navMenu', {
     state: (): { opened: boolean } => ({
-        opened: false
+        opened: false,
     }),
     actions: {
         open(): void {
@@ -13,6 +13,6 @@ export const useNavMenuStore = defineStore('navMenu', {
         },
         close(): void {
             this.opened = false;
-        }
-    }
+        },
+    },
 });

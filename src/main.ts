@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
-import { Pinia, createPinia } from 'pinia';
+import type { Pinia } from 'pinia';
+import { createPinia } from 'pinia';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { i18n } from './plugins/i18n';
@@ -19,7 +20,7 @@ const aosOptions = {
         return window.innerWidth < maxWidth;
     },
     once: true as boolean,
-    duration: 700 as number
+    duration: 700 as number,
 };
 // @ts-expect-error currently no way around
 app.AOS = AOS.init(aosOptions);

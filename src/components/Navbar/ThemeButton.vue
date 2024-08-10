@@ -9,34 +9,31 @@ const { t } = useLanguageSwitcher();
 const themeStore = useThemeStore();
 
 const vCursorHover = useCursorHover();
-
 </script>
 
 <template>
     <button
+        v-cursor-hover
         data-aos="zoom-in-up"
         class="change-theme-button"
-        v-cursor-hover
         @click="themeStore.toggle();"
     >
-
         <img
+            v-show="themeStore.theme === DarkTheme"
             src="@/assets/images/icons/sun.svg"
             class="icon sun-icon"
             width="1000"
             height="1000"
             :alt="t('navbar.images.sun')"
-            v-show="themeStore.theme === DarkTheme"
         >
         <img
+            v-show="themeStore.theme === LightTheme"
             src="@/assets/images/icons/moon.svg"
             class="icon"
             width="1000"
             height="1000"
             :alt="t('navbar.images.moon')"
-            v-show="themeStore.theme === LightTheme"
         >
-
     </button>
 </template>
 
@@ -69,5 +66,4 @@ const vCursorHover = useCursorHover();
         }
     }
 }
-
 </style>

@@ -1,8 +1,8 @@
-import { setActivePinia, createPinia } from 'pinia';
+import { createPinia, setActivePinia } from 'pinia';
 import { useCursorStore } from '@/stores/cursor';
 import { CursorHidden, CursorVisible } from '@/constants/app';
 
-describe('Theme store', () => {
+describe('theme store', () => {
     beforeEach(() => {
         setActivePinia(createPinia());
     });

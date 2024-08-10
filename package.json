@@ -1,9 +1,9 @@
 {
     "name": "portfolio",
+    "type": "module",
     "version": "2.4.9",
     "private": true,
     "author": "Maciek Iwaniuk",
-    "type": "module",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
@@ -21,7 +21,7 @@
         "vue-i18n": "^9.13.1"
     },
     "devDependencies": {
-        "@eslint/js": "^9.9.0",
+        "@antfu/eslint-config": "^2.25.0",
         "@iconify/vue": "^4.1.2",
         "@intlify/vue-i18n-loader": "^4.2.0",
         "@pinia/testing": "^0.1.2",
@@ -34,7 +34,6 @@
         "@vue/test-utils": "^2.3.2",
         "@vue/vue3-jest": "^29.2.4",
         "eslint": "^9.9.0",
-        "eslint-plugin-vue": "^9.27.0",
         "globals": "^15.9.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.5.0",
@@ -42,7 +41,6 @@
         "less-loader": "^12.2.0",
         "ts-jest": "^29.1.0",
         "typescript": "^5.5.4",
-        "typescript-eslint": "^8.0.1",
         "vue-cli-plugin-i18n": "~2.3.2"
     }
 }

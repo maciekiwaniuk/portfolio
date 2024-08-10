@@ -4,9 +4,9 @@ import { EnglishLanguage } from '@/constants/app';
 /**
  * Updates lang attribute based on language value from localStorage
  */
-export const updateLangAttribute = (): void => {
+export function updateLangAttribute(): void {
     document.documentElement.setAttribute(
         'lang',
-        localStorage.getItem(LanguageKey) ?? EnglishLanguage
+        localStorage.getItem(LanguageKey) ?? EnglishLanguage,
     );
-};
+}

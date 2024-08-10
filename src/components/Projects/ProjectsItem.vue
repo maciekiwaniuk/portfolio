@@ -3,23 +3,22 @@ import { Icon } from '@iconify/vue';
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
-import { TechnologyType } from '@/types/TechnologyType';
-import { AnimationType } from '@/types/AnimationType';
+import type { TechnologyType } from '@/types/TechnologyType';
+import type { AnimationType } from '@/types/AnimationType';
 import { DarkTheme, LightTheme } from '@/constants/app';
+
+const props = defineProps<{
+    title: string;
+    content: string;
+    technologies: TechnologyType[];
+    github: string;
+    online?: string;
+    animation: AnimationType;
+}>();
 
 const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
-
-const props = defineProps<{
-    title: string,
-    content: string,
-    technologies: TechnologyType[],
-    github: string,
-    online?: string,
-    animation: AnimationType
-}>()
-
 </script>
 
 <template>
@@ -45,27 +44,25 @@ const props = defineProps<{
                 />
             </div>
 
-            <p class="below" v-if="props.github || props.online">
+            <p v-if="props.github || props.online" class="below">
                 <a
+                    v-if="props.github"
+                    v-cursor-hover
                     class="link"
                     target="_blank"
                     aria-label="GitHub"
-                    v-cursor-hover
-                    v-if="props.github"
                     :href="props.github"
                 >
                     <span class="text">GitHub</span>
                     <Icon icon="icon-park-outline:github" width="38" />
                 </a>
 
-
                 <a
+                    v-if="props.online"
+                    v-cursor-hover
                     class="link"
                     target="_blank"
-                    v-cursor-hover
-                    v-if="props.online"
                     :href="props.online"
-
                 >
                     <span class="text">Online</span>
                     <Icon icon="ci:external-link" width="38" />
@@ -159,5 +156,4 @@ const props = defineProps<{
 .projects-item-light-theme {
     background-color: #light[background-color-on-element];
 }
-
 </style>

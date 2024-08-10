@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import ProjectsItem from '@/components/Projects/ProjectsItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { TechnologyType } from '@/types/TechnologyType';
+import type { TechnologyType } from '@/types/TechnologyType';
 import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
 type ProjectType = {
-    titleKey: string,
-    contentKey: string,
-    github: string,
-    online?: string,
-    technologies: TechnologyType[]
+    titleKey: string;
+    contentKey: string;
+    github: string;
+    online?: string;
+    technologies: TechnologyType[];
 };
 const projects: ProjectType[] = [
     {
@@ -19,51 +19,63 @@ const projects: ProjectType[] = [
         contentKey: 'projects.projectsItems.shopSystem.content',
         github: 'https://github.com/maciekiwaniuk/shop-system',
         technologies: [
-            'php', 'phpunit', 'symfony',
-            'redis', 'mysql', 'docker'
-        ]
+            'php',
+            'phpunit',
+            'symfony',
+            'redis',
+            'mysql',
+            'docker',
+        ],
     },
     {
         titleKey: 'projects.projectsItems.demoCryptoExchange.title',
         contentKey: 'projects.projectsItems.demoCryptoExchange.content',
         github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
         technologies: [
-            'php', 'phpunit', 'symfony',
-            'typescript', 'vue', 'mysql',
-            'docker'
-        ]
+            'php',
+            'phpunit',
+            'symfony',
+            'typescript',
+            'vue',
+            'mysql',
+            'docker',
+        ],
     },
     {
         titleKey: 'projects.projectsItems.snakeWebApp.title',
         contentKey: 'projects.projectsItems.snakeWebApp.content',
         github: 'https://github.com/maciekiwaniuk/snake-web-app',
         technologies: [
-            'php', 'laravel', 'javascript',
-            'jquery', 'bootstrap', 'mysql',
-            'redis', 'pwa'
-        ]
+            'php',
+            'laravel',
+            'javascript',
+            'jquery',
+            'bootstrap',
+            'mysql',
+            'redis',
+            'pwa',
+        ],
     },
     {
         titleKey: 'projects.projectsItems.snakeGame.title',
         contentKey: 'projects.projectsItems.snakeGame.content',
         github: 'https://github.com/maciekiwaniuk/snake-game',
-        technologies: ['python', 'pygame', 'pyqt5']
+        technologies: ['python', 'pygame', 'pyqt5'],
     },
     {
         titleKey: 'projects.projectsItems.minesweeper.title',
         contentKey: 'projects.projectsItems.minesweeper.content',
         github: 'https://github.com/maciekiwaniuk/minesweeper',
         online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
-        technologies: ['javascript', 'css']
+        technologies: ['javascript', 'css'],
     },
     {
         titleKey: 'projects.projectsItems.portfolio.title',
         contentKey: 'projects.projectsItems.portfolio.content',
         github: 'https://github.com/maciekiwaniuk/portfolio',
-        technologies: ['typescript', 'vue', 'less', 'pwa']
-    }
+        technologies: ['typescript', 'vue', 'less', 'pwa'],
+    },
 ];
-
 </script>
 
 <template>
@@ -71,7 +83,9 @@ const projects: ProjectType[] = [
         id="projects"
         class="projects"
     >
-        <h2 :data-aos="FadeDown" class="title">{{ t('projects.title') }}</h2>
+        <h2 :data-aos="FadeDown" class="title">
+            {{ t('projects.title') }}
+        </h2>
 
         <div class="items">
             <ProjectsItem
@@ -128,5 +142,4 @@ const projects: ProjectType[] = [
         }
     }
 }
-
 </style>

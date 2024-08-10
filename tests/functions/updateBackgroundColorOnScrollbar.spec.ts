@@ -1,13 +1,13 @@
 import { LocalStorageMock } from '@tests/mocks/LocalStorageMock';
 import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundColorOnScrollbar';
-import { ThemeType } from '@/types/ThemeType';
+import type { ThemeType } from '@/types/ThemeType';
 import { DarkTheme, LightTheme } from '@/constants/app';
 import { ThemeKey } from '@/constants/localStorage';
 
 describe('updateBackgroundColorOnScrollbar function', (): void => {
     const localStorageMock: LocalStorageMock = new LocalStorageMock();
     Object.defineProperty(window, 'localStorage', {
-        value: localStorageMock
+        value: localStorageMock,
     });
 
     const scrollbarSelector = '::-webkit-scrollbar-track';
@@ -16,11 +16,11 @@ describe('updateBackgroundColorOnScrollbar function', (): void => {
         body: {},
         addEventListener: jest.fn(),
         styleSheets: [
-            { addRule: jest.fn() }
-        ]
+            { addRule: jest.fn() },
+        ],
     };
     Object.defineProperty(window, 'document', {
-        value: documentMock
+        value: documentMock,
     });
 
     beforeEach((): void => {
@@ -31,17 +31,17 @@ describe('updateBackgroundColorOnScrollbar function', (): void => {
     it('updates default color on scrollbar when localStorage is empty', (): void => {
         const mockGetComputedStyle = jest.fn().mockReturnValue({
             getPropertyValue: jest.fn().mockReturnValue(
-                localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme
+                localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme,
             ),
         });
         Object.defineProperty(window, 'getComputedStyle', {
-            value: mockGetComputedStyle
+            value: mockGetComputedStyle,
         });
 
         updateBackgroundColorOnScrollbar();
         expect(documentMock.styleSheets[0].addRule).toHaveBeenCalledWith(
             scrollbarSelector,
-            `background-color: ${DarkTheme};`
+            `background-color: ${DarkTheme};`,
         );
     });
 
@@ -50,18 +50,18 @@ describe('updateBackgroundColorOnScrollbar function', (): void => {
 
         const mockGetComputedStyle = jest.fn().mockReturnValue({
             getPropertyValue: jest.fn().mockReturnValue(
-                localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme
+                localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme,
             ),
         });
         Object.defineProperty(window, 'getComputedStyle', {
-            value: mockGetComputedStyle
+            value: mockGetComputedStyle,
         });
 
         updateBackgroundColorOnScrollbar();
 
         expect(documentMock.styleSheets[0].addRule).toHaveBeenCalledWith(
             scrollbarSelector,
-            `background-color: ${LightTheme};`
+            `background-color: ${LightTheme};`,
         );
     });
 });

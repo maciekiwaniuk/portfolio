@@ -1,6 +1,6 @@
 import { useCursorStore } from '@/stores/cursor';
 
-export const useCursorHover = () => {
+export function useCursorHover() {
     const cursorStore = useCursorStore();
 
     return {
@@ -11,6 +11,6 @@ export const useCursorHover = () => {
             element.addEventListener('mouseleave', (): void => {
                 cursorStore.toggle();
             });
-        }
+        },
     };
-};
+}

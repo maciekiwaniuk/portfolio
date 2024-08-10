@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import EducationItem from '@/components/Education/EducationItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { TechnologyType } from '@/types/TechnologyType';
+import type { TechnologyType } from '@/types/TechnologyType';
 import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
 type Education = {
-    title: string,
-    content: string,
-    major: string,
-    period: string,
-    url: string,
-    technologies: TechnologyType[]
+    title: string;
+    content: string;
+    major: string;
+    period: string;
+    url: string;
+    technologies: TechnologyType[];
 };
 const educationItems: Education[] = [
     {
@@ -22,8 +22,9 @@ const educationItems: Education[] = [
         period: '2023 - 2027',
         url: 'https://pb.edu.pl/',
         technologies: [
-            'c', 'linux'
-        ]
+            'c',
+            'linux',
+        ],
     },
     {
         title: t('education.educationItems.zse.title'),
@@ -32,12 +33,15 @@ const educationItems: Education[] = [
         period: '2019 - 2023',
         url: 'https://zse.bialystok.pl/',
         technologies: [
-            'php', 'javascript', 'mysql',
-            'python', 'csharp', 'java'
-        ]
-    }
+            'php',
+            'javascript',
+            'mysql',
+            'python',
+            'csharp',
+            'java',
+        ],
+    },
 ];
-
 </script>
 
 <template>
@@ -45,7 +49,9 @@ const educationItems: Education[] = [
         id="education"
         class="education"
     >
-        <h2 :data-aos="FadeDown" class="title">{{ t('education.title') }}</h2>
+        <h2 :data-aos="FadeDown" class="title">
+            {{ t('education.title') }}
+        </h2>
 
         <div class="items">
             <EducationItem
@@ -60,7 +66,6 @@ const educationItems: Education[] = [
                 :animation="index % 2 === 0 ? FadeRight : FadeLeft"
             />
         </div>
-
     </section>
 </template>
 
@@ -104,5 +109,4 @@ const educationItems: Education[] = [
         }
     }
 }
-
 </style>

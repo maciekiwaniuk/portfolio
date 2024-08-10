@@ -1,29 +1,5 @@
-<template>
-    <Cursor />
-
-    <main
-        class="container"
-        :class="{ 'container-dark-theme': themeStore.theme === DarkTheme,
-                  'container-light-theme': themeStore.theme === LightTheme }">
-        <Navbar />
-
-        <LandingPage />
-
-        <Experience />
-
-        <Education />
-
-        <Skills />
-
-        <Projects />
-
-        <Contact />
-
-        <Footer />
-    </main>
-</template>
-
 <script setup lang="ts">
+import { onMounted, watch } from 'vue';
 import Cursor from '@/components/Cursor.vue';
 import Navbar from '@/components/Navbar/Navbar.vue';
 import LandingPage from '@/components/LandingPage/LandingPage.vue';
@@ -42,8 +18,6 @@ import { addEventOnOpeningNavBySliding } from '@/functions/addEventOnOpeningNavB
 import { updateLangAttribute } from '@/functions/updateLangAttribute';
 import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundColorOnScrollbar';
 
-import { onMounted } from 'vue';
-import { watch } from 'vue';
 import { DarkTheme, LightTheme } from '@/constants/app';
 
 onMounted(() => {
@@ -60,10 +34,35 @@ watch(
     () => navMenuStore.opened,
     (opened) => {
         document.body.setAttribute('overflow', opened ? 'hidden' : 'visible');
-    }
+    },
 );
-
 </script>
+
+<template>
+    <Cursor />
+
+    <main
+        class="container"
+        :class="{ 'container-dark-theme': themeStore.theme === DarkTheme,
+                  'container-light-theme': themeStore.theme === LightTheme }"
+    >
+        <Navbar />
+
+        <LandingPage />
+
+        <Experience />
+
+        <Education />
+
+        <Skills />
+
+        <Projects />
+
+        <Contact />
+
+        <Footer />
+    </main>
+</template>
 
 <style lang="less">
 @import '@/styles/variables.less';

@@ -12,8 +12,8 @@ export default defineConfig({
             enableLegacy: false,
             runtimeOnly: false,
             compositionOnly: false,
-            fullInstall: true
-        }
+            fullInstall: true,
+        },
     },
     // https://cli.vuejs.org/core-plugins/pwa.html#configuration
     pwa: {
@@ -28,5 +28,5 @@ export default defineConfig({
         msTileColor: '#000000',
         appleMobileWebAppCapable: 'yes',
         appleMobileWebAppStatusBarStyle: 'black',
-    }
+    },
 });

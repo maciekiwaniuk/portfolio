@@ -2,30 +2,29 @@
 import { useThemeStore } from '@/stores/theme';
 import { useNavMenuStore } from '@/stores/navMenu';
 import { useCursorHover } from '@/directives/useCursorHover';
-import { AlignmentType } from '@/types/AlignmentType';
+import type { AlignmentType } from '@/types/AlignmentType';
 import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '@/constants/app';
+
+const props = defineProps<{
+    element: string;
+    text: string;
+    alignment: AlignmentType;
+}>();
 
 const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
-
-const props = defineProps<{
-    element: string,
-    text: string,
-    alignment: AlignmentType
-}>();
-
 </script>
 
 <template>
     <a
+        v-cursor-hover
         :class="{ 'vertical-alignment': props.alignment === VerticalNavigationAlignment,
                   'horizontal-alignment': props.alignment === HorizontalNavigationAlignment,
                   'link-dark-theme': themeStore.theme === DarkTheme,
                   'link-light-theme': themeStore.theme === LightTheme }"
-        v-cursor-hover
         :href="`#${element}`"
         @click="navMenuStore.close()"
     >
@@ -70,5 +69,4 @@ a {
 .link-light-theme::before {
     background-color: #light[text-color];
 }
-
 </style>

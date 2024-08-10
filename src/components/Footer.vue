@@ -12,7 +12,6 @@ const vCursorHover = useCursorHover();
 const themeStore = useThemeStore();
 
 const currentYear: number = new Date().getFullYear();
-
 </script>
 
 <template>
@@ -28,22 +27,21 @@ const currentYear: number = new Date().getFullYear();
         <!-- icons visible on footer while screen is small -->
         <div class="icons">
             <a
+                v-cursor-hover
                 class="link"
                 target="_blank"
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
-                v-cursor-hover
             >
                 <Icon icon="logos:linkedin-icon" width="20" class="linkedin-icon" />
             </a>
 
-
             <a
+                v-cursor-hover
                 class="link"
                 target="_blank"
                 aria-label="GitHub"
                 href="https://github.com/maciekiwaniuk"
-                v-cursor-hover
             >
                 <Icon icon="codicon:github" width="20" />
             </a>
@@ -52,22 +50,21 @@ const currentYear: number = new Date().getFullYear();
         <!-- icons on left side of screen while screen is big -->
         <div class="icons-on-big-screens">
             <a
+                v-cursor-hover
                 class="link"
                 target="_blank"
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
-                v-cursor-hover
             >
                 <Icon icon="logos:linkedin-icon" width="40" class="linkedin-icon" />
             </a>
 
-
             <a
+                v-cursor-hover
                 class="link"
                 target="_blank"
                 aria-label="GitHub"
                 href="https://github.com/maciekiwaniuk"
-                v-cursor-hover
             >
                 <Icon icon="icon-park-outline:github" width="40" />
             </a>
@@ -158,5 +155,4 @@ const currentYear: number = new Date().getFullYear();
 .footer-light-theme {
     background-color: #light[background-color-on-element];
 }
-
 </style>

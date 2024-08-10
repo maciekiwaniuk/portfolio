@@ -3,20 +3,20 @@ import { useNavMenuStore } from '@/stores/navMenu';
 /**
  * Adds possibility of toggling navigation by sliding
  */
-export const addEventOnOpeningNavBySliding = (): void => {
+export function addEventOnOpeningNavBySliding(): void {
     const navMenuStore = useNavMenuStore();
 
     const sizeOfSlideToTargetEvent: number = 140;
 
-    let touchStartPosition: number = 0,
-        touchEndPosition: number = 0,
-        difference: number = 0;
+    let touchStartPosition: number = 0;
+    let touchEndPosition: number = 0;
+    let difference: number = 0;
 
-    document.addEventListener('touchstart', e => {
+    document.addEventListener('touchstart', (e) => {
         touchStartPosition = e.changedTouches[0].screenX;
     });
 
-    document.addEventListener('touchend', e => {
+    document.addEventListener('touchend', (e) => {
         touchEndPosition = e.changedTouches[0].screenX;
         difference = Math.abs(touchStartPosition - touchEndPosition);
 
@@ -27,4 +27,4 @@ export const addEventOnOpeningNavBySliding = (): void => {
             navMenuStore.close();
         }
     });
-};
+}

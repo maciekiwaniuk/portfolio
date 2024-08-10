@@ -22,10 +22,10 @@ export type TechnologyType =
     'symfony' |
     'docker' |
     'phpunit' |
-    'typescript'|
+    'typescript' |
     'microservices' |
     'rabbitmq' |
-    'tailwind'|
+    'tailwind' |
     'c' |
     'linux' |
     'nuxt';

@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { Icon } from '@iconify/vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { FadeDown, FadeUp } from '@/constants/app';
-import { Icon } from '@iconify/vue';
 
 const vCursorHover = useCursorHover();
 
@@ -11,7 +11,6 @@ const { t } = useLanguageSwitcher();
 function copyEmailToClipboard() {
     navigator.clipboard.writeText('iwaniukmaciej1@gmail.com');
 }
-
 </script>
 
 <template>
@@ -19,13 +18,15 @@ function copyEmailToClipboard() {
         id="contact"
         class="contact"
     >
-        <h2 :data-aos="FadeDown" class="title">{{ t('contact.title') }}</h2>
+        <h2 :data-aos="FadeDown" class="title">
+            {{ t('contact.title') }}
+        </h2>
 
         <div
-            :data-aos="FadeUp"
             v-cursor-hover
-            @click="copyEmailToClipboard();"
+            :data-aos="FadeUp"
             class="content"
+            @click="copyEmailToClipboard();"
         >
             <Icon
                 icon="clarity:email-solid"
@@ -34,7 +35,6 @@ function copyEmailToClipboard() {
 
             <span class="email">iwaniukmaciej1@gmail.com</span>
         </div>
-
     </section>
 </template>
 
@@ -89,5 +89,4 @@ function copyEmailToClipboard() {
         }
     }
 }
-
 </style>

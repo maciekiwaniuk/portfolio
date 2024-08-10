@@ -2,33 +2,32 @@
 import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
-import { TechnologyType } from '@/types/TechnologyType';
-import { AnimationType } from '@/types/AnimationType';
+import type { TechnologyType } from '@/types/TechnologyType';
+import type { AnimationType } from '@/types/AnimationType';
 import { DarkTheme, LightTheme } from '@/constants/app';
+
+const props = defineProps<{
+    title: string;
+    content: string;
+    major: string;
+    period: string;
+    url: string;
+    technologies: TechnologyType[];
+    animation: AnimationType;
+}>();
 
 const vCursorHover = useCursorHover();
 
 const themeStore = useThemeStore();
-
-const props = defineProps<{
-    title: string,
-    content: string,
-    major: string,
-    period: string,
-    url: string,
-    technologies: TechnologyType[],
-    animation: AnimationType
-}>();
-
 </script>
 
 <template>
     <div :data-aos="props.animation">
         <a
+            v-cursor-hover
             class="link"
             target="_blank"
             :href="props.url"
-            v-cursor-hover
         >
             <div
                 class="education-item"
@@ -134,5 +133,4 @@ const props = defineProps<{
 .education-item-light-theme {
     background-color: #light[background-color-on-element];
 }
-
 </style>

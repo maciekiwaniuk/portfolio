@@ -1,8 +1,8 @@
-import { LanguageType } from '@/types/LanguageType';
-import { CursorVisibilityType } from '@/types/CursorVisibilityType';
-import { ThemeType } from '@/types/ThemeType';
-import { AlignmentType } from '@/types/AlignmentType';
-import { AnimationType } from '@/types/AnimationType';
+import type { LanguageType } from '@/types/LanguageType';
+import type { CursorVisibilityType } from '@/types/CursorVisibilityType';
+import type { ThemeType } from '@/types/ThemeType';
+import type { AlignmentType } from '@/types/AlignmentType';
+import type { AnimationType } from '@/types/AnimationType';
 
 export const DarkTheme: ThemeType = 'dark';
 export const LightTheme: ThemeType = 'light';

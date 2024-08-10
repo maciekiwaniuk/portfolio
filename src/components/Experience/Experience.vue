@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { TechnologyType } from '@/types/TechnologyType';
+import type { TechnologyType } from '@/types/TechnologyType';
 import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
 type Experience = {
-    title: string,
-    content: string,
-    profession: string,
-    startDate: Date,
-    endDate: Date | null,
-    url: string,
-    technologies: TechnologyType[]
+    title: string;
+    content: string;
+    profession: string;
+    startDate: Date;
+    endDate: Date | null;
+    url: string;
+    technologies: TechnologyType[];
 };
 
 const experienceItems: Experience[] = [
@@ -25,10 +25,16 @@ const experienceItems: Experience[] = [
         endDate: new Date('2023-09'),
         url: 'https://ebrand.com/',
         technologies: [
-            'php', 'phpunit', 'microservices', 'git',
-            'symfony', 'mysql', 'redis', 'rabbitmq',
-            'docker'
-        ]
+            'php',
+            'phpunit',
+            'microservices',
+            'git',
+            'symfony',
+            'mysql',
+            'redis',
+            'rabbitmq',
+            'docker',
+        ],
     },
     {
         title: 'Merinosoft',
@@ -38,10 +44,15 @@ const experienceItems: Experience[] = [
         endDate: new Date('2022-12'),
         url: 'https://merinosoft.pl/',
         technologies: [
-            'php', 'laravel', 'javascript', 'jquery',
-            'bootstrap', 'postgresql', 'git'
-        ]
-    }
+            'php',
+            'laravel',
+            'javascript',
+            'jquery',
+            'bootstrap',
+            'postgresql',
+            'git',
+        ],
+    },
 ];
 
 function getTranslatedDateRange(startDate: Date, endDate: Date | null): string {
@@ -69,29 +80,33 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
     let yearsString = '';
     if (yearsDifference === 1) {
         yearsString = t('experience.year');
-    } else if (yearsDifference > 1 && ![12, 13, 14].includes(yearsDifference % 100) && [2, 3, 4].includes(yearsDifference % 10)) {
+    }
+    else if (yearsDifference > 1 && ![12, 13, 14].includes(yearsDifference % 100) && [2, 3, 4].includes(yearsDifference % 10)) {
         yearsString = t('experience.yearsFirstForm');
-    } else if (yearsDifference > 1) {
+    }
+    else if (yearsDifference > 1) {
         yearsString = t ('experience.yearsSecondForm');
     }
 
     let monthsString = '';
     if (monthsDifference === 1) {
         monthsString = t('experience.month');
-    } else if (monthsDifference > 1) {
+    }
+    else if (monthsDifference > 1) {
         monthsString = t('experience.months');
     }
 
     if (yearsString && monthsString) {
         return `(${yearsDifference} ${yearsString} ${monthsDifference} ${monthsString})`;
-    } else if (yearsString) {
+    }
+    else if (yearsString) {
         return `(${yearsDifference} ${yearsString})`;
-    } else if (monthsString) {
+    }
+    else if (monthsString) {
         return `(${monthsDifference} ${monthsString})`;
     }
     return '';
 }
-
 </script>
 
 <template>
@@ -99,7 +114,9 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
         id="experience"
         class="experience"
     >
-        <h2 :data-aos="FadeDown" class="title">{{ t('experience.title') }}</h2>
+        <h2 :data-aos="FadeDown" class="title">
+            {{ t('experience.title') }}
+        </h2>
 
         <div class="items">
             <ExperienceItem
@@ -115,7 +132,6 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
                 :animation="index % 2 === 0 ? FadeRight : FadeLeft"
             />
         </div>
-
     </section>
 </template>
 
@@ -159,5 +175,4 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
         }
     }
 }
-
 </style>

@@ -10,7 +10,6 @@ const themeStore = useThemeStore();
 const navMenuStore = useNavMenuStore();
 
 const vCursorHover = useCursorHover();
-
 </script>
 
 <template>
@@ -20,14 +19,14 @@ const vCursorHover = useCursorHover();
                   'navigation-light-theme': themeStore.theme === LightTheme }"
     >
         <button
-            class="nav-hamburger-toggler"
             v-cursor-hover
-            @click="navMenuStore.open();"
+            class="nav-hamburger-toggler"
             aria-label="Hamburger"
+            @click="navMenuStore.open();"
         >
-            <span class="bar bar-short"></span>
-            <span class="bar"></span>
-            <span class="bar bar-medium"></span>
+            <span class="bar bar-short" />
+            <span class="bar" />
+            <span class="bar bar-medium" />
         </button>
 
         <div class="nav-links">
@@ -37,10 +36,10 @@ const vCursorHover = useCursorHover();
         <div
             class="background-blocking-content"
             :class="{ 'background-blocking-content-visible': navMenuStore.opened }"
-            @click="navMenuStore.close();">
-        </div>
+            @click="navMenuStore.close();"
+        />
 
-        <div class="nav-links-mobile-menu" :class="{ 'active': navMenuStore.opened }">
+        <div class="nav-links-mobile-menu" :class="{ active: navMenuStore.opened }">
             <NavigationLinks alignment="vertical" />
         </div>
     </header>
@@ -149,5 +148,4 @@ const vCursorHover = useCursorHover();
         background-color: #light[background-color];
     }
 }
-
 </style>

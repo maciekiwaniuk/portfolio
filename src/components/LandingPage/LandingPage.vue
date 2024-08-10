@@ -4,7 +4,6 @@ import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { FadeUpRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
-
 </script>
 
 <template>
@@ -15,7 +14,9 @@ const { t } = useLanguageSwitcher();
             :data-aos="FadeUpRight"
             class="text"
         >
-            <h2 class="my-name-is">{{ t('landingPage.myNameIs') }}</h2>
+            <h2 class="my-name-is">
+                {{ t('landingPage.myNameIs') }}
+            </h2>
 
             <h1 class="name">
                 <AnimateSplitLetters
@@ -23,7 +24,9 @@ const { t } = useLanguageSwitcher();
                 />
             </h1>
 
-            <p class="description">{{ t('landingPage.description') }}</p>
+            <p class="description">
+                {{ t('landingPage.description') }}
+            </p>
         </div>
     </section>
 </template>
@@ -77,5 +80,4 @@ const { t } = useLanguageSwitcher();
         }
     }
 }
-
 </style>

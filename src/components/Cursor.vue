@@ -10,24 +10,23 @@ const vCursorHover = useCursorHover();
 const themeStore = useThemeStore();
 
 const cursorStore = useCursorStore();
-
 </script>
 
 <template>
     <div
+        v-show="cursorStore.visibility === CursorVisible"
         aria-hidden="true"
         class="cursor"
-        v-show="cursorStore.visibility === CursorVisible"
         :class="{ 'cursor-dark-theme': themeStore.theme === DarkTheme,
                   'cursor-light-theme': themeStore.theme === LightTheme,
                   'hover': cursorStore.hover }"
-    ></div>
+    />
 
     <button
-        class="toggle-visibility-of-cursor-button"
         v-cursor-hover
-        @click="cursorStore.toggleVisibility();"
+        class="toggle-visibility-of-cursor-button"
         aria-label="Cursor switch"
+        @click="cursorStore.toggleVisibility();"
     >
         <Icon
             icon="clarity:cursor-hand-click-line"
@@ -89,5 +88,4 @@ const cursorStore = useCursorStore();
 .cursor-light-theme {
     border-color: #light[cursor-color];
 }
-
 </style>

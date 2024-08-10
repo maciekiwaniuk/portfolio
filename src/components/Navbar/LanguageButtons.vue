@@ -6,14 +6,13 @@ import { EnglishLanguage, PolishLanguage } from '@/constants/app';
 const { t, changeLanguage } = useLanguageSwitcher();
 
 const vCursorHover = useCursorHover();
-
 </script>
 
 <template>
     <div data-aos="zoom-in-up">
         <button
-            class="change-language-button"
             v-cursor-hover
+            class="change-language-button"
             @click="changeLanguage(PolishLanguage);"
         >
             <img
@@ -26,8 +25,8 @@ const vCursorHover = useCursorHover();
         </button>
 
         <button
-            class="change-language-button"
             v-cursor-hover
+            class="change-language-button"
             @click="changeLanguage(EnglishLanguage);"
         >
             <img
@@ -64,5 +63,4 @@ const vCursorHover = useCursorHover();
         height: 3rem;
     }
 }
-
 </style>

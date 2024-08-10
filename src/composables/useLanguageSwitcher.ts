@@ -1,18 +1,12 @@
 import { useI18n } from 'vue-i18n';
-import { LanguageType } from '@/types/LanguageType';
+import type { LanguageType } from '@/types/LanguageType';
 import { LanguageKey } from '@/constants/localStorage';
 
-/**
- * locale => currently selected language
- *
- * @returns t => translations - t('key')
- * @returns changeLanguage() => changes currently selected language
- */
-export const useLanguageSwitcher = () => {
+export function useLanguageSwitcher() {
     // t => translations
     // locale => currently selected language
     const { t, locale } = useI18n({
-        useScope: 'global'
+        useScope: 'global',
     });
 
     const changeLanguage = (selectedLanguage: LanguageType): void => {
@@ -21,9 +15,9 @@ export const useLanguageSwitcher = () => {
 
         document.documentElement.setAttribute(
             'lang',
-            selectedLanguage
+            selectedLanguage,
         );
     };
 
     return { t, changeLanguage };
-};
+}

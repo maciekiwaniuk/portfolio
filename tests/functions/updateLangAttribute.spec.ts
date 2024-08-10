@@ -6,7 +6,7 @@ import { LanguageKey } from '@/constants/localStorage';
 describe('updateLangAttribute function', (): void => {
     const localStorageMock: LocalStorageMock = new LocalStorageMock();
     Object.defineProperty(window, 'localStorage', {
-        value: localStorageMock
+        value: localStorageMock,
     });
 
     beforeEach((): void => {
