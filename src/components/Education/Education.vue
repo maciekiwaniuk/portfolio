@@ -7,18 +7,18 @@ import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 const { t } = useLanguageSwitcher();
 
 type Education = {
-    titleKey: string,
-    contentKey: string,
-    majorKey: string,
+    title: string,
+    content: string,
+    major: string,
     period: string,
     url: string,
     technologies: TechnologyType[]
 };
 const educationItems: Education[] = [
     {
-        titleKey: 'education.educationItems.universityOfTechnology.title',
-        contentKey: 'education.educationItems.universityOfTechnology.content',
-        majorKey: 'education.educationItems.universityOfTechnology.major',
+        title: t('education.educationItems.universityOfTechnology.title'),
+        content: t('education.educationItems.universityOfTechnology.content'),
+        major: t('education.educationItems.universityOfTechnology.major'),
         period: '2023 - 2027',
         url: 'https://pb.edu.pl/',
         technologies: [
@@ -26,9 +26,9 @@ const educationItems: Education[] = [
         ]
     },
     {
-        titleKey: 'education.educationItems.zse.title',
-        contentKey: 'education.educationItems.zse.content',
-        majorKey: 'education.educationItems.zse.major',
+        title: t('education.educationItems.zse.title'),
+        content: t('education.educationItems.zse.content'),
+        major: t('education.educationItems.zse.major'),
         period: '2019 - 2023',
         url: 'https://zse.bialystok.pl/',
         technologies: [
@@ -51,9 +51,9 @@ const educationItems: Education[] = [
             <EducationItem
                 v-for="(education, index) in educationItems"
                 :key="index"
-                :title="t(education.titleKey)"
-                :content="t(education.contentKey)"
-                :major="t(education.majorKey)"
+                :title="education.title"
+                :content="education.content"
+                :major="education.major"
                 :period="education.period"
                 :url="education.url"
                 :technologies="education.technologies"

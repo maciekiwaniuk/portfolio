@@ -8,8 +8,8 @@ const { t } = useLanguageSwitcher();
 
 type Experience = {
     title: string,
-    contentKey: string,
-    professionKey: string,
+    content: string,
+    profession: string,
     startDate: Date,
     endDate: Date | null,
     url: string,
@@ -19,8 +19,8 @@ type Experience = {
 const experienceItems: Experience[] = [
     {
         title: 'EBRAND',
-        contentKey: 'experience.experienceItems.ebrand.content',
-        professionKey: 'experience.experienceItems.ebrand.profession',
+        content: t('experience.experienceItems.ebrand.content'),
+        profession: t('experience.experienceItems.ebrand.profession'),
         startDate: new Date('2023-04'),
         endDate: new Date('2023-09'),
         url: 'https://ebrand.com/',
@@ -32,8 +32,8 @@ const experienceItems: Experience[] = [
     },
     {
         title: 'Merinosoft',
-        contentKey: 'experience.experienceItems.merinosoft.content',
-        professionKey: 'experience.experienceItems.merinosoft.profession',
+        content: t('experience.experienceItems.merinosoft.content'),
+        profession: t('experience.experienceItems.merinosoft.profession'),
         startDate: new Date('2021-08'),
         endDate: new Date('2022-12'),
         url: 'https://merinosoft.pl/',
@@ -88,9 +88,8 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
         return `(${yearsDifference} ${yearsString})`;
     } else if (monthsString) {
         return `(${monthsDifference} ${monthsString})`;
-    } else {
-        return '';
     }
+    return '';
 }
 
 </script>
@@ -107,8 +106,8 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
                 v-for="(experience, index) in experienceItems"
                 :key="index"
                 :title="experience.title"
-                :content="t(experience.contentKey)"
-                :profession="t(experience.professionKey)"
+                :content="experience.content"
+                :profession="experience.profession"
                 :date-range="getTranslatedDateRange(experience.startDate, experience.endDate)"
                 :period="getTranslatedPeriod(experience.startDate, experience.endDate)"
                 :url="experience.url"
