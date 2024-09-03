@@ -58,12 +58,16 @@
             "12": "Dec"
         },
         "experienceItems": {
-            "merinosoft": {
-                "content": "Development of a web application relating to the management of employees in a company.",
+            "transparentData": {
+                "content": "Development of a distributed microservices-based system relating to provision of economic data. Integration with multiple external APIs.",
                 "profession": "PHP Developer"
             },
             "ebrand": {
                 "content": "Development of a distributed microservices-based system relating to online brand protection. Integration with multiple external APIs.",
+                "profession": "PHP Developer"
+            },
+            "merinosoft": {
+                "content": "Development of a web application relating to the management of employees in a company.",
                 "profession": "PHP Developer"
             }
         }

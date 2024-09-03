@@ -170,6 +170,21 @@ const technologies: TechnologiesType = {
         icon: 'logos:nuxt-icon',
         width: 42,
     },
+    gcp: {
+        title: 'GCP',
+        icon: 'catppuccin:gcp',
+        width: 40,
+    },
+    kubernetes: {
+        title: 'Kubernetes',
+        icon: 'logos:kubernetes',
+        width: 38,
+    },
+    slim: {
+        title: 'Slim',
+        icon: 'logos:slim',
+        width: 36,
+    }
 };
 </script>
 

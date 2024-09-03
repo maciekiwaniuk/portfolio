@@ -28,4 +28,7 @@ export type TechnologyType =
     'tailwind' |
     'c' |
     'linux' |
-    'nuxt';
+    'nuxt' |
+    'gcp' |
+    'kubernetes' |
+    'slim';

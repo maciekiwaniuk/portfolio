@@ -58,12 +58,16 @@
             "12": "gru"
         },
         "experienceItems": {
-            "merinosoft": {
-                "content": "Rozwój aplikacji webowej związanej z zarządzaniem pracownikami przez firmy.",
+            "transparentData": {
+                "content": "Rozwój rozproszonego systemu opartego o architekturę mikroserwioswą związanego z dostarczaniem danych gospodarczych. Integracje z licznymi zewnętrznymi systemami przez API.",
                 "profession": "Programista PHP"
             },
             "ebrand": {
-                "content": "Rozwój rozproszonego systemu opartego na architekturę mikroserwioswą związanego z ochroną marek online. Integracje z licznymi zewnętrznymi systemami przez API.",
+                "content": "Rozwój rozproszonego systemu opartego o architekturę mikroserwioswą związanego z ochroną marek online. Integracje z licznymi zewnętrznymi systemami przez API.",
+                "profession": "Programista PHP"
+            },
+            "merinosoft": {
+                "content": "Rozwój aplikacji webowej związanej z zarządzaniem pracownikami przez firmy.",
                 "profession": "Programista PHP"
             }
         }

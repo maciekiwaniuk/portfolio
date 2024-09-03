@@ -18,6 +18,28 @@ type Experience = {
 
 const experienceItems: Experience[] = [
     {
+        title: 'Transparent Data',
+        content: t('experience.experienceItems.transparentData.content'),
+        profession: t('experience.experienceItems.transparentData.profession'),
+        startDate: new Date('2024-07'),
+        endDate: null,
+        url: 'https://transparentdata.pl/',
+        technologies: [
+            'php',
+            'phpunit',
+            'microservices',
+            'slim',
+            'laravel',
+            'javascript',
+            'css',
+            'mysql',
+            'redis',
+            'gcp',
+            'kubernetes',
+            'docker',
+        ],
+    },
+    {
         title: 'EBRAND',
         content: t('experience.experienceItems.ebrand.content'),
         profession: t('experience.experienceItems.ebrand.profession'),
@@ -28,7 +50,6 @@ const experienceItems: Experience[] = [
             'php',
             'phpunit',
             'microservices',
-            'git',
             'symfony',
             'mysql',
             'redis',
@@ -50,7 +71,6 @@ const experienceItems: Experience[] = [
             'jquery',
             'bootstrap',
             'postgresql',
-            'git',
         ],
     },
 ];
