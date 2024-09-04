@@ -105,11 +105,6 @@ const technologies: TechnologiesType = {
         icon: 'logos:qt',
         width: 40,
     },
-    pwa: {
-        title: 'PWA',
-        icon: 'logos:pwa',
-        width: 36,
-    },
     css: {
         title: 'CSS',
         icon: 'logos:css-3',

@@ -53,7 +53,6 @@ const projects: ProjectType[] = [
             'bootstrap',
             'mysql',
             'redis',
-            'pwa',
         ],
     },
     {
@@ -73,7 +72,7 @@ const projects: ProjectType[] = [
         title:t( 'projects.projectsItems.portfolio.title'),
         content: t('projects.projectsItems.portfolio.content'),
         github: 'https://github.com/maciekiwaniuk/portfolio',
-        technologies: ['typescript', 'vue', 'less', 'pwa'],
+        technologies: ['typescript', 'vue', 'less'],
     },
 ];
 </script>

@@ -20,8 +20,6 @@ const useRegularlyTechnologies: TechnologyType[] = [
 
 const hadContactTechnologies: TechnologyType[] = [
     'python',
-    'csharp',
-    'java',
     'rabbitmq',
     'jquery',
     'sass',
@@ -32,7 +30,6 @@ const hadContactTechnologies: TechnologyType[] = [
     'typescript',
     'vue',
     'nuxt',
-    'pwa',
 ];
 </script>
 
