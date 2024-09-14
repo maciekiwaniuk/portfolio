@@ -1,42 +1,4 @@
 {
-    "compilerOptions": {
-        "target": "esnext",
-        "jsx": "preserve",
-        "lib": [
-            "esnext",
-            "dom",
-            "dom.iterable",
-            "scripthost"
-        ],
-        "useDefineForClassFields": true,
-        "baseUrl": "./",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "paths": {
-            "@/*": ["src/*"],
-            "@tests/*": ["tests/*"]
-        },
-        "types": [
-            "webpack-env",
-            "node",
-            "@types/jest"
-        ],
-        "allowJs": true,
-        "strict": true,
-        "sourceMap": true,
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": true
-    },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue",
-        "tests/**/*.ts",
-        "tests/**/*.tsx"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json"
 }

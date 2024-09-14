@@ -1,8 +1,8 @@
-import { LocalStorageMock } from '@tests/mocks/LocalStorageMock';
-import { updateBackgroundColorOnScrollbar } from '@/functions/updateBackgroundColorOnScrollbar';
-import type { ThemeType } from '@/types/ThemeType';
-import { DarkTheme, LightTheme } from '@/constants/app';
-import { ThemeKey } from '@/constants/localStorage';
+import { LocalStorageMock } from '~/tests/mocks/LocalStorageMock';
+import { updateBackgroundColorOnScrollbar } from '../../functions/updateBackgroundColorOnScrollbar';
+import type { ThemeType } from '../../types/ThemeType';
+import { DarkTheme, LightTheme } from '../../constants/app';
+import { ThemeKey } from '../../constants/localStorage';
 
 describe('updateBackgroundColorOnScrollbar function', (): void => {
     const localStorageMock: LocalStorageMock = new LocalStorageMock();
