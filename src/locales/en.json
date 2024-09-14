@@ -86,26 +86,27 @@
                 "title": "Shop system",
                 "content": "Backend of a simple store system. The project is based on CQRS made as a modular monolith. Directories are organized using Domain-Driven-Design approach."
             },
-            "demoCryptoExchange": {
-                "title": "Demo crypto exchange",
-                "content": "A project of a demo cryptocurrency exchange that simulates the real functioning of an exchange, but uses fictional currency. Data regarding cryptocurrency prices is obtained from the API provided by the Binance exchange."
+            "isocapi": {
+                "title": "ISOCAPI",
+                "content": "A platform for retrieving data via API from popular auction apps, operating in a pay-per-use model."
             },
-            "snakeWebApp": {
-                "title": "Snake - web app",
-                "content": "This application handles data sent by the game application written in python. It has extensive user account functionality, along with a comprehensive, feature-rich admin panel."
+            "portfolio": {
+                "title": "Portfolio",
+                "content": "A website summarizing information about myself. It includes information about my education, commercial experience and projects, whilst being interactive and animated."
             },
             "snakeGame": {
                 "title": "Snake - game",
                 "content": "This game reads and writes data through a web application API. The user competes against other users through a ranking, whilst earning currency that can then be spent on upgrades or skins that improve the gameplay experience."
             },
+            "snakeWebApp": {
+                "title": "Snake - web app",
+                "content": "This application handles data sent by the game application written in python. It has extensive user account functionality, along with a comprehensive, feature-rich admin panel."
+            },
             "minesweeper": {
                 "title": "Minesweeper",
                 "content": "A sapper game with a selectable game difficulty and a save option, which saves choices as well as user records to the local browser memory."
-            },
-            "portfolio": {
-                "title": "Portfolio",
-                "content": "A website summarizing information about myself. It includes information about my education, commercial experience and projects, whilst being interactive and animated."
             }
+
         }
     },
 

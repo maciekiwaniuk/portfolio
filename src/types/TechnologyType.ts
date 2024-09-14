@@ -30,4 +30,6 @@ export type TechnologyType =
     'nuxt' |
     'gcp' |
     'kubernetes' |
-    'slim';
+    'slim' |
+    'golang' |
+    'keydb';

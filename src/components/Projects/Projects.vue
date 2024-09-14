@@ -8,7 +8,7 @@ const { t } = useLanguageSwitcher();
 type ProjectType = {
     title: string;
     content: string;
-    github: string;
+    github?: string;
     online?: string;
     technologies: TechnologyType[];
 };
@@ -27,18 +27,31 @@ const projects: ProjectType[] = [
         ],
     },
     {
-        title: t('projects.projectsItems.demoCryptoExchange.title'),
-        content: t('projects.projectsItems.demoCryptoExchange.content'),
-        github: 'https://github.com/maciekiwaniuk/demo-crypto-exchange',
+        title: t('projects.projectsItems.isocapi.title'),
+        content: t('projects.projectsItems.isocapi.content'),
+        online: 'https://isocapi.com',
         technologies: [
-            'php',
-            'phpunit',
-            'symfony',
+            'golang',
             'typescript',
             'vue',
+            'nuxt',
+            'tailwind',
             'mysql',
+            'keydb',
             'docker',
         ],
+    },
+    {
+        title: t( 'projects.projectsItems.portfolio.title'),
+        content: t('projects.projectsItems.portfolio.content'),
+        github: 'https://github.com/maciekiwaniuk/portfolio',
+        technologies: ['typescript', 'vue', 'less'],
+    },
+    {
+        title: t('projects.projectsItems.snakeGame.title'),
+        content: t('projects.projectsItems.snakeGame.content'),
+        github: 'https://github.com/maciekiwaniuk/snake-game',
+        technologies: ['python', 'pygame', 'pyqt5'],
     },
     {
         title: t('projects.projectsItems.snakeWebApp.title'),
@@ -55,23 +68,11 @@ const projects: ProjectType[] = [
         ],
     },
     {
-        title: t('projects.projectsItems.snakeGame.title'),
-        content: t('projects.projectsItems.snakeGame.content'),
-        github: 'https://github.com/maciekiwaniuk/snake-game',
-        technologies: ['python', 'pygame', 'pyqt5'],
-    },
-    {
         title: t('projects.projectsItems.minesweeper.title'),
         content: t('projects.projectsItems.minesweeper.content'),
         github: 'https://github.com/maciekiwaniuk/minesweeper',
         online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
         technologies: ['javascript', 'css'],
-    },
-    {
-        title:t( 'projects.projectsItems.portfolio.title'),
-        content: t('projects.projectsItems.portfolio.content'),
-        github: 'https://github.com/maciekiwaniuk/portfolio',
-        technologies: ['typescript', 'vue', 'less'],
     },
 ];
 </script>

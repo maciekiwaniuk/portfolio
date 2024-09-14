@@ -179,6 +179,16 @@ const technologies: TechnologiesType = {
         title: 'Slim',
         icon: 'logos:slim',
         width: 36,
+    },
+    golang: {
+        title: 'Golang',
+        icon: 'devicon:go',
+        width: 36
+    },
+    keydb: {
+        title: 'KeyDB',
+        icon: 'logos:keydb-icon',
+        width: 36
     }
 };
 </script>

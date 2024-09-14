@@ -84,27 +84,27 @@
         "projectsItems": {
             "shopSystem": {
                 "title": "System sklepu",
-                "content": "Backend prostego systemu sklepu. Projekt oparty jest na CQRS wykonanym jako modułowy monolit. Foldery są posegregowane przy użyciu podejścia Domain-Driven-Design."
+                "content": "Backend prostego systemu sklepu. Projekt oparty jest na CQRS wraz z architekturą hexagonalną."
             },
-            "demoCryptoExchange": {
-                "title": "Demo giełda kryptowalut",
-                "content": "Projekt demo giełdy kryptowalut, która symuluje rzeczywiste funkcjonowanie giełdy, jednak używa fikcyjnej waluty. Dane dotyczące cen kryptowalut są pobierane z API udostępnianego przez giełdę Binance."
+            "isocapi": {
+                "title": "ISOCAPI",
+                "content": "Platforma do pozyskiwania danych przez api z popularnych aplikacji aukcyjnych, działająca w modelu płatności za użycie."
             },
-            "snakeWebApp": {
-                "title": "Snake - aplikacja webowa",
-                "content": "Aplikacja obsługuje dane przesyłane przez grę na komputer napisaną w pythonie. Posiada rozbudowane funkcjonalności kont użytkowników wraz z obszernym, bogatym w funkcjonalności panelem administratora."
+            "portfolio": {
+                "title": "Portfolio",
+                "content": "Strona internetowa streszczająca informacje o mojej osobie. Zawarte są w niej wiadomości na temat mojej edukacji, doświadczenia komercyjnego czy projektach."
             },
             "snakeGame": {
                 "title": "Snake - gra",
                 "content": "Gra odczytuje oraz zapisuje dane poprzez API aplikacji webowej. Użytkownik rywalizuje z innymi użytkownikami poprzez ranking, zdobywa walutę, którą może następnie wydać na ulepszenia lub skórki poprawiające odczucia z rozgrywki."
             },
+            "snakeWebApp": {
+                "title": "Snake - aplikacja webowa",
+                "content": "Aplikacja obsługuje dane przesyłane przez grę na komputer napisaną w pythonie. Posiada rozbudowane funkcjonalności kont użytkowników wraz z obszernym, bogatym w funkcjonalności panelem administratora."
+            },
             "minesweeper": {
                 "title": "Saper",
                 "content": "Gra w sapera z możliwością wyboru trudności gry oraz zapisywaniem wyborów jak i rekordów użytkownika do lokalnej pamięci przeglądarki."
-            },
-            "portfolio": {
-                "title": "Portfolio",
-                "content": "Strona internetowa streszczająca informacje o mojej osobie. Zawarte są w niej wiadomości na temat mojej edukacji, doświadczenia komercyjnego czy projektów."
             }
         }
     },
