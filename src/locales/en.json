@@ -84,7 +84,7 @@
         "projectsItems": {
             "shopSystem": {
                 "title": "Shop system",
-                "content": "Backend of a simple store system. The project is based on CQRS made as a modular monolith. Directories are organized using Domain-Driven-Design approach."
+                "content": "Backend of a simple store system. The project is based on CQRS along with hexagonal architecture."
             },
             "isocapi": {
                 "title": "ISOCAPI",

@@ -86,7 +86,7 @@ const technologies: TechnologiesType = {
         width: 44,
     },
     vue: {
-        title: 'VueJS',
+        title: 'Vue',
         icon: 'logos:vue',
         width: 35,
     },
