@@ -59,15 +59,15 @@
         },
         "experienceItems": {
             "transparentData": {
-                "content": "Development of a distributed microservices-based system relating to provision of economic data. Integration with multiple external APIs.",
+                "content": "Development of a distributed microservices-based system related to provision of economic data. Integration with multiple external APIs.",
                 "profession": "PHP Developer"
             },
             "ebrand": {
-                "content": "Development of a distributed microservices-based system relating to online brand protection. Integration with multiple external APIs.",
+                "content": "Development of a distributed microservices-based system related to online brand protection. Integration with multiple external APIs.",
                 "profession": "PHP Developer"
             },
             "merinosoft": {
-                "content": "Development of a web application relating to the management of employees in a company.",
+                "content": "Development of a web application related to the management of employees in a company.",
                 "profession": "PHP Developer"
             }
         }
