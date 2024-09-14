@@ -22,6 +22,7 @@ const educationItems: Education[] = [
         url: 'https://pb.edu.pl/',
         technologies: [
             'c',
+            'csharp',
             'linux',
         ],
     },
