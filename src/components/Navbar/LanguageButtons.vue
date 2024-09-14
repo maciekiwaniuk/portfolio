@@ -9,7 +9,7 @@ const vCursorHover = useCursorHover();
 </script>
 
 <template>
-    <div data-aos="zoom-in-up">
+    <div>
         <button
             v-cursor-hover
             class="change-language-button"

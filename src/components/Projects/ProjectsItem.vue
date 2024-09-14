@@ -4,7 +4,6 @@ import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 import type { TechnologyType } from '@/types/TechnologyType';
-import type { AnimationType } from '@/types/AnimationType';
 import { DarkTheme, LightTheme } from '@/constants/app';
 
 const props = defineProps<{
@@ -13,7 +12,6 @@ const props = defineProps<{
     technologies: TechnologyType[];
     github: string;
     online?: string;
-    animation: AnimationType;
 }>();
 
 const vCursorHover = useCursorHover();
@@ -22,7 +20,7 @@ const themeStore = useThemeStore();
 </script>
 
 <template>
-    <div :data-aos="props.animation">
+    <div>
         <div
             class="projects-item"
             :class="{ 'projects-item-dark-theme': themeStore.theme === DarkTheme,

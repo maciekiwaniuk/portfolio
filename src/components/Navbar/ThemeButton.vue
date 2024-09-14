@@ -14,7 +14,6 @@ const vCursorHover = useCursorHover();
 <template>
     <button
         v-cursor-hover
-        data-aos="zoom-in-up"
         class="change-theme-button"
         @click="themeStore.toggle();"
     >

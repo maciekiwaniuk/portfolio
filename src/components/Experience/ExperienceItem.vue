@@ -3,7 +3,6 @@ import TechnologyElement from '@/components/TechnologyElement.vue';
 import { useCursorHover } from '@/directives/useCursorHover';
 import { useThemeStore } from '@/stores/theme';
 import type { TechnologyType } from '@/types/TechnologyType';
-import type { AnimationType } from '@/types/AnimationType';
 import { DarkTheme, LightTheme } from '@/constants/app';
 
 const props = defineProps<{
@@ -14,7 +13,6 @@ const props = defineProps<{
     period: string;
     url: string;
     technologies: TechnologyType[];
-    animation: AnimationType;
 }>();
 
 const vCursorHover = useCursorHover();
@@ -23,7 +21,7 @@ const themeStore = useThemeStore();
 </script>
 
 <template>
-    <div :data-aos="props.animation">
+    <div>
         <a
             v-cursor-hover
             class="link"

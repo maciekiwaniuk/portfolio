@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import AnimateSplitLetters from '@/components/LandingPage/AnimateSplitLetters.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
-import { FadeUpRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 </script>
@@ -10,10 +9,7 @@ const { t } = useLanguageSwitcher();
     <section
         class="landing-page"
     >
-        <div
-            :data-aos="FadeUpRight"
-            class="text"
-        >
+        <div class="text">
             <h2 class="my-name-is">
                 {{ t('landingPage.myNameIs') }}
             </h2>

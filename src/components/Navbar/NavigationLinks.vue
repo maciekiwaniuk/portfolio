@@ -16,10 +16,6 @@ const { t } = useLanguageSwitcher();
 const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
-
-// animation only for menu on big screens
-type LinksAnimationType = 'zoom-in-up' | null;
-const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' ? 'zoom-in-up' : null);
 </script>
 
 <template>
@@ -40,7 +36,7 @@ const linksAnimation = ref<LinksAnimationType>(props.alignment === 'horizontal' 
             </button>
         </div>
 
-        <div :data-aos="linksAnimation">
+        <div>
             <nav
                 :class="{ 'vertical': props.alignment === VerticalNavigationAlignment,
                           'horizontal': props.alignment === HorizontalNavigationAlignment,

@@ -13,7 +13,6 @@
         "lint:eslint:fix": "eslint . --fix"
     },
     "dependencies": {
-        "aos": "^3.0.0-beta.6",
         "core-js": "^3.37.1",
         "pinia": "^2.1.3",
         "register-service-worker": "^1.7.2",

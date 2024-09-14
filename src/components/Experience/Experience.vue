@@ -2,7 +2,6 @@
 import ExperienceItem from '@/components/Experience/ExperienceItem.vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import type { TechnologyType } from '@/types/TechnologyType';
-import { FadeDown, FadeLeft, FadeRight } from '@/constants/app';
 
 const { t } = useLanguageSwitcher();
 
@@ -134,7 +133,7 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
         id="experience"
         class="experience"
     >
-        <h2 :data-aos="FadeDown" class="title">
+        <h2 class="title">
             {{ t('experience.title') }}
         </h2>
 
@@ -149,7 +148,6 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
                 :period="getTranslatedPeriod(experience.startDate, experience.endDate)"
                 :url="experience.url"
                 :technologies="experience.technologies"
-                :animation="index % 2 === 0 ? FadeRight : FadeLeft"
             />
         </div>
     </section>

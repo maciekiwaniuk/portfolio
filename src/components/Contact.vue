@@ -2,7 +2,6 @@
 import { Icon } from '@iconify/vue';
 import { useLanguageSwitcher } from '@/composables/useLanguageSwitcher';
 import { useCursorHover } from '@/directives/useCursorHover';
-import { FadeDown, FadeUp } from '@/constants/app';
 
 const vCursorHover = useCursorHover();
 
@@ -18,13 +17,12 @@ function copyEmailToClipboard() {
         id="contact"
         class="contact"
     >
-        <h2 :data-aos="FadeDown" class="title">
+        <h2 class="title">
             {{ t('contact.title') }}
         </h2>
 
         <div
             v-cursor-hover
-            :data-aos="FadeUp"
             class="content"
             @click="copyEmailToClipboard();"
         >
