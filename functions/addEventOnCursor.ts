@@ -1,7 +1,3 @@
-/**
- * Adds currently selected theme styles and event that
- * changes styles of cursor position
- */
 export function addEventOnCursor(): void {
     const cursor: HTMLElement = document.querySelector('.cursor') as HTMLElement;
 

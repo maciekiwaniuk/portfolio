@@ -1,7 +1,7 @@
 import { LocalStorageMock } from '~/tests/mocks/LocalStorageMock';
-import { updateLangAttribute } from '../../functions/updateLangAttribute';
-import { EnglishLanguage, PolishLanguage } from '../../constants/app';
-import { LanguageKey } from '../../constants/localStorage';
+import { updateLangAttribute } from '~/../functions/updateLangAttribute';
+import { EnglishLanguage, PolishLanguage } from '~/../constants/app';
+import { LanguageKey } from '~/../constants/localStorage';
 
 describe('updateLangAttribute function', (): void => {
     const localStorageMock: LocalStorageMock = new LocalStorageMock();

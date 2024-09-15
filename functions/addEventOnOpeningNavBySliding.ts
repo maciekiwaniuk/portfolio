@@ -1,8 +1,5 @@
 import { useNavMenuStore } from '~/stores/navMenu';
 
-/**
- * Adds possibility of toggling navigation by sliding
- */
 export function addEventOnOpeningNavBySliding(): void {
     const navMenuStore = useNavMenuStore();
 

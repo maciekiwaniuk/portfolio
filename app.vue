@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { onMounted, watch } from 'vue';
+import Contact from '~/components/Contact.vue';
 import Cursor from '~/components/Cursor.vue';
-import Navbar from '~/components/Navbar/Navbar.vue';
-import LandingPage from '~/components/LandingPage/LandingPage.vue';
 import Education from '~/components/Education/Education.vue';
 import Experience from '~/components/Experience/Experience.vue';
-import Skills from '~/components/Skills.vue';
-import Projects from '~/components/Projects/Projects.vue';
-import Contact from '~/components/Contact.vue';
 import Footer from '~/components/Footer.vue';
-
-import { useThemeStore } from '~/stores/theme';
-import { useNavMenuStore } from '~/stores/navMenu';
-
-import { addEventOnCursor } from '~/functions/addEventOnCursor';
-import { addEventOnOpeningNavBySliding } from '~/functions/addEventOnOpeningNavBySliding';
-import { updateLangAttribute } from '~/functions/updateLangAttribute';
-import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
+import LandingPage from '~/components/LandingPage/LandingPage.vue';
+import Navbar from '~/components/Navbar/Navbar.vue';
+import Projects from '~/components/Projects/Projects.vue';
+import Skills from '~/components/Skills.vue';
 
 import { DarkTheme, LightTheme } from '~/constants/app';
+import { addEventOnCursor } from '~/functions/addEventOnCursor';
+
+import { addEventOnOpeningNavBySliding } from '~/functions/addEventOnOpeningNavBySliding';
+import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
+import { updateLangAttribute } from '~/functions/updateLangAttribute';
+import { useNavMenuStore } from '~/stores/navMenu';
+
+import { useThemeStore } from '~/stores/theme';
 
 onMounted(() => {
     addEventOnCursor();
@@ -65,9 +65,9 @@ watch(
 </template>
 
 <style lang="less">
-@import '@/styles/variables.less';
-@import '@/styles/main.less';
-@import '@/styles/scrollbar.less';
+@import './styles/variables.less';
+@import './styles/main.less';
+@import './styles/scrollbar.less';
 
 #app {
     user-select: none;

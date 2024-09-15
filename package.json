@@ -14,10 +14,12 @@
     "dependencies": {
         "@nuxt/icon": "^1.5.1",
         "@nuxt/image": "^1.8.0",
+        "@nuxtjs/i18n": "^8.5.3",
         "@nuxtjs/robots": "^4.1.7",
         "@nuxtjs/sitemap": "^6.0.1",
         "@pinia/nuxt": "^0.5.4",
         "nuxt": "^3.13.0",
+        "pinia": "^2.2.2",
         "vue": "latest",
         "vue-router": "latest"
     },
@@ -25,6 +27,7 @@
         "@antfu/eslint-config": "^3.6.0",
         "eslint": "^9.10.0",
         "less": "^4.2.0",
-        "typescript": "^5.6.2"
+        "typescript": "^5.6.2",
+        "vue-tsc": "^2.1.6"
     }
 }
