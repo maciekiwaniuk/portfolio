@@ -1,10 +1,7 @@
 <script setup lang="ts">
-
 import { useThemeStore } from '~/stores/theme';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { DarkTheme, LightTheme } from '~/constants/app';
-
-
 
 const themeStore = useThemeStore();
 

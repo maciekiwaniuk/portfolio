@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import NavigationLinksLink from '~/components/Navbar/NavigationLinksLink.vue';
-
 import { useThemeStore } from '~/stores/theme';
 import { useNavMenuStore } from '~/stores/navMenu';
 import type { AlignmentType } from '~/types/AlignmentType';
@@ -10,8 +8,6 @@ import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigatio
 const props = defineProps<{
     alignment: AlignmentType;
 }>();
-
-
 
 const themeStore = useThemeStore();
 

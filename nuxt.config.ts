@@ -1,14 +1,13 @@
 export default defineNuxtConfig({
+    compatibilityDate: '2024-09-21',
     devtools: {
         enabled: true,
-    },
-    typescript: {
-        typeCheck: true,
     },
     modules: [
         '@nuxtjs/i18n',
         '@nuxtjs/sitemap',
         '@nuxtjs/robots',
+        '@nuxtjs/device',
         '@nuxt/image',
         '@nuxt/icon',
         '@pinia/nuxt',
@@ -27,9 +26,6 @@ export default defineNuxtConfig({
                 },
             ],
         },
-    },
-    routeRules: {
-        '/': { prerender: true },
     },
     i18n: {
         strategy: 'no_prefix',

@@ -3,7 +3,7 @@ import { useCursorHover } from '~/directives/useCursorHover';
 import { EnglishLanguage, PolishLanguage } from '~/constants/app';
 import { useLanguageSwitcher } from "~/composables/useLanguageSwitcher";
 
-const { t, changeLanguage } = useLanguageSwitcher();
+const changeLanguage = useLanguageSwitcher()!;
 
 const vCursorHover = useCursorHover();
 </script>

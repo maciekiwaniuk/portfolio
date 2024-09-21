@@ -3,7 +3,7 @@ import EducationItem from '~/components/Education/EducationItem.vue';
 
 import type { TechnologyType } from '~/types/TechnologyType';
 
-
+const { t } = useI18n();
 
 type Education = {
     title: string;
@@ -15,9 +15,9 @@ type Education = {
 };
 const educationItems: Education[] = [
     {
-        title: $t('education.educationItems.universityOfTechnology.title'),
-        content: $t('education.educationItems.universityOfTechnology.content'),
-        major: $t('education.educationItems.universityOfTechnology.major'),
+        title: t('education.educationItems.universityOfTechnology.title'),
+        content: t('education.educationItems.universityOfTechnology.content'),
+        major: t('education.educationItems.universityOfTechnology.major'),
         period: '2023 - 2027',
         url: 'https://pb.edu.pl/',
         technologies: [
@@ -27,9 +27,9 @@ const educationItems: Education[] = [
         ],
     },
     {
-        title: $t('education.educationItems.zse.title'),
-        content: $t('education.educationItems.zse.content'),
-        major: $t('education.educationItems.zse.major'),
+        title: t('education.educationItems.zse.title'),
+        content: t('education.educationItems.zse.content'),
+        major: t('education.educationItems.zse.major'),
         period: '2019 - 2023',
         url: 'https://zse.bialystok.pl/',
         technologies: [

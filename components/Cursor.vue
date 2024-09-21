@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import { useCursorStore } from '~/stores/cursor';
@@ -29,8 +28,8 @@ const cursorStore = useCursorStore();
         @click="cursorStore.toggleVisibility();"
     >
         <Icon
-            icon="clarity:cursor-hand-click-line"
-            width="30"
+            name="clarity:cursor-hand-click-line"
+            size="30"
         />
     </button>
 </template>

@@ -36,6 +36,19 @@ watch(
         document.body.setAttribute('overflow', opened ? 'hidden' : 'visible');
     },
 );
+
+const backgroundImageUrl = ref<string>('');
+
+onMounted(() => {
+    const img = useImage();
+    const loadBackgroundImage = computed(() => {
+        const imgUrl = img('/img/background.png', {
+            format: 'webp',
+        });
+        return `url('${imgUrl}')`;
+    });
+    backgroundImageUrl.value = loadBackgroundImage.value;
+});
 </script>
 
 <template>
@@ -45,6 +58,7 @@ watch(
         class="container"
         :class="{ 'container-dark-theme': themeStore.theme === DarkTheme,
                   'container-light-theme': themeStore.theme === LightTheme }"
+        :style="{ backgroundImage: backgroundImageUrl }"
     >
         <Navbar />
 
@@ -69,26 +83,21 @@ watch(
 @import './styles/main.less';
 @import './styles/scrollbar.less';
 
-#app {
+.container {
+    min-height: 200vh;
+    font-family: 'LatoFontRegular', serif;
     user-select: none;
+    transition: background-color ease @theme-switch-time,
+                color ease @theme-switch-time;
+}
 
-    .container {
-        min-height: 200vh;
-        font-family: 'LatoFontRegular', serif;
-        background-image: url('./assets/images/background.avif');
+.container-dark-theme {
+    background-color: #dark[background-color];
+    color: #dark[text-color];
+}
 
-        transition: background-color ease @theme-switch-time,
-        color ease @theme-switch-time;
-    }
-
-    .container-dark-theme {
-        background-color: #dark[background-color];
-        color: #dark[text-color];
-    }
-
-    .container-light-theme {
-        background-color: #light[background-color];
-        color: #light[text-color];
-    }
+.container-light-theme {
+    background-color: #light[background-color];
+    color: #light[text-color];
 }
 </style>

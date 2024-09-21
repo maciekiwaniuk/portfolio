@@ -1,10 +1,7 @@
 <script setup lang="ts">
-
 import { useCursorHover } from '~/directives/useCursorHover';
 
 const vCursorHover = useCursorHover();
-
-
 
 function copyEmailToClipboard() {
     navigator.clipboard.writeText('iwaniukmaciej1@gmail.com');
@@ -26,8 +23,8 @@ function copyEmailToClipboard() {
             @click="copyEmailToClipboard();"
         >
             <Icon
-                icon="clarity:email-solid"
-                width="35"
+                name="clarity:email-solid"
+                size="35"
             />
 
             <span class="email">iwaniukmaciej1@gmail.com</span>

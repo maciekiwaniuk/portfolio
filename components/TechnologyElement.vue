@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
 import { DarkTheme, LightTheme } from '~/constants/app';
@@ -201,8 +200,8 @@ const technologies: TechnologiesType = {
     >
         <div class="icon">
             <Icon
-                :icon="technologies[props.element].icon"
-                :width="technologies[props.element].width"
+                :name="technologies[props.element].icon"
+                :size="technologies[props.element].width"
             />
         </div>
 

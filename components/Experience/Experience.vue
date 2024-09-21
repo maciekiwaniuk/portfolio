@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import ExperienceItem from '~/components/Experience/ExperienceItem.vue';
-
 import type { TechnologyType } from '~/types/TechnologyType';
 
-
+const { t } = useI18n();
 
 type Experience = {
     title: string;
@@ -14,12 +13,11 @@ type Experience = {
     url: string;
     technologies: TechnologyType[];
 };
-
 const experienceItems: Experience[] = [
     {
         title: 'Transparent Data',
-        content: $t('experience.experienceItems.transparentData.content'),
-        profession: $t('experience.experienceItems.transparentData.profession'),
+        content: t('experience.experienceItems.transparentData.content'),
+        profession: t('experience.experienceItems.transparentData.profession'),
         startDate: new Date('2024-07'),
         endDate: null,
         url: 'https://transparentdata.pl/',
@@ -40,8 +38,8 @@ const experienceItems: Experience[] = [
     },
     {
         title: 'EBRAND',
-        content: $t('experience.experienceItems.ebrand.content'),
-        profession: $t('experience.experienceItems.ebrand.profession'),
+        content: t('experience.experienceItems.ebrand.content'),
+        profession: t('experience.experienceItems.ebrand.profession'),
         startDate: new Date('2023-04'),
         endDate: new Date('2023-09'),
         url: 'https://ebrand.com/',
@@ -58,8 +56,8 @@ const experienceItems: Experience[] = [
     },
     {
         title: 'Merinosoft',
-        content: $t('experience.experienceItems.merinosoft.content'),
-        profession: $t('experience.experienceItems.merinosoft.profession'),
+        content: t('experience.experienceItems.merinosoft.content'),
+        profession: t('experience.experienceItems.merinosoft.profession'),
         startDate: new Date('2021-08'),
         endDate: new Date('2022-12'),
         url: 'https://merinosoft.pl/',
@@ -76,17 +74,17 @@ const experienceItems: Experience[] = [
 
 function getTranslatedDateRange(startDate: Date, endDate: Date | null): string {
     const startMonth = (startDate.getMonth()) + 1;
-    const startMonthString = $t(`experience.monthNames.${startMonth}`);
+    const startMonthString = t(`experience.monthNames.${startMonth}`);
     const fullStartDateString = `${startMonthString} ${startDate.getFullYear()}`;
 
     if (endDate) {
         const endMonth = (endDate.getMonth()) + 1;
-        const endMonthString = $t(`experience.monthNames.${endMonth}`);
+        const endMonthString = t(`experience.monthNames.${endMonth}`);
         const fullEndDateString = `${endMonthString} ${endDate.getFullYear()}`;
 
         return `${fullStartDateString} - ${fullEndDateString}`;
     }
-    return `${fullStartDateString} - ${$t('experience.now')}`;
+    return `${fullStartDateString} - ${t('experience.now')}`;
 }
 
 function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
@@ -98,21 +96,21 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
 
     let yearsString = '';
     if (yearsDifference === 1) {
-        yearsString = $t('experience.year');
+        yearsString = t('experience.year');
     }
     else if (yearsDifference > 1 && ![12, 13, 14].includes(yearsDifference % 100) && [2, 3, 4].includes(yearsDifference % 10)) {
-        yearsString = $t('experience.yearsFirstForm');
+        yearsString = t('experience.yearsFirstForm');
     }
     else if (yearsDifference > 1) {
-        yearsString = t ('experience.yearsSecondForm');
+        yearsString = t('experience.yearsSecondForm');
     }
 
     let monthsString = '';
     if (monthsDifference === 1) {
-        monthsString = $t('experience.month');
+        monthsString = t('experience.month');
     }
     else if (monthsDifference > 1) {
-        monthsString = $t('experience.months');
+        monthsString = t('experience.months');
     }
 
     if (yearsString && monthsString) {

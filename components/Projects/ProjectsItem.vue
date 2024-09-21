@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
 import TechnologyElement from '~/components/TechnologyElement.vue';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
@@ -10,7 +9,7 @@ const props = defineProps<{
     title: string;
     content: string;
     technologies: TechnologyType[];
-    github: string;
+    github?: string;
     online?: string;
 }>();
 
@@ -52,7 +51,7 @@ const themeStore = useThemeStore();
                     :href="props.github"
                 >
                     <span class="text">GitHub</span>
-                    <Icon icon="icon-park-outline:github" width="38" />
+                    <Icon name="icon-park-outline:github" size="38" />
                 </a>
 
                 <a
@@ -63,7 +62,7 @@ const themeStore = useThemeStore();
                     :href="props.online"
                 >
                     <span class="text">Online</span>
-                    <Icon icon="ci:external-link" width="38" />
+                    <Icon name="ci:external-link" size="38" />
                 </a>
             </p>
         </div>

@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
-
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import { DarkTheme, LightTheme } from '~/constants/app';
-
-
 
 const vCursorHover = useCursorHover();
 
@@ -33,7 +29,7 @@ const currentYear: number = new Date().getFullYear();
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
             >
-                <Icon icon="logos:linkedin-icon" width="20" class="linkedin-icon" />
+                <Icon name="logos:linkedin-icon" size="20" class="linkedin-icon" />
             </a>
 
             <a
@@ -43,7 +39,7 @@ const currentYear: number = new Date().getFullYear();
                 aria-label="GitHub"
                 href="https://github.com/maciekiwaniuk"
             >
-                <Icon icon="codicon:github" width="20" />
+                <Icon name="codicon:github" size="20" />
             </a>
         </div>
 
@@ -56,7 +52,7 @@ const currentYear: number = new Date().getFullYear();
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
             >
-                <Icon icon="logos:linkedin-icon" width="40" class="linkedin-icon" />
+                <Icon name="logos:linkedin-icon" size="40" class="linkedin-icon" />
             </a>
 
             <a
@@ -66,7 +62,7 @@ const currentYear: number = new Date().getFullYear();
                 aria-label="GitHub"
                 href="https://github.com/maciekiwaniuk"
             >
-                <Icon icon="icon-park-outline:github" width="40" />
+                <Icon name="icon-park-outline:github" size="40" />
             </a>
         </div>
     </footer>

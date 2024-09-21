@@ -3,10 +3,9 @@ const props = defineProps<{
     text: string;
 }>();
 
-const splitLetters = props.text.spli$t('');
+const { isMobile } = useDevice();
 
-const minScreenWidthToDisplayAnimation = 800;
-const smallDevice = window.innerWidth <= minScreenWidthToDisplayAnimation;
+const splitLetters = props.text.split('');
 
 function restartAnimation(event: Event) {
     const element = event.target! as HTMLElement;
@@ -18,7 +17,7 @@ function restartAnimation(event: Event) {
 </script>
 
 <template>
-    <span v-if="smallDevice">{{ props.text }}</span>
+    <span v-if="isMobile">{{ props.text }}</span>
 
     <span
         v-for="(letter, index) in splitLetters"

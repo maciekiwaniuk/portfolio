@@ -6,11 +6,15 @@ import { DarkTheme, LightTheme } from '~/constants/app';
 import { ThemeKey } from '~/constants/localStorage';
 
 export const useThemeStore = defineStore('theme', {
-    state: (): { theme: ThemeType } => ({
+    state: (): { theme: null | ThemeType } => ({
         theme: getTheme(),
     }),
     actions: {
         toggle(): void {
+            if (!import.meta.client) {
+                return;
+            }
+
             this.theme = (this.theme === DarkTheme) ? LightTheme : DarkTheme;
 
             localStorage.setItem(ThemeKey, this.theme);

@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import TechnologyElement from '~/components/TechnologyElement.vue';
-
 import type { TechnologyType } from '~/types/TechnologyType';
-
-
 
 const useRegularlyTechnologies: TechnologyType[] = [
     'php',
