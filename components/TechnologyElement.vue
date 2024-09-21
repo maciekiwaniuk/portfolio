@@ -22,173 +22,173 @@ const technologies: TechnologiesType = {
     php: {
         title: 'PHP',
         icon: 'logos:php',
-        width: 48,
+        width: 30,
     },
     laravel: {
         title: 'Laravel',
         icon: 'logos:laravel',
-        width: 40,
+        width: 35,
     },
     javascript: {
         title: 'JavaScript',
         icon: 'skill-icons:javascript',
-        width: 35,
+        width: 32,
     },
     jquery: {
         title: 'jQuery',
         icon: 'mdi:jquery',
-        width: 42,
+        width: 33,
     },
     sass: {
         title: 'Sass',
         icon: 'vscode-icons:file-type-sass',
-        width: 42,
+        width: 41,
     },
     less: {
         title: 'less',
         icon: 'logos:less',
-        width: 42,
+        width: 23,
     },
     bootstrap: {
         title: 'Bootstrap',
         icon: 'akar-icons:bootstrap-fill',
-        width: 42,
+        width: 37,
     },
     mysql: {
         title: 'MySQL',
         icon: 'logos:mysql',
-        width: 52,
+        width: 30,
     },
     postgresql: {
         title: 'PostgreSQL',
         icon: 'logos:postgresql',
-        width: 42,
+        width: 34,
     },
     git: {
         title: 'Git',
         icon: 'bi:git',
-        width: 38,
+        width: 34,
     },
     github: {
         title: 'GitHub',
         icon: 'akar-icons:github-fill',
-        width: 38,
+        width: 32,
     },
     python: {
         title: 'Python',
         icon: 'logos:python',
-        width: 40,
+        width: 30,
     },
     csharp: {
         title: 'C#',
         icon: 'vscode-icons:file-type-csharp2',
-        width: 44,
+        width: 35,
     },
     vue: {
         title: 'Vue',
         icon: 'logos:vue',
-        width: 35,
+        width: 29,
     },
     redis: {
         title: 'Redis',
         icon: 'logos:redis',
-        width: 40,
+        width: 30,
     },
     pygame: {
         title: 'pygame',
         icon: 'noto:snake',
-        width: 40,
+        width: 34,
     },
     pyqt5: {
         title: 'PyQt5',
         icon: 'logos:qt',
-        width: 40,
+        width: 25,
     },
     css: {
         title: 'CSS',
         icon: 'logos:css-3',
-        width: 30,
+        width: 20,
     },
     java: {
         title: 'Java',
         icon: 'logos:java',
-        width: 30,
+        width: 32,
     },
     symfony: {
         title: 'Symfony',
         icon: 'logos:symfony',
-        width: 40,
+        width: 36,
     },
     docker: {
         title: 'Docker',
         icon: 'logos:docker-icon',
-        width: 48,
+        width: 32,
     },
     phpunit: {
         title: 'PHPUnit',
         icon: 'vscode-icons:file-type-phpunit',
-        width: 38,
+        width: 35,
     },
     typescript: {
         title: 'TypeScript',
         icon: 'skill-icons:typescript',
-        width: 35,
+        width: 32,
     },
     microservices: {
         title: 'Microservices',
         icon: 'carbon:microservices-1',
-        width: 35,
+        width: 32,
     },
     rabbitmq: {
         title: 'RabbitMQ',
         icon: 'logos:rabbitmq-icon',
-        width: 30,
+        width: 29,
     },
     tailwind: {
         title: 'Tailwind',
         icon: 'logos:tailwindcss-icon',
-        width: 33,
+        width: 25,
     },
     c: {
         title: 'C',
         icon: 'logos:c',
-        width: 33,
+        width: 30,
     },
     linux: {
         title: 'Linux',
         icon: 'flat-color-icons:linux',
-        width: 41,
+        width: 37,
     },
     nuxt: {
         title: 'Nuxt',
         icon: 'logos:nuxt-icon',
-        width: 42,
+        width: 26,
     },
     gcp: {
         title: 'GCP',
         icon: 'catppuccin:gcp',
-        width: 40,
+        width: 34,
     },
     kubernetes: {
         title: 'Kubernetes',
         icon: 'logos:kubernetes',
-        width: 38,
+        width: 33,
     },
     slim: {
         title: 'Slim',
         icon: 'logos:slim',
-        width: 36,
+        width: 33,
     },
     golang: {
         title: 'Golang',
         icon: 'devicon:go',
-        width: 36
+        width: 31,
     },
     keydb: {
         title: 'KeyDB',
         icon: 'logos:keydb-icon',
-        width: 36
-    }
+        width: 34,
+    },
 };
 </script>
 

@@ -41,7 +41,10 @@ const themeStore = useThemeStore();
                 />
             </div>
 
-            <p v-if="props.github || props.online" class="below">
+            <p
+                v-if="props.github || props.online"
+                class="below"
+            >
                 <a
                     v-if="props.github"
                     v-cursor-hover
@@ -51,7 +54,10 @@ const themeStore = useThemeStore();
                     :href="props.github"
                 >
                     <span class="text">GitHub</span>
-                    <Icon name="icon-park-outline:github" size="38" />
+                    <Icon
+                        name="icon-park-outline:github"
+                        size="33"
+                    />
                 </a>
 
                 <a
@@ -62,7 +68,10 @@ const themeStore = useThemeStore();
                     :href="props.online"
                 >
                     <span class="text">Online</span>
-                    <Icon name="ci:external-link" size="38" />
+                    <Icon
+                        name="ci:external-link"
+                        size="32"
+                    />
                 </a>
             </p>
         </div>

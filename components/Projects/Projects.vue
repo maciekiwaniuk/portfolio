@@ -44,7 +44,7 @@ const projects: ProjectType[] = [
         title: t( 'projects.projectsItems.portfolio.title'),
         content: t('projects.projectsItems.portfolio.content'),
         github: 'https://github.com/maciekiwaniuk/portfolio',
-        technologies: ['typescript', 'vue', 'less'],
+        technologies: ['typescript', 'vue', 'nuxt', 'less', 'docker'],
     },
     {
         title: t('projects.projectsItems.snakeGame.title'),

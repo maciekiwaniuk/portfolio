@@ -29,7 +29,11 @@ const currentYear: number = new Date().getFullYear();
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
             >
-                <Icon name="logos:linkedin-icon" size="20" class="linkedin-icon" />
+                <Icon
+                    name="logos:linkedin-icon"
+                    size="20"
+                    class="linkedin-icon"
+                />
             </a>
 
             <a
@@ -39,7 +43,10 @@ const currentYear: number = new Date().getFullYear();
                 aria-label="GitHub"
                 href="https://github.com/maciekiwaniuk"
             >
-                <Icon name="codicon:github" size="20" />
+                <Icon
+                    name="codicon:github"
+                    size="20"
+                />
             </a>
         </div>
 
@@ -52,7 +59,11 @@ const currentYear: number = new Date().getFullYear();
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
             >
-                <Icon name="logos:linkedin-icon" size="40" class="linkedin-icon" />
+                <Icon
+                    name="logos:linkedin-icon"
+                    size="40"
+                    class="linkedin-icon"
+                />
             </a>
 
             <a
@@ -62,7 +73,10 @@ const currentYear: number = new Date().getFullYear();
                 aria-label="GitHub"
                 href="https://github.com/maciekiwaniuk"
             >
-                <Icon name="icon-park-outline:github" size="40" />
+                <Icon
+                    name="icon-park-outline:github"
+                    size="40"
+                />
             </a>
         </div>
     </footer>
