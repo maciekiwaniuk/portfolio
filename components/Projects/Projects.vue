@@ -5,16 +5,16 @@ import type { TechnologyType } from '~/types/TechnologyType';
 const { t } = useI18n();
 
 type ProjectType = {
-    title: string;
-    content: string;
+    titleKey: string;
+    contentKey: string;
     github?: string;
     online?: string;
     technologies: TechnologyType[];
 };
 const projects: ProjectType[] = [
     {
-        title: t('projects.projectsItems.shopSystem.title'),
-        content: t('projects.projectsItems.shopSystem.content'),
+        titleKey: 'projects.projectsItems.shopSystem.title',
+        contentKey: 'projects.projectsItems.shopSystem.content',
         github: 'https://github.com/maciekiwaniuk/shop-system',
         technologies: [
             'php',
@@ -26,8 +26,8 @@ const projects: ProjectType[] = [
         ],
     },
     {
-        title: t('projects.projectsItems.isocapi.title'),
-        content: t('projects.projectsItems.isocapi.content'),
+        titleKey: 'projects.projectsItems.isocapi.title',
+        contentKey: 'projects.projectsItems.isocapi.content',
         online: 'https://isocapi.com',
         technologies: [
             'golang',
@@ -41,20 +41,20 @@ const projects: ProjectType[] = [
         ],
     },
     {
-        title: t( 'projects.projectsItems.portfolio.title'),
-        content: t('projects.projectsItems.portfolio.content'),
+        titleKey: 'projects.projectsItems.portfolio.title',
+        contentKey: 'projects.projectsItems.portfolio.content',
         github: 'https://github.com/maciekiwaniuk/portfolio',
         technologies: ['typescript', 'vue', 'nuxt', 'less', 'docker'],
     },
     {
-        title: t('projects.projectsItems.snakeGame.title'),
-        content: t('projects.projectsItems.snakeGame.content'),
+        titleKey: 'projects.projectsItems.snakeGame.title',
+        contentKey: 'projects.projectsItems.snakeGame.content',
         github: 'https://github.com/maciekiwaniuk/snake-game',
         technologies: ['python', 'pygame', 'pyqt5'],
     },
     {
-        title: t('projects.projectsItems.snakeWebApp.title'),
-        content: t('projects.projectsItems.snakeWebApp.content'),
+        titleKey: 'projects.projectsItems.snakeWebApp.title',
+        contentKey: 'projects.projectsItems.snakeWebApp.content',
         github: 'https://github.com/maciekiwaniuk/snake-web-app',
         technologies: [
             'php',
@@ -67,8 +67,8 @@ const projects: ProjectType[] = [
         ],
     },
     {
-        title: t('projects.projectsItems.minesweeper.title'),
-        content: t('projects.projectsItems.minesweeper.content'),
+        titleKey: 'projects.projectsItems.minesweeper.title',
+        contentKey: 'projects.projectsItems.minesweeper.content',
         github: 'https://github.com/maciekiwaniuk/minesweeper',
         online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
         technologies: ['javascript', 'css'],
@@ -89,8 +89,8 @@ const projects: ProjectType[] = [
             <ProjectsItem
                 v-for="(project, index) in projects"
                 :key="index"
-                :title="project.title"
-                :content="project.content"
+                :title="$t(project.titleKey)"
+                :content="$t(project.contentKey)"
                 :technologies="project.technologies"
                 :github="project.github"
                 :online="project.online"

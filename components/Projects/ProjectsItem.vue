@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import TechnologyElement from '~/components/TechnologyElement.vue';
+import { DarkTheme, LightTheme } from '~/constants/app';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
-import { DarkTheme, LightTheme } from '~/constants/app';
 
 const props = defineProps<{
     title: string;

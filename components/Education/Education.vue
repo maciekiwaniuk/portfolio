@@ -3,21 +3,19 @@ import EducationItem from '~/components/Education/EducationItem.vue';
 
 import type { TechnologyType } from '~/types/TechnologyType';
 
-const { t } = useI18n();
-
 type Education = {
-    title: string;
-    content: string;
-    major: string;
+    titleKey: string;
+    contentKey: string;
+    majorKey: string;
     period: string;
     url: string;
     technologies: TechnologyType[];
 };
 const educationItems: Education[] = [
     {
-        title: t('education.educationItems.universityOfTechnology.title'),
-        content: t('education.educationItems.universityOfTechnology.content'),
-        major: t('education.educationItems.universityOfTechnology.major'),
+        titleKey: 'education.educationItems.universityOfTechnology.title',
+        contentKey: 'education.educationItems.universityOfTechnology.content',
+        majorKey: 'education.educationItems.universityOfTechnology.major',
         period: '2023 - 2027',
         url: 'https://pb.edu.pl/',
         technologies: [
@@ -27,9 +25,9 @@ const educationItems: Education[] = [
         ],
     },
     {
-        title: t('education.educationItems.zse.title'),
-        content: t('education.educationItems.zse.content'),
-        major: t('education.educationItems.zse.major'),
+        titleKey: 'education.educationItems.zse.title',
+        contentKey: 'education.educationItems.zse.content',
+        majorKey: 'education.educationItems.zse.major',
         period: '2019 - 2023',
         url: 'https://zse.bialystok.pl/',
         technologies: [
@@ -57,9 +55,9 @@ const educationItems: Education[] = [
             <EducationItem
                 v-for="(education, index) in educationItems"
                 :key="index"
-                :title="education.title"
-                :content="education.content"
-                :major="education.major"
+                :title="$t(education.titleKey)"
+                :content="$t(education.contentKey)"
+                :major="$t(education.majorKey)"
                 :period="education.period"
                 :url="education.url"
                 :technologies="education.technologies"

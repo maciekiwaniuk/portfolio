@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import TechnologyElement from '~/components/TechnologyElement.vue';
+import { DarkTheme, LightTheme } from '~/constants/app';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
-import { DarkTheme, LightTheme } from '~/constants/app';
 
 const props = defineProps<{
-    title: string;
+    companyName: string;
     content: string;
     profession: string;
     dateRange: string;
@@ -33,7 +33,7 @@ const themeStore = useThemeStore();
                 :class="{ 'experience-item-dark-theme': themeStore.theme === DarkTheme,
                           'experience-item-light-theme': themeStore.theme === LightTheme }"
             >
-                <h3 class="title">{{ props.title }}</h3>
+                <h3 class="companyName">{{ props.companyName }}</h3>
 
                 <p class="content">
                     {{ props.content }}
@@ -81,7 +81,7 @@ const themeStore = useThemeStore();
 
     transition: background-color ease @theme-switch-time;
 
-    .title {
+    .companyName {
         display: flex;
         align-items: center;
         margin: auto;
@@ -124,7 +124,7 @@ const themeStore = useThemeStore();
 
 @media (min-width: @first-breakpoint) {
     .experience-item {
-        .title {
+        .companyName {
             max-width: 25rem;
         }
         .content {

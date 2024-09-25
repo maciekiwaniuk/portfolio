@@ -107,7 +107,7 @@ const technologies: TechnologiesType = {
     css: {
         title: 'CSS',
         icon: 'logos:css-3',
-        width: 20,
+        width: 36,
     },
     java: {
         title: 'Java',

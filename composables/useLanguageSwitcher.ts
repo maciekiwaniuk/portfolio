@@ -1,17 +1,17 @@
-import type { LanguageType } from '~/types/LanguageType';
-import { LanguageKey } from '~/constants/localStorage';
 import { useI18n } from 'vue-i18n';
+import { LanguageKey } from '~/constants/localStorage';
+import type { LanguageType } from '~/types/LanguageType';
 
 export function useLanguageSwitcher() {
     if (!import.meta.client) {
         return;
     }
 
-    const { locale } = useI18n();
+    const { setLocale } = useI18n();
 
     return function (selectedLanguage: LanguageType) {
         localStorage.setItem(LanguageKey, selectedLanguage);
-        locale.value = selectedLanguage;
+        setLocale(selectedLanguage);
 
         document.documentElement.setAttribute(
             'lang',

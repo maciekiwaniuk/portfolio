@@ -5,9 +5,9 @@ import type { TechnologyType } from '~/types/TechnologyType';
 const { t } = useI18n();
 
 type Experience = {
-    title: string;
-    content: string;
-    profession: string;
+    companyName: string;
+    contentKey: string;
+    professionKey: string;
     startDate: Date;
     endDate: Date | null;
     url: string;
@@ -15,9 +15,9 @@ type Experience = {
 };
 const experienceItems: Experience[] = [
     {
-        title: 'Transparent Data',
-        content: t('experience.experienceItems.transparentData.content'),
-        profession: t('experience.experienceItems.transparentData.profession'),
+        companyName: 'Transparent Data',
+        contentKey: 'experience.experienceItems.transparentData.content',
+        professionKey: 'experience.experienceItems.transparentData.profession',
         startDate: new Date('2024-07'),
         endDate: null,
         url: 'https://transparentdata.pl/',
@@ -37,9 +37,9 @@ const experienceItems: Experience[] = [
         ],
     },
     {
-        title: 'EBRAND',
-        content: t('experience.experienceItems.ebrand.content'),
-        profession: t('experience.experienceItems.ebrand.profession'),
+        companyName: 'EBRAND',
+        contentKey: 'experience.experienceItems.ebrand.content',
+        professionKey: 'experience.experienceItems.ebrand.profession',
         startDate: new Date('2023-04'),
         endDate: new Date('2023-09'),
         url: 'https://ebrand.com/',
@@ -55,9 +55,9 @@ const experienceItems: Experience[] = [
         ],
     },
     {
-        title: 'Merinosoft',
-        content: t('experience.experienceItems.merinosoft.content'),
-        profession: t('experience.experienceItems.merinosoft.profession'),
+        companyName: 'Merinosoft',
+        contentKey: 'experience.experienceItems.merinosoft.content',
+        professionKey: 'experience.experienceItems.merinosoft.profession',
         startDate: new Date('2021-08'),
         endDate: new Date('2022-12'),
         url: 'https://merinosoft.pl/',
@@ -139,9 +139,9 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
             <ExperienceItem
                 v-for="(experience, index) in experienceItems"
                 :key="index"
-                :title="experience.title"
-                :content="experience.content"
-                :profession="experience.profession"
+                :company-name="experience.companyName"
+                :content="$t(experience.contentKey)"
+                :profession="$t(experience.professionKey)"
                 :date-range="getTranslatedDateRange(experience.startDate, experience.endDate)"
                 :period="getTranslatedPeriod(experience.startDate, experience.endDate)"
                 :url="experience.url"
