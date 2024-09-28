@@ -15,25 +15,19 @@ type Experience = {
 };
 const experienceItems: Experience[] = [
     {
-        companyName: 'Transparent Data',
-        contentKey: 'experience.experienceItems.transparentData.content',
-        professionKey: 'experience.experienceItems.transparentData.profession',
-        startDate: new Date('2024-07'),
-        endDate: null,
-        url: 'https://transparentdata.pl/',
+        companyName: 'Merinosoft',
+        contentKey: 'experience.experienceItems.merinosoft.content',
+        professionKey: 'experience.experienceItems.merinosoft.profession',
+        startDate: new Date('2021-08'),
+        endDate: new Date('2022-12'),
+        url: 'https://merinosoft.pl/',
         technologies: [
             'php',
-            'phpunit',
-            'microservices',
-            'slim',
             'laravel',
             'javascript',
-            'css',
-            'mysql',
-            'redis',
-            'gcp',
-            'kubernetes',
-            'docker',
+            'jquery',
+            'bootstrap',
+            'postgresql',
         ],
     },
     {
@@ -55,19 +49,25 @@ const experienceItems: Experience[] = [
         ],
     },
     {
-        companyName: 'Merinosoft',
-        contentKey: 'experience.experienceItems.merinosoft.content',
-        professionKey: 'experience.experienceItems.merinosoft.profession',
-        startDate: new Date('2021-08'),
-        endDate: new Date('2022-12'),
-        url: 'https://merinosoft.pl/',
+        companyName: 'Transparent Data',
+        contentKey: 'experience.experienceItems.transparentData.content',
+        professionKey: 'experience.experienceItems.transparentData.profession',
+        startDate: new Date('2024-07'),
+        endDate: null,
+        url: 'https://transparentdata.pl/',
         technologies: [
             'php',
+            'phpunit',
+            'microservices',
+            'slim',
             'laravel',
             'javascript',
-            'jquery',
-            'bootstrap',
-            'postgresql',
+            'css',
+            'mysql',
+            'redis',
+            'gcp',
+            'kubernetes',
+            'docker',
         ],
     },
 ];
@@ -139,6 +139,7 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
             <ExperienceItem
                 v-for="(experience, index) in experienceItems"
                 :key="index"
+                :index="index"
                 :company-name="experience.companyName"
                 :content="$t(experience.contentKey)"
                 :profession="$t(experience.professionKey)"
@@ -189,6 +190,13 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
         .title {
             min-height: 4rem;
         }
+    }
+}
+
+@media (min-width: @second-breakpoint) {
+    .experience {
+        min-width: 60rem;
+        max-width: 70rem;
     }
 }
 </style>

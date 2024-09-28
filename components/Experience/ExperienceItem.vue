@@ -6,6 +6,7 @@ import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
 
 const props = defineProps<{
+    index: number;
     companyName: string;
     content: string;
     profession: string;
@@ -21,7 +22,15 @@ const themeStore = useThemeStore();
 </script>
 
 <template>
-    <div>
+    <div class="experience-item-container">
+        <div
+            v-if="index % 2 == 1"
+            class="visible-on-big-screen">
+        </div>
+        <ExperienceTimeline
+            v-if="index % 2 == 1"
+            class="visible-on-big-screen"
+        />
         <a
             v-cursor-hover
             class="link"
@@ -56,12 +65,23 @@ const themeStore = useThemeStore();
                 </p>
             </div>
         </a>
+        <ExperienceTimeline
+            v-if="index % 2 == 0"
+            class="visible-on-big-screen"
+        />
+        <div
+            v-if="index % 2 == 0"
+            class="visible-on-big-screen"
+        ></div>
     </div>
 </template>
 
 <style lang="less" scoped>
 @import '../../styles/variables.less';
 
+.visible-on-big-screen {
+    display: none;
+}
 .link {
     text-decoration: none;
     color: inherit;
@@ -138,6 +158,17 @@ const themeStore = useThemeStore();
             .job-time span {
                 display: inline;
             }
+        }
+    }
+}
+
+@media (min-width: @second-breakpoint) {
+    .experience-item-container {
+        display: grid;
+        grid-template-columns: 4fr 1fr 4fr;
+
+        .visible-on-big-screen {
+            display: block;
         }
     }
 }
