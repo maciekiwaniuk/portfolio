@@ -6,10 +6,17 @@ import { DarkTheme, LightTheme } from '~/constants/app';
 import { ThemeKey } from '~/constants/localStorage';
 
 export const useThemeStore = defineStore('theme', {
-    state: (): { theme: null | ThemeType } => ({
+    state: (): { theme: ThemeType } => ({
         theme: getTheme(),
     }),
     actions: {
+        initTheme(): void {
+            if (!import.meta.client) {
+                return;
+            }
+
+            this.theme = getTheme();
+        },
         toggle(): void {
             if (!import.meta.client) {
                 return;
@@ -21,5 +28,9 @@ export const useThemeStore = defineStore('theme', {
 
             updateBackgroundColorOnScrollbar();
         },
+    },
+    getters: {
+        isDark: (state) => state.theme === DarkTheme,
+        isLight: (state) => state.theme === LightTheme,
     },
 });

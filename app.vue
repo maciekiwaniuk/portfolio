@@ -20,13 +20,6 @@ import { useNavMenuStore } from '~/stores/navMenu';
 
 import { useThemeStore } from '~/stores/theme';
 
-onMounted(() => {
-    addEventOnCursor();
-    addEventOnOpeningNavBySliding();
-    updateLangAttribute();
-    updateBackgroundColorOnScrollbar();
-});
-
 const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
@@ -40,6 +33,12 @@ watch(
 const backgroundImageUrl = ref<string>('');
 
 onMounted(() => {
+    themeStore.initTheme();
+    addEventOnCursor();
+    addEventOnOpeningNavBySliding();
+    updateLangAttribute();
+    updateBackgroundColorOnScrollbar();
+
     const img = useImage();
     const loadBackgroundImage = computed(() => {
         const imgUrl = img('/img/background.png', {
@@ -56,8 +55,8 @@ onMounted(() => {
 
     <main
         class="container"
-        :class="{ 'container-dark-theme': themeStore.theme === DarkTheme,
-                  'container-light-theme': themeStore.theme === LightTheme }"
+        :class="{ 'container-dark-theme': themeStore.isDark,
+                  'container-light-theme': themeStore.isLight }"
         :style="{ backgroundImage: backgroundImageUrl }"
     >
         <Navbar />
