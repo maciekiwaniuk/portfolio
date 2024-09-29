@@ -45,7 +45,7 @@ const vCursorHover = useCursorHover();
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 .navigation {
     font-family: 'LatoFontBold', serif;

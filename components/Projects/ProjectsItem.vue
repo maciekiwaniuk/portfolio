@@ -78,7 +78,7 @@ const themeStore = useThemeStore();
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 .projects-item {
     display: flex;

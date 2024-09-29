@@ -153,7 +153,7 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 .experience {
     display: flex;

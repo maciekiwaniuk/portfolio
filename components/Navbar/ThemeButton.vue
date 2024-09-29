@@ -15,7 +15,7 @@ const vCursorHover = useCursorHover();
     >
         <img
             v-show="themeStore.isDark"
-            src="../../assets/images/icons/sun.svg"
+            src="@/assets/images/icons/sun.svg"
             class="icon sun-icon"
             width="1000"
             height="1000"
@@ -23,7 +23,7 @@ const vCursorHover = useCursorHover();
         >
         <img
             v-show="themeStore.isLight"
-            src="../../assets/images/icons/moon.svg"
+            src="@/assets/images/icons/moon.svg"
             class="icon"
             width="1000"
             height="1000"
@@ -33,7 +33,7 @@ const vCursorHover = useCursorHover();
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 .change-theme-button {
     width: 3rem;

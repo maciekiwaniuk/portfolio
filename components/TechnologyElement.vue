@@ -209,7 +209,7 @@ const technologies: TechnologiesType = {
 </template>
 
 <style lang="less" scoped>
-@import '../styles/variables.less';
+@import '@/styles/variables.less';
 
 .technology-element {
     display: flex;

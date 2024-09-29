@@ -76,7 +76,7 @@ const themeStore = useThemeStore();
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 .visible-on-big-screen {
     display: none;

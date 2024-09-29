@@ -15,7 +15,7 @@ import ThemeButton from '~/components/Navbar/ThemeButton.vue';
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 .navbar {
     display: flex;

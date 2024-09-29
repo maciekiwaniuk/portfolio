@@ -16,7 +16,7 @@ const vCursorHover = useCursorHover();
             @click="changeLanguage(PolishLanguage);"
         >
             <img
-                src="../../assets/images/flags/pl.png"
+                src="@/assets/images/flags/pl.png"
                 class="flag"
                 width="50"
                 height="50"
@@ -30,7 +30,7 @@ const vCursorHover = useCursorHover();
             @click="changeLanguage(EnglishLanguage);"
         >
             <img
-                src="../../assets/images/flags/en.png"
+                src="@/assets/images/flags/en.png"
                 class="flag"
                 width="50"
                 height="50"
@@ -41,7 +41,7 @@ const vCursorHover = useCursorHover();
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 .change-language-button {
     position: relative;

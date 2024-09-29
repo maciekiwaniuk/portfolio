@@ -35,7 +35,7 @@ const cursorStore = useCursorStore();
 </template>
 
 <style lang="less" scoped>
-@import '../styles/variables.less';
+@import '@/styles/variables.less';
 
 .cursor {
     display: none;

@@ -33,7 +33,7 @@ const vCursorHover = useCursorHover();
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 a {
     position: relative;

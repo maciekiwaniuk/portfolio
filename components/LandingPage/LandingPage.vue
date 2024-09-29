@@ -25,7 +25,7 @@ import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vu
 </template>
 
 <style lang="less" scoped>
-@import '../../styles/variables.less';
+@import '@/styles/variables.less';
 
 .landing-page {
     display: flex;
