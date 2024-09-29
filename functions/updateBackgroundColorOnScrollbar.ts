@@ -1,4 +1,4 @@
-import { DarkTheme } from '~/constants/app';
+import { DarkTheme } from '~/constants/theme';
 import { ThemeKey } from '~/constants/localStorage';
 import type { ThemeType } from '~/types/ThemeType';
 

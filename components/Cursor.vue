@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CursorVisible } from '~/constants/app';
+import { CursorVisible } from '~/constants/cursor';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useCursorStore } from '~/stores/cursor';
 import { useThemeStore } from '~/stores/theme';

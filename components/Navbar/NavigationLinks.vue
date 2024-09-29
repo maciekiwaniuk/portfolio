@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NavigationLinksLink from '~/components/Navbar/NavigationLinksLink.vue';
-import { HorizontalNavigationAlignment, VerticalNavigationAlignment } from '~/constants/app';
+import { HorizontalNavigationAlignment, VerticalNavigationAlignment } from '~/constants/alignment';
 import { useNavMenuStore } from '~/stores/navMenu';
 import { useThemeStore } from '~/stores/theme';
 import type { AlignmentType } from '~/types/AlignmentType';

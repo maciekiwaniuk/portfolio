@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { CursorHidden, CursorVisible } from '~/constants/app';
+import { CursorHidden, CursorVisible } from '~/constants/cursor';
 import { CursorVisibilityKey } from '~/constants/localStorage';
 import type { CursorVisibilityType } from '~/types/CursorVisibilityType';
 

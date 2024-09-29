@@ -1,5 +1,5 @@
 import { useLanguageSwitcher } from '~/composables/useLanguageSwitcher';
-import { EnglishLanguage, PolishLanguage } from '~/constants/app';
+import { EnglishLanguage, PolishLanguage } from '~/constants/language';
 import { LanguageKey } from '~/constants/localStorage';
 import type { LanguageType } from '~/types/LanguageType';
 

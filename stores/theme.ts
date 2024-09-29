@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { DarkTheme, LightTheme } from '~/constants/app';
+import { DarkTheme, LightTheme } from '~/constants/theme';
 import { ThemeKey } from '~/constants/localStorage';
 import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
 import type { ThemeType } from '~/types/ThemeType';

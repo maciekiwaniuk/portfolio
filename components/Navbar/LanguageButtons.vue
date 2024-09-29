@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useLanguageSwitcher } from '~/composables/useLanguageSwitcher';
-import { EnglishLanguage, PolishLanguage } from '~/constants/app';
+import { EnglishLanguage, PolishLanguage } from '~/constants/language';
 import { useCursorHover } from '~/directives/useCursorHover';
 
 const changeLanguage = useLanguageSwitcher()!;

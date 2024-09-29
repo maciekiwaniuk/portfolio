@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { HorizontalNavigationAlignment, VerticalNavigationAlignment } from '~/constants/app';
+import { HorizontalNavigationAlignment, VerticalNavigationAlignment } from '~/constants/alignment';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useNavMenuStore } from '~/stores/navMenu';
 import { useThemeStore } from '~/stores/theme';

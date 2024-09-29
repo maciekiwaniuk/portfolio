@@ -1,4 +1,4 @@
-import { EnglishLanguage } from '~/constants/app';
+import { EnglishLanguage } from '~/constants/language';
 import { LanguageKey } from '~/constants/localStorage';
 
 export function updateLangAttribute(): void {
