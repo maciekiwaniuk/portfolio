@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
         '@nuxt/image',
         '@nuxt/icon',
+        'nuxt-gtag',
         '@pinia/nuxt',
     ],
     app: {
@@ -42,5 +43,8 @@ export default defineNuxtConfig({
                 file: 'pl.json',
             },
         ],
+    },
+    gtag: {
+        id: 'G-EV1076RNK2',
     },
 });
