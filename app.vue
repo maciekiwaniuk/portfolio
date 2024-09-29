@@ -44,6 +44,17 @@ onMounted(() => {
     });
     backgroundImageUrl.value = loadBackgroundImage.value;
 });
+
+const config = useRuntimeConfig();
+
+useSeoMeta({
+    title: 'maciekiwaniuk.pl - Software Developer',
+    description: 'Portfolio - Maciek Iwaniuk',
+    ogDescription: 'Portfolio - Maciek Iwaniuk',
+    ogTitle: 'maciekiwaniuk.pl - Software Developer',
+    ogImage: `${config.public.baseUrl}/img/icons/180x180.png`,
+    ogUrl: config.public.baseUrl,
+});
 </script>
 
 <template>

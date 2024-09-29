@@ -18,6 +18,7 @@
 @line-width: 0.6rem;
 @line-before-height: 10%;
 @line-after-height: calc(100% - @line-before-height - @circle-size - @circle-margin);
+@border-radius-lines: 3px;
 
 .experience-timeline {
     width: 100%;
@@ -27,6 +28,7 @@
         height: @line-before-height;
         margin: auto;
         background-color: @blue-color;
+        border-radius: @border-radius-lines;
     }
     .circle {
         height: @circle-size;
@@ -40,6 +42,7 @@
         height: @line-after-height;
         margin: auto;
         background-color: @blue-color;
+        border-radius: @border-radius-lines;
     }
 }
 </style>

@@ -28,6 +28,15 @@ export default defineNuxtConfig({
             ],
         },
     },
+    routeRules: {
+        '/': { prerender: true },
+        '/sitemap.xml': { prerender: true },
+    },
+    runtimeConfig: {
+        public: {
+            baseUrl: process.env.BASE_URL,
+        },
+    },
     i18n: {
         strategy: 'no_prefix',
         langDir: 'translations',
