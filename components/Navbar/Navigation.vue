@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import NavigationLinks from '~/components/Navbar/NavigationLinks.vue';
-import { useThemeStore } from '~/stores/theme';
-import { useNavMenuStore } from '~/stores/navMenu';
 import { useCursorHover } from '~/directives/useCursorHover';
-import { DarkTheme, LightTheme } from '~/constants/app';
+import { useNavMenuStore } from '~/stores/navMenu';
+import { useThemeStore } from '~/stores/theme';
 
 const themeStore = useThemeStore();
 
@@ -15,8 +14,8 @@ const vCursorHover = useCursorHover();
 <template>
     <header
         class="navigation"
-        :class="{ 'navigation-dark-theme': themeStore.theme === DarkTheme,
-                  'navigation-light-theme': themeStore.theme === LightTheme }"
+        :class="{ 'navigation-dark-theme': themeStore.isDark,
+                  'navigation-light-theme': themeStore.isLight }"
     >
         <button
             v-cursor-hover

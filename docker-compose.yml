@@ -6,8 +6,8 @@ services:
         image: nginx:1.25.4
         platform: linux/amd64
         ports:
-            - "80:80"
-            - "443:443"
+            - '80:80'
+            - '443:443'
         restart: always
         volumes:
             - .:/var/www/html/frontend

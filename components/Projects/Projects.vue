@@ -2,8 +2,6 @@
 import ProjectsItem from '~/components/Projects/ProjectsItem.vue';
 import type { TechnologyType } from '~/types/TechnologyType';
 
-const { t } = useI18n();
-
 type ProjectType = {
     titleKey: string;
     contentKey: string;

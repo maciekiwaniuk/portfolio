@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TechnologyElement from '~/components/TechnologyElement.vue';
-import { DarkTheme, LightTheme } from '~/constants/app';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
@@ -24,11 +23,11 @@ const themeStore = useThemeStore();
 <template>
     <div class="experience-item-container">
         <div
-            v-if="index % 2 == 1"
-            class="visible-on-big-screen">
-        </div>
+            v-if="index % 2 === 1"
+            class="visible-on-big-screen"
+        />
         <ExperienceTimeline
-            v-if="index % 2 == 1"
+            v-if="index % 2 === 1"
             class="visible-on-big-screen"
         />
         <a
@@ -39,8 +38,8 @@ const themeStore = useThemeStore();
         >
             <div
                 class="experience-item"
-                :class="{ 'experience-item-dark-theme': themeStore.theme === DarkTheme,
-                          'experience-item-light-theme': themeStore.theme === LightTheme }"
+                :class="{ 'experience-item-dark-theme': themeStore.isDark,
+                          'experience-item-light-theme': themeStore.isLight }"
             >
                 <h3 class="companyName">{{ props.companyName }}</h3>
 
@@ -50,8 +49,8 @@ const themeStore = useThemeStore();
 
                 <div class="technologies">
                     <TechnologyElement
-                        v-for="(technology, index) in props.technologies"
-                        :key="index"
+                        v-for="(technology, indexKey) in props.technologies"
+                        :key="indexKey"
                         :element="technology"
                     />
                 </div>
@@ -66,13 +65,13 @@ const themeStore = useThemeStore();
             </div>
         </a>
         <ExperienceTimeline
-            v-if="index % 2 == 0"
+            v-if="index % 2 === 0"
             class="visible-on-big-screen"
         />
         <div
-            v-if="index % 2 == 0"
+            v-if="index % 2 === 0"
             class="visible-on-big-screen"
-        ></div>
+        />
     </div>
 </template>
 

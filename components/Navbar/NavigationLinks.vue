@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import NavigationLinksLink from '~/components/Navbar/NavigationLinksLink.vue';
-import { useThemeStore } from '~/stores/theme';
+import { HorizontalNavigationAlignment, VerticalNavigationAlignment } from '~/constants/app';
 import { useNavMenuStore } from '~/stores/navMenu';
+import { useThemeStore } from '~/stores/theme';
 import type { AlignmentType } from '~/types/AlignmentType';
-import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '~/constants/app';
 
 const props = defineProps<{
     alignment: AlignmentType;
@@ -17,8 +17,8 @@ const navMenuStore = useNavMenuStore();
 <template>
     <div
         class="navigation-links"
-        :class="{ 'navigation-links-dark-theme': themeStore.theme === DarkTheme,
-                  'navigation-links-light-theme': themeStore.theme === LightTheme }"
+        :class="{ 'navigation-links-dark-theme': themeStore.isDark,
+                  'navigation-links-light-theme': themeStore.isLight }"
     >
         <div
             v-if="props.alignment === VerticalNavigationAlignment"

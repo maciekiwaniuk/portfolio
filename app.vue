@@ -9,15 +9,11 @@ import LandingPage from '~/components/LandingPage/LandingPage.vue';
 import Navbar from '~/components/Navbar/Navbar.vue';
 import Projects from '~/components/Projects/Projects.vue';
 import Skills from '~/components/Skills.vue';
-
-import { DarkTheme, LightTheme } from '~/constants/app';
 import { addEventOnCursor } from '~/functions/addEventOnCursor';
-
 import { addEventOnOpeningNavBySliding } from '~/functions/addEventOnOpeningNavBySliding';
 import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
 import { updateLangAttribute } from '~/functions/updateLangAttribute';
 import { useNavMenuStore } from '~/stores/navMenu';
-
 import { useThemeStore } from '~/stores/theme';
 
 const themeStore = useThemeStore();

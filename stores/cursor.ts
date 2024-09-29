@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
-import type { CursorVisibilityType } from '~/types/CursorVisibilityType';
 import { CursorHidden, CursorVisible } from '~/constants/app';
 import { CursorVisibilityKey } from '~/constants/localStorage';
+import type { CursorVisibilityType } from '~/types/CursorVisibilityType';
 
 export const useCursorStore = defineStore('cursor', {
     state: (): { hover: boolean; visibility: CursorVisibilityType } => ({

@@ -1,6 +1,6 @@
-import { createPinia, setActivePinia } from 'pinia';
-import { useThemeStore } from '~/../stores/theme';
 import { DarkTheme, LightTheme } from '~/../constants/app';
+import { useThemeStore } from '~/../stores/theme';
+import { createPinia, setActivePinia } from 'pinia';
 
 describe('theme store', () => {
     beforeEach(() => {

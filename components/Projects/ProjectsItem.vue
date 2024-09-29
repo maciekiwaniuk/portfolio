@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import TechnologyElement from '~/components/TechnologyElement.vue';
-import { DarkTheme, LightTheme } from '~/constants/app';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
@@ -22,8 +21,8 @@ const themeStore = useThemeStore();
     <div>
         <div
             class="projects-item"
-            :class="{ 'projects-item-dark-theme': themeStore.theme === DarkTheme,
-                      'projects-item-light-theme': themeStore.theme === LightTheme }"
+            :class="{ 'projects-item-dark-theme': themeStore.isDark,
+                      'projects-item-light-theme': themeStore.isLight }"
         >
             <h3 class="title">
                 {{ props.title }}

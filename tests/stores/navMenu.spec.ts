@@ -1,5 +1,5 @@
-import { createPinia, setActivePinia } from 'pinia';
 import { useNavMenuStore } from '~/../stores/navMenu';
+import { createPinia, setActivePinia } from 'pinia';
 
 describe('nav menu store', () => {
     beforeEach(() => {

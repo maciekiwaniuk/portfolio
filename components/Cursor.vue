@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { CursorVisible } from '~/constants/app';
 import { useCursorHover } from '~/directives/useCursorHover';
-import { useThemeStore } from '~/stores/theme';
 import { useCursorStore } from '~/stores/cursor';
-import { CursorVisible, DarkTheme, LightTheme } from '~/constants/app';
+import { useThemeStore } from '~/stores/theme';
 
 const vCursorHover = useCursorHover();
 
@@ -16,8 +16,8 @@ const cursorStore = useCursorStore();
         v-show="cursorStore.visibility === CursorVisible"
         aria-hidden="true"
         class="cursor"
-        :class="{ 'cursor-dark-theme': themeStore.theme === DarkTheme,
-                  'cursor-light-theme': themeStore.theme === LightTheme,
+        :class="{ 'cursor-dark-theme': themeStore.isDark,
+                  'cursor-light-theme': themeStore.isLight,
                   'hover': cursorStore.hover }"
     />
 

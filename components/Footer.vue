@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
-import { DarkTheme, LightTheme } from '~/constants/app';
 
 const vCursorHover = useCursorHover();
 
@@ -13,8 +12,8 @@ const currentYear: number = new Date().getFullYear();
 <template>
     <footer
         class="footer"
-        :class="{ 'footer-dark-theme': themeStore.theme === DarkTheme,
-                  'footer-light-theme': themeStore.theme === LightTheme }"
+        :class="{ 'footer-dark-theme': themeStore.isDark,
+                  'footer-light-theme': themeStore.isLight }"
     >
         <h3 class="info">
             {{ $t('author') }} - {{ currentYear }} {{ $t('footer.allRightsReserved') }}

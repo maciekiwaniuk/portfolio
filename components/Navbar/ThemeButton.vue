@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useThemeStore } from '~/stores/theme';
 import { useCursorHover } from '~/directives/useCursorHover';
-import { DarkTheme, LightTheme } from '~/constants/app';
+import { useThemeStore } from '~/stores/theme';
 
 const themeStore = useThemeStore();
 
@@ -15,7 +14,7 @@ const vCursorHover = useCursorHover();
         @click="themeStore.toggle();"
     >
         <img
-            v-show="themeStore.theme === DarkTheme"
+            v-show="themeStore.isDark"
             src="../../assets/images/icons/sun.svg"
             class="icon sun-icon"
             width="1000"
@@ -23,7 +22,7 @@ const vCursorHover = useCursorHover();
             :alt="$t('navbar.images.sun')"
         >
         <img
-            v-show="themeStore.theme === LightTheme"
+            v-show="themeStore.isLight"
             src="../../assets/images/icons/moon.svg"
             class="icon"
             width="1000"

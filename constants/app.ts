@@ -1,7 +1,7 @@
-import type { LanguageType } from '~/types/LanguageType';
-import type { CursorVisibilityType } from '~/types/CursorVisibilityType';
-import type { ThemeType } from '~/types/ThemeType';
 import type { AlignmentType } from '~/types/AlignmentType';
+import type { CursorVisibilityType } from '~/types/CursorVisibilityType';
+import type { LanguageType } from '~/types/LanguageType';
+import type { ThemeType } from '~/types/ThemeType';
 
 export const DarkTheme: ThemeType = 'dark';
 export const LightTheme: ThemeType = 'light';

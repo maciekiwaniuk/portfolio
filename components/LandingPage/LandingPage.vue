@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vue';
-
 </script>
 
 <template>

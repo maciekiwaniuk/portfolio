@@ -1,5 +1,5 @@
-import { LanguageKey } from '~/constants/localStorage';
 import { EnglishLanguage } from '~/constants/app';
+import { LanguageKey } from '~/constants/localStorage';
 
 export function updateLangAttribute(): void {
     document.documentElement.setAttribute(

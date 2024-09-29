@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useThemeStore } from '~/stores/theme';
-import { useNavMenuStore } from '~/stores/navMenu';
+import { HorizontalNavigationAlignment, VerticalNavigationAlignment } from '~/constants/app';
 import { useCursorHover } from '~/directives/useCursorHover';
+import { useNavMenuStore } from '~/stores/navMenu';
+import { useThemeStore } from '~/stores/theme';
 import type { AlignmentType } from '~/types/AlignmentType';
-import { DarkTheme, HorizontalNavigationAlignment, LightTheme, VerticalNavigationAlignment } from '~/constants/app';
 
 const props = defineProps<{
     element: string;
@@ -23,8 +23,8 @@ const vCursorHover = useCursorHover();
         v-cursor-hover
         :class="{ 'vertical-alignment': props.alignment === VerticalNavigationAlignment,
                   'horizontal-alignment': props.alignment === HorizontalNavigationAlignment,
-                  'link-dark-theme': themeStore.theme === DarkTheme,
-                  'link-light-theme': themeStore.theme === LightTheme }"
+                  'link-dark-theme': themeStore.isDark,
+                  'link-light-theme': themeStore.isLight }"
         :href="`#${element}`"
         @click="navMenuStore.close()"
     >

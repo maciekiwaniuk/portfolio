@@ -9,7 +9,9 @@
         "dev": "nuxt dev",
         "generate": "nuxt generate",
         "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
+        "postinstall": "nuxt prepare",
+        "lint:eslint": "eslint .",
+        "lint:eslint:fix": "eslint . --fix"
     },
     "dependencies": {
         "@nuxt/icon": "^1.5.1",

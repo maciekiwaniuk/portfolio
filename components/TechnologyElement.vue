@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
-import { DarkTheme, LightTheme } from '~/constants/app';
 
 const props = defineProps<{
     element: keyof TechnologiesType;
@@ -195,8 +194,8 @@ const technologies: TechnologiesType = {
 <template>
     <div
         class="technology-element"
-        :class="{ 'technology-element-dark-theme': themeStore.theme === DarkTheme,
-                  'technology-element-light-theme': themeStore.theme === LightTheme }"
+        :class="{ 'technology-element-dark-theme': themeStore.isDark,
+                  'technology-element-light-theme': themeStore.isLight }"
     >
         <div class="icon">
             <Icon

@@ -1,13 +1,12 @@
 import { defineStore } from 'pinia';
-import { getTheme } from '~/functions/getTheme';
-import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
-import type { ThemeType } from '~/types/ThemeType';
 import { DarkTheme, LightTheme } from '~/constants/app';
 import { ThemeKey } from '~/constants/localStorage';
+import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
+import type { ThemeType } from '~/types/ThemeType';
 
 export const useThemeStore = defineStore('theme', {
     state: (): { theme: ThemeType } => ({
-        theme: getTheme(),
+        theme: DarkTheme,
     }),
     actions: {
         initTheme(): void {
@@ -15,7 +14,7 @@ export const useThemeStore = defineStore('theme', {
                 return;
             }
 
-            this.theme = getTheme();
+            this.theme = localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme;
         },
         toggle(): void {
             if (!import.meta.client) {
@@ -30,7 +29,7 @@ export const useThemeStore = defineStore('theme', {
         },
     },
     getters: {
-        isDark: (state) => state.theme === DarkTheme,
-        isLight: (state) => state.theme === LightTheme,
+        isDark: state => state.theme === DarkTheme,
+        isLight: state => state.theme === LightTheme,
     },
 });

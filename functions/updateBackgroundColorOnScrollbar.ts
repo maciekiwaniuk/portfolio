@@ -1,6 +1,6 @@
-import type { ThemeType } from '~/types/ThemeType';
-import { ThemeKey } from '~/constants/localStorage';
 import { DarkTheme } from '~/constants/app';
+import { ThemeKey } from '~/constants/localStorage';
+import type { ThemeType } from '~/types/ThemeType';
 
 export function updateBackgroundColorOnScrollbar(): void {
     const selectedTheme: ThemeType = localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme;

@@ -4,9 +4,9 @@
 
 <template>
     <div class="experience-timeline">
-        <div class="line-before"></div>
-        <div class="circle"></div>
-        <div class="line-after"></div>
+        <div class="line-before" />
+        <div class="circle" />
+        <div class="line-after" />
     </div>
 </template>
 
