@@ -14,7 +14,8 @@ export const useThemeStore = defineStore('theme', {
                 return;
             }
 
-            this.theme = localStorage.getItem(ThemeKey) as ThemeType ?? DarkTheme;
+            this.theme = localStorage.getItem(ThemeKey) as ThemeType
+                ?? DarkTheme;
         },
         toggle(): void {
             if (!import.meta.client) {

@@ -12,7 +12,6 @@ services:
         volumes:
             - .:/var/www/html/frontend
             - ./docker/nginx/dev/nginx.conf:/etc/nginx/nginx.conf
-            - ./docker/ssl:/etc/ssl:ro
         working_dir: /var/www/html
 
     frontend:

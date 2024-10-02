@@ -13,8 +13,11 @@ import { addEventOnCursor } from '~/functions/addEventOnCursor';
 import { addEventOnOpeningNavBySliding } from '~/functions/addEventOnOpeningNavBySliding';
 import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
 import { updateLangAttribute } from '~/functions/updateLangAttribute';
+import { useCursorStore } from '~/stores/cursor';
 import { useNavMenuStore } from '~/stores/navMenu';
 import { useThemeStore } from '~/stores/theme';
+
+const cursorStore = useCursorStore();
 
 const themeStore = useThemeStore();
 
@@ -30,6 +33,7 @@ const backgroundImageUrl = ref<string>('');
 
 onMounted(() => {
     themeStore.initTheme();
+    cursorStore.initCursor();
     addEventOnCursor();
     addEventOnOpeningNavBySliding();
     updateLangAttribute();

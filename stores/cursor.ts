@@ -6,11 +6,17 @@ import type { CursorVisibilityType } from '~/types/CursorVisibilityType';
 export const useCursorStore = defineStore('cursor', {
     state: (): { hover: boolean; visibility: CursorVisibilityType } => ({
         hover: false,
-        visibility: (import.meta.client)
-            ? localStorage.getItem(CursorVisibilityKey) as CursorVisibilityType ?? CursorVisible
-            : CursorHidden,
+        visibility: CursorHidden,
     }),
     actions: {
+        initCursor(): void {
+            if (!import.meta.client) {
+                return;
+            }
+
+            this.visibility = localStorage.getItem(CursorVisibilityKey) as CursorVisibilityType
+                ?? CursorVisible;
+        },
         toggle(): void {
             this.hover = !this.hover;
         },
