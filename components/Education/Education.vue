@@ -20,8 +20,10 @@ const educationItems: Education[] = [
         url: 'https://pb.edu.pl/',
         technologies: [
             'c',
+            'cpp',
             'csharp',
             'linux',
+            'oraclesql'
         ],
     },
     {
@@ -35,6 +37,7 @@ const educationItems: Education[] = [
             'javascript',
             'mysql',
             'python',
+            'cpp',
             'csharp',
             'java',
         ],

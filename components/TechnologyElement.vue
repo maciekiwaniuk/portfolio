@@ -188,6 +188,16 @@ const technologies: TechnologiesType = {
         icon: 'logos:keydb-icon',
         width: 34,
     },
+    oraclesql: {
+        title: 'Oracle SQL',
+        icon: 'devicon:sqldeveloper',
+        width: 32,
+    },
+    cpp: {
+        title: 'C++',
+        icon: 'vscode-icons:file-type-cpp3',
+        width: 35,
+    },
 };
 </script>
 

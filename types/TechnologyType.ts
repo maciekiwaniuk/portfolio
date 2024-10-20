@@ -32,4 +32,6 @@ export type TechnologyType =
     'kubernetes' |
     'slim' |
     'golang' |
-    'keydb';
+    'keydb' |
+    'oraclesql' |
+    'cpp' ;
