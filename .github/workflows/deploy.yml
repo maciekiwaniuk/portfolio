@@ -54,5 +54,6 @@ jobs:
                   script: |
                       cd apps/portfolio
                       git pull --rebase origin main
+                      ./docker/ssl/check_and_generate_certificate.sh
                       docker-compose -f docker-compose.prod.yml down
                       docker-compose -f docker-compose.prod.yml up -d --build
