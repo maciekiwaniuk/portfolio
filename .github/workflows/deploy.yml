@@ -1,0 +1,58 @@
+name: Build & Deploy to VPS
+on:
+    push:
+        branches:
+            - main
+
+env:
+    REGISTRY: docker.io
+    IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+    build-and-push-image:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    - dockerfile: ./docker/Dockerfile
+                      tag: frontend
+        permissions:
+            contents: read
+            packages: write
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Log in to the Container registry
+              uses: docker/login-action@v2
+              with:
+                  registry: ${{ env.REGISTRY }}
+                  username: ${{ secrets.DOCKERHUB_USERNAME }}
+                  password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+            - name: Build and push Docker image to registry
+              uses: docker/build-push-action@v2
+              with:
+                  context: .
+                  file: ${{ matrix.dockerfile }}
+                  push: true
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:${{ matrix.tag }}
+
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build-and-push-image
+        steps:
+            - name: Login via SSH and deploy on server
+              uses: appleboy/ssh-action@v0.1.5
+              with:
+                  host: ${{ secrets.SSH_HOST }}
+                  username: ${{ secrets.SSH_USERNAME }}
+                  key: ${{ secrets.SSH_KEY }}
+                  port: ${{ secrets.SSH_PORT }}
+                  script: |
+                      cd apps/portfolio
+                      git pull --rebase origin main
+                      docker-compose -f docker-compose.prod.yml down
+                      docker-compose -f docker-compose.prod.yml up -d --build
