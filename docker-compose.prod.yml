@@ -6,12 +6,11 @@ services:
         image: nginx:1.25.4
         ports:
             - 80:80
-            - 443:443
         restart: unless-stopped
         volumes:
             - ./docker/nginx/prod/nginx.conf:/etc/nginx/nginx.conf
-            - ./certbot/conf:/etc/letsencrypt
-            - ./certbot/www:/var/www/certbot
+        networks:
+            - portfolio-network
 
     frontend:
         container_name: portfolio-frontend
@@ -23,11 +22,9 @@ services:
         volumes:
             - .:/var/www/html
         working_dir: /var/www/html
+        networks:
+            - portfolio-network
 
-    certbot:
-        image: certbot/certbot
-        container_name: certbot
-        volumes:
-            - ./certbot/conf:/etc/letsencrypt
-            - ./certbot/www:/var/www/certbot
-        command: certonly --webroot -w /var/www/certbot --force-renewal --email iwaniukmaciej1@gmail.com -d maciekiwaniuk.pl --agree-tos
+networks:
+    portfolio-network:
+        driver: bridge
