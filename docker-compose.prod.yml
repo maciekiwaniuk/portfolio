@@ -21,8 +21,8 @@ services:
         command: sh -c "npm install && npx nuxi build && node .output/server/index.mjs"
         restart: on-failure
         volumes:
-            - .:/var/www/html/frontend
-        working_dir: /var/www/html/frontend
+            - .:/var/www/html
+        working_dir: /var/www/html
 
     certbot:
         image: certbot/certbot
