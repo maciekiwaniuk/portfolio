@@ -61,7 +61,12 @@ export default defineNuxtConfig({
         registerType: 'autoUpdate',
         includeAssets: [],
         manifest: false,
-        workbox: undefined,
+        workbox: {
+            cleanupOutdatedCaches: true,
+            clientsClaim: true,
+            skipWaiting: true,
+            runtimeCaching: [],
+        },
         devOptions: {
             enabled: false,
         },
