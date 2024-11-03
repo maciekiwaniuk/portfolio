@@ -12,6 +12,7 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         'nuxt-gtag',
         '@pinia/nuxt',
+        '@vite-pwa/nuxt',
     ],
     app: {
         head: {
@@ -56,4 +57,13 @@ export default defineNuxtConfig({
     gtag: {
         id: 'G-EV1076RNK2',
     },
+    pwa: {
+        registerType: 'autoUpdate',
+        includeAssets: [],
+        manifest: false,
+        workbox: undefined,
+        devOptions: {
+            enabled: false,
+        },
+    }
 });
