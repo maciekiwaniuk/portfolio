@@ -8,7 +8,7 @@ WORKDIR /var/www/html
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --production
 
 # Copy the rest of the application files
 COPY . .
@@ -20,13 +20,12 @@ RUN npx nuxi build
 FROM nginx:1.27.2-alpine
 
 # Copy the built frontend application to the Nginx public directory
-COPY --from=build /var/www/html/.output/public /usr/share/nginx/html
+COPY --from=build /var/www/html/.output /var/www/html/.output
 
 # Copy custom Nginx configuration
 COPY ./docker/nginx/prod/nginx.conf /etc/nginx/nginx.conf
 
-# Expose port 80
-EXPOSE 80
+RUN apk add --update npm
 
 # Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD nginx -g 'daemon off;' & node /var/www/html/.output/server/index.mjs
