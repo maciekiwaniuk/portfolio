@@ -10,14 +10,12 @@ env:
 
 jobs:
     build-and-push-image:
-        if: false
         runs-on: ubuntu-latest
         strategy:
             fail-fast: false
             matrix:
                 include:
                     - dockerfile: ./docker/Dockerfile
-                      tag: frontend
         permissions:
             contents: read
             packages: write
@@ -33,16 +31,12 @@ jobs:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
                   password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-            - name: Build and push Docker image to registry
-              uses: docker/build-push-action@v2
-              with:
-                  context: .
-                  file: ${{ matrix.dockerfile }}
-                  push: true
-                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:${{ matrix.tag }}
+            -   name: Build and Push
+                run: |
+                    docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest .
+                    docker push ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
 
     deploy:
-        if: false
         runs-on: ubuntu-latest
         needs: build-and-push-image
         steps:
@@ -54,7 +48,7 @@ jobs:
                   key: ${{ secrets.SSH_KEY }}
                   port: ${{ secrets.SSH_PORT }}
                   script: |
-                      cd apps/portfolio
-                      git pull
-                      docker-compose -f docker-compose.prod.yml down
-                      docker-compose -f docker-compose.prod.yml up -d --build
+                      cd ~/deployments/portfolio
+                      docker compose pull
+                      docker compose down
+                      docker compose up -d
