@@ -3,7 +3,7 @@ services:
         container_name: portfolio-nginx
         depends_on:
             - frontend
-        image: nginx:1.25.4
+        image: nginx:1.27.2-alpine
         ports:
             - 80:80
         restart: unless-stopped
@@ -14,9 +14,10 @@ services:
 
     frontend:
         container_name: portfolio-frontend
-        build:
-            context: ./docker
-            dockerfile: Dockerfile
+        image: node:23-alpine
+        environment:
+            - HOST=0.0.0.0
+            - PORT=3000
         command: sh -c "npm install && npx nuxi build && node .output/server/index.mjs"
         restart: on-failure
         volumes:
