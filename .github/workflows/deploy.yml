@@ -25,14 +25,14 @@ jobs:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
                   password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-            -   name: Build and Push Images
+            -   name: Build and Push Frontend Image
                 run: |
-                    docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-frontend:latest -f docker/frontend/Dockerfile .
+                    docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-frontend:latest -f docker/frontend/prod/Dockerfile .
                     docker push ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-frontend:latest
 
             -   name: Build and Push Nginx Image
                 run: |
-                    docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-nginx:latest -f docker/nginx/Dockerfile .
+                    docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-nginx:latest -f docker/nginx/prod/Dockerfile .
                     docker push ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-nginx:latest
 
     deploy:
