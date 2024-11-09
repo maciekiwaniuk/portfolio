@@ -47,7 +47,8 @@ jobs:
                   key: ${{ secrets.SSH_KEY }}
                   port: ${{ secrets.SSH_PORT }}
                   script: |
-                      cd ~/deployments/portfolio
-                      docker compose pull
-                      docker compose down
-                      docker compose up -d
+                      cd ~/apps/portfolio
+                      git pull
+                      docker compose -f docker-compose.prod.yml pull
+                      docker compose -f docker-compose.prod.yml down
+                      docker compose -f docker-compose.prod.yml up -d
