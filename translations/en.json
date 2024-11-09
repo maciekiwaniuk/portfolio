@@ -94,13 +94,9 @@
                 "title": "Portfolio",
                 "content": "A website summarizing information about myself. It includes information about my education, commercial experience and projects, whilst being interactive and animated."
             },
-            "snakeGame": {
-                "title": "Snake - game",
-                "content": "This game reads and writes data through a web application API. The user competes against other users through a ranking, whilst earning currency that can then be spent on upgrades or skins that improve the gameplay experience."
-            },
-            "snakeWebApp": {
-                "title": "Snake - web app",
-                "content": "This application handles data sent by the game application written in python. It has extensive user account functionality, along with a comprehensive, feature-rich admin panel."
+            "snakeMonorepo": {
+                "title": "Snake - Web and Desktop Application",
+                "content": "A Snake game project consisting of both a desktop and a web application. The game's functionality is connected to the server on the web application."
             },
             "minesweeper": {
                 "title": "Minesweeper",

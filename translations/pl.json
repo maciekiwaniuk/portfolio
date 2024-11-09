@@ -94,13 +94,9 @@
                 "title": "Portfolio",
                 "content": "Strona internetowa streszczająca informacje o mojej osobie. Zawarte są w niej wiadomości na temat mojej edukacji, doświadczenia komercyjnego czy projektach."
             },
-            "snakeGame": {
-                "title": "Snake - gra",
-                "content": "Gra odczytuje oraz zapisuje dane poprzez API aplikacji webowej. Użytkownik rywalizuje z innymi użytkownikami poprzez ranking, zdobywa walutę, którą może następnie wydać na ulepszenia lub skórki poprawiające odczucia z rozgrywki."
-            },
-            "snakeWebApp": {
-                "title": "Snake - aplikacja webowa",
-                "content": "Aplikacja obsługuje dane przesyłane przez grę na komputer napisaną w pythonie. Posiada rozbudowane funkcjonalności kont użytkowników wraz z obszernym, bogatym w funkcjonalności panelem administratora."
+            "snakeMonorepo": {
+                "title": "Snake - aplikacja webowa i desktopowa",
+                "content": "Projekt gry snake który składa się na aplikacje desktopowa oraz webową. Działanie gry jest połączone z serwerem na aplikacji webowej."
             },
             "minesweeper": {
                 "title": "Saper",
