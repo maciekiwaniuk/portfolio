@@ -9,10 +9,8 @@ env:
     IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-    build-and-push-image:
+    build-and-push-images:
         runs-on: ubuntu-latest
-        strategy:
-            fail-fast: false
         permissions:
             contents: read
             packages: write
@@ -27,14 +25,19 @@ jobs:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
                   password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-            -   name: Build and Push
+            -   name: Build and Push Images
                 run: |
-                    docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest .
-                    docker push ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
+                    docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-frontend:latest -f docker/frontend/Dockerfile .
+                    docker push ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-frontend:latest
+
+            -   name: Build and Push Nginx Image
+                run: |
+                    docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-nginx:latest -f docker/nginx/Dockerfile .
+                    docker push ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-nginx:latest
 
     deploy:
         runs-on: ubuntu-latest
-        needs: build-and-push-image
+        needs: build-and-push-images
         steps:
             - name: Login via SSH and deploy on server
               uses: appleboy/ssh-action@v1.1.0
