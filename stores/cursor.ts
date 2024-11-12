@@ -15,7 +15,7 @@ export const useCursorStore = defineStore('cursor', {
             }
 
             this.visibility = localStorage.getItem(CursorVisibilityKey) as CursorVisibilityType
-                ?? CursorVisible;
+            ?? CursorVisible;
         },
         toggle(): void {
             this.hover = !this.hover;

@@ -23,7 +23,7 @@ const educationItems: Education[] = [
             'cpp',
             'csharp',
             'linux',
-            'oraclesql'
+            'oraclesql',
         ],
     },
     {

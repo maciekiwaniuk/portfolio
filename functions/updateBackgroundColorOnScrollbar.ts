@@ -1,5 +1,5 @@
-import { DarkTheme } from '~/constants/theme';
 import { ThemeKey } from '~/constants/localStorage';
+import { DarkTheme } from '~/constants/theme';
 import type { ThemeType } from '~/types/ThemeType';
 
 export function updateBackgroundColorOnScrollbar(): void {

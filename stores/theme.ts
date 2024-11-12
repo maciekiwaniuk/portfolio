@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
-import { DarkTheme, LightTheme } from '~/constants/theme';
 import { ThemeKey } from '~/constants/localStorage';
+import { DarkTheme, LightTheme } from '~/constants/theme';
 import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
 import type { ThemeType } from '~/types/ThemeType';
 
@@ -15,7 +15,7 @@ export const useThemeStore = defineStore('theme', {
             }
 
             this.theme = localStorage.getItem(ThemeKey) as ThemeType
-                ?? DarkTheme;
+            ?? DarkTheme;
         },
         toggle(): void {
             if (!import.meta.client) {
