@@ -49,6 +49,7 @@ const vCursorHover = useCursorHover();
 
 .navigation {
     font-family: 'LatoFontBold', serif;
+    z-index: 10;
 
     .nav-hamburger-toggler {
         display: flex;
