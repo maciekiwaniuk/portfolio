@@ -12,13 +12,11 @@
             "greatBritainFlag": "Change language to English"
         }
     },
-
     "landingPage": {
         "myNameIs": "Hi, my name is",
         "name": "Maciek Iwaniuk.",
         "description": "I am a computer science student, with a strong emphasis on enhancing my skills. I aspire to build my future in the IT industry and constantly strive to develop myself to stay up to date with the latest technologies."
     },
-
     "education": {
         "title": "Education",
         "educationItems": {
@@ -34,7 +32,6 @@
             }
         }
     },
-
     "experience": {
         "title": "Experience",
         "now": "now",
@@ -72,13 +69,11 @@
             }
         }
     },
-
     "skills": {
         "title": "Skills",
         "useRegularly": "I use regularly",
         "hadContact": "I had contact with"
     },
-
     "projects": {
         "title": "Projects",
         "projectsItems": {
@@ -105,14 +100,14 @@
 
         }
     },
-
     "contact": {
         "title": "Contact"
     },
-
     "footer": {
         "allRightsReserved": "© All rights reserved"
     },
-
+    "technologyElement": {
+        "microservices": "Microservices"
+    },
     "author": "Maciek Iwaniuk"
 }

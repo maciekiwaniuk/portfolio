@@ -9,7 +9,8 @@ const props = defineProps<{
 const themeStore = useThemeStore();
 
 type TechnologyConfigType = {
-    title: string;
+    title?: string;
+    titleKey?: string;
     icon: string;
     width: number;
 };
@@ -134,7 +135,7 @@ const technologies: TechnologiesType = {
         width: 32,
     },
     microservices: {
-        title: 'Microservices',
+        titleKey: 'technologyElement.microservices',
         icon: 'carbon:microservices-1',
         width: 32,
     },
@@ -214,7 +215,16 @@ const technologies: TechnologiesType = {
             />
         </div>
 
-        <span class="title">{{ technologies[props.element].title }}</span>
+        <span
+            v-if="technologies[props.element].title"
+            class="title"
+        >{{ technologies[props.element].title }}
+        </span>
+        <span
+            v-else
+            class="title"
+        >{{ $t(technologies[props.element].titleKey) }}
+        </span>
     </div>
 </template>
 

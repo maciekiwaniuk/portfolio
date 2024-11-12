@@ -12,13 +12,11 @@
             "greatBritainFlag": "Zmień język na angielski"
         }
     },
-
     "landingPage": {
         "myNameIs": "Hej, nazywam się",
         "name": "Maciek Iwaniuk.",
         "description": "Jestem studentem informatyki, skupionym na podnoszeniu swoich kompetencji. Wiążę swoją przyszłość z branżą IT i stale rozwijam się, aby być na bieżąco z najnowszymi technologiami."
     },
-
     "education": {
         "title": "Edukacja",
         "educationItems": {
@@ -34,7 +32,6 @@
             }
         }
     },
-
     "experience": {
         "title": "Doświadczenie",
         "now": "obecnie",
@@ -72,13 +69,11 @@
             }
         }
     },
-
     "skills": {
         "title": "Umiejętności",
         "useRegularly": "Regularnie używam",
         "hadContact": "Miałem styczność z"
     },
-
     "projects": {
         "title": "Projekty",
         "projectsItems": {
@@ -104,14 +99,14 @@
             }
         }
     },
-
     "contact": {
         "title": "Kontakt"
     },
-
     "footer": {
         "allRightsReserved": "© Wszelkie prawa zastrzeżone"
     },
-
+    "technologyElement": {
+        "microservices": "Mikroserwisy"
+    },
     "author": "Maciek Iwaniuk"
 }
