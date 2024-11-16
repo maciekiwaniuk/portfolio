@@ -17,10 +17,8 @@ const useRegularlyTechnologies: TechnologyType[] = [
 const hadContactTechnologies: TechnologyType[] = [
     'python',
     'rabbitmq',
-    'jquery',
     'sass',
     'tailwind',
-    'bootstrap',
     'postgresql',
     'javascript',
     'typescript',
