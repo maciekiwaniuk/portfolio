@@ -5,13 +5,14 @@ import type { TechnologyType } from '~/types/TechnologyType';
 const useRegularlyTechnologies: TechnologyType[] = [
     'php',
     'phpunit',
-    'symfony',
     'laravel',
+    'symfony',
+    'git',
+    'javascript',
+    'vue',
     'mysql',
     'redis',
     'docker',
-    'git',
-    'github',
 ];
 
 const hadContactTechnologies: TechnologyType[] = [
@@ -19,11 +20,9 @@ const hadContactTechnologies: TechnologyType[] = [
     'rabbitmq',
     'sass',
     'tailwind',
-    'postgresql',
-    'javascript',
-    'typescript',
-    'vue',
     'nuxt',
+    'typescript',
+    'postgresql',
 ];
 </script>
 

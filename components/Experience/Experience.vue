@@ -28,6 +28,7 @@ const experienceItems: Experience[] = [
             'slim',
             'laravel',
             'javascript',
+            'vue',
             'css',
             'mysql',
             'redis',

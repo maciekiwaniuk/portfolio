@@ -9,7 +9,6 @@ export type TechnologyType =
     'mysql' |
     'postgresql' |
     'git' |
-    'github' |
     'python' |
     'csharp' |
     'vue' |

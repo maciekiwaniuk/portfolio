@@ -69,11 +69,6 @@ const technologies: TechnologiesType = {
         icon: 'bi:git',
         width: 34,
     },
-    github: {
-        title: 'GitHub',
-        icon: 'akar-icons:github-fill',
-        width: 32,
-    },
     python: {
         title: 'Python',
         icon: 'logos:python',
