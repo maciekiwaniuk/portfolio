@@ -169,11 +169,6 @@ const technologies: TechnologiesType = {
         icon: 'logos:kubernetes',
         width: 33,
     },
-    slim: {
-        title: 'Slim',
-        icon: 'logos:slim',
-        width: 33,
-    },
     golang: {
         title: 'Golang',
         icon: 'devicon:go',

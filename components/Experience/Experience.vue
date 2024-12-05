@@ -25,7 +25,6 @@ const experienceItems: Experience[] = [
             'php',
             'phpunit',
             'microservices',
-            'slim',
             'laravel',
             'javascript',
             'vue',
