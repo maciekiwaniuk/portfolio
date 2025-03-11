@@ -32,6 +32,7 @@ const experienceItems: Experience[] = [
             'mysql',
             'redis',
             'gcp',
+            'elasticsearch',
             'kubernetes',
             'docker',
         ],

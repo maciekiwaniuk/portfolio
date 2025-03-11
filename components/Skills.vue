@@ -9,6 +9,7 @@ const useRegularlyTechnologies: TechnologyType[] = [
     'symfony',
     'git',
     'javascript',
+    'typescript',
     'vue',
     'mysql',
     'redis',
@@ -18,11 +19,11 @@ const useRegularlyTechnologies: TechnologyType[] = [
 const hadContactTechnologies: TechnologyType[] = [
     'python',
     'rabbitmq',
+    'nuxt',
     'sass',
     'tailwind',
-    'nuxt',
-    'typescript',
     'postgresql',
+    'elasticsearch',
 ];
 </script>
 

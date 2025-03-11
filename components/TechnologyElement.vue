@@ -189,6 +189,11 @@ const technologies: TechnologiesType = {
         icon: 'vscode-icons:file-type-cpp3',
         width: 35,
     },
+    elasticsearch: {
+        title: 'Elasticsearch',
+        icon: 'devicon:elasticsearch',
+        width: 33,
+    },
 };
 </script>
 

@@ -32,4 +32,5 @@ export type TechnologyType =
     'golang' |
     'keydb' |
     'oraclesql' |
-    'cpp';
+    'cpp' |
+    'elasticsearch';
