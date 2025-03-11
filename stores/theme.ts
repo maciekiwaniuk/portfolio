@@ -1,36 +1,39 @@
 import { defineStore } from 'pinia';
+import { computed, ref } from 'vue';
 import { ThemeKey } from '~/constants/localStorage';
 import { DarkTheme, LightTheme } from '~/constants/theme';
 import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
 import type { ThemeType } from '~/types/ThemeType';
 
-export const useThemeStore = defineStore('theme', {
-    state: (): { theme: ThemeType } => ({
-        theme: DarkTheme,
-    }),
-    actions: {
-        initTheme(): void {
-            if (!import.meta.client) {
-                return;
-            }
+export const useThemeStore = defineStore('theme', () => {
+    const theme = ref<ThemeType>(DarkTheme);
 
-            this.theme = localStorage.getItem(ThemeKey) as ThemeType
-            ?? DarkTheme;
-        },
-        toggle(): void {
-            if (!import.meta.client) {
-                return;
-            }
+    const initTheme = () => {
+        if (!import.meta.client) {
+            return;
+        }
 
-            this.theme = (this.theme === DarkTheme) ? LightTheme : DarkTheme;
+        theme.value = (localStorage.getItem(ThemeKey) as ThemeType) ?? DarkTheme;
+    };
 
-            localStorage.setItem(ThemeKey, this.theme);
+    const toggle = () => {
+        if (!import.meta.client) {
+            return;
+        }
 
-            updateBackgroundColorOnScrollbar();
-        },
-    },
-    getters: {
-        isDark: state => state.theme === DarkTheme,
-        isLight: state => state.theme === LightTheme,
-    },
+        theme.value = theme.value === DarkTheme ? LightTheme : DarkTheme;
+        localStorage.setItem(ThemeKey, theme.value);
+        updateBackgroundColorOnScrollbar();
+    };
+
+    const isDark = computed(() => theme.value === DarkTheme);
+    const isLight = computed(() => theme.value === LightTheme);
+
+    return {
+        theme,
+        initTheme,
+        toggle,
+        isDark,
+        isLight,
+    };
 });

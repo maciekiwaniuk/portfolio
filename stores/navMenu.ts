@@ -1,15 +1,20 @@
 import { defineStore } from 'pinia';
+import { ref } from 'vue';
 
-export const useNavMenuStore = defineStore('navMenu', {
-    state: (): { opened: boolean } => ({
-        opened: false,
-    }),
-    actions: {
-        open(): void {
-            this.opened = true;
-        },
-        close(): void {
-            this.opened = false;
-        },
-    },
+export const useNavMenuStore = defineStore('navMenu', () => {
+    const opened = ref(false);
+
+    const open = () => {
+        opened.value = true;
+    };
+
+    const close = () => {
+        opened.value = false;
+    };
+
+    return {
+        opened,
+        open,
+        close,
+    };
 });
