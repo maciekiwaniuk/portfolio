@@ -65,7 +65,7 @@ const projects: ProjectType[] = [
         titleKey: 'projects.projectsItems.minesweeper.title',
         contentKey: 'projects.projectsItems.minesweeper.content',
         github: 'https://github.com/maciekiwaniuk/minesweeper',
-        online: 'https://maciekiwaniuk-minesweeper.netlify.app/',
+        online: 'https://minesweeper.maciekiwaniuk.pl',
         technologies: ['javascript', 'css'],
     },
 ];
