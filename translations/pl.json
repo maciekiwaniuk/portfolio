@@ -56,16 +56,16 @@
         },
         "experienceItems": {
             "transparentData": {
-                "content": "Rozwój rozproszonego systemu opartego o architekturę mikroserwioswą związanego z dostarczaniem danych gospodarczych. Integracje z licznymi zewnętrznymi systemami przez API.",
-                "profession": "Programista PHP"
+                "content": "Rozwój rozproszonego systemu opartego na mikroserwisach, związanego z dostarczaniem danych gospodarczych z polskich i zagranicznych rejestrów. Integracja z wieloma zewnętrznymi API. Agregacja i transformacja dużych zbiorów danych do spersonalizowanych raportów biznesowych. Praca zarówno po stronie backendu, jak i frontendu (np. sprawdzaj.pl), w tym implementacja interfejsów użytkownika na podstawie szablonów graficznych. Produkty zaprojektowane z myślą o wysokiej dostępności i niezawodności, działające w oparciu o rygorystyczne wymagania SLA. Obowiązki obejmują również tworzenie i utrzymywanie rozwiązań monitorujących, debugowanie systemu oraz reagowanie na incydenty. Aktywny udział w dzieleniu się wiedzą i code reviews.",
+                "profession": "PHP Developer"
             },
             "ebrand": {
-                "content": "Rozwój rozproszonego systemu opartego o architekturę mikroserwioswą związanego z ochroną marek online. Integracje z licznymi zewnętrznymi systemami przez API.",
-                "profession": "Programista PHP"
+                "content": "Rozwój rozproszonego systemu opartego na mikroserwisach, związanego z ochroną marek w internecie. Integracja z wieloma zewnętrznymi API. Aktywny udział w przeglądach kodu oraz współpraca z zespołem w celu zapewnienia wysokiej jakości i łatwości utrzymania kodu.",
+                "profession": "PHP Developer"
             },
             "merinosoft": {
-                "content": "Rozwój aplikacji webowej związanej z zarządzaniem pracownikami przez firmy.",
-                "profession": "Programista PHP"
+                "content": "Rozwój aplikacji webowej związanej z zarządzaniem pracownikami w firmie. Praca zarówno po stronie backendu, jak i frontendu, okazjonalnie z naciskiem na poprawę doświadczenia użytkownika.",
+                "profession": "PHP Developer"
             }
         }
     },

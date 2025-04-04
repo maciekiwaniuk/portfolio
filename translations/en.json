@@ -56,11 +56,11 @@
         },
         "experienceItems": {
             "transparentData": {
-                "content": "Development of a distributed microservices-based system related to provision of economic data. Integration with multiple external APIs.",
+                "content": "Development of a distributed microservices-based system related to the provision of economic data from both Polish and international registers. Integration with multiple external APIs. Aggregation and transformation of large data sets into customized business reports. Contribution to both backend and frontend layers (e.g. sprawdzaj.pl), including implementing user interfaces based on graphic design templates. The products are designed with high availability and reliability in mind, operating under strict SLA requirements. Responsibilities also include developing and maintaining monitoring solutions, system debugging, and incident response. Active involvement in knowledge sharing and code reviews.",
                 "profession": "PHP Developer"
             },
             "ebrand": {
-                "content": "Development of a distributed microservices-based system related to online brand protection. Integration with multiple external APIs.",
+                "content": "Development of a distributed microservices-based system related to online brand protection. Integration with multiple external APIs. Actively participated in code reviews and collaborated with the team to ensure high code quality and maintainability.",
                 "profession": "PHP Developer"
             },
             "merinosoft": {
