@@ -56,16 +56,16 @@
         },
         "experienceItems": {
             "transparentData": {
-                "content": "Rozwój rozproszonego systemu opartego na mikroserwisach, związanego z dostarczaniem danych gospodarczych z polskich i zagranicznych rejestrów. Integracja z wieloma zewnętrznymi API. Agregacja i transformacja dużych zbiorów danych do spersonalizowanych raportów biznesowych. Praca zarówno po stronie backendu, jak i frontendu (np. sprawdzaj.pl), w tym implementacja interfejsów użytkownika na podstawie szablonów graficznych. Produkty zaprojektowane z myślą o wysokiej dostępności i niezawodności, działające w oparciu o rygorystyczne wymagania SLA. Obowiązki obejmują również tworzenie i utrzymywanie rozwiązań monitorujących, debugowanie systemu oraz reagowanie na incydenty. Aktywny udział w dzieleniu się wiedzą i code reviews.",
-                "profession": "PHP Developer"
+                "content": "Rozwój rozproszonego systemu opartego na architekturze mikrousługowej, związanego z udostępnianiem danych gospodarczych z polskich i międzynarodowych rejestrów. Agregacja i transformacja dużych zbiorów danych na potrzeby tworzenia spersonalizowanych raportów biznesowych. Udział zarówno w warstwie backendowej, jak i frontendowej, w tym implementacja interfejsów użytkownika na podstawie gotowych projektów graficznych. Produkty projektowane z uwzględnieniem wysokiej dostępności i niezawodności. Zakres obowiązków obejmuje również rozwój i utrzymanie monitoringów, debugowanie systemu oraz reagowanie na incydenty. Aktywny udział w dzieleniu się wiedzą i code review.",
+                "profession": "Full-stack Developer"
             },
             "ebrand": {
-                "content": "Rozwój rozproszonego systemu opartego na mikroserwisach, związanego z ochroną marek w internecie. Integracja z wieloma zewnętrznymi API. Aktywny udział w przeglądach kodu oraz współpraca z zespołem w celu zapewnienia wysokiej jakości i łatwości utrzymania kodu.",
-                "profession": "PHP Developer"
+                "content": "Rozwój rozproszonego systemu opartego na architekturze mikrousługowej, związanego z ochroną marek w internecie. Integracje z zewnętrznymi interfejsami API. Aktywny udział w code reviews oraz ścisła współpraca z zespołem w celu zapewnienia wysokiej jakości i łatwości utrzymania produktu.",
+                "profession": "Backend Developer"
             },
             "merinosoft": {
                 "content": "Rozwój aplikacji webowej związanej z zarządzaniem pracownikami w firmie. Praca zarówno po stronie backendu, jak i frontendu, okazjonalnie z naciskiem na poprawę doświadczenia użytkownika.",
-                "profession": "PHP Developer"
+                "profession": "Full-stack Developer"
             }
         }
     },
@@ -79,7 +79,7 @@
         "projectsItems": {
             "shopSystem": {
                 "title": "System sklepu",
-                "content": "Backend prostego systemu sklepu. Projekt oparty jest na CQRS wraz z architekturą hexagonalną."
+                "content": "Backend prostego systemu sklepowego zbudowanego jako modularny monolit wykorzystując wzorzec CQRS oraz architekturę heksagonalną."
             },
             "isocapi": {
                 "title": "ISOCAPI",

@@ -18,6 +18,8 @@ const projects: ProjectType[] = [
             'php',
             'phpunit',
             'symfony',
+            'elasticsearch',
+            'rabbitmq',
             'redis',
             'mysql',
             'docker',

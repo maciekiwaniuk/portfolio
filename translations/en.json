@@ -56,16 +56,16 @@
         },
         "experienceItems": {
             "transparentData": {
-                "content": "Development of a distributed microservices-based system related to the provision of economic data from both Polish and international registers. Integration with multiple external APIs. Aggregation and transformation of large data sets into customized business reports. Contribution to both backend and frontend layers (e.g. sprawdzaj.pl), including implementing user interfaces based on graphic design templates. The products are designed with high availability and reliability in mind, operating under strict SLA requirements. Responsibilities also include developing and maintaining monitoring solutions, system debugging, and incident response. Active involvement in knowledge sharing and code reviews.",
-                "profession": "PHP Developer"
+                "content": "Development of a distributed microservices-based system related to the provision of economic data from both Polish and international registers. Aggregation and transformation of large data sets into customized business reports. Contribution to both backend and frontend layers, including implementing user interfaces based on graphic design templates. The products are designed with high availability and reliability in mind. Responsibilities also include developing and maintaining monitoring solutions, system debugging, and incident response. Active involvement in knowledge sharing and code reviews.",
+                "profession": "Full-stack Developer"
             },
             "ebrand": {
                 "content": "Development of a distributed microservices-based system related to online brand protection. Integration with multiple external APIs. Actively participated in code reviews and collaborated with the team to ensure high code quality and maintainability.",
-                "profession": "PHP Developer"
+                "profession": "Backend Developer"
             },
             "merinosoft": {
                 "content": "Development of a web application related to the management of employees in a company.",
-                "profession": "PHP Developer"
+                "profession": "Full-stack Developer"
             }
         }
     },
@@ -79,7 +79,7 @@
         "projectsItems": {
             "shopSystem": {
                 "title": "Shop system",
-                "content": "Backend of a simple store system. The project is based on CQRS along with hexagonal architecture."
+                "content": "Backend of a simple store system built as a modular monolith using CQRS and hexagonal architecture."
             },
             "isocapi": {
                 "title": "ISOCAPI",
