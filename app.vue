@@ -41,8 +41,8 @@ onMounted(() => {
 
     const img = useImage();
     const loadBackgroundImage = computed(() => {
-        const imgUrl = img('/img/background.png', {
-            format: 'webp',
+        const imgUrl = img('/images/background.png', {
+            format: 'avif',
         });
         return `url('${imgUrl}')`;
     });
@@ -56,7 +56,7 @@ useSeoMeta({
     description: 'Portfolio - Maciek Iwaniuk',
     ogDescription: 'Portfolio - Maciek Iwaniuk',
     ogTitle: 'maciekiwaniuk.pl - Software Developer',
-    ogImage: `${config.public.baseUrl}/img/icons/180x180.png`,
+    ogImage: `${config.public.baseUrl}/images/icons/180x180.png`,
     ogUrl: config.public.baseUrl,
 });
 </script>

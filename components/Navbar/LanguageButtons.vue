@@ -15,13 +15,14 @@ const vCursorHover = useCursorHover();
             class="change-language-button"
             @click="changeLanguage(PolishLanguage);"
         >
-            <img
-                src="@/assets/images/flags/pl.png"
+            <NuxtImg
+                src="/images/flags/pl.png"
+                format="avif"
                 class="flag"
                 width="50"
                 height="50"
                 :alt="$t('navbar.images.polishFlag')"
-            >
+            />
         </button>
 
         <button
@@ -29,13 +30,14 @@ const vCursorHover = useCursorHover();
             class="change-language-button"
             @click="changeLanguage(EnglishLanguage);"
         >
-            <img
-                src="@/assets/images/flags/en.png"
+            <NuxtImg
+                src="/images/flags/en.png"
+                format="avif"
                 class="flag"
                 width="50"
                 height="50"
                 :alt="$t('navbar.images.greatBritainFlag')"
-            >
+            />
         </button>
     </div>
 </template>

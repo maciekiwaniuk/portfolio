@@ -1,6 +1,6 @@
 services:
     portfolio-frontend-build:
-        container_name: portfolio-build
+        container_name: portfolio-frontend-build
         build:
             context: .
             dockerfile: docker/frontend/build/Dockerfile
@@ -15,4 +15,4 @@ services:
 
 networks:
     default:
-        name: portfolio_network
+        name: portfolio_network_build

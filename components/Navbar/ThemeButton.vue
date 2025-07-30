@@ -15,7 +15,7 @@ const vCursorHover = useCursorHover();
     >
         <img
             v-show="themeStore.isDark"
-            src="@/assets/images/icons/sun.svg"
+            src="/images/togglers/sun.svg"
             class="icon sun-icon"
             width="1000"
             height="1000"
@@ -23,7 +23,7 @@ const vCursorHover = useCursorHover();
         >
         <img
             v-show="themeStore.isLight"
-            src="@/assets/images/icons/moon.svg"
+            src="/images/togglers/moon.svg"
             class="icon"
             width="1000"
             height="1000"
