@@ -13,6 +13,13 @@ export default defineNuxtConfig({
         'nuxt-gtag',
         '@pinia/nuxt',
     ],
+    nitro: {
+        compressPublicAssets: {
+            gzip: true,
+            brotli: true,
+        },
+        minify: true,
+    },
     app: {
         head: {
             htmlAttrs: {
