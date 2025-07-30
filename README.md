@@ -25,9 +25,9 @@ After the build completes and images are pushed to Docker Hub, the deployment st
 
     cd ~/apps/portfolio
     git pull
-    docker compose -f docker-compose.prod.yml pull
-    docker compose -f docker-compose.prod.yml down
-    docker compose -f docker-compose.prod.yml up -d
+    docker compose -f docker-compose-prod.yml pull
+    docker compose -f docker-compose-prod.yml down
+    docker compose -f docker-compose-prod.yml up -d
 
 The application should be cloned beforehand into the `/apps/portfolio` directory.
 

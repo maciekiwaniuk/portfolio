@@ -1,0 +1,18 @@
+services:
+    portfolio-frontend-build:
+        container_name: portfolio-build
+        build:
+            context: .
+            dockerfile: docker/frontend/build/Dockerfile
+        ports:
+            - '3001:3001'
+        restart: on-failure
+        volumes:
+            - .:/var/www/html
+        working_dir: /var/www/html
+        stdin_open: true
+        tty: true
+
+networks:
+    default:
+        name: portfolio_network
