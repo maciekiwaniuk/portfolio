@@ -42,7 +42,7 @@ onMounted(() => {
     const img = useImage();
     const loadBackgroundImage = computed(() => {
         const imgUrl = img('/images/background.png', {
-            format: 'avif',
+            format: 'webp',
         });
         return `url('${imgUrl}')`;
     });

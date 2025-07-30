@@ -14,27 +14,27 @@
         "lint:eslint:fix": "eslint . --fix"
     },
     "dependencies": {
-        "@nuxt/icon": "^1.5.1",
-        "@nuxt/image": "^1.8.0",
-        "@nuxt/kit": "^3.13.2",
+        "@nuxt/icon": "^1.15.0",
+        "@nuxt/image": "^1.11.0",
+        "@nuxt/kit": "^4.0.2",
         "@nuxtjs/device": "^3.2.4",
-        "@nuxtjs/i18n": "^8.5.3",
+        "@nuxtjs/i18n": "^10.0.3",
         "@nuxtjs/pwa": "^3.3.5",
-        "@nuxtjs/robots": "^4.1.7",
-        "@nuxtjs/sitemap": "^6.0.1",
-        "@pinia/nuxt": "^0.5.4",
-        "nuxt": "^3.13.0",
-        "nuxt-gtag": "^3.0.1",
-        "pinia": "^2.2.2",
-        "sharp": "^0.33.5",
+        "@nuxtjs/robots": "^5.4.0",
+        "@nuxtjs/sitemap": "^7.4.3",
+        "@pinia/nuxt": "^0.11.2",
+        "nuxt": "^4.0.2",
+        "nuxt-gtag": "^3.0.3",
+        "pinia": "^3.0.3",
+        "sharp": "^0.34.3",
         "vue": "latest",
         "vue-router": "latest"
     },
     "devDependencies": {
-        "@antfu/eslint-config": "^3.6.0",
-        "eslint": "^9.10.0",
-        "less": "^4.2.0",
-        "typescript": "^5.6.2",
-        "vue-tsc": "^2.1.6"
+        "@antfu/eslint-config": "^5.0.0",
+        "eslint": "^9.32.0",
+        "less": "^4.4.0",
+        "typescript": "^5.8.3",
+        "vue-tsc": "^3.0.4"
     }
 }
