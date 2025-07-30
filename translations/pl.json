@@ -79,7 +79,7 @@
         "projectsItems": {
             "shopSystem": {
                 "title": "System sklepu",
-                "content": "Backend prostego systemu sklepowego zbudowanego jako modularny monolit wykorzystując wzorzec CQRS oraz architekturę heksagonalną."
+                "content": "Backend prostego systemu sklepowego zbudowanego jako modularny monolit wykorzystując wzorzec CQRS oraz architekturę heksagonalną z mikroserwisami."
             },
             "isocapi": {
                 "title": "ISOCAPI",

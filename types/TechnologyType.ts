@@ -33,4 +33,6 @@ export type TechnologyType =
     'keydb' |
     'oraclesql' |
     'cpp' |
-    'elasticsearch';
+    'elasticsearch' |
+    'react' |
+    'next';

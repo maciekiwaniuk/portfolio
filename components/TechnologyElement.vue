@@ -194,6 +194,16 @@ const technologies: TechnologiesType = {
         icon: 'devicon:elasticsearch',
         width: 33,
     },
+    react: {
+        title: 'React',
+        icon: 'devicon:react',
+        width: 35,
+    },
+    next: {
+        title: 'Next.js',
+        icon: 'devicon:nextjs',
+        width: 35,
+    },
 };
 </script>
 

@@ -79,7 +79,7 @@
         "projectsItems": {
             "shopSystem": {
                 "title": "Shop system",
-                "content": "Backend of a simple store system built as a modular monolith using CQRS and hexagonal architecture."
+                "content": "System of a simple store system built as a modular monolith using CQRS and hexagonal architecture with microservices."
             },
             "isocapi": {
                 "title": "ISOCAPI",
