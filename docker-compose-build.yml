@@ -7,8 +7,6 @@ services:
         ports:
             - '3001:3001'
         restart: on-failure
-        volumes:
-            - .:/var/www/html
         working_dir: /var/www/html
         stdin_open: true
         tty: true

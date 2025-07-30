@@ -19,15 +19,17 @@ function restartAnimation(event: Event) {
 <template>
     <span v-if="isMobile">{{ props.text }}</span>
 
+    <!-- v-for="(letter, index) in splitLetters"-->
     <span
-        v-for="(letter, index) in splitLetters"
+        v-for="index in 15"
         v-else
         :key="index"
         :style="{ animationDelay: `${index / 10}s` }"
         class="animation"
         @mouseover="restartAnimation($event);"
     >
-        {{ letter }}
+        {{ splitLetters[index - 1] }}
+        <!-- TODO: idk why tf i am getting 'e' at the end in production on 15th index -->
     </span>
 </template>
 
