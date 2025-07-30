@@ -115,33 +115,37 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
     let yearsString = '';
     if (yearsDifference === 1) {
         yearsString = t('experience.year');
-    } else if (
-        yearsDifference > 1 &&
-        ![12, 13, 14].includes(yearsDifference % 100) &&
-        [2, 3, 4].includes(yearsDifference % 10)
+    }
+    else if (
+        yearsDifference > 1
+        && ![12, 13, 14].includes(yearsDifference % 100)
+        && [2, 3, 4].includes(yearsDifference % 10)
     ) {
         yearsString = t('experience.yearsFirstForm');
-    } else if (yearsDifference > 1) {
+    }
+    else if (yearsDifference > 1) {
         yearsString = t('experience.yearsSecondForm');
     }
 
     let monthsString = '';
     if (monthsDifference === 1) {
         monthsString = t('experience.month');
-    } else if (monthsDifference > 1) {
+    }
+    else if (monthsDifference > 1) {
         monthsString = t('experience.months');
     }
 
     if (yearsString && monthsString) {
         return `(${yearsDifference} ${yearsString} ${monthsDifference} ${monthsString})`;
-    } else if (yearsString) {
+    }
+    else if (yearsString) {
         return `(${yearsDifference} ${yearsString})`;
-    } else if (monthsString) {
+    }
+    else if (monthsString) {
         return `(${monthsDifference} ${monthsString})`;
     }
     return '';
 }
-
 </script>
 
 <template>

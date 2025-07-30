@@ -5,7 +5,7 @@ services:
     nginx:
         image: maciekiwaniuk/portfolio-nginx:latest
         ports:
-            - "80:80"
+            - '80:80'
         restart: on-failure
         depends_on:
            - frontend

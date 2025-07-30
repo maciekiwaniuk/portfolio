@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TechnologyElement from '~/components/TechnologyElement.vue';
 import ExperienceTimeline from '~/components/Experience/ExperienceTimeline.vue';
+import TechnologyElement from '~/components/TechnologyElement.vue';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
