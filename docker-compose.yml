@@ -1,33 +1,29 @@
 services:
-    nginx:
+    portfolio-nginx:
         container_name: portfolio-nginx
         depends_on:
-            - frontend
+            - portfolio-frontend
         image: nginx:1.27.2-alpine
         ports:
-            - 80:80
+            - "80:80"
         restart: unless-stopped
         volumes:
             - ./docker/nginx/dev/nginx.conf:/etc/nginx/nginx.conf
-        networks:
-            - portfolio-network
 
-    frontend:
+    portfolio-frontend:
         container_name: portfolio-frontend
         image: node:23-alpine
         environment:
             - HOST=0.0.0.0
             - PORT=3000
-        command: sh -c "npm install && npm install --ignore-scripts=false --foreground-scripts --verbose sharp && npx nuxi dev"
+        command: sh -c "npm install --ignore-scripts=false --foreground-scripts --verbose sharp && npx nuxi dev"
         restart: on-failure
         volumes:
             - .:/var/www/html
         working_dir: /var/www/html
-        networks:
-            - portfolio-network
         stdin_open: true
         tty: true
 
 networks:
-    portfolio-network:
-        driver: bridge
+    default:
+        name: portfolio_network
