@@ -1,7 +1,7 @@
 services:
     portfolio-frontend:
         container_name: portfolio-frontend
-        image: node:23-alpine
+        image: node:24-alpine
         ports:
             - '3000:3000'
         command: sh -c "npm install --ignore-scripts=false --foreground-scripts --verbose sharp && npx nuxi dev"

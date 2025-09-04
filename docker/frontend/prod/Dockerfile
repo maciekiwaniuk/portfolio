@@ -1,4 +1,4 @@
-FROM node:23-alpine AS build
+FROM node:24-alpine
 
 WORKDIR /var/www/html
 

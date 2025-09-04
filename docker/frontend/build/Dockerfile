@@ -1,4 +1,4 @@
-FROM node:23-alpine AS build
+FROM node:24-alpine
 
 WORKDIR /var/www/html
 
@@ -9,7 +9,5 @@ RUN npm install --omit=dev
 COPY . .
 
 RUN npx nuxi build
-
-ENV PORT=3001
 
 CMD ["node", ".output/server/index.mjs"]
