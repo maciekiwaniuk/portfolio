@@ -35,10 +35,6 @@ export default defineNuxtConfig({
             ],
         },
     },
-    routeRules: {
-        '/': { prerender: true },
-        '/sitemap.xml': { prerender: true },
-    },
     runtimeConfig: {
         public: {
             baseUrl: process.env.BASE_URL,
@@ -47,6 +43,7 @@ export default defineNuxtConfig({
     i18n: {
         strategy: 'no_prefix',
         langDir: 'locales',
+        defaultLocale: 'en',
         locales: [
             {
                 code: 'en',

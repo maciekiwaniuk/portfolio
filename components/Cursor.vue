@@ -15,6 +15,7 @@ const cursorStore = useCursorStore();
     <div
         v-show="cursorStore.visibility === CursorVisible"
         aria-hidden="true"
+        class="cursor"
         :class="[
             $style.cursor,
             { [$style.cursorDarkTheme]: themeStore.isDark,
