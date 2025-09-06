@@ -4,30 +4,30 @@ import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vu
 
 <template>
     <section
-        class="landing-page"
+        :class="$style.landingPage"
     >
-        <div class="text">
-            <h2 class="my-name-is">
+        <div :class="$style.text">
+            <h2 :class="$style.myNameIs">
                 {{ $t('landingPage.myNameIs') }}
             </h2>
 
-            <h1 class="name">
+            <h1 :class="$style.name">
                 <AnimateSplitLetters
                     :text="$t('landingPage.name')"
                 />
             </h1>
 
-            <p class="description">
+            <p :class="$style.description">
                 {{ $t('landingPage.description') }}
             </p>
         </div>
     </section>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
-.landing-page {
+.landingPage {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +37,7 @@ import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vu
     padding: 1.6rem;
 
     .text {
-        .my-name-is {
+        .myNameIs {
             font-size: 1.7rem;
             font-family: 'FontCaveat', serif;
         }
@@ -55,13 +55,13 @@ import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vu
 }
 
 @media (min-width: @first-breakpoint) {
-    .landing-page {
+    .landingPage {
         min-width: 30rem;
         max-width: 40rem;
         min-height: calc(100vh - @navbar-height - @navbar-border);
 
         .text {
-            .my-name-is {
+            .myNameIs {
                 font-size: 2.5rem;
             }
             .name {

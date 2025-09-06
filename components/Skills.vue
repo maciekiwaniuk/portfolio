@@ -31,17 +31,17 @@ const hadContactTechnologies: TechnologyType[] = [
 </script>
 
 <template>
-    <div id="skills" class="skills">
-        <h2 class="title">
+    <div id="skills" :class="$style.skills">
+        <h2 :class="$style.title">
             {{ $t('skills.title') }}
         </h2>
 
-        <div class="element">
-            <h3 class="title-smaller">
+        <div :class="$style.element">
+            <h3 :class="$style.titleSmaller">
                 {{ $t('skills.useRegularly') }}
             </h3>
 
-            <div class="content">
+            <div :class="$style.content">
                 <TechnologyElement
                     v-for="(technology, index) in useRegularlyTechnologies"
                     :key="index"
@@ -50,12 +50,12 @@ const hadContactTechnologies: TechnologyType[] = [
             </div>
         </div>
 
-        <div class="element">
-            <h3 class="title-smaller">
+        <div :class="$style.element">
+            <h3 :class="$style.titleSmaller">
                 {{ $t('skills.hadContact') }}
             </h3>
 
-            <div class="content">
+            <div :class="$style.content">
                 <TechnologyElement
                     v-for="(technology, index) in hadContactTechnologies"
                     :key="index"
@@ -66,7 +66,7 @@ const hadContactTechnologies: TechnologyType[] = [
     </div>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .skills {
@@ -92,7 +92,7 @@ const hadContactTechnologies: TechnologyType[] = [
         padding-top: 0.7rem;
         padding-bottom: 0.5rem;
 
-        .title-smaller {
+        .titleSmaller {
             width: 100%;
             text-align: center;
             font-size: 1.5rem;
@@ -118,7 +118,7 @@ const hadContactTechnologies: TechnologyType[] = [
         padding-bottom: 7rem;
 
         .element {
-            .title-smaller {
+            .titleSmaller {
                 text-align: left;
             }
             .content {

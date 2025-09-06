@@ -22,33 +22,35 @@ const themeStore = useThemeStore();
 </script>
 
 <template>
-    <div class="experience-item-container">
+    <div :class="$style.experienceItemContainer">
         <div
             v-if="index % 2 === 1"
-            class="visible-on-big-screen"
+            :class="$style.visibleOnBigScreen"
         />
         <ExperienceTimeline
             v-if="index % 2 === 1"
-            class="visible-on-big-screen"
+            :class="$style.visibleOnBigScreen"
         />
         <a
             v-cursor-hover
-            class="link"
+            :class="$style.link"
             target="_blank"
             :href="props.url"
         >
             <div
-                class="experience-item"
-                :class="{ 'experience-item-dark-theme': themeStore.isDark,
-                          'experience-item-light-theme': themeStore.isLight }"
+                :class="[
+                    $style.experienceItem,
+                    { [$style.experienceItemDarkTheme]: themeStore.isDark,
+                      [$style.experienceItemLightTheme]: themeStore.isLight }
+                ]"
             >
-                <h3 class="companyName">{{ props.companyName }}</h3>
+                <h3 :class="$style.companyName">{{ props.companyName }}</h3>
 
-                <p class="content">
+                <p :class="$style.content">
                     {{ props.content }}
                 </p>
 
-                <div class="technologies">
+                <div :class="$style.technologies">
                     <TechnologyElement
                         v-for="(technology, indexKey) in props.technologies"
                         :key="indexKey"
@@ -56,10 +58,10 @@ const themeStore = useThemeStore();
                     />
                 </div>
 
-                <p class="below">
+                <p :class="$style.below">
                     <span>{{ props.profession }}</span>
-                    <span class="job-time">
-                        <span class="date-range">{{ dateRange }}</span>
+                    <span :class="$style.jobTime">
+                        <span :class="$style.dateRange">{{ dateRange }}</span>
                         <span>{{ period }}</span>
                     </span>
                 </p>
@@ -67,26 +69,26 @@ const themeStore = useThemeStore();
         </a>
         <ExperienceTimeline
             v-if="index % 2 === 0"
-            class="visible-on-big-screen"
+            :class="$style.visibleOnBigScreen"
         />
         <div
             v-if="index % 2 === 0"
-            class="visible-on-big-screen"
+            :class="$style.visibleOnBigScreen"
         />
     </div>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
-.visible-on-big-screen {
+.visibleOnBigScreen {
     display: none;
 }
 .link {
     text-decoration: none;
     color: inherit;
 }
-.experience-item {
+.experienceItem {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -143,7 +145,7 @@ const themeStore = useThemeStore();
 }
 
 @media (min-width: @first-breakpoint) {
-    .experience-item {
+    .experienceItem {
         .companyName {
             max-width: 25rem;
         }
@@ -163,21 +165,21 @@ const themeStore = useThemeStore();
 }
 
 @media (min-width: @second-breakpoint) {
-    .experience-item-container {
+    .experienceItemContainer {
         display: grid;
         grid-template-columns: 4fr 1fr 4fr;
 
-        .visible-on-big-screen {
+        .visibleOnBigScreen {
             display: block;
         }
     }
 }
 
-.experience-item-dark-theme {
+.experienceItemDarkTheme {
     background-color: #dark[background-color-on-element];
 }
 
-.experience-item-light-theme {
+.experienceItemLightTheme {
     background-color: #light[background-color-on-element];
 }
 </style>

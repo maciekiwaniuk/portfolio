@@ -48,13 +48,13 @@ const educationItems: Education[] = [
 <template>
     <section
         id="education"
-        class="education"
+        :class="$style.education"
     >
-        <h2 class="title">
+        <h2 :class="$style.title">
             {{ $t('education.title') }}
         </h2>
 
-        <div class="items">
+        <div :class="$style.items">
             <EducationItem
                 v-for="(education, index) in educationItems"
                 :key="index"
@@ -69,7 +69,7 @@ const educationItems: Education[] = [
     </section>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .education {

@@ -15,15 +15,17 @@ const cursorStore = useCursorStore();
     <div
         v-show="cursorStore.visibility === CursorVisible"
         aria-hidden="true"
-        class="cursor"
-        :class="{ 'cursor-dark-theme': themeStore.isDark,
-                  'cursor-light-theme': themeStore.isLight,
-                  'hover': cursorStore.hover }"
+        :class="[
+            $style.cursor,
+            { [$style.cursorDarkTheme]: themeStore.isDark,
+              [$style.cursorLightTheme]: themeStore.isLight,
+              [$style.hover]: cursorStore.hover }
+        ]"
     />
 
     <button
         v-cursor-hover
-        class="toggle-visibility-of-cursor-button"
+        :class="$style.toggleVisibilityOfCursorButton"
         aria-label="Cursor switch"
         @click="cursorStore.toggleVisibility();"
     >
@@ -34,7 +36,7 @@ const cursorStore = useCursorStore();
     </button>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .cursor {
@@ -58,7 +60,7 @@ const cursorStore = useCursorStore();
     transform: scale(2);
 }
 
-.toggle-visibility-of-cursor-button {
+.toggleVisibilityOfCursorButton {
     display: none;
     position: fixed;
     bottom: 0.6rem;
@@ -75,16 +77,16 @@ const cursorStore = useCursorStore();
     .cursor {
         display: block;
     }
-    .toggle-visibility-of-cursor-button {
+    .toggleVisibilityOfCursorButton {
         display: block;
     }
 }
 
-.cursor-dark-theme {
+.cursorDarkTheme {
     border-color: #dark[cursor-color];
 }
 
-.cursor-light-theme {
+.cursorLightTheme {
     border-color: #light[cursor-color];
 }
 </style>

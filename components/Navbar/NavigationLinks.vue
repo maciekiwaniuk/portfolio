@@ -16,27 +16,30 @@ const navMenuStore = useNavMenuStore();
 
 <template>
     <div
-        class="navigation-links"
-        :class="{ 'navigation-links-dark-theme': themeStore.isDark,
-                  'navigation-links-light-theme': themeStore.isLight }"
+        :class="[
+            $style.navigationLinks,
+            { [$style.navigationLinksDarkTheme]: themeStore.isDark,
+              [$style.navigationLinksLightTheme]: themeStore.isLight }
+        ]"
     >
         <div
             v-if="props.alignment === VerticalNavigationAlignment"
-            :class="{ hidden: !navMenuStore.opened }"
-            class="area-to-close-menu"
+            :class="[$style.areaToCloseMenu, { [$style.hidden]: !navMenuStore.opened }]"
             @click="navMenuStore.close();"
         >
-            <button class="close-button">
-                <span class="bar bar-to-right" />
-                <span class="bar bar-to-left" />
+            <button :class="$style.closeButton">
+                <span :class="[$style.bar, $style.barToRight]" />
+                <span :class="[$style.bar, $style.barToLeft]" />
             </button>
         </div>
 
         <div>
             <nav
-                :class="{ 'vertical': props.alignment === VerticalNavigationAlignment,
-                          'horizontal': props.alignment === HorizontalNavigationAlignment,
-                          'hidden-text': (props.alignment === VerticalNavigationAlignment && !navMenuStore.opened) }"
+                :class="[
+                    { [$style.vertical]: props.alignment === VerticalNavigationAlignment,
+                      [$style.horizontal]: props.alignment === HorizontalNavigationAlignment,
+                      [$style.hiddenText]: (props.alignment === VerticalNavigationAlignment && !navMenuStore.opened) }
+                ]"
             >
                 <NavigationLinksLink element="experience" :text="$t('navbar.experience')" :alignment="props.alignment" />
                 <NavigationLinksLink element="education" :text="$t('navbar.education')" :alignment="props.alignment" />
@@ -47,18 +50,17 @@ const navMenuStore = useNavMenuStore();
         </div>
 
         <div
-            class="area-below-to-close-menu"
-            :class="{ hidden: !navMenuStore.opened }"
+            :class="[$style.areaBelowToCloseMenu, { [$style.hidden]: !navMenuStore.opened }]"
             @click="navMenuStore.close();"
         />
     </div>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
-.navigation-links {
-    .area-to-close-menu {
+.navigationLinks {
+    .areaToCloseMenu {
         position: absolute;
         top: 0;
         left: 0;
@@ -68,7 +70,7 @@ const navMenuStore = useNavMenuStore();
         justify-content: center;
         align-items: center;
 
-        .close-button {
+        .closeButton {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -83,16 +85,16 @@ const navMenuStore = useNavMenuStore();
                 width: 80%;
                 border-radius: 10px;
             }
-            .bar-to-left {
+            .barToLeft {
                 transform: rotate(45deg);
             }
-            .bar-to-right {
+            .barToRight {
                 transform: translateY(17px) rotate(-45deg);
             }
         }
     }
 
-    .area-below-to-close-menu {
+    .areaBelowToCloseMenu {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -102,7 +104,7 @@ const navMenuStore = useNavMenuStore();
     .hidden {
         display: none;
     }
-    .hidden-text {
+    .hiddenText {
         font-size: 0 !important;
     }
     nav {
@@ -124,12 +126,12 @@ const navMenuStore = useNavMenuStore();
     }
 }
 
-.navigation-links-dark-theme {
+.navigationLinksDarkTheme {
     .bar {
         background-color: #dark[text-color];
     }
 }
-.navigation-links-light-theme {
+.navigationLinksLightTheme {
     .bar {
         background-color: #light[text-color];
     }

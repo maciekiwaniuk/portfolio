@@ -21,10 +21,12 @@ const vCursorHover = useCursorHover();
 <template>
     <a
         v-cursor-hover
-        :class="{ 'vertical-alignment': props.alignment === VerticalNavigationAlignment,
-                  'horizontal-alignment': props.alignment === HorizontalNavigationAlignment,
-                  'link-dark-theme': themeStore.isDark,
-                  'link-light-theme': themeStore.isLight }"
+        :class="[
+            { [$style.verticalAlignment]: props.alignment === VerticalNavigationAlignment,
+              [$style.horizontalAlignment]: props.alignment === HorizontalNavigationAlignment,
+              [$style.linkDarkTheme]: themeStore.isDark,
+              [$style.linkLightTheme]: themeStore.isLight }
+        ]"
         :href="`#${element}`"
         @click="navMenuStore.close()"
     >
@@ -32,7 +34,7 @@ const vCursorHover = useCursorHover();
     </a>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 a {
@@ -45,10 +47,10 @@ a {
     transition: color ease 0.1s,
                 transform ease @hover-time;
 }
-.vertical-alignment {
+.verticalAlignment {
     margin-right: 1rem;
 }
-.horizontal-alignment::before {
+.horizontalAlignment::before {
     content: '';
     position: absolute;
     bottom: -0.1rem;
@@ -59,14 +61,14 @@ a {
 
     transition: clip-path ease-out @hover-time;
 }
-.horizontal-alignment:hover::before {
+.horizontalAlignment:hover::before {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.link-dark-theme::before {
+.linkDarkTheme::before {
     background-color: #dark[text-color];
 }
-.link-light-theme::before {
+.linkLightTheme::before {
     background-color: #light[text-color];
 }
 </style>

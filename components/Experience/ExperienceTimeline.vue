@@ -1,16 +1,12 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-    <div class="experience-timeline">
-        <div class="line-before" />
-        <div class="circle" />
-        <div class="line-after" />
+    <div :class="$style.experienceTimeline">
+        <div :class="$style.lineBefore" />
+        <div :class="$style.circle" />
+        <div :class="$style.lineAfter" />
     </div>
 </template>
 
-<style scoped lang="less">
+<style module lang="less">
 @import '@/styles/variables.less';
 
 @circle-size: 2.3rem;
@@ -20,16 +16,17 @@
 @line-after-height: calc(100% - @line-before-height - @circle-size - @circle-margin);
 @border-radius-lines: 3px;
 
-.experience-timeline {
+.experienceTimeline {
     width: 100%;
 
-    .line-before {
+    .lineBefore {
         width: @line-width;
         height: @line-before-height;
         margin: auto;
         background-color: @blue-color;
         border-radius: @border-radius-lines;
     }
+
     .circle {
         height: @circle-size;
         width: @circle-size;
@@ -37,7 +34,8 @@
         background-color: @blue-color;
         border-radius: 50%;
     }
-    .line-after {
+
+    .lineAfter {
         width: @line-width;
         height: @line-after-height;
         margin: auto;

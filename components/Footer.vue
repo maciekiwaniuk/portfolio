@@ -11,19 +11,21 @@ const currentYear: number = new Date().getFullYear();
 
 <template>
     <footer
-        class="footer"
-        :class="{ 'footer-dark-theme': themeStore.isDark,
-                  'footer-light-theme': themeStore.isLight }"
+        :class="[
+            $style.footer,
+            { [$style.footerDarkTheme]: themeStore.isDark,
+              [$style.footerLightTheme]: themeStore.isLight }
+        ]"
     >
-        <h3 class="info">
+        <h3 :class="$style.info">
             {{ $t('author') }} - {{ currentYear }} {{ $t('footer.allRightsReserved') }}
         </h3>
 
         <!-- icons visible on footer while screen is small -->
-        <div class="icons">
+        <div :class="$style.icons">
             <a
                 v-cursor-hover
-                class="link"
+                :class="$style.link"
                 target="_blank"
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
@@ -31,13 +33,13 @@ const currentYear: number = new Date().getFullYear();
                 <Icon
                     name="logos:linkedin-icon"
                     size="20"
-                    class="linkedin-icon"
+                    :class="$style.linkedinIcon"
                 />
             </a>
 
             <a
                 v-cursor-hover
-                class="link"
+                :class="$style.link"
                 target="_blank"
                 aria-label="GitHub"
                 href="https://github.com/maciekiwaniuk"
@@ -50,10 +52,10 @@ const currentYear: number = new Date().getFullYear();
         </div>
 
         <!-- icons on left side of screen while screen is big -->
-        <div class="icons-on-big-screens">
+        <div :class="$style.iconsOnBigScreens">
             <a
                 v-cursor-hover
-                class="link"
+                :class="$style.link"
                 target="_blank"
                 aria-label="Linkedin"
                 href="https://www.linkedin.com/in/iwaniuk-maciej/"
@@ -61,13 +63,13 @@ const currentYear: number = new Date().getFullYear();
                 <Icon
                     name="logos:linkedin-icon"
                     size="40"
-                    class="linkedin-icon"
+                    :class="$style.linkedinIcon"
                 />
             </a>
 
             <a
                 v-cursor-hover
-                class="link"
+                :class="$style.link"
                 target="_blank"
                 aria-label="GitHub"
                 href="https://github.com/maciekiwaniuk"
@@ -81,7 +83,7 @@ const currentYear: number = new Date().getFullYear();
     </footer>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .footer {
@@ -98,7 +100,7 @@ const currentYear: number = new Date().getFullYear();
         color: inherit;
         cursor: pointer;
     }
-    .linkedin-icon {
+    .linkedinIcon {
         background-color: white;
         border-radius: 10%;
     }
@@ -116,7 +118,7 @@ const currentYear: number = new Date().getFullYear();
             padding-right: 0.3rem;
         }
     }
-    .icons-on-big-screens {
+    .iconsOnBigScreens {
         display: none;
         align-items: center;
         justify-content: center;
@@ -152,16 +154,16 @@ const currentYear: number = new Date().getFullYear();
             display: none;
         }
 
-        .icons-on-big-screens {
+        .iconsOnBigScreens {
             display: flex;
         }
     }
 }
 
-.footer-dark-theme {
+.footerDarkTheme {
     background-color: #dark[background-color-on-element];
 }
-.footer-light-theme {
+.footerLightTheme {
     background-color: #light[background-color-on-element];
 }
 </style>

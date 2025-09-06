@@ -11,15 +11,15 @@ function copyEmailToClipboard() {
 <template>
     <section
         id="contact"
-        class="contact"
+        :class="$style.contact"
     >
-        <h2 class="title">
+        <h2 :class="$style.title">
             {{ $t('contact.title') }}
         </h2>
 
         <div
             v-cursor-hover
-            class="content"
+            :class="$style.content"
             @click="copyEmailToClipboard();"
         >
             <Icon
@@ -27,12 +27,12 @@ function copyEmailToClipboard() {
                 size="35"
             />
 
-            <span class="email">iwaniukmaciej1@gmail.com</span>
+            <span :class="$style.email">iwaniukmaciej1@gmail.com</span>
         </div>
     </section>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .contact {

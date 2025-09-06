@@ -83,13 +83,13 @@ const projects: ProjectType[] = [
 <template>
     <section
         id="projects"
-        class="projects"
+        :class="$style.projects"
     >
-        <h2 class="title">
+        <h2 :class="$style.title">
             {{ $t('projects.title') }}
         </h2>
 
-        <div class="items">
+        <div :class="$style.items">
             <ProjectsItem
                 v-for="(project, index) in projects"
                 :key="index"
@@ -103,7 +103,7 @@ const projects: ProjectType[] = [
     </section>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .projects {

@@ -209,11 +209,13 @@ const technologies: TechnologiesType = {
 
 <template>
     <div
-        class="technology-element"
-        :class="{ 'technology-element-dark-theme': themeStore.isDark,
-                  'technology-element-light-theme': themeStore.isLight }"
+        :class="[
+            $style.technologyElement,
+            { [$style.technologyElementDarkTheme]: themeStore.isDark,
+              [$style.technologyElementLightTheme]: themeStore.isLight }
+        ]"
     >
-        <div class="icon">
+        <div :class="$style.icon">
             <Icon
                 :name="technologies[props.element].icon"
                 :size="technologies[props.element].width"
@@ -222,21 +224,21 @@ const technologies: TechnologiesType = {
 
         <span
             v-if="technologies[props.element].title"
-            class="title"
+            :class="$style.title"
         >{{ technologies[props.element].title }}
         </span>
         <span
             v-else
-            class="title"
+            :class="$style.title"
         >{{ $t(technologies[props.element].titleKey) }}
         </span>
     </div>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
-.technology-element {
+.technologyElement {
     display: flex;
     align-items: center;
     min-height: 3.2rem;
@@ -256,12 +258,12 @@ const technologies: TechnologiesType = {
     }
 }
 
-.technology-element-dark-theme {
+.technologyElementDarkTheme {
     color: #dark[text-color];
     background-color: #dark[background-color-on-element];
 }
 
-.technology-element-light-theme {
+.technologyElementLightTheme {
     color: #light[text-color];
     background-color: #light[background-color-on-element];
 }

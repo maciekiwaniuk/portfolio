@@ -22,22 +22,24 @@ const themeStore = useThemeStore();
     <div>
         <a
             v-cursor-hover
-            class="link"
+            :class="$style.link"
             target="_blank"
             :href="props.url"
         >
             <div
-                class="education-item"
-                :class="{ 'education-item-dark-theme': themeStore.isDark,
-                          'education-item-light-theme': themeStore.isLight }"
+                :class="[
+                    $style.educationItem,
+                    { [$style.educationItemDarkTheme]: themeStore.isDark,
+                      [$style.educationItemLightTheme]: themeStore.isLight }
+                ]"
             >
-                <h3 class="title">{{ props.title }}</h3>
+                <h3 :class="$style.title">{{ props.title }}</h3>
 
-                <p class="content">
+                <p :class="$style.content">
                     {{ props.content }}
                 </p>
 
-                <div class="technologies">
+                <div :class="$style.technologies">
                     <TechnologyElement
                         v-for="(technology, index) in props.technologies"
                         :key="index"
@@ -45,7 +47,7 @@ const themeStore = useThemeStore();
                     />
                 </div>
 
-                <p class="below">
+                <p :class="$style.below">
                     <span>{{ props.major }}</span>
                     <span>{{ props.period }}</span>
                 </p>
@@ -54,14 +56,14 @@ const themeStore = useThemeStore();
     </div>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .link {
     text-decoration: none;
     color: inherit;
 }
-.education-item {
+.educationItem {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -109,7 +111,7 @@ const themeStore = useThemeStore();
 }
 
 @media (min-width: @first-breakpoint) {
-    .education-item {
+    .educationItem {
         .title {
             max-width: 25rem;
         }
@@ -123,11 +125,11 @@ const themeStore = useThemeStore();
 
 }
 
-.education-item-dark-theme {
+.educationItemDarkTheme {
     background-color: #dark[background-color-on-element];
 }
 
-.education-item-light-theme {
+.educationItemLightTheme {
     background-color: #light[background-color-on-element];
 }
 </style>

@@ -12,13 +12,13 @@ const vCursorHover = useCursorHover();
     <div>
         <button
             v-cursor-hover
-            class="change-language-button"
+            :class="$style.changeLanguageButton"
             @click="changeLanguage(PolishLanguage);"
         >
             <NuxtImg
                 src="/images/flags/pl.png"
                 format="avif"
-                class="flag"
+                :class="$style.flag"
                 width="50"
                 height="50"
                 :alt="$t('navbar.images.polishFlag')"
@@ -27,13 +27,13 @@ const vCursorHover = useCursorHover();
 
         <button
             v-cursor-hover
-            class="change-language-button"
+            :class="$style.changeLanguageButton"
             @click="changeLanguage(EnglishLanguage);"
         >
             <NuxtImg
                 src="/images/flags/en.png"
                 format="avif"
-                class="flag"
+                :class="$style.flag"
                 width="50"
                 height="50"
                 :alt="$t('navbar.images.greatBritainFlag')"
@@ -42,10 +42,10 @@ const vCursorHover = useCursorHover();
     </div>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
-.change-language-button {
+.changeLanguageButton {
     position: relative;
     width: 2.5rem;
     height: 2.5rem;
@@ -60,7 +60,7 @@ const vCursorHover = useCursorHover();
 }
 
 @media (min-width: @first-breakpoint) {
-    .change-language-button {
+    .changeLanguageButton {
         width: 3rem;
         height: 3rem;
     }

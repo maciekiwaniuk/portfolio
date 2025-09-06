@@ -151,13 +151,13 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
 <template>
     <section
         id="experience"
-        class="experience"
+        :class="$style.experience"
     >
-        <h2 class="title">
+        <h2 :class="$style.title">
             {{ $t('experience.title') }}
         </h2>
 
-        <div class="items">
+        <div :class="$style.items">
             <ExperienceItem
                 v-for="(experience, index) in experienceItems"
                 :key="index"
@@ -174,7 +174,7 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
     </section>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .experience {

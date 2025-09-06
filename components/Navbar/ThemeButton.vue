@@ -10,13 +10,13 @@ const vCursorHover = useCursorHover();
 <template>
     <button
         v-cursor-hover
-        class="change-theme-button"
+        :class="$style.changeThemeButton"
         @click="themeStore.toggle();"
     >
         <img
             v-show="themeStore.isDark"
             src="/images/togglers/sun.svg"
-            class="icon sun-icon"
+            :class="[$style.icon, $style.sunIcon]"
             width="1000"
             height="1000"
             :alt="$t('navbar.images.sun')"
@@ -24,7 +24,7 @@ const vCursorHover = useCursorHover();
         <img
             v-show="themeStore.isLight"
             src="/images/togglers/moon.svg"
-            class="icon"
+            :class="$style.icon"
             width="1000"
             height="1000"
             :alt="$t('navbar.images.moon')"
@@ -32,10 +32,10 @@ const vCursorHover = useCursorHover();
     </button>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
-.change-theme-button {
+.changeThemeButton {
     width: 3rem;
     height: 3rem;
     font-size: 3rem;
@@ -48,14 +48,14 @@ const vCursorHover = useCursorHover();
         width: 2.2rem;
         height: auto;
     }
-    .sun-icon {
+    .sunIcon {
         // change black svg into white
         filter: invert(100%);
     }
 }
 
 @media (min-width: @first-breakpoint) {
-    .change-theme-button {
+    .changeThemeButton {
         .icon {
             width: 2.5rem;
         }

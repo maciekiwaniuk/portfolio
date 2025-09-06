@@ -13,45 +13,49 @@ const vCursorHover = useCursorHover();
 
 <template>
     <header
-        class="navigation"
-        :class="{ 'navigation-dark-theme': themeStore.isDark,
-                  'navigation-light-theme': themeStore.isLight }"
+        :class="[
+            $style.navigation,
+            { [$style.navigationDarkTheme]: themeStore.isDark,
+              [$style.navigationLightTheme]: themeStore.isLight }
+        ]"
     >
         <button
             v-cursor-hover
-            class="nav-hamburger-toggler"
+            :class="$style.navHamburgerToggler"
             aria-label="Hamburger"
             @click="navMenuStore.open();"
         >
-            <span class="bar bar-short" />
-            <span class="bar" />
-            <span class="bar bar-medium" />
+            <span :class="[$style.bar, $style.barShort]" />
+            <span :class="$style.bar" />
+            <span :class="[$style.bar, $style.barMedium]" />
         </button>
 
-        <div class="nav-links">
+        <div :class="$style.navLinks">
             <NavigationLinks alignment="horizontal" />
         </div>
 
         <div
-            class="background-blocking-content"
-            :class="{ 'background-blocking-content-visible': navMenuStore.opened }"
+            :class="[
+                $style.backgroundBlockingContent,
+                { [$style.backgroundBlockingContentVisible]: navMenuStore.opened }
+            ]"
             @click="navMenuStore.close();"
         />
 
-        <div class="nav-links-mobile-menu" :class="{ active: navMenuStore.opened }">
+        <div :class="[$style.navLinksMobileMenu, { [$style.active]: navMenuStore.opened }]">
             <NavigationLinks alignment="vertical" />
         </div>
     </header>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .navigation {
     font-family: 'LatoFontBold', serif;
     z-index: 10;
 
-    .nav-hamburger-toggler {
+    .navHamburgerToggler {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -69,29 +73,29 @@ const vCursorHover = useCursorHover();
             border-radius: 10px;
             transition: background-color ease @hover-time;
         }
-        .bar-short {
+        .barShort {
             width: 50%;
         }
-        .bar-medium {
+        .barMedium {
             width: 80%;
         }
     }
-    .nav-links {
+    .navLinks {
         display: none;
     }
 
-    .background-blocking-content {
+    .backgroundBlockingContent {
         position: absolute;
         top: 0;
         left: 0;
         height: 367rem;
         width: 0;
     }
-    .background-blocking-content-visible {
+    .backgroundBlockingContentVisible {
         width: calc(100vw - 12rem);
     }
 
-    .nav-links-mobile-menu {
+    .navLinksMobileMenu {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -115,36 +119,36 @@ const vCursorHover = useCursorHover();
 
 @media (min-width: @first-breakpoint) {
     .navigation {
-        .nav-hamburger-toggler {
+        .navHamburgerToggler {
             display: none;
         }
 
-        .nav-links {
+        .navLinks {
             display: flex;
         }
     }
 }
 
-.navigation-dark-theme {
+.navigationDarkTheme {
     .bar {
         background-color: #dark[text-color];
     }
-    .nav-hamburger-toggler:hover .bar {
+    .navHamburgerToggler:hover .bar {
         background-color: #dark[text-color-hover];
     }
 
-    .nav-links-mobile-menu {
+    .navLinksMobileMenu {
         background-color: #dark[background-color];
     }
 }
-.navigation-light-theme {
+.navigationLightTheme {
     .bar {
         background-color: #light[text-color];
     }
-    .nav-hamburger-toggler:hover .bar {
+    .navHamburgerToggler:hover .bar {
         background-color: #light[text-color-hover];
     }
-    .nav-links-mobile-menu {
+    .navLinksMobileMenu {
         background-color: #light[background-color];
     }
 }

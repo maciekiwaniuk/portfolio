@@ -5,7 +5,7 @@ import ThemeButton from '~/components/Navbar/ThemeButton.vue';
 </script>
 
 <template>
-    <div class="navbar">
+    <div :class="$style.navbar">
         <ThemeButton />
 
         <LanguageButtons />
@@ -14,7 +14,7 @@ import ThemeButton from '~/components/Navbar/ThemeButton.vue';
     </div>
 </template>
 
-<style lang="less" scoped>
+<style module lang="less">
 @import '@/styles/variables.less';
 
 .navbar {
