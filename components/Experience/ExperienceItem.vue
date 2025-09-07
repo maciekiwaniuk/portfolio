@@ -133,11 +133,11 @@ const themeStore = useThemeStore();
         font-family: 'LatoFontLight', serif;
         padding-top: 0.5rem;
 
-        .job-time {
+        .jobTime {
             span {
                 display: block;
             }
-            .date-range::after {
+            .dateRange::after {
                 content: ' ';
             }
         }

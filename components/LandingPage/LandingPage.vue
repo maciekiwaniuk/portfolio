@@ -39,7 +39,6 @@ import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vu
     .text {
         .myNameIs {
             font-size: 1.7rem;
-            font-family: 'FontCaveat', serif;
         }
         .name {
             display: block;

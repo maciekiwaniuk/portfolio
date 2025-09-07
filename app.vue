@@ -66,8 +66,8 @@ useSeoMeta({
 
     <main
         class="container"
-        :class="{ 'container-dark-theme': themeStore.isDark,
-                  'container-light-theme': themeStore.isLight }"
+        :class="{ 'containerDarkTheme': themeStore.isDark,
+                  'containerLightTheme': themeStore.isLight }"
         :style="{ backgroundImage: backgroundImageUrl }"
     >
         <Navbar />
@@ -101,12 +101,12 @@ useSeoMeta({
                 color ease @theme-switch-time;
 }
 
-.container-dark-theme {
+.containerDarkTheme {
     background-color: #dark[background-color];
     color: #dark[text-color];
 }
 
-.container-light-theme {
+.containerLightTheme {
     background-color: #light[background-color];
     color: #light[text-color];
 }
