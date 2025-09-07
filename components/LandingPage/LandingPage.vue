@@ -38,12 +38,15 @@ import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vu
 
     .text {
         .myNameIs {
+            font-family: 'Caveat', serif;
+            font-weight: 400;
             font-size: 1.7rem;
         }
         .name {
             display: block;
             margin-bottom: 0.5rem;
-            font-family: 'LatoFontBold', serif;
+            font-family: 'Lato', serif;
+            font-weight: 700;
             font-size: 3.5rem;
             color: @blue-color;
         }

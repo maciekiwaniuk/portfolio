@@ -121,7 +121,8 @@ const projects: ProjectType[] = [
         width: 100%;
         min-height: 3rem;
         text-align: center;
-        font-family: 'LatoFontBold', serif;
+        font-family: 'Lato', serif;
+        font-weight: 700;
         font-size: 3rem;
         color: @blue-color;
     }

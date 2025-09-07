@@ -82,7 +82,8 @@ const hadContactTechnologies: TechnologyType[] = [
         float: left;
         width: 100%;
         text-align: center;
-        font-family: 'LatoFontBold', serif;
+        font-family: 'Lato', serif;
+        font-weight: 700;
         font-size: 3rem;
         padding-bottom: 0.4rem;
         color: @blue-color;

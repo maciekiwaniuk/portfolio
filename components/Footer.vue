@@ -107,7 +107,8 @@ const currentYear: number = new Date().getFullYear();
     .info {
         text-align: center;
         padding-right: 0.3rem;
-        font-family: 'LatoFontLight', serif;
+        font-family: 'Lato', serif;
+        font-weight: 300;
         font-size: 0.90rem;
     }
     .icons {

@@ -12,6 +12,7 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         'nuxt-gtag',
         '@pinia/nuxt',
+        '@nuxt/fonts',
     ],
     nitro: {
         compressPublicAssets: {
@@ -59,5 +60,17 @@ export default defineNuxtConfig({
     },
     gtag: {
         id: 'G-EV1076RNK2',
+    },
+    fonts: {
+        families: [
+            {
+                name: 'Lato',
+                weights: [300, 400, 700],
+            },
+            {
+                name: 'Caveat',
+                weights: [400],
+            },
+        ],
     },
 });

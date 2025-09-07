@@ -95,7 +95,8 @@ useSeoMeta({
 
 .container {
     min-height: 200vh;
-    font-family: 'LatoFontRegular', serif;
+    font-family: 'Lato', serif;
+    font-weight: 400;
     user-select: none;
     transition: background-color ease @theme-switch-time,
                 color ease @theme-switch-time;

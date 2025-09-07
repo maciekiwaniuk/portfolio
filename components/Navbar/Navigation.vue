@@ -52,7 +52,8 @@ const vCursorHover = useCursorHover();
 @import '@/styles/variables.less';
 
 .navigation {
-    font-family: 'LatoFontBold', serif;
+    font-family: 'Lato', serif;
+    font-weight: 700;
     z-index: 10;
 
     .navHamburgerToggler {

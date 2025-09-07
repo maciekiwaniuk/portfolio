@@ -113,7 +113,8 @@ const themeStore = useThemeStore();
         display: flex;
         align-items: center;
         text-align: left;
-        font-family: 'LatoFontLight', serif;
+        font-family: 'Lato', serif;
+        font-weight: 300;
         font-style: italic;
         line-height: 1.3rem;
         font-size: 1.05rem;
@@ -130,7 +131,8 @@ const themeStore = useThemeStore();
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-family: 'LatoFontLight', serif;
+        font-family: 'Lato', serif;
+        font-weight: 300;
         padding-top: 0.5rem;
 
         .jobTime {

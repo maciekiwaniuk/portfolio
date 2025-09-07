@@ -89,7 +89,8 @@ const themeStore = useThemeStore();
         align-items: center;
         text-align: left;
         line-height: 1.3rem;
-        font-family: 'LatoFontLight', serif;
+        font-family: 'Lato', serif;
+        font-weight: 300;
         font-style: italic;
         font-size: 1.05rem;
     }
@@ -106,7 +107,8 @@ const themeStore = useThemeStore();
         justify-content: space-between;
         align-items: center;
         padding-top: 0.5rem;
-        font-family: 'LatoFontLight', serif;
+        font-family: 'Lato', serif;
+        font-weight: 300;
     }
 }
 

@@ -107,7 +107,8 @@ const themeStore = useThemeStore();
         align-items: center;
         text-align: left;
         line-height: 1.3rem;
-        font-family: 'LatoFontLight', serif;
+        font-family: 'Lato', serif;
+        font-weight: 300;
         font-style: italic;
         font-size: 1.05rem;
     }
