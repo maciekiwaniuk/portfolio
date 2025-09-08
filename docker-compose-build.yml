@@ -1,6 +1,6 @@
 services:
-    portfolio-frontend-build:
-        container_name: portfolio-frontend-build
+    portfolio:
+        container_name: portfolio
         build:
             context: .
             dockerfile: docker/frontend/build/Dockerfile

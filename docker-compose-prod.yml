@@ -1,7 +1,6 @@
 services:
     frontend:
         image: maciekiwaniuk/portfolio-frontend:latest
-
     nginx:
         image: maciekiwaniuk/portfolio-nginx:latest
         ports:

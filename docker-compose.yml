@@ -1,10 +1,10 @@
 services:
-    portfolio-frontend:
-        container_name: portfolio-frontend
+    portfolio:
+        container_name: portfolio
         image: node:24-alpine
         ports:
             - '3000:3000'
-        command: sh -c "npm install --ignore-scripts=false --foreground-scripts --verbose sharp && npx nuxi dev"
+        command: sh -c "npm ci --ignore-scripts=false --foreground-scripts --verbose sharp && npx nuxi dev"
         restart: on-failure
         volumes:
             - .:/var/www/html

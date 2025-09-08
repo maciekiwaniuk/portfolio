@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
     compatibilityDate: '2024-09-21',
+    site: {
+        url: 'https://maciekiwaniuk.pl',
+    },
     devtools: {
         enabled: false,
     },
@@ -15,11 +18,20 @@ export default defineNuxtConfig({
         '@nuxt/fonts',
     ],
     nitro: {
+        prerender: {
+            routes: ['/sitemap.xml', '/robots.txt'],
+            ignore: ['/'],
+        },
         compressPublicAssets: {
             gzip: true,
             brotli: true,
         },
         minify: true,
+    },
+    routeRules: {
+        '/': { ssr: true },
+        '/sitemap.xml': { prerender: true },
+        '/robots.txt': { prerender: true },
     },
     app: {
         head: {
