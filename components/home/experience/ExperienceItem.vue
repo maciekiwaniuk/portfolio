@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ExperienceTimeline from '~/components/Experience/ExperienceTimeline.vue';
-import TechnologyElement from '~/components/TechnologyElement.vue';
+import ExperienceTimeline from '~/components/home/experience/ExperienceTimeline.vue';
+import TechnologyElement from '~/components/home/TechnologyElement.vue';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
@@ -79,7 +79,7 @@ const themeStore = useThemeStore();
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .visibleOnBigScreen {
     display: none;

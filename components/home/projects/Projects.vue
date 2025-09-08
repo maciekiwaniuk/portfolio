@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProjectsItem from '~/components/Projects/ProjectsItem.vue';
+import ProjectsItem from '~/components/home/projects/ProjectsItem.vue';
 import type { TechnologyType } from '~/types/TechnologyType';
 
 type ProjectType = {
@@ -104,7 +104,7 @@ const projects: ProjectType[] = [
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .projects {
     display: flex;

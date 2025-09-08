@@ -43,7 +43,7 @@ const vCursorHover = useCursorHover();
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .changeLanguageButton {
     position: relative;

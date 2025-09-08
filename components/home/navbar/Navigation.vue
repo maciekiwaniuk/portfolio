@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavigationLinks from '~/components/Navbar/NavigationLinks.vue';
+import NavigationLinks from '~/components/home/navbar/NavigationLinks.vue';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useNavMenuStore } from '~/stores/navMenu';
 import { useThemeStore } from '~/stores/theme';
@@ -49,7 +49,7 @@ const vCursorHover = useCursorHover();
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .navigation {
     font-family: 'Lato', serif;

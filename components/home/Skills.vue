@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TechnologyElement from '~/components/TechnologyElement.vue';
+import TechnologyElement from '~/components/home/TechnologyElement.vue';
 import type { TechnologyType } from '~/types/TechnologyType';
 
 const useRegularlyTechnologies: TechnologyType[] = [
@@ -67,7 +67,7 @@ const hadContactTechnologies: TechnologyType[] = [
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .skills {
     display: flex;

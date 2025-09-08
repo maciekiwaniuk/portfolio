@@ -33,7 +33,7 @@ const vCursorHover = useCursorHover();
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .changeThemeButton {
     width: 3rem;

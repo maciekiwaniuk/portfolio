@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TechnologyElement from '~/components/TechnologyElement.vue';
+import TechnologyElement from '~/components/home/TechnologyElement.vue';
 import { useCursorHover } from '~/directives/useCursorHover';
 import { useThemeStore } from '~/stores/theme';
 import type { TechnologyType } from '~/types/TechnologyType';
@@ -80,7 +80,7 @@ const themeStore = useThemeStore();
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .projectsItem {
     display: flex;

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import LanguageButtons from '~/components/Navbar/LanguageButtons.vue';
-import Navigation from '~/components/Navbar/Navigation.vue';
-import ThemeButton from '~/components/Navbar/ThemeButton.vue';
+import LanguageButtons from '~/components/home/navbar/LanguageButtons.vue';
+import Navigation from '~/components/home/navbar/Navigation.vue';
+import ThemeButton from '~/components/home/navbar/ThemeButton.vue';
 </script>
 
 <template>
@@ -15,7 +15,7 @@ import ThemeButton from '~/components/Navbar/ThemeButton.vue';
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .navbar {
     display: flex;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vue';
+import AnimateSplitLetters from '~/components/home/landingPage/AnimateSplitLetters.vue';
 </script>
 
 <template>
@@ -25,7 +25,7 @@ import AnimateSplitLetters from '~/components/LandingPage/AnimateSplitLetters.vu
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .landingPage {
     display: flex;

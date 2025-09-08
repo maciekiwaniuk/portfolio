@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import EducationItem from '~/components/Education/EducationItem.vue';
+import EducationItem from '~/components/home/education/EducationItem.vue';
 
 import type { TechnologyType } from '~/types/TechnologyType';
 
@@ -70,7 +70,7 @@ const educationItems: Education[] = [
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .education {
     display: flex;

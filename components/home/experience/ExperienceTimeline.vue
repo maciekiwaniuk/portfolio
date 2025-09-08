@@ -7,7 +7,7 @@
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 @circle-size: 2.3rem;
 @circle-margin: 0.5rem;

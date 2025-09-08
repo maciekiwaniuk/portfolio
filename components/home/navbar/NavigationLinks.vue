@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavigationLinksLink from '~/components/Navbar/NavigationLinksLink.vue';
+import NavigationLinksLink from '~/components/home/navbar/NavigationLinksLink.vue';
 import { HorizontalNavigationAlignment, VerticalNavigationAlignment } from '~/constants/alignment';
 import { useNavMenuStore } from '~/stores/navMenu';
 import { useThemeStore } from '~/stores/theme';
@@ -57,7 +57,7 @@ const navMenuStore = useNavMenuStore();
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .navigationLinks {
     .areaToCloseMenu {

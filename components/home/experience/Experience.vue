@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ExperienceItem from '~/components/Experience/ExperienceItem.vue';
+import ExperienceItem from '~/components/home/experience/ExperienceItem.vue';
 import type { TechnologyType } from '~/types/TechnologyType';
 
 const { t } = useI18n();
@@ -175,7 +175,7 @@ function getTranslatedPeriod(startDate: Date, endDate: Date | null): string {
 </template>
 
 <style module lang="less">
-@import '@/styles/variables.less';
+@import '~/styles/variables.less';
 
 .experience {
     display: flex;
