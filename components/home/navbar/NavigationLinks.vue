@@ -57,7 +57,7 @@ const navMenuStore = useNavMenuStore();
 </template>
 
 <style module lang="less">
-@import '~/styles/variables.less';
+@import '/styles/variables.less';
 
 .navigationLinks {
     .areaToCloseMenu {

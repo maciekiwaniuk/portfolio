@@ -84,7 +84,7 @@ const currentYear: number = new Date().getFullYear();
 </template>
 
 <style module lang="less">
-@import '~/styles/variables.less';
+@import '/styles/variables.less';
 
 .footer {
     display: flex;

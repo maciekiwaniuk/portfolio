@@ -79,7 +79,7 @@ const themeStore = useThemeStore();
 </template>
 
 <style module lang="less">
-@import '~/styles/variables.less';
+@import '/styles/variables.less';
 
 .visibleOnBigScreen {
     display: none;

@@ -65,9 +65,13 @@ useSeoMeta({
     <Cursor />
 
     <main
-        class="container"
-        :class="{ 'containerDarkTheme': themeStore.isDark,
-                  'containerLightTheme': themeStore.isLight }"
+        :class="[
+            $style.container,
+            {
+                [$style.containerDarkTheme]: themeStore.isDark,
+                [$style.containerLightTheme]: themeStore.isLight,
+            },
+        ]"
         :style="{ backgroundImage: backgroundImageUrl }"
     >
         <Navbar />
@@ -88,10 +92,8 @@ useSeoMeta({
     </main>
 </template>
 
-<style lang="less">
-@import './styles/variables.less';
-@import './styles/main.less';
-@import './styles/scrollbar.less';
+<style module lang="less">
+@import '/styles/variables.less';
 
 .container {
     min-height: 200vh;

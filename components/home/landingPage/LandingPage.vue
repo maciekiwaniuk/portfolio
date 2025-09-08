@@ -25,7 +25,7 @@ import AnimateSplitLetters from '~/components/home/landingPage/AnimateSplitLette
 </template>
 
 <style module lang="less">
-@import '~/styles/variables.less';
+@import '/styles/variables.less';
 
 .landingPage {
     display: flex;

@@ -104,7 +104,7 @@ const projects: ProjectType[] = [
 </template>
 
 <style module lang="less">
-@import '~/styles/variables.less';
+@import '/styles/variables.less';
 
 .projects {
     display: flex;

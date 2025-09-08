@@ -67,7 +67,7 @@ const hadContactTechnologies: TechnologyType[] = [
 </template>
 
 <style module lang="less">
-@import '~/styles/variables.less';
+@import '/styles/variables.less';
 
 .skills {
     display: flex;

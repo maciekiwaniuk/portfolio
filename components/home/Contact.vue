@@ -33,7 +33,7 @@ function copyEmailToClipboard() {
 </template>
 
 <style module lang="less">
-@import '~/styles/variables.less';
+@import '/styles/variables.less';
 
 .contact {
     display: flex;
