@@ -12,14 +12,20 @@ import { useNavMenuStore } from '~/stores/navMenu';
 import { useThemeStore } from '~/stores/theme';
 
 const cursorStore = useCursorStore();
-
 const themeStore = useThemeStore();
-
 const navMenuStore = useNavMenuStore();
+const route = useRoute();
+
 watch(
     () => navMenuStore.opened,
     (opened) => {
         document.body.setAttribute('overflow', opened ? 'hidden' : 'visible');
+    },
+);
+watch(
+    () => route.path,
+    () => {
+        cursorStore.reset();
     },
 );
 

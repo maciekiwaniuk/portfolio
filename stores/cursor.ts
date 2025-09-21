@@ -29,9 +29,14 @@ export const useCursorStore = defineStore('cursor', () => {
         localStorage.setItem(CursorVisibilityKey, visibility.value);
     };
 
+    const reset = () => {
+        hover.value = false;
+    };
+
     return {
         hover,
         visibility,
+        reset,
         initCursor,
         toggle,
         toggleVisibility,
