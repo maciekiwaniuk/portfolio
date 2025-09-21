@@ -1,5 +1,7 @@
 {
     "navbar": {
+        "portfolio": "Portfolio",
+        "blog": "Blog",
         "education": "Education",
         "experience": "Experience",
         "skills": "Skills",
@@ -11,6 +13,14 @@
             "polishFlag": "Change language to Polish",
             "greatBritainFlag": "Change language to English"
         }
+    },
+    "blog": {
+        "title": "Blog",
+        "readMore": "Read more",
+        "backToBlog": "← Back to Blog",
+        "publishedOn": "Published on",
+        "readingTime": "min read",
+        "tags": "Tags"
     },
     "landingPage": {
         "myNameIs": "Hi, my name is",

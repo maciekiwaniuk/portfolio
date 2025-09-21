@@ -1,5 +1,7 @@
 {
     "navbar": {
+        "portfolio": "Portfolio",
+        "blog": "Blog",
         "education": "Edukacja",
         "experience": "Doświadczenie",
         "skills": "Umiejętności",
@@ -11,6 +13,14 @@
             "polishFlag": "Zmień język na polski",
             "greatBritainFlag": "Zmień język na angielski"
         }
+    },
+    "blog": {
+        "title": "Blog",
+        "readMore": "Czytaj więcej",
+        "backToBlog": "← Powrót do Blogu",
+        "publishedOn": "Opublikowano",
+        "readingTime": "min czytania",
+        "tags": "Tagi"
     },
     "landingPage": {
         "myNameIs": "Hej, nazywam się",

@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     devtools: {
         enabled: false,
     },
+    content: {
+        watch: false,
+    },
     modules: [
         '@nuxtjs/i18n',
         '@nuxtjs/sitemap',
@@ -20,7 +23,10 @@ export default defineNuxtConfig({
     ],
     nitro: {
         prerender: {
-            routes: ['/sitemap.xml', '/robots.txt'],
+            routes: [
+                '/sitemap.xml',
+                '/robots.txt',
+            ],
             ignore: ['/'],
         },
         compressPublicAssets: {
@@ -31,6 +37,8 @@ export default defineNuxtConfig({
     },
     routeRules: {
         '/': { ssr: true },
+        '/blog': { ssr: true },
+        '/blog/*': { ssr: true },
         '/sitemap.xml': { prerender: true },
         '/robots.txt': { prerender: true },
     },

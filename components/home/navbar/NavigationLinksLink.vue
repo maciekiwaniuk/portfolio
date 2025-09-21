@@ -6,7 +6,8 @@ import { useThemeStore } from '~/stores/theme';
 import type { AlignmentType } from '~/types/AlignmentType';
 
 const props = defineProps<{
-    element: string;
+    link?: string;
+    element?: string;
     text: string;
     alignment: AlignmentType;
 }>();
@@ -20,6 +21,7 @@ const vCursorHover = useCursorHover();
 
 <template>
     <a
+        v-if="element"
         v-cursor-hover
         :class="[
             { [$style.verticalAlignment]: props.alignment === VerticalNavigationAlignment,
@@ -32,6 +34,21 @@ const vCursorHover = useCursorHover();
     >
         {{ text }}
     </a>
+
+    <NuxtLink
+        v-if="link"
+        v-cursor-hover
+        :class="[
+            { [$style.verticalAlignment]: props.alignment === VerticalNavigationAlignment,
+              [$style.horizontalAlignment]: props.alignment === HorizontalNavigationAlignment,
+              [$style.linkDarkTheme]: themeStore.isDark,
+              [$style.linkLightTheme]: themeStore.isLight }
+        ]"
+        :to="link"
+        @click="navMenuStore.close()"
+    >
+        {{ text }}
+    </NuxtLink>
 </template>
 
 <style module lang="less">

@@ -12,6 +12,11 @@ const props = defineProps<{
 const themeStore = useThemeStore();
 
 const navMenuStore = useNavMenuStore();
+
+const route = useRoute();
+const isHomePage = computed(() => {
+    return route.path === '/';
+});
 </script>
 
 <template>
@@ -41,11 +46,19 @@ const navMenuStore = useNavMenuStore();
                       [$style.hiddenText]: (props.alignment === VerticalNavigationAlignment && !navMenuStore.opened) }
                 ]"
             >
-                <NavigationLinksLink element="experience" :text="$t('navbar.experience')" :alignment="props.alignment" />
-                <NavigationLinksLink element="education" :text="$t('navbar.education')" :alignment="props.alignment" />
-                <NavigationLinksLink element="skills" :text="$t('navbar.skills')" :alignment="props.alignment" />
-                <NavigationLinksLink element="projects" :text="$t('navbar.projects')" :alignment="props.alignment" />
-                <NavigationLinksLink element="contact" :text="$t('navbar.contact')" :alignment="props.alignment" />
+                <template v-if="isHomePage">
+                    <NavigationLinksLink link="/blog" :text="$t('navbar.blog')" :alignment="props.alignment" />
+                    <NavigationLinksLink element="experience" :text="$t('navbar.experience')" :alignment="props.alignment" />
+                    <NavigationLinksLink element="education" :text="$t('navbar.education')" :alignment="props.alignment" />
+                    <NavigationLinksLink element="skills" :text="$t('navbar.skills')" :alignment="props.alignment" />
+                    <NavigationLinksLink element="projects" :text="$t('navbar.projects')" :alignment="props.alignment" />
+                    <NavigationLinksLink element="contact" :text="$t('navbar.contact')" :alignment="props.alignment" />
+                </template>
+
+                <template v-else>
+                    <NavigationLinksLink link="/blog" :text="$t('navbar.blog')" :alignment="props.alignment" />
+                    <NavigationLinksLink link="/" :text="$t('navbar.portfolio')" :alignment="props.alignment" />
+                </template>
             </nav>
         </div>
 

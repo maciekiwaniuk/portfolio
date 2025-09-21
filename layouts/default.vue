@@ -1,0 +1,96 @@
+<script setup lang="ts">
+import { onMounted, watch } from 'vue';
+import Cursor from '~/components/home/Cursor.vue';
+import Footer from '~/components/home/Footer.vue';
+import Navbar from '~/components/home/navbar/Navbar.vue';
+import { addEventOnCursor } from '~/functions/addEventOnCursor';
+import { addEventOnOpeningNavBySliding } from '~/functions/addEventOnOpeningNavBySliding';
+import { updateBackgroundColorOnScrollbar } from '~/functions/updateBackgroundColorOnScrollbar';
+import { updateLangAttribute } from '~/functions/updateLangAttribute';
+import { useCursorStore } from '~/stores/cursor';
+import { useNavMenuStore } from '~/stores/navMenu';
+import { useThemeStore } from '~/stores/theme';
+
+const cursorStore = useCursorStore();
+
+const themeStore = useThemeStore();
+
+const navMenuStore = useNavMenuStore();
+watch(
+    () => navMenuStore.opened,
+    (opened) => {
+        document.body.setAttribute('overflow', opened ? 'hidden' : 'visible');
+    },
+);
+
+const backgroundImageUrl = ref<string>('');
+
+onMounted(() => {
+    themeStore.initTheme();
+    cursorStore.initCursor();
+    addEventOnCursor();
+    addEventOnOpeningNavBySliding();
+    updateLangAttribute();
+    updateBackgroundColorOnScrollbar();
+
+    const img = useImage();
+    const loadBackgroundImage = computed(() => {
+        const imgUrl = img('/images/background.png', {
+            format: 'webp',
+        });
+        return `url('${imgUrl}')`;
+    });
+    backgroundImageUrl.value = loadBackgroundImage.value;
+});
+</script>
+
+<template>
+    <Cursor />
+
+    <main
+        :class="[
+            $style.container,
+            {
+                [$style.containerDarkTheme]: themeStore.isDark,
+                [$style.containerLightTheme]: themeStore.isLight,
+            },
+        ]"
+        :style="{ backgroundImage: backgroundImageUrl }"
+    >
+        <Navbar />
+
+        <section :class="$style.content">
+            <slot />
+        </section>
+
+        <Footer />
+    </main>
+</template>
+
+<style module lang="less">
+@import '/styles/main.less';
+@import '/styles/variables.less';
+@import '/styles/scrollbar.less';
+
+.container {
+    font-family: 'Lato', serif;
+    font-weight: 400;
+    user-select: none;
+    transition: background-color ease @theme-switch-time,
+    color ease @theme-switch-time;
+}
+
+.containerDarkTheme {
+    background-color: #dark[background-color];
+    color: #dark[text-color];
+}
+
+.containerLightTheme {
+    background-color: #light[background-color];
+    color: #light[text-color];
+}
+
+.content {
+    min-height: calc(100vh - @navbar-height - 4rem)
+}
+</style>

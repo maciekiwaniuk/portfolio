@@ -95,7 +95,7 @@ const currentYear: number = new Date().getFullYear();
     min-width: 100%;
     border-top: solid @blue-color 0.1rem;
 
-    a {
+    .link {
         text-decoration: none;
         color: inherit;
         cursor: pointer;
@@ -130,7 +130,7 @@ const currentYear: number = new Date().getFullYear();
         width: 4rem;
         height: 7rem;
 
-        a {
+        .link {
             width: 100%;
             text-align: center;
         }
