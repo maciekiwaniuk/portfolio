@@ -45,13 +45,13 @@ const formatDate = (dateString: string) => {
                         <span>{{ formatDate(post.meta.date) }}</span>
                     </div>
                     <div v-if="post.meta.tags" :class="$style.tags">
-            <span
-                v-for="tag in post.meta.tags"
-                :key="tag"
-                :class="$style.tag"
-            >
-              #{{ tag }}
-            </span>
+                        <span
+                            v-for="tag in post.meta.tags"
+                            :key="tag"
+                            :class="$style.tag"
+                        >
+                          #{{ tag }}
+                        </span>
                     </div>
                 </header>
 

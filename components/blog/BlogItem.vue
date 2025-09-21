@@ -46,15 +46,15 @@ const formatDate = (dateString: string) => {
                     {{ props.description }}
                 </p>
 
-<!--                <div :class="$style.tags" v-if="props.tags.length > 0">-->
-<!--                    <span-->
-<!--                        v-for="tag in props.tags"-->
-<!--                        :key="tag"-->
-<!--                        :class="$style.tag"-->
-<!--                    >-->
-<!--                        #{{ tag }}-->
-<!--                    </span>-->
-<!--                </div>-->
+                <div :class="$style.tags" v-if="tags.length > 0">
+                    <span
+                        v-for="tag in tags"
+                        :key="tag"
+                        :class="$style.tag"
+                    >
+                        #{{ tag }}
+                    </span>
+                </div>
 
                 <div :class="$style.meta">
                     <span :class="$style.date">
