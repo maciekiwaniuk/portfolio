@@ -13,6 +13,7 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
         '@nuxt/image',
         '@nuxt/icon',
+        '@nuxt/content',
         'nuxt-gtag',
         '@pinia/nuxt',
         '@nuxt/fonts',
