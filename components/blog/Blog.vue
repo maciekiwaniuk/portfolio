@@ -7,13 +7,10 @@ const { data: posts } = await useAsyncData(() =>
 </script>
 
 <template>
-    <section
-        id="blog"
-        :class="$style.blog"
-    >
-        <h2 :class="$style.title">
+    <section :class="$style.blog">
+        <h1 :class="$style.title">
             {{ $t('blog.title') }}
-        </h2>
+        </h1>
 
         <div :class="$style.items">
             <BlogItem

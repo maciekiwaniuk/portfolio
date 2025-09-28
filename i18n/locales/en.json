@@ -17,7 +17,6 @@
     "blog": {
         "title": "Latest posts",
         "readMore": "Read more",
-        "backToBlog": "← Back to Blog",
         "publishedOn": "Published on",
         "readingTime": "min read",
         "tags": "Tags"

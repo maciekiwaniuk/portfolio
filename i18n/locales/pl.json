@@ -17,7 +17,6 @@
     "blog": {
         "title": "Ostatnie posty",
         "readMore": "Czytaj więcej",
-        "backToBlog": "← Powrót do Blogu",
         "publishedOn": "Opublikowano",
         "readingTime": "min czytania",
         "tags": "Tagi"

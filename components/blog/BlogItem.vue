@@ -57,11 +57,16 @@ const formatDate = (dateString: string) => {
                 </div>
 
                 <div :class="$style.meta">
-                    <span :class="$style.date">
-                        {{ formatDate(props.date) }}
-                    </span>
+                    <div :class="$style.metaLeft">
+                        <time :class="$style.date" :datetime="props.date">
+                            {{ formatDate(props.date) }}
+                        </time>
+                        <span :class="$style.readingTime" v-if="props.readingTime">
+                            {{ props.readingTime }}
+                        </span>
+                    </div>
                     <span :class="$style.readMore">
-                        {{ $t('blog.readMore') }} →
+                        {{ $t('blog.readMore') }}
                     </span>
                 </div>
             </div>
@@ -133,9 +138,22 @@ const formatDate = (dateString: string) => {
         font-weight: 300;
         font-size: 0.9rem;
 
+        .metaLeft {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
         .date {
             opacity: 0.8;
         }
+
+        .readingTime {
+            color: @blue-color;
+            font-weight: 400;
+            font-size: 0.8rem;
+        }
+
         .readMore {
             color: @blue-color;
             font-weight: 400;
@@ -153,6 +171,12 @@ const formatDate = (dateString: string) => {
         }
         .tags {
             justify-content: flex-start;
+        }
+        .meta {
+            .metaLeft {
+                flex-direction: row;
+                gap: 1rem;
+            }
         }
     }
 }

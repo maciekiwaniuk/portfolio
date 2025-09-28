@@ -4,7 +4,15 @@ import Blog from '~/components/blog/Blog.vue';
 useHead({
     title: 'Blog - Maciek Iwaniuk',
     meta: [
-        { name: 'description', content: 'Read my latest blog posts about web development, programming, and technology.' }
+        { name: 'description', content: 'Read my latest blog posts about web development, programming, and technology.' },
+        { name: 'keywords', content: 'blog, web development, programming, technology' },
+        { name: 'author', content: 'Maciek Iwaniuk' },
+        { property: 'og:title', content: 'Blog - Maciek Iwaniuk' },
+        { property: 'og:description', content: 'Read my latest blog posts about web development, programming, and technology.' },
+        { property: 'og:type', content: 'website' },
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://maciekiwaniuk.pl/blog' }
     ]
 });
 </script>

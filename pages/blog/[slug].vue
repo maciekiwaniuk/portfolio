@@ -16,8 +16,8 @@ useHead({
     title: `${post.value.title} - Maciek Iwaniuk`,
     meta: [
         { name: 'description', content: post.value.description },
-        { property: 'og:title', content: post.value.title },
-        { property: 'og:description', content: post.value.description },
+        { name: 'keywords', content: post.value.meta.tags?.join(', ') || '' },
+        { name: 'author', content: 'Maciek Iwaniuk' },
     ],
 });
 
@@ -34,17 +34,22 @@ const formatDate = (dateString: string) => {
 <template>
     <main :class="$style.blogPost">
         <div :class="$style.container">
-            <NuxtLink to="/blog" :class="$style.backLink">
-                {{ $t('blog.backToBlog') }}
-            </NuxtLink>
-
             <article :class="$style.article">
                 <header :class="$style.header">
                     <h1 :class="$style.title">{{ post.title }}</h1>
+
                     <div :class="$style.meta">
-                        <span>{{ formatDate(post.meta.date) }}</span>
+                        <div :class="$style.metaInfo">
+                            <time :class="$style.date" :datetime="post.meta.date">
+                                {{ $t('blog.publishedOn') }} {{ formatDate(post.meta.date) }}
+                            </time>
+                            <span v-if="post.meta.readingTime" :class="$style.readingTime">
+                                {{ post.meta.readingTime }}
+                            </span>
+                        </div>
                     </div>
-                    <div v-if="post.meta.tags" :class="$style.tags">
+
+                    <div v-if="post.meta.tags && post.meta.tags.length > 0" :class="$style.tags">
                         <span
                             v-for="tag in post.meta.tags"
                             :key="tag"
@@ -76,18 +81,6 @@ const formatDate = (dateString: string) => {
     margin: 0 auto;
 }
 
-.backLink {
-    display: inline-block;
-    margin-bottom: 2rem;
-    color: @blue-color;
-    text-decoration: none;
-    font-weight: 500;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
 .article {
     .header {
         margin-bottom: 3rem;
@@ -104,9 +97,27 @@ const formatDate = (dateString: string) => {
 
         .meta {
             margin-bottom: 1rem;
-            color: #666;
             font-family: 'Lato', serif;
             font-weight: 300;
+
+            .metaInfo {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+
+                .date {
+                    font-size: 0.9rem;
+                    color: white;
+                    font-weight: 400;
+                }
+
+                .readingTime {
+                    color: @blue-color;
+                    font-weight: 400;
+                    font-size: 0.8rem;
+                }
+            }
         }
 
         .tags {
@@ -134,12 +145,9 @@ const formatDate = (dateString: string) => {
             color: @blue-color;
             font-family: 'Lato', serif;
             font-weight: 700;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
         }
 
         :global(p) {
-            margin-bottom: 1.5rem;
         }
 
         :global(code) {
@@ -147,14 +155,6 @@ const formatDate = (dateString: string) => {
             padding: 0.2rem 0.4rem;
             border-radius: 0.3rem;
             font-size: 0.9em;
-        }
-
-        :global(pre) {
-            background-color: #f5f5f5;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            margin: 1.5rem 0;
         }
 
         :global(blockquote) {
