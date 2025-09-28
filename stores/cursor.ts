@@ -13,7 +13,7 @@ export const useCursorStore = defineStore('cursor', () => {
             return;
         }
 
-        visibility.value = (localStorage.getItem(CursorVisibilityKey) as CursorVisibilityType) ?? CursorVisible;
+        visibility.value = (localStorage.getItem(CursorVisibilityKey) as CursorVisibilityType) ?? CursorHidden;
     };
 
     const toggle = () => {
